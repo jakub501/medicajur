@@ -1,0 +1,23 @@
+import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/dictionaries";
+import { PageHero } from "@/components/PageHero";
+import { Section } from "@/components/Section";
+import { HoursPanel, ContactPanel } from "@/components/sections/HoursContact";
+
+export function HoursPage({ dict }: { locale: Locale; dict: Dictionary }) {
+  return (
+    <>
+      <PageHero
+        eyebrow={dict.nav.hours}
+        title={dict.hoursSection.title}
+        lead={dict.hoursSection.pageLead}
+      />
+      <Section>
+        <div className="grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+          <HoursPanel dict={dict} />
+          <ContactPanel dict={dict} withMap withEmails={false} />
+        </div>
+      </Section>
+    </>
+  );
+}
