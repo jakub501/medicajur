@@ -13,18 +13,14 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={cn("py-12 sm:py-[54px]", className)}>
+    <section id={id} className={cn("py-12 sm:py-16", className)}>
       <Container className={containerClassName}>{children}</Container>
     </section>
   );
 }
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="text-[12px] font-bold uppercase tracking-[0.16em] text-primary">
-      {children}
-    </span>
-  );
+  return <span className="text-eyebrow text-primary">{children}</span>;
 }
 
 export function SectionHeading({
@@ -49,14 +45,14 @@ export function SectionHeading({
       )}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2 className="mt-2.5 text-[32px] leading-tight sm:text-[40px]">{title}</h2>
+      <h2 className="text-h2 mt-2.5">{title}</h2>
       {center && (
         <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r from-primary to-brand-green" />
       )}
       {subtitle && (
         <p
           className={cn(
-            "mt-3 max-w-[42em] text-muted",
+            "text-body-lg mt-3 max-w-[42em] text-muted",
             center && "mx-auto",
           )}
         >

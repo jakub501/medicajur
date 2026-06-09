@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" fill="none" role="img" aria-label="Doctor portrait placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1b6aa6"/>
+      <stop offset="1" stop-color="#0d4674"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <circle cx="200" cy="175" r="72" fill="rgba(255,255,255,0.18)"/>
+  <ellipse cx="200" cy="390" rx="120" ry="95" fill="rgba(255,255,255,0.14)"/>
+  <path d="M200 120c-35 0-58 28-58 62 0 22 10 42 28 54v24h60v-24c18-12 28-32 28-54 0-34-23-62-58-62z" fill="rgba(255,255,255,0.22)"/>
+</svg>

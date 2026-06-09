@@ -9,6 +9,7 @@ import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
+import { StickyMobileCta } from "@/components/StickyMobileCta";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -73,9 +74,6 @@ export async function generateMetadata({
       title,
       description,
     },
-    icons: {
-      icon: "/favicon.ico",
-    },
     robots: {
       index: true,
       follow: true,
@@ -124,8 +122,9 @@ export default async function LocaleLayout({
         />
         <TopBar dict={dict} />
         <Header locale={locale} dict={dict} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-[4.75rem] md:pb-0">{children}</main>
         <Footer locale={locale} dict={dict} />
+        <StickyMobileCta dict={dict} />
         <CookieBanner locale={locale} dict={dict} />
       </body>
     </html>

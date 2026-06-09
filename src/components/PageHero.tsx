@@ -11,7 +11,7 @@ export function PageHero({
   lead?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-blue-soft/60 to-bg pb-10 pt-12 sm:pb-12 sm:pt-14">
+    <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-blue-soft/60 to-bg py-12 sm:py-16">
       <span
         className="orb"
         style={{
@@ -26,10 +26,8 @@ export function PageHero({
       <Container>
         <div className="relative max-w-[44em] animate-rise">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-          <h1 className="mt-2.5 text-[36px] font-medium leading-[1.08] tracking-[-0.02em] sm:text-[48px]">
-            {title}
-          </h1>
-          {lead && <p className="mt-4 text-[18px] text-muted">{lead}</p>}
+          <h1 className="text-h1 mt-2.5 font-medium">{title}</h1>
+          {lead && <p className="text-body-lg mt-4 text-muted">{lead}</p>}
         </div>
       </Container>
     </section>

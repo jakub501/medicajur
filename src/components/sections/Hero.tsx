@@ -5,10 +5,43 @@ import { SITE } from "@/lib/site";
 import { Container } from "../Container";
 import { OpenStatus } from "../OpenStatus";
 import { ImagePlaceholder } from "../ImagePlaceholder";
+import { ButtonAnchor, ButtonLink } from "../Button";
+
+function DoctorBadge({ dict }: { dict: Dictionary }) {
+  return (
+    <div className="flex items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3.5 shadow-float">
+      <span className="icon-box h-[38px] w-[38px] rounded-[10px]">
+        <Stethoscope className="h-5 w-5" strokeWidth={1.85} aria-hidden="true" />
+      </span>
+      <span>
+        <span className="block font-serif text-body font-semibold leading-tight">
+          {SITE.doctor}
+        </span>
+        <span className="block text-caption text-muted">{dict.hero.badgeDoctor}</span>
+      </span>
+    </div>
+  );
+}
+
+function EnglishBadge({ dict }: { dict: Dictionary }) {
+  return (
+    <div className="flex items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3.5 shadow-float">
+      <span className="icon-box h-[38px] w-[38px] rounded-[10px]">
+        <Languages className="h-5 w-5" strokeWidth={1.85} aria-hidden="true" />
+      </span>
+      <span>
+        <span className="block font-serif text-body font-semibold leading-tight">
+          {dict.hero.badgeEnglishTitle}
+        </span>
+        <span className="block text-caption text-muted">{dict.hero.badgeEnglish}</span>
+      </span>
+    </div>
+  );
+}
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <section className="relative overflow-hidden pb-10 pt-12 sm:pb-10 sm:pt-14">
+    <section className="relative overflow-hidden py-12 sm:py-16">
       <span
         className="orb"
         style={{
@@ -32,71 +65,51 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         aria-hidden="true"
       />
       <Container>
-        <div className="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-[50px]">
-          <div className="animate-rise">
+        <div className="relative grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12">
+          <div className="order-1 animate-rise">
             <OpenStatus
               openLabel={dict.common.openNow}
               closedLabel={dict.common.closedNow}
             />
-            <h1 className="mt-5 text-[40px] font-medium leading-[1.08] tracking-[-0.02em] sm:text-[54px]">
-              {dict.hero.title}
-            </h1>
-            <p className="mt-5 max-w-[30em] text-[18px] text-muted sm:text-[18.5px]">
-              {dict.hero.lead}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
+            <h1 className="text-display mt-5 font-medium">{dict.hero.title}</h1>
+            <p className="text-body-lg mt-5 max-w-[30em] text-muted">{dict.hero.lead}</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <ButtonAnchor
                 href={SITE.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cta-primary inline-flex items-center gap-2 rounded-[10px] px-5 py-3.5 text-[15px] font-bold text-white transition-all"
+                size="md"
               >
                 <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
                 {dict.hero.primaryCta}
-              </a>
-              <a
-                href={href(locale, "patients")}
-                className="inline-flex items-center gap-2 rounded-[10px] border-[1.5px] border-blue-line bg-surface px-5 py-3.5 text-[15px] font-bold text-primary transition-colors hover:border-primary"
-              >
+              </ButtonAnchor>
+              <ButtonLink href={href(locale, "patients")} variant="secondary" size="md">
                 <UserPlus className="h-[18px] w-[18px]" strokeWidth={1.85} />
                 {dict.hero.secondaryCta}
-              </a>
+              </ButtonLink>
             </div>
+            <p className="text-caption mt-3 text-muted">{dict.hero.bookingNote}</p>
           </div>
 
-          <div className="relative animate-rise [animation-delay:120ms]">
-            <ImagePlaceholder
-              src={SITE.images.doctor || undefined}
-              alt={dict.hero.photoAlt}
-              label={dict.hero.photoAlt}
-              priority
-              className="h-[360px] w-full rounded-[18px] shadow-hero sm:h-[500px]"
-            />
-            <div className="animate-floaty absolute left-3 top-5 flex items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3.5 shadow-float sm:-left-6">
-              <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-blue-soft text-primary">
-                <Stethoscope className="h-5 w-5" strokeWidth={1.85} />
-              </span>
-              <span>
-                <span className="block font-serif text-[16px] font-semibold leading-tight">
-                  {SITE.doctor}
-                </span>
-                <span className="block text-[12px] text-muted">
-                  {dict.hero.badgeDoctor}
-                </span>
-              </span>
+          <div className="order-2 animate-rise [animation-delay:120ms]">
+            <div className="relative">
+              <ImagePlaceholder
+                src={SITE.images.doctor || undefined}
+                alt={dict.hero.photoAlt}
+                label={dict.hero.photoAlt}
+                priority
+                className="h-[260px] w-full rounded-xl shadow-hero sm:h-[340px] md:h-[380px] lg:h-[440px]"
+              />
+              <div className="animate-floaty absolute left-3 top-4 hidden md:block lg:-left-5">
+                <DoctorBadge dict={dict} />
+              </div>
+              <div className="animate-floaty absolute bottom-4 right-3 hidden md:block lg:-right-4 [animation-delay:-3s]">
+                <EnglishBadge dict={dict} />
+              </div>
             </div>
-            <div className="animate-floaty absolute bottom-6 right-3 flex items-center gap-3 rounded-[14px] border border-line bg-surface px-4 py-3.5 shadow-float [animation-delay:-3s] sm:-right-5">
-              <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[10px] bg-blue-soft text-primary">
-                <Languages className="h-5 w-5" strokeWidth={1.85} />
-              </span>
-              <span>
-                <span className="block font-serif text-[16px] font-semibold leading-tight">
-                  English speaking
-                </span>
-                <span className="block text-[12px] text-muted">
-                  {dict.hero.badgeEnglish}
-                </span>
-              </span>
+            <div className="mt-4 flex flex-col gap-3 md:hidden">
+              <DoctorBadge dict={dict} />
+              <EnglishBadge dict={dict} />
             </div>
           </div>
         </div>

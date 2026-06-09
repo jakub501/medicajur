@@ -11,8 +11,8 @@ const sk = {
   nav: {
     about: "Ambulancia",
     services: "Služby",
-    hours: "Ordinačné hodiny",
-    patients: "Pre pacientov",
+    hours: "Hodiny",
+    patients: "Pacienti",
     contact: "Kontakt",
     book: "Objednať sa",
     menu: "Menu",
@@ -44,14 +44,17 @@ const sk = {
   hero: {
     title: "Moderná všeobecná ambulancia vo Svätom Jure",
     lead: "Prevencia, presná diagnostika a liečba pre dospelých — s modernými prístrojmi a dostatkom času pre každého pacienta.",
-    primaryCta: "Objednať vyšetrenie / e-recept",
+    primaryCta: "Objednať sa",
     secondaryCta: "Som nový pacient",
     badgeDoctor: "Všeobecný lekár · samostatne od 2019",
+    badgeEnglishTitle: "Anglicky hovoriaci lekár",
     badgeEnglish: "English speaking GP",
+    bookingNote: "Objednávanie prebieha cez portál Moji lekári",
     photoAlt: "MUDr. Pavol Trnovec, PhD.",
   },
   facts: {
     todayLabel: "Dnes",
+    acuteLabel: "Akútne dnes",
     addressLabel: "Adresa",
     phoneLabel: "Telefón",
   },
@@ -59,8 +62,10 @@ const sk = {
     eyebrow: "Prijímame nových pacientov",
     title: "Vitajte v našej ambulancii",
     text: "O administratívu sa postaráme za vás. Prechod k nám je rýchly a bez stresu — odhlásenie od predchádzajúceho lekára vybavíme my.",
-    downloadCta: "Stiahnuť formuláre",
+    aboutCta: "O ambulancii",
+    infoCta: "Informácie pre nových pacientov",
     callCta: "Zavolať",
+    whyTitle: "Prečo si vybrať nás?",
     stepsTitle: "Ako sa stať pacientom",
     steps: [
       {
@@ -112,6 +117,7 @@ const sk = {
       text: "Moderné prístroje pre rýchle laboratórne výsledky priamo na mieste, bez čakania na externé laboratórium.",
       tags: ["CRP test", "FOB test", "Glukóza · HbA1c", "EKG", "INR / Quick"],
     },
+    viewAll: "Všetky služby",
     pageTitle: "Naše služby",
     pageLead:
       "Poskytujeme komplexnú všeobecnú zdravotnú starostlivosť pre dospelých — od prevencie cez diagnostiku až po liečbu a dlhodobé sledovanie.",
@@ -173,22 +179,29 @@ const sk = {
   insurers: {
     label: "Zmluvné poisťovne",
   },
-  reviews: {
-    eyebrow: "Skúsenosti pacientov",
-    title: "Čo o nás hovoria",
-    disclaimer: "Ukážkové referencie — pred spustením nahradíme reálnymi ohlasmi pacientov.",
+  trust: {
+    eyebrow: "Dôvera",
+    title: "Na čom stojíme",
     items: [
       {
-        text: "Pán doktor je skutočný profesionál. Dôkladne ma vyšetril, všetko zrozumiteľne vysvetlil a liečba rýchlo zabrala.",
-        who: "Ján K.",
+        title: "7+ rokov praxe",
+        text: "MUDr. Pavol Trnovec, PhD. samostatne ordinuje vo Svätom Jure od roku 2019.",
+        icon: "stethoscope",
       },
       {
-        text: "Krásna, nová a čistá ambulancia. Vybavenie je moderné a sestrička veľmi šikovná. Konečne ambulancia na úrovni.",
-        who: "Mária S.",
+        title: "Všetky poisťovne",
+        text: "Zmluvy so VšZP, Dôverou aj Union — bez obmedzenia výberu lekára.",
+        icon: "shield-check",
       },
       {
-        text: "Úžasný ľudský prístup. Pán doktor si na pacienta nájde čas, vypočuje ho a naozaj sa snaží pomôcť.",
-        who: "Peter L.",
+        title: "Výsledky na počkanie",
+        text: "POCT prístroje a EKG priamo v ambulancii — bez čakania na laboratórium.",
+        icon: "activity",
+      },
+      {
+        title: "SK · EN",
+        text: "Komunikujeme zrozumiteľne aj v anglickom jazyku pre zahraničných pacientov.",
+        icon: "languages",
       },
     ],
   },
@@ -306,8 +319,8 @@ const en: Dictionary = {
   nav: {
     about: "Practice",
     services: "Services",
-    hours: "Opening hours",
-    patients: "For patients",
+    hours: "Hours",
+    patients: "Patients",
     contact: "Contact",
     book: "Book now",
     menu: "Menu",
@@ -339,14 +352,17 @@ const en: Dictionary = {
   hero: {
     title: "A modern general practice in Svätý Jur",
     lead: "Prevention, accurate diagnostics and treatment for adults — with modern equipment and enough time for every patient.",
-    primaryCta: "Book a visit / e-prescription",
+    primaryCta: "Book now",
     secondaryCta: "I'm a new patient",
     badgeDoctor: "General practitioner · since 2019",
+    badgeEnglishTitle: "English speaking doctor",
     badgeEnglish: "English speaking GP",
+    bookingNote: "Booking is handled via the My Doctors portal",
     photoAlt: "MUDr. Pavol Trnovec, PhD.",
   },
   facts: {
     todayLabel: "Today",
+    acuteLabel: "Acute today",
     addressLabel: "Address",
     phoneLabel: "Phone",
   },
@@ -354,8 +370,10 @@ const en: Dictionary = {
     eyebrow: "Accepting new patients",
     title: "Welcome to our practice",
     text: "We handle the paperwork for you. Switching to us is quick and stress-free — we'll de-register you from your previous doctor.",
-    downloadCta: "Download forms",
+    aboutCta: "About the practice",
+    infoCta: "Info for new patients",
     callCta: "Call us",
+    whyTitle: "Why choose us?",
     stepsTitle: "How to become a patient",
     steps: [
       {
@@ -407,6 +425,7 @@ const en: Dictionary = {
       text: "Modern devices for fast laboratory results on the spot, with no waiting for an external lab.",
       tags: ["CRP test", "FOB test", "Glucose · HbA1c", "ECG", "INR / Quick"],
     },
+    viewAll: "All services",
     pageTitle: "Our services",
     pageLead:
       "We provide comprehensive general healthcare for adults — from prevention and diagnostics to treatment and long-term follow-up.",
@@ -468,22 +487,29 @@ const en: Dictionary = {
   insurers: {
     label: "Contracted insurers",
   },
-  reviews: {
-    eyebrow: "Patient experience",
-    title: "What patients say",
-    disclaimer: "Sample testimonials — to be replaced with real patient feedback before launch.",
+  trust: {
+    eyebrow: "Trust",
+    title: "What we stand on",
     items: [
       {
-        text: "The doctor is a true professional. He examined me thoroughly, explained everything clearly and the treatment worked quickly.",
-        who: "Ján K.",
+        title: "7+ years of practice",
+        text: "MUDr. Pavol Trnovec, PhD. has been running his own practice in Svätý Jur since 2019.",
+        icon: "stethoscope",
       },
       {
-        text: "A beautiful, new and clean practice. The equipment is modern and the nurse very skilled. Finally a practice at this level.",
-        who: "Mária S.",
+        title: "All insurers",
+        text: "Contracts with VšZP, Dôvera and Union — no restriction on choosing your GP.",
+        icon: "shield-check",
       },
       {
-        text: "A wonderful, human approach. The doctor takes time for the patient, listens and genuinely tries to help.",
-        who: "Peter L.",
+        title: "Results while you wait",
+        text: "POCT devices and ECG on site — no waiting for an external laboratory.",
+        icon: "activity",
+      },
+      {
+        title: "SK · EN",
+        text: "We communicate clearly in English for international patients.",
+        icon: "languages",
       },
     ],
   },

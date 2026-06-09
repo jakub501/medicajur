@@ -1,57 +1,84 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { Clock, MapPin, Phone } from "lucide-react";
-import { SITE, scheduleForDow, fmtMinutes } from "@/lib/site";
+import { Clock, MapPin, Phone, Zap } from "lucide-react";
+import { SITE, mapsLink } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Container } from "../Container";
+import { Section } from "../Section";
 
-export function QuickFacts({ dict }: { dict: Dictionary }) {
-  const [todayLabel, setTodayLabel] = useState("—");
+type FactItem = {
+  icon: typeof Clock;
+  label: string;
+  value: React.ReactNode;
+};
 
-  useEffect(() => {
-    const day = scheduleForDow(new Date().getDay());
-    setTodayLabel(
-      day.intervals.length === 0
-        ? dict.common.weekendClosed
-        : day.intervals
-            .map(([s, e]) => `${fmtMinutes(s)} – ${fmtMinutes(e)}`)
-            .join("  |  "),
-    );
-  }, [dict]);
-
-  const items = [
-    { icon: Clock, label: dict.facts.todayLabel, value: todayLabel },
+export function QuickFacts({
+  dict,
+  todayHours,
+  acuteHours,
+}: {
+  dict: Dictionary;
+  todayHours: string;
+  acuteHours: string | null;
+}) {
+  const items: FactItem[] = [
+    {
+      icon: Clock,
+      label: dict.facts.todayLabel,
+      value: (
+        <>
+          {todayHours}
+          {acuteHours && (
+            <span className="text-body-sm mt-1 flex items-center gap-1.5 font-sans font-semibold text-primary">
+              <Zap className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
+              {acuteHours}
+            </span>
+          )}
+        </>
+      ),
+    },
     {
       icon: MapPin,
       label: dict.facts.addressLabel,
-      value: `${SITE.address.street}, ${SITE.address.city}`,
+      value: (
+        <a
+          href={mapsLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="transition-colors hover:text-primary"
+        >
+          {SITE.address.street}, {SITE.address.city}
+        </a>
+      ),
     },
-    { icon: Phone, label: dict.facts.phoneLabel, value: SITE.phone },
+    {
+      icon: Phone,
+      label: dict.facts.phoneLabel,
+      value: (
+        <a href={SITE.phoneHref} className="transition-colors hover:text-primary">
+          {SITE.phone}
+        </a>
+      ),
+    },
   ];
 
   return (
-    <Container>
-      <div className="grid overflow-hidden rounded-2xl border border-line bg-line shadow-[0_18px_40px_-30px_rgba(13,70,116,0.45)] sm:grid-cols-3 sm:gap-px">
+    <Section className="py-8 sm:py-10">
+      <div className="grid overflow-hidden rounded-2xl border border-line bg-line shadow-facts md:grid-cols-3 md:gap-px">
         {items.map(({ icon: IconCmp, label, value }) => (
           <div
             key={label}
-            className="flex items-center gap-4 bg-surface px-6 py-5"
+            className="flex min-w-0 items-center gap-4 bg-surface px-5 py-5 sm:px-6"
           >
-            <span className="flex h-[46px] w-[46px] shrink-0 items-center justify-center rounded-xl bg-blue-soft text-primary">
-              <IconCmp className="h-[22px] w-[22px]" strokeWidth={1.85} />
+            <span className="icon-box">
+              <IconCmp className="h-[22px] w-[22px]" strokeWidth={1.85} aria-hidden="true" />
             </span>
-            <div>
-              <div className="text-[12px] font-bold uppercase tracking-[0.1em] text-muted">
-                {label}
-              </div>
-              <div className="mt-0.5 font-serif text-[18px] font-semibold text-ink">
+            <div className="min-w-0">
+              <div className="text-eyebrow text-muted">{label}</div>
+              <div className="mt-0.5 break-words font-serif text-body-lg font-semibold text-ink">
                 {value}
               </div>
             </div>
           </div>
         ))}
       </div>
-    </Container>
+    </Section>
   );
 }

@@ -36,8 +36,9 @@ export const SITE = {
    * While a value is an empty string, a tasteful placeholder is shown instead.
    */
   images: {
-    doctor: "", // e.g. "/images/doctor.jpg"
-    facility: "", // e.g. "/images/ambulancia.jpg"
+    doctor: "/images/doctor.png",
+    logo: "/images/logo.png",
+    facility: "/images/facility.svg", // replace with "/images/ambulancia.jpg" when available
   },
 } as const;
 
@@ -75,3 +76,22 @@ export function isOpenAt(date = new Date()) {
   const now = date.getHours() * 60 + date.getMinutes();
   return day.intervals.some(([start, end]) => now >= start && now < end);
 }
+
+export function formatDayIntervals(dow: number, closedLabel: string) {
+  const day = scheduleForDow(dow);
+  if (day.intervals.length === 0) return closedLabel;
+  return day.intervals
+    .map(([s, e]) => `${fmtMinutes(s)} – ${fmtMinutes(e)}`)
+    .join("  |  ");
+}
+
+export function formatDayAcute(dow: number, acutePrefix: string) {
+  const day = scheduleForDow(dow);
+  if (!day.acute) return null;
+  const [s, e] = day.acute;
+  return `${acutePrefix}: ${fmtMinutes(s)} – ${fmtMinutes(e)}`;
+}
+
+export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  SITE.mapsQuery,
+)}`;

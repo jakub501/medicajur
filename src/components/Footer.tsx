@@ -14,88 +14,69 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "contact", label: "contact" },
 ];
 
+const footerLink =
+  "flex min-h-11 items-center py-1 text-body-sm text-footer-muted transition-colors hover:text-white";
+
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-6 bg-primary-deep pb-7 pt-14 text-[#c2d8e8]">
+    <footer className="mt-6 bg-primary-deep pb-7 pt-14 text-footer-text">
       <Container>
-        <div className="grid gap-9 md:grid-cols-[2fr_1fr_1fr_1fr]">
-          <div>
+        <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Brand locale={locale} brand={SITE.brand} doctor={SITE.doctor} invert />
-            <p className="mt-4 max-w-[30em] text-[14.5px] text-[#95b6cc]">
+            <p className="text-body-sm mt-4 max-w-[30em] text-footer-muted">
               {dict.footer.about}
             </p>
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[12.5px] font-bold uppercase tracking-[0.12em] text-white">
-              {dict.footer.navTitle}
-            </h4>
+            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.navTitle}</h4>
             {NAV.map(({ key, label }) => (
-              <Link
-                key={key}
-                href={href(locale, key)}
-                className="block py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
-              >
+              <Link key={key} href={href(locale, key)} className={footerLink}>
                 {dict.nav[label]}
               </Link>
             ))}
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[12.5px] font-bold uppercase tracking-[0.12em] text-white">
-              {dict.footer.contactTitle}
-            </h4>
-            <a
-              href={SITE.phoneHref}
-              className="flex items-center gap-2 py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
-            >
-              <Phone className="h-4 w-4" strokeWidth={1.85} />
+            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.contactTitle}</h4>
+            <a href={SITE.phoneHref} className={footerLink}>
+              <Phone className="mr-2 h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {SITE.phone}
             </a>
-            <a
-              href={`mailto:${SITE.emails.doctor}`}
-              className="flex items-center gap-2 py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
-            >
-              <Mail className="h-4 w-4" strokeWidth={1.85} />
+            <a href={`mailto:${SITE.emails.doctor}`} className={footerLink}>
+              <Mail className="mr-2 h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {SITE.emails.doctor}
             </a>
-            <span className="flex items-start gap-2 py-1 text-[14.5px] text-[#95b6cc]">
-              <MapPin className="mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.85} />
+            <span className={`${footerLink} items-start`}>
+              <MapPin className="mr-2 mt-0.5 h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {SITE.address.street}, {SITE.address.zip} {SITE.address.city}
             </span>
             <a
               href={SITE.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
+              className={footerLink}
             >
-              <CalendarCheck className="h-4 w-4" strokeWidth={1.85} />
+              <CalendarCheck className="mr-2 h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {dict.common.bookOnline}
             </a>
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[12.5px] font-bold uppercase tracking-[0.12em] text-white">
-              {dict.footer.legalTitle}
-            </h4>
-            <Link
-              href={href(locale, "privacy")}
-              className="block py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
-            >
+            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.legalTitle}</h4>
+            <Link href={href(locale, "privacy")} className={footerLink}>
               {dict.footer.privacy}
             </Link>
-            <Link
-              href={href(locale, "cookies")}
-              className="block py-1 text-[14.5px] text-[#95b6cc] transition-colors hover:text-white"
-            >
+            <Link href={href(locale, "cookies")} className={footerLink}>
               {dict.footer.cookies}
             </Link>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-5 text-[13px] text-[#7494ac]">
+        <div className="text-caption mt-10 border-t border-white/10 pt-5 text-footer-subtle">
           © {year} {SITE.company} — {SITE.doctor}. {dict.footer.rights}
         </div>
       </Container>

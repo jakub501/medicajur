@@ -26,6 +26,26 @@ export function href(locale: Locale, key: RouteKey, hash?: string) {
   return hash ? `${base}#${hash}` : base;
 }
 
+/** Homepage section anchors used when navigating from the home page. */
+export const homeSectionHash: Partial<Record<RouteKey, string>> = {
+  about: "about",
+  services: "services",
+  hours: "hours",
+  contact: "kontakt",
+};
+
+export function isHomePath(pathname: string, locale: Locale) {
+  return pathname === `/${locale}` || pathname === `/${locale}/`;
+}
+
+export function navHref(locale: Locale, key: RouteKey, pathname: string) {
+  if (isHomePath(pathname, locale)) {
+    const hash = homeSectionHash[key];
+    if (hash) return href(locale, "home", hash);
+  }
+  return href(locale, key);
+}
+
 /** Content (non-home) route keys, in nav/sitemap order. */
 export const contentRouteKeys: RouteKey[] = [
   "about",

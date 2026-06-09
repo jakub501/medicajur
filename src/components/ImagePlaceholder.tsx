@@ -20,6 +20,15 @@ export function ImagePlaceholder({
   priority?: boolean;
 }) {
   if (src) {
+    if (src.endsWith(".svg")) {
+      return (
+        <div className={cn("relative overflow-hidden", className)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={src} alt={alt} className="h-full w-full object-cover" />
+        </div>
+      );
+    }
+
     return (
       <div className={cn("relative overflow-hidden", className)}>
         <Image
@@ -28,7 +37,7 @@ export function ImagePlaceholder({
           fill
           priority={priority}
           sizes="(max-width: 960px) 100vw, 600px"
-          className="object-cover"
+          className="object-cover object-top"
         />
       </div>
     );

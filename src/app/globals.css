@@ -15,9 +15,37 @@
   --color-amber: #c9803a;
   --color-gold: #e0a53d;
 
+  /* On-primary / dark surfaces */
+  --color-on-primary: #eaf3fa;
+  --color-on-primary-muted: #cfe2f0;
+  --color-on-primary-subtle: #a8cde6;
+  --color-topbar-text: #d5e5f1;
+  --color-footer-text: #c2d8e8;
+  --color-footer-muted: #95b6cc;
+  --color-footer-subtle: #7494ac;
+
+  /* Insurer accents */
+  --color-insurer-vszp-bg: #e8f5ee;
+  --color-insurer-vszp-text: #1a7a4a;
+  --color-insurer-dovera-bg: #e8f0fa;
+  --color-insurer-dovera-text: #15639c;
+  --color-insurer-union-bg: #fdf3e8;
+  --color-insurer-union-text: #b86b1a;
+
   /* Typography */
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, Georgia, serif;
+
+  /* Type scale */
+  --text-display: clamp(2rem, 1.2rem + 2.5vw, 3.375rem);
+  --text-h1: clamp(1.875rem, 1.4rem + 1.5vw, 2.5rem);
+  --text-h2: clamp(1.75rem, 1.5rem + 0.8vw, 2.5rem);
+  --text-h3: 1.375rem;
+  --text-body-lg: 1.0625rem;
+  --text-body: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-caption: 0.8125rem;
+  --text-eyebrow: 0.75rem;
 
   /* Radii */
   --radius-xl: 18px;
@@ -28,6 +56,7 @@
   --shadow-card: 0 16px 34px -22px rgba(13, 70, 116, 0.4);
   --shadow-float: 0 14px 30px -16px rgba(13, 70, 116, 0.4);
   --shadow-hero: 0 24px 50px -26px rgba(13, 70, 116, 0.45);
+  --shadow-facts: 0 18px 40px -30px rgba(13, 70, 116, 0.45);
 }
 
 :root {
@@ -71,19 +100,94 @@ h4 {
   margin: 0;
 }
 
+/* Typography utilities */
+.text-display {
+  font-size: var(--text-display);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.text-h1 {
+  font-size: var(--text-h1);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.text-h2 {
+  font-size: var(--text-h2);
+  line-height: 1.15;
+}
+
+.text-h3 {
+  font-size: var(--text-h3);
+  line-height: 1.2;
+}
+
+.text-body-lg {
+  font-size: var(--text-body-lg);
+}
+
+.text-body {
+  font-size: var(--text-body);
+}
+
+.text-body-sm {
+  font-size: var(--text-body-sm);
+}
+
+.text-caption {
+  font-size: var(--text-caption);
+}
+
+.text-eyebrow {
+  font-size: var(--text-eyebrow);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* Card & icon primitives */
+.card {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.75rem;
+  }
+}
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 13px;
+  background: var(--color-blue-soft);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Safe area for fixed bottom UI */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 ::selection {
   background: var(--color-primary);
   color: #fff;
 }
 
-/* Focus visibility for accessibility */
 :focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Subtle entrance animation, respectful of reduced-motion */
 @keyframes rise {
   from {
     opacity: 0;
@@ -143,7 +247,6 @@ h4 {
   animation: grow-bar 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Animated nav underline */
 .nav-underline {
   position: relative;
 }
@@ -165,7 +268,6 @@ h4 {
   transform: scaleX(1);
 }
 
-/* Decorative soft gradient orb */
 .orb {
   position: absolute;
   border-radius: 9999px;
@@ -174,7 +276,6 @@ h4 {
   z-index: 0;
 }
 
-/* Subtle gradient hairline divider */
 .hairline {
   height: 1px;
   background: linear-gradient(
@@ -185,7 +286,6 @@ h4 {
   );
 }
 
-/* Premium primary CTA sheen */
 .cta-primary {
   background: linear-gradient(180deg, #1a6ba6 0%, var(--color-primary) 100%);
   box-shadow:
@@ -194,6 +294,31 @@ h4 {
 }
 .cta-primary:hover {
   background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-deep) 100%);
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--color-blue-line);
+  background: var(--color-surface);
+  color: var(--color-primary);
+}
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+}
+
+.btn-ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+.btn-ghost:hover {
+  border-color: #fff;
+}
+
+.btn-inverse {
+  background: #fff;
+  color: var(--color-primary);
+}
+.btn-inverse:hover {
+  background: var(--color-blue-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -216,7 +341,6 @@ h4 {
   }
 }
 
-/* Map iframe baseline */
 .map-frame {
   filter: saturate(0.92);
 }
