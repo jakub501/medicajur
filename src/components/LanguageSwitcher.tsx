@@ -17,7 +17,7 @@ export function LanguageSwitcher({
   return (
     <div
       className={cn(
-        "inline-flex h-10 shrink-0 items-center rounded-full border border-line bg-surface p-0.5 text-body-sm font-bold leading-none",
+        "glass-control inline-flex h-10 shrink-0 items-center rounded-full p-0.5 text-body-sm font-bold leading-none",
         className,
       )}
       role="group"

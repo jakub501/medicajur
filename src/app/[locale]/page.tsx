@@ -7,11 +7,11 @@ import {
 import { Reveal } from "@/components/Reveal";
 import { Hero } from "@/components/sections/Hero";
 import { QuickFacts } from "@/components/sections/QuickFacts";
+import { Trust } from "@/components/sections/Trust";
 import { NewPatients } from "@/components/sections/NewPatients";
 import { ServicesBento } from "@/components/sections/Services";
+import { Faq } from "@/components/sections/Faq";
 import { HoursContact } from "@/components/sections/HoursContact";
-import { Insurers } from "@/components/sections/Insurers";
-import { Trust } from "@/components/sections/Trust";
 
 export default async function HomePage({
   params,
@@ -32,16 +32,18 @@ export default async function HomePage({
         <QuickFacts dict={dict} todayHours={todayHours} acuteHours={acuteHours} />
       </Reveal>
       <Reveal>
+        <Trust dict={dict} />
+      </Reveal>
+      <Reveal>
         <NewPatients locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
         <ServicesBento locale={loc} dict={dict} />
       </Reveal>
-      <HoursContact dict={dict} />
-      <Insurers dict={dict} />
       <Reveal>
-        <Trust dict={dict} />
+        <Faq locale={loc} dict={dict} items={dict.faq.items} showCta />
       </Reveal>
+      <HoursContact dict={dict} />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, CalendarCheck, Menu, X } from "lucide-react";
-import { href, navHref, type Locale, type RouteKey } from "@/i18n/config";
+import { href, isHomePath, navHref, type Locale, type RouteKey } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
@@ -23,10 +23,18 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -40,8 +48,16 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     return pathname === target || pathname.startsWith(`${target}/`);
   };
 
+  const onHome = isHomePath(pathname, locale);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-bg/90 backdrop-blur-md">
+    <header
+      className={cn(
+        "site-header sticky top-0 z-50",
+        onHome && "site-header--home",
+        scrolled && "site-header--scrolled",
+      )}
+    >
       <Container>
         <nav className="grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
           <Link href={href(locale, "home")} className="shrink-0" aria-label={SITE.brand}>
@@ -73,13 +89,6 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-2.5">
-            <a
-              href={SITE.phoneHref}
-              className="hidden h-10 items-center gap-1.5 whitespace-nowrap text-body-sm font-bold leading-none text-primary lg:inline-flex"
-            >
-              <Phone className="h-[17px] w-[17px] shrink-0" strokeWidth={1.85} aria-hidden="true" />
-              {SITE.phone}
-            </a>
             <LanguageSwitcher locale={locale} className="hidden sm:inline-flex" />
             <a
               href={SITE.bookingUrl}
@@ -96,7 +105,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               onClick={() => setOpen((v) => !v)}
               aria-label={open ? dict.nav.close : dict.nav.menu}
               aria-expanded={open}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-line bg-surface text-ink lg:hidden"
+              className="glass-control inline-flex h-11 w-11 items-center justify-center rounded-[10px] text-ink lg:hidden"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -106,7 +115,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
       {/* Mobile menu */}
       <div className={cn("lg:hidden", open ? "block" : "hidden")}>
-        <div className="border-t border-line bg-surface">
+        <div className="site-header-menu">
           <Container className="py-4">
             <div className="flex flex-col">
               {NAV.map(({ key, label }) => (

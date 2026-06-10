@@ -5,7 +5,7 @@ import { Container } from "./Container";
 
 export function TopBar({ dict }: { dict: Dictionary }) {
   return (
-    <div className="bg-primary-deep text-body-sm text-topbar-text">
+    <div className="border-b border-white/10 bg-gradient-to-r from-primary-deep via-primary to-[#0f5f7f] text-body-sm text-topbar-text">
       <Container>
         <div className="flex h-10 items-center justify-between gap-4">
           <div className="flex min-w-0 items-center gap-2">

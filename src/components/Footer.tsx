@@ -4,7 +4,6 @@ import { href, type Locale, type RouteKey } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { Container } from "./Container";
-import { Brand } from "./Logo";
 
 const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "about", label: "about" },
@@ -17,6 +16,19 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
 const footerLink =
   "flex min-h-11 items-center py-1 text-body-sm text-footer-muted transition-colors hover:text-white";
 
+function FooterBrand() {
+  return (
+    <div className="leading-tight">
+      <div className="font-serif text-[22px] font-semibold tracking-[0.01em] text-white sm:text-[24px]">
+        {SITE.brand}
+      </div>
+      <div className="mt-1 text-[11px] font-bold uppercase tracking-[0.12em] text-footer-muted">
+        {SITE.doctor}
+      </div>
+    </div>
+  );
+}
+
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const year = new Date().getFullYear();
 
@@ -25,14 +37,16 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <Container>
         <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr]">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Brand locale={locale} brand={SITE.brand} doctor={SITE.doctor} invert />
+            <FooterBrand />
             <p className="text-body-sm mt-4 max-w-[30em] text-footer-muted">
               {dict.footer.about}
             </p>
           </div>
 
           <div>
-            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.navTitle}</h4>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-200/80">
+              {dict.footer.navTitle}
+            </h3>
             {NAV.map(({ key, label }) => (
               <Link key={key} href={href(locale, key)} className={footerLink}>
                 {dict.nav[label]}
@@ -41,7 +55,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.contactTitle}</h4>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-200/80">
+              {dict.footer.contactTitle}
+            </h3>
             <a href={SITE.phoneHref} className={footerLink}>
               <Phone className="mr-2 h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {SITE.phone}
@@ -66,7 +82,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
 
           <div>
-            <h4 className="text-eyebrow mb-3 text-white">{dict.footer.legalTitle}</h4>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-200/80">
+              {dict.footer.legalTitle}
+            </h3>
             <Link href={href(locale, "privacy")} className={footerLink}>
               {dict.footer.privacy}
             </Link>
@@ -77,7 +95,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         </div>
 
         <div className="text-caption mt-10 border-t border-white/10 pt-5 text-footer-subtle">
-          © {year} {SITE.company} — {SITE.doctor}. {dict.footer.rights}
+          © {year} {SITE.company} {dict.footer.rights}
         </div>
       </Container>
     </footer>

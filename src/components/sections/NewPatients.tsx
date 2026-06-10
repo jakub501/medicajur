@@ -1,11 +1,11 @@
-import { ArrowRight, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { SITE } from "@/lib/site";
 import { Section } from "../Section";
 import { Icon } from "../Icon";
-import { ButtonAnchor, ButtonLink } from "../Button";
+import { ButtonLink } from "../Button";
 
 export function NewPatients({
   locale,
@@ -25,29 +25,30 @@ export function NewPatients({
           <span className="text-eyebrow relative text-on-primary-subtle">
             {dict.patients.eyebrow}
           </span>
-          <h2 className="text-h2 relative mt-2.5 text-white">{dict.patients.title}</h2>
+          <h2 className="text-h2 relative mt-2.5 !text-white">{dict.patients.title}</h2>
           <p className="text-body-lg relative mt-3.5 max-w-[34em] text-on-primary-muted">
             {dict.patients.text}
           </p>
-          <div className="relative mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <div className="relative mt-7">
             <ButtonLink href={href(locale, "about")} variant="inverse" size="md">
               <ArrowRight className="h-[18px] w-[18px]" strokeWidth={1.85} />
               {dict.patients.aboutCta}
             </ButtonLink>
-            <ButtonLink href={href(locale, "patients")} variant="ghost" size="md">
+            <Link
+              href={href(locale, "patients")}
+              className="text-body-sm mt-4 inline-flex min-h-11 items-center gap-1.5 font-bold text-on-primary transition-colors hover:text-white"
+            >
               {dict.patients.infoCta}
-            </ButtonLink>
-            <ButtonAnchor href={SITE.phoneHref} variant="ghost" size="md">
-              <Phone className="h-[18px] w-[18px]" strokeWidth={1.85} />
-              {dict.patients.callCta}
-            </ButtonAnchor>
+              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
 
         <div className="bg-surface px-6 py-10 sm:px-10 sm:py-12">
-          <h3 className="text-eyebrow mb-6 text-muted">{dict.patients.whyTitle}</h3>
+          <h3 className="text-eyebrow mb-3 text-muted">{dict.patients.doctorTitle}</h3>
+          <p className="text-body mb-6 max-w-[36em] text-muted">{dict.patients.story}</p>
           <ul className="flex flex-col gap-[18px]">
-            {dict.about.values.map((value) => (
+            {dict.patients.whyItems.map((value) => (
               <li key={value.title} className="flex items-start gap-4">
                 <span className="icon-box h-[38px] w-[38px] rounded-[11px]">
                   <Icon name={value.icon} className="h-5 w-5" />

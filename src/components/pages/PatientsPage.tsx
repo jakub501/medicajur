@@ -5,8 +5,9 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { PageHero } from "@/components/PageHero";
 import { Section } from "@/components/Section";
 import { Container } from "@/components/Container";
+import { Faq } from "@/components/sections/Faq";
 
-export function PatientsPage({ dict }: { locale: Locale; dict: Dictionary }) {
+export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const p = dict.patientsPage;
 
   return (
@@ -83,28 +84,7 @@ export function PatientsPage({ dict }: { locale: Locale; dict: Dictionary }) {
         </Container>
       </section>
 
-      {/* FAQ */}
-      <Section>
-        <h2 className="mb-8 text-[28px] sm:text-[32px]">{p.faqTitle}</h2>
-        <div className="flex flex-col gap-3">
-          {p.faq.map((item) => (
-            <details
-              key={item.q}
-              className="group rounded-[14px] border border-line bg-surface px-5 py-4 [&_summary::-webkit-details-marker]:hidden"
-            >
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[17px] font-semibold text-ink">
-                {item.q}
-                <span className="text-primary transition-transform group-open:rotate-45">
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-[15.5px] leading-relaxed text-muted">
-                {item.a}
-              </p>
-            </details>
-          ))}
-        </div>
-      </Section>
+      <Faq locale={locale} dict={dict} items={p.faq} />
     </>
   );
 }

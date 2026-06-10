@@ -12,8 +12,8 @@ const variantClass: Record<Variant, string> = {
 };
 
 const sizeClass: Record<Size, string> = {
-  sm: "h-10 gap-1.5 px-3.5 text-body-sm",
-  md: "h-11 gap-2 px-5 text-body",
+  sm: "min-h-10 gap-2 px-3.5 text-body-sm leading-snug",
+  md: "min-h-11 gap-2.5 px-4 text-body leading-snug",
 };
 
 export function buttonClassName({
@@ -26,7 +26,7 @@ export function buttonClassName({
   className?: string;
 }) {
   return cn(
-    "inline-flex items-center justify-center rounded-[10px] font-bold leading-none transition-all",
+    "inline-flex items-center justify-center rounded-[10px] text-center font-bold transition-all",
     variantClass[variant],
     sizeClass[size],
     className,

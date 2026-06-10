@@ -85,6 +85,18 @@ export function ContactPanel({
           </span>
         </ContactLine>
 
+        <ContactLine
+          icon={<Mail className="h-5 w-5" strokeWidth={1.85} />}
+          label={dict.common.email}
+        >
+          <a
+            href={`mailto:${SITE.emails.doctor}`}
+            className="font-serif text-body-lg font-semibold text-primary hover:underline"
+          >
+            {SITE.emails.doctor}
+          </a>
+        </ContactLine>
+
         {withEmails && (
           <ContactLine
             icon={<Mail className="h-5 w-5" strokeWidth={1.85} />}

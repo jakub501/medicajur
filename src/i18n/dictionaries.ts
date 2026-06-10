@@ -42,8 +42,12 @@ const sk = {
     note: "Online objednávanie liekov a vyšetrení cez portál Moji lekári",
   },
   hero: {
-    title: "Moderná všeobecná ambulancia vo Svätom Jure",
-    lead: "Prevencia, presná diagnostika a liečba pre dospelých — s modernými prístrojmi a dostatkom času pre každého pacienta.",
+    eyebrow: "Prijímame nových pacientov",
+    titleLine1: "MUDr. Pavol Trnovec, PhD.",
+    titleLine2Prefix: "Ambulancia všeobecného lekára ",
+    titleHighlight: "vo Svätom Jure",
+    lead: "Komplexná starostlivosť o dospelých — od prevencie a POCT diagnostiky na počkanie až po liečbu chronických ochorení. Objednávkový systém a dostatok času na každého pacienta.",
+    insurersLabel: "Zmluvné poisťovne:",
     primaryCta: "Objednať sa",
     secondaryCta: "Som nový pacient",
     badgeDoctor: "Všeobecný lekár · samostatne od 2019",
@@ -65,7 +69,26 @@ const sk = {
     aboutCta: "O ambulancii",
     infoCta: "Informácie pre nových pacientov",
     callCta: "Zavolať",
-    whyTitle: "Prečo si vybrať nás?",
+    story:
+      "Vyštudoval Jesseniovu lekársku fakultu UK, pochádza zo Žiliny a vo Svätom Jure samostatne ordinuje od jari 2019. Ku každému pacientovi pristupuje osobne — s dôrazom na čas, prevenciu a zrozumiteľné vysvetlenie diagnózy aj liečby.",
+    doctorTitle: "Váš lekár",
+    whyItems: [
+      {
+        title: "Čas pre pacienta",
+        text: "Objednávkový systém znižuje čakanie a dáva priestor na dôkladné vyšetrenie.",
+        icon: "clock",
+      },
+      {
+        title: "Prevencia na prvom mieste",
+        text: "Zameriavame sa na včasný záchyt ochorení a dlhodobé zdravie pacienta.",
+        icon: "shield-check",
+      },
+      {
+        title: "7+ rokov samostatnej praxe",
+        text: "MUDr. Pavol Trnovec, PhD. vedie ambulanciu vo Svätom Jure od roku 2019.",
+        icon: "stethoscope",
+      },
+    ],
     stepsTitle: "Ako sa stať pacientom",
     steps: [
       {
@@ -181,7 +204,10 @@ const sk = {
   },
   trust: {
     eyebrow: "Dôvera",
-    title: "Na čom stojíme",
+    title: "Prečo si vybrať našu ambulanciu",
+    subtitle: "Stabilná prax, zmluvy so všetkými poisťovňami a vybavenie, ktoré šetrí váš čas.",
+    doctorLine: "MUDr. Pavol Trnovec, PhD. — všeobecný lekár pre dospelých od roku 2019",
+    insurersLabel: "Zmluvné poisťovne",
     items: [
       {
         title: "7+ rokov praxe",
@@ -210,8 +236,8 @@ const sk = {
     title: "O ambulancii a lekárovi",
     lead: "MUDr. Pavol Trnovec, PhD. je všeobecný lekár pre dospelých a odborný zástupca ambulancie MEDICA JUR, s.r.o. vo Svätom Jure.",
     bio: [
-      "Pochádza zo Žiliny a vyštudoval Jesseniovu lekársku fakultu Univerzity Komenského. Vo Svätom Jure samostatne ordinuje od jari 2019.",
-      "Ambulancia kladie dôraz na prevenciu, presnú diagnostiku a individuálny prístup. Na každého pacienta si vyhradzujeme dostatok času a komunikujeme zrozumiteľne — aj v anglickom jazyku.",
+      "MUDr. Pavol Trnovec, PhD. vyštudoval Jesseniovu lekársku fakultu Univerzity Komenského. Pochádza zo Žiliny a vo Svätom Jure vedie ambulanciu všeobecného lekára pre dospelých od jari 2019.",
+      "Ambulancia stavia na prevencii, presnej diagnostike a individuálnom prístupe. Na vyšetrenie si vyhradzujeme dostatok času — výsledok vysvetlíme zrozumiteľne, aj v anglickom jazyku.",
     ],
     valuesTitle: "Na čom nám záleží",
     values: [
@@ -222,7 +248,7 @@ const sk = {
       },
       {
         title: "Moderné vybavenie",
-        text: "POCT prístroje a EKG umožňujú výsledky priamo na mieste.",
+        text: "Ambulancia je vybavená prístrojmi pre rýchlu diagnostiku priamo na mieste.",
         icon: "activity",
       },
       {
@@ -231,9 +257,9 @@ const sk = {
         icon: "shield-check",
       },
       {
-        title: "English speaking GP",
-        text: "Komunikujeme aj v anglickom jazyku pre zahraničných pacientov.",
-        icon: "languages",
+        title: "Individuálny prístup",
+        text: "Ku každému pacientovi pristupujeme osobne a s dostatkom času na vysvetlenie.",
+        icon: "clipboard-check",
       },
     ],
     facilityTitle: "Naše priestory",
@@ -244,6 +270,42 @@ const sk = {
       insurers: "Zmluvné poisťovne",
       languages: "Jazyky (SK · EN)",
     },
+  },
+  faq: {
+    eyebrow: "Otázky pacientov",
+    title: "Časté otázky",
+    subtitle: "Odpovede na to, čo pacienti najčastejšie riešia pred návštevou alebo pri prvom kontakte.",
+    cta: "Viac informácií pre nových pacientov",
+    items: [
+      {
+        q: "Ako sa objednať na vyšetrenie?",
+        a: "Registrovaní pacienti sa objednávajú cez portál Moji lekári. Noví pacienti nás môžu kontaktovať telefonicky počas ordinačných hodín alebo prísť osobne s podpísanou dohodou o poskytovaní zdravotnej starostlivosti.",
+      },
+      {
+        q: "Prijímate nových pacientov?",
+        a: "Áno. Stačí vyplniť a podpísať dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju do ambulancie počas ordinačných hodín. O odhlásenie od predchádzajúceho lekára sa postaráme my.",
+      },
+      {
+        q: "Čo priniesť na prvú návštevu?",
+        a: "Občiansky preukaz, preukaz zdravotného poistenia, podpísanú dohodu o poskytovaní zdravotnej starostlivosti a zoznam užívaných liekov. Ak máte zdravotnú dokumentáciu od predchádzajúceho lekára, prineste ju tiež.",
+      },
+      {
+        q: "Ako si objednám e-recept?",
+        a: "Registrovaní pacienti objednávajú lieky a e-recepty výhradne cez portál Moji lekári. Prístup získate na základe pozvánky, ktorú vám zašle lekár na e-mail po registrácii.",
+      },
+      {
+        q: "Kedy prísť s akútnym stavom?",
+        a: "Akútne stavy ošetrujeme v časoch na to vyhradených — pozrite si dnešný čas akútnej ordinačnej služby v tabuľke hodín. Pri vážnych príznakoch volajte 155.",
+      },
+      {
+        q: "Kde zaparkujem pri ambulancii?",
+        a: "Parkovanie je možné pri polyfunkčnej budove Kačačnice na Muškátovej 2. Vstup do ambulancie je na 1. poschodí nad lekárňou Vitalita, s bezbariérovým prístupom cez výťah.",
+      },
+      {
+        q: "S ktorými poisťovňami máte zmluvu?",
+        a: "Máme zmluvu so všetkými zdravotnými poisťovňami pôsobiacimi na Slovensku — VšZP, Dôvera a Union.",
+      },
+    ],
   },
   patientsPage: {
     eyebrow: "Pre pacientov",
@@ -350,8 +412,12 @@ const en: Dictionary = {
     note: "Online prescriptions & appointments via the Moji lekári portal",
   },
   hero: {
-    title: "A modern general practice in Svätý Jur",
-    lead: "Prevention, accurate diagnostics and treatment for adults — with modern equipment and enough time for every patient.",
+    eyebrow: "Accepting new patients",
+    titleLine1: "MUDr. Pavol Trnovec, PhD.",
+    titleLine2Prefix: "General practice ",
+    titleHighlight: "in Svätý Jur",
+    lead: "Comprehensive care for adults — from prevention and on-site POCT diagnostics to chronic disease management. An appointment system and enough time for every patient.",
+    insurersLabel: "Contracted insurers:",
     primaryCta: "Book now",
     secondaryCta: "I'm a new patient",
     badgeDoctor: "General practitioner · since 2019",
@@ -373,7 +439,26 @@ const en: Dictionary = {
     aboutCta: "About the practice",
     infoCta: "Info for new patients",
     callCta: "Call us",
-    whyTitle: "Why choose us?",
+    story:
+      "He graduated from the Jessenius Faculty of Medicine, comes from Žilina and has been running his own practice in Svätý Jur since spring 2019. He takes a personal approach — with an emphasis on time, prevention and clear explanations of diagnosis and treatment.",
+    doctorTitle: "Your doctor",
+    whyItems: [
+      {
+        title: "Time for the patient",
+        text: "An appointment system reduces waiting and allows for a thorough examination.",
+        icon: "clock",
+      },
+      {
+        title: "Prevention first",
+        text: "We focus on early detection of illness and long-term patient health.",
+        icon: "shield-check",
+      },
+      {
+        title: "7+ years of independent practice",
+        text: "MUDr. Pavol Trnovec, PhD. has been leading the practice in Svätý Jur since 2019.",
+        icon: "stethoscope",
+      },
+    ],
     stepsTitle: "How to become a patient",
     steps: [
       {
@@ -489,7 +574,10 @@ const en: Dictionary = {
   },
   trust: {
     eyebrow: "Trust",
-    title: "What we stand on",
+    title: "Why choose our practice",
+    subtitle: "Established practice, contracts with all insurers and equipment that saves your time.",
+    doctorLine: "MUDr. Pavol Trnovec, PhD. — general practitioner for adults since 2019",
+    insurersLabel: "Contracted insurers",
     items: [
       {
         title: "7+ years of practice",
@@ -518,8 +606,8 @@ const en: Dictionary = {
     title: "About the practice & doctor",
     lead: "MUDr. Pavol Trnovec, PhD. is a general practitioner for adults and the professional representative of the MEDICA JUR, s.r.o. practice in Svätý Jur.",
     bio: [
-      "He comes from Žilina and graduated from the Jessenius Faculty of Medicine of Comenius University. He has been running his own practice in Svätý Jur since spring 2019.",
-      "The practice emphasises prevention, accurate diagnostics and an individual approach. We set aside enough time for every patient and communicate clearly — including in English.",
+      "MUDr. Pavol Trnovec, PhD. graduated from the Jessenius Faculty of Medicine of Comenius University. He comes from Žilina and has been leading the general practice for adults in Svätý Jur since spring 2019.",
+      "The practice focuses on prevention, accurate diagnostics and an individual approach. We set aside enough time for every examination — and explain results clearly, including in English.",
     ],
     valuesTitle: "What we care about",
     values: [
@@ -530,7 +618,7 @@ const en: Dictionary = {
       },
       {
         title: "Modern equipment",
-        text: "POCT devices and ECG provide results right on the spot.",
+        text: "The practice is equipped for rapid on-site diagnostics.",
         icon: "activity",
       },
       {
@@ -539,9 +627,9 @@ const en: Dictionary = {
         icon: "shield-check",
       },
       {
-        title: "English speaking GP",
-        text: "We also communicate in English for international patients.",
-        icon: "languages",
+        title: "Individual approach",
+        text: "We treat every patient personally, with enough time to explain everything clearly.",
+        icon: "clipboard-check",
       },
     ],
     facilityTitle: "Our premises",
@@ -552,6 +640,42 @@ const en: Dictionary = {
       insurers: "Contracted insurers",
       languages: "Languages (SK · EN)",
     },
+  },
+  faq: {
+    eyebrow: "Patient questions",
+    title: "Frequently asked questions",
+    subtitle: "Answers to what patients most often need to know before a visit or first contact.",
+    cta: "More information for new patients",
+    items: [
+      {
+        q: "How do I book an appointment?",
+        a: "Registered patients book via the Moji lekári portal. New patients can contact us by phone during opening hours or visit in person with a signed healthcare provision agreement.",
+      },
+      {
+        q: "Are you accepting new patients?",
+        a: "Yes. Simply complete and sign the healthcare provision agreement and bring it to the practice during opening hours. We take care of de-registering you from your previous doctor.",
+      },
+      {
+        q: "What should I bring to my first visit?",
+        a: "ID card, health insurance card, signed healthcare provision agreement and a list of medications you take. If you have medical records from your previous doctor, bring those too.",
+      },
+      {
+        q: "How do I order an e-prescription?",
+        a: "Registered patients order medication and e-prescriptions exclusively via the Moji lekári portal. Access is granted by an invitation the doctor sends to your e-mail after registration.",
+      },
+      {
+        q: "When should I come with an acute condition?",
+        a: "We see acute cases during dedicated time slots — check today's acute hours in the schedule. For serious symptoms, call 155.",
+      },
+      {
+        q: "Where can I park near the practice?",
+        a: "Parking is available at the Kačačnice building at Muškátová 2. The practice is on the 1st floor above the Vitalita pharmacy, with step-free access via a lift.",
+      },
+      {
+        q: "Which insurers do you have contracts with?",
+        a: "We have contracts with all health insurers operating in Slovakia — VšZP, Dôvera and Union.",
+      },
+    ],
   },
   patientsPage: {
     eyebrow: "For patients",
