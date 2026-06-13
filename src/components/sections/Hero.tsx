@@ -122,15 +122,9 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <div>
               <h1 className="text-display text-balance font-medium leading-[1.12]">
                 <span className="block">{dict.hero.titleLine1}</span>
-                <span className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-2">
-                  <span className="text-h2 font-normal text-muted">
-                    {dict.hero.titleLine2Prefix}
-                    <span className="text-primary">{dict.hero.titleHighlight}</span>
-                  </span>
-                  <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-blue-line bg-blue-soft/80 px-3 py-1 text-caption font-bold text-primary">
-                    <Languages className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
-                    {dict.hero.languagesBadge}
-                  </span>
+                <span className="text-h2 mt-1 block font-normal text-muted">
+                  {dict.hero.titleLine2Prefix}
+                  <span className="text-primary">{dict.hero.titleHighlight}</span>
                 </span>
               </h1>
             </div>
@@ -225,6 +219,13 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-line bg-blue-soft/80 px-3.5 py-1.5 text-caption font-bold text-primary">
+                <Languages className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
+                {dict.hero.languagesBadge}
+              </span>
             </div>
 
             <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:hidden">

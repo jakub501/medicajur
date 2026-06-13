@@ -9,7 +9,6 @@ import { TopBar } from "@/components/layout/TopBar";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
-import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -122,9 +121,8 @@ export default async function LocaleLayout({
         />
         <TopBar dict={dict} />
         <Header locale={locale} dict={dict} />
-        <main className="flex-1 pb-[4.75rem] md:pb-0">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />
-        <StickyMobileCta dict={dict} />
         <CookieBanner locale={locale} dict={dict} />
       </body>
     </html>
