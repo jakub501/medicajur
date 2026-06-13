@@ -1,7 +1,8 @@
 import { Clock, MapPin, Phone, Zap } from "lucide-react";
 import { SITE, mapsLink } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Section } from "../Section";
+import { Section } from "@/components/ui/Section";
+import { OpenStatus } from "@/components/shared/OpenStatus";
 
 type FactItem = {
   icon: typeof Clock;
@@ -61,6 +62,12 @@ export function QuickFacts({
 
   return (
     <Section className="py-8 sm:py-10">
+      <div className="mb-4 flex justify-center sm:justify-start">
+        <OpenStatus
+          openLabel={dict.common.openNow}
+          closedLabel={dict.common.closedNow}
+        />
+      </div>
       <div className="grid overflow-hidden rounded-2xl border border-line bg-line shadow-facts md:grid-cols-3 md:gap-px">
         {items.map(({ icon: IconCmp, label, value }) => (
           <div

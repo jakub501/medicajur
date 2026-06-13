@@ -2,9 +2,10 @@ import { Building2, Globe, CalendarCheck } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { PageHero } from "@/components/PageHero";
-import { Section } from "@/components/Section";
-import { ContactPanel, HoursPanel } from "@/components/sections/HoursContact";
+import { PageHero } from "@/components/ui/PageHero";
+import { Section } from "@/components/ui/Section";
+import { ContactPanel } from "@/components/shared/ContactPanel";
+import { HoursPanel } from "@/components/shared/HoursPanel";
 
 export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
   const c = dict.contact;

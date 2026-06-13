@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Section } from "../Section";
-import { Icon } from "../Icon";
-import { ButtonLink } from "../Button";
+import { Section } from "@/components/ui/Section";
+import { Icon } from "@/components/ui/Icon";
+import { ButtonLink } from "@/components/ui/Button";
 
 export function NewPatients({
   locale,

@@ -8,8 +8,8 @@ import { href, isHomePath, navHref, type Locale, type RouteKey } from "@/i18n/co
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
-import { Container } from "./Container";
-import { Brand } from "./Logo";
+import { Container } from "@/components/ui/Container";
+import { Brand } from "./Brand";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [

@@ -2,9 +2,9 @@ import { Download, FileText, CalendarCheck, Info } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { PageHero } from "@/components/PageHero";
-import { Section } from "@/components/Section";
-import { Container } from "@/components/Container";
+import { PageHero } from "@/components/ui/PageHero";
+import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
 import { Faq } from "@/components/sections/Faq";
 
 export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {

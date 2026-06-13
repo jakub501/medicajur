@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Activity, ArrowRight } from "lucide-react";
 import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Section, SectionHeading } from "../Section";
-import { Icon } from "../Icon";
+import { Section, SectionHeading } from "@/components/ui/Section";
+import { Icon } from "@/components/ui/Icon";
 
 export function ServicesBento({
   locale,

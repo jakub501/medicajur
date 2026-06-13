@@ -1,7 +1,7 @@
 import type { Locale } from "@/i18n/config";
-import { PageHero } from "@/components/PageHero";
-import { Section } from "@/components/Section";
-import { getLegalDoc } from "./legal-content";
+import { PageHero } from "@/components/ui/PageHero";
+import { Section } from "@/components/ui/Section";
+import { getLegalDoc } from "./legalContent";
 
 export function LegalPage({
   kind,

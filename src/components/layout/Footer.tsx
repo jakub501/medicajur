@@ -3,7 +3,7 @@ import { Phone, MapPin, CalendarCheck, Mail } from "lucide-react";
 import { href, type Locale, type RouteKey } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { Container } from "./Container";
+import { Container } from "@/components/ui/Container";
 
 const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "about", label: "about" },

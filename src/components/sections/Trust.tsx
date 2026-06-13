@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { Icon } from "../Icon";
-import { Section, SectionHeading } from "../Section";
+import { Icon } from "@/components/ui/Icon";
+import { Section, SectionHeading } from "@/components/ui/Section";
 
 export function Trust({ dict }: { dict: Dictionary }) {
   const t = dict.trust;

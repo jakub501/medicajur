@@ -37,6 +37,7 @@ const sk = {
     backHome: "Späť na úvod",
     readMore: "Zistiť viac",
     getDirections: "Navigovať",
+    comingSoon: "Už čoskoro",
   },
   topbar: {
     note: "Online objednávanie liekov a vyšetrení cez portál Moji lekári",
@@ -46,14 +47,23 @@ const sk = {
     titleLine1: "MUDr. Pavol Trnovec, PhD.",
     titleLine2Prefix: "Ambulancia všeobecného lekára ",
     titleHighlight: "vo Svätom Jure",
-    lead: "Komplexná starostlivosť o dospelých — od prevencie a POCT diagnostiky na počkanie až po liečbu chronických ochorení. Objednávkový systém a dostatok času na každého pacienta.",
+    lead: "Prevencia, POCT diagnostika na počkanie a liečba chronických ochorení. Objednávkový systém a komunikácia aj v angličtine.",
     insurersLabel: "Zmluvné poisťovne:",
+    languagesBadge: "SK · EN",
     primaryCta: "Objednať sa",
     secondaryCta: "Som nový pacient",
-    badgeDoctor: "Všeobecný lekár · samostatne od 2019",
-    badgeEnglishTitle: "Anglicky hovoriaci lekár",
-    badgeEnglish: "English speaking GP",
+    badges: [
+      {
+        title: "Summa cum laude · PhD.",
+        subtitle: "Jesseniova lekárska fakulta UK",
+      },
+      {
+        title: "7+ rokov praxe",
+        subtitle: "Samostatná ambulancia od 2019",
+      },
+    ],
     bookingNote: "Objednávanie prebieha cez portál Moji lekári",
+    bookingNotePrefix: "Objednávanie prebieha cez portál ",
     photoAlt: "MUDr. Pavol Trnovec, PhD.",
   },
   facts: {
@@ -70,7 +80,7 @@ const sk = {
     infoCta: "Informácie pre nových pacientov",
     callCta: "Zavolať",
     story:
-      "Vyštudoval Jesseniovu lekársku fakultu UK, pochádza zo Žiliny a vo Svätom Jure samostatne ordinuje od jari 2019. Ku každému pacientovi pristupuje osobne — s dôrazom na čas, prevenciu a zrozumiteľné vysvetlenie diagnózy aj liečby.",
+      "Absolvent Jesseniovej lekárskej fakulty UK v Martine (Summa cum laude) a držiteľ titulu PhD. Vo Svätom Jure vedie ambulanciu od jari 2019 — s dôrazom na čas, prevenciu a zrozumiteľnú komunikáciu, aj v anglickom jazyku.",
     doctorTitle: "Váš lekár",
     whyItems: [
       {
@@ -111,7 +121,7 @@ const sk = {
     subtitle: "Kompletná zdravotná starostlivosť o dospelých pacientov pod jednou strechou.",
     featured: {
       title: "Prevencia, diagnostika a liečba",
-      text: "Komplexná starostlivosť o dospelých so zameraním na včasnú diagnostiku, efektívnu liečbu a dlhodobé zdravie.",
+      text: "Kompletný rozsah služieb všeobecného lekára — vrátane POCT diagnostiky na počkanie, e-receptov a English speaking GP.",
     },
     items: [
       {
@@ -137,42 +147,89 @@ const sk = {
     ],
     poct: {
       title: "POCT prístroje — výsledky na počkanie",
-      text: "Moderné prístroje pre rýchle laboratórne výsledky priamo na mieste, bez čakania na externé laboratórium.",
-      tags: ["CRP test", "FOB test", "Glukóza · HbA1c", "EKG", "INR / Quick"],
+      text: "Ambulancia je vybavená modernými diagnostickými prístrojmi — od EKG a ABI testu cez CRP, hemoglobín a iFOBT až po 24-hodinový tlakový holter.",
+      tags: [
+        "EKG Schiller AT 2 Plus",
+        "ABI BOSO",
+        "Holter BOSO TM2430",
+        "CRP · Hb · iFOBT",
+        "Glukomer Accu Check",
+      ],
     },
     viewAll: "Všetky služby",
     pageTitle: "Naše služby",
     pageLead:
-      "Poskytujeme komplexnú všeobecnú zdravotnú starostlivosť pre dospelých — od prevencie cez diagnostiku až po liečbu a dlhodobé sledovanie.",
-    detailGroups: [
-      {
-        title: "Prevencia a poradenstvo",
-        items: [
-          "Preventívne prehliadky pre dospelých",
-          "Posúdenie kardiovaskulárneho rizika",
-          "Poradenstvo pri chronických ochoreniach",
-          "Očkovanie a cestovná medicína",
-        ],
-      },
-      {
-        title: "Diagnostika",
-        items: [
-          "Odbery krvi a biologického materiálu",
-          "POCT vyšetrenia s výsledkom na počkanie (CRP, glukóza, INR…)",
-          "EKG vyšetrenie",
-          "Interpretácia laboratórnych a zobrazovacích výsledkov",
-        ],
-      },
-      {
-        title: "Liečba a sledovanie",
-        items: [
-          "Liečba akútnych ochorení",
-          "Manažment chronických ochorení (dispenzarizácia)",
-          "Predpis liekov a e-recepty",
-          "Predoperačné vyšetrenia a potvrdenia",
-        ],
-      },
-    ],
+      "Komplexná všeobecná starostlivosť o dospelých — od prevencie a POCT diagnostiky na počkanie až po e-recepty, konziliárne návrhy a výkony podľa cenníka.",
+    scope: {
+      title: "Rozsah poskytovaných služieb",
+      intro:
+        "Ambulancia poskytuje kompletnú zdravotnú starostlivosť v pôsobnosti všeobecného lekára pre dospelých pacientov.",
+      items: [
+        { text: "Prevencia, diagnostika a liečba ochorení v pôsobnosti všeobecného lekára" },
+        { text: "Vypracovanie návrhov na konziliárne vyšetrenia" },
+        { text: "Preventívne vyšetrenia a očkovanie" },
+        { text: "Predoperačné vyšetrenia" },
+        {
+          text: "Odbery krvi a diagnostika prostredníctvom POCT prístrojov — prístrojové vybavenie",
+        },
+        { text: "Odborné zdravotné poradenstvo a konzultácie" },
+        { text: "Ambulantná starostlivosť" },
+        { text: "Vydávanie potvrdení podľa platných zákonov" },
+        { text: "E-recept, e-lab, e-žiadanka" },
+        { text: "Objednávanie", comingSoon: true },
+        { text: "English speaking GP" },
+        { text: "Výkony na žiadosť pacienta podľa platného cenníka" },
+      ],
+    },
+    equipment: {
+      title: "Prístrojové vybavenie",
+      intro:
+        "Diagnostické prístroje priamo v ambulancii umožňujú rýchle vyšetrenie a výsledok na počkanie — bez zbytočného čakania na externé laboratórium.",
+      purposeLabel: "Vyšetrenie / účel",
+      deviceLabel: "Prístroj",
+      items: [
+        {
+          purpose: "Odhalí ochorenia srdca",
+          device: "EKG Schiller AT 2 Plus",
+        },
+        {
+          purpose:
+            "Jednominútový test, ktorý zistí, či nemáte zúžené tepny na dolných končatinách — môže vám zachrániť život (ABI)",
+          device: "ABI BOSO ABI system -100",
+        },
+        {
+          purpose: "Tlak krvi pod 24-hodinovou kontrolou",
+          device: "Tlakový holter BOSO TM2430",
+        },
+        {
+          purpose: "Antibiotiká iba keď ich skutočne treba",
+          device: "QuickRead go Orion — kvantitatívne vyšetrenie CRP",
+        },
+        {
+          purpose: "Odhalí chudokrvnosť — anémiu",
+          device: "QuickRead go Orion — vyšetrenie hladiny hemoglobínu",
+        },
+        {
+          purpose: "Odhalí skryté, okultné krvácanie — stolica na okultné krvácanie",
+          device: "QuickRead go Orion — kvantitatívne vyšetrenie iFOBT",
+        },
+        {
+          purpose: "Meranie sýtenia vašej krvi kyslíkom",
+          device: "Pulzný oxymeter",
+        },
+        {
+          purpose: "Vyšetrenie zvukovodu, ušného bubienka — zápal, ušný maz",
+          device: "Otoskop KaWe Germany",
+        },
+        {
+          purpose: "Orientačné vyšetrenie hladiny cukru v krvi",
+          device: "Glukomer Accu Check",
+        },
+        { purpose: "Vyšetrenie moču" },
+        { purpose: "INR", comingSoon: true },
+        { purpose: "Orientačné vyšetrenie zraku, sluchu" },
+      ],
+    },
   },
   hoursSection: {
     title: "Ordinačné hodiny",
@@ -236,8 +293,44 @@ const sk = {
     title: "O ambulancii a lekárovi",
     lead: "MUDr. Pavol Trnovec, PhD. je všeobecný lekár pre dospelých a odborný zástupca ambulancie MEDICA JUR, s.r.o. vo Svätom Jure.",
     bio: [
-      "MUDr. Pavol Trnovec, PhD. vyštudoval Jesseniovu lekársku fakultu Univerzity Komenského. Pochádza zo Žiliny a vo Svätom Jure vedie ambulanciu všeobecného lekára pre dospelých od jari 2019.",
-      "Ambulancia stavia na prevencii, presnej diagnostike a individuálnom prístupe. Na vyšetrenie si vyhradzujeme dostatok času — výsledok vysvetlíme zrozumiteľne, aj v anglickom jazyku.",
+      "MUDr. Pavol Trnovec, PhD. vyštudoval Jesseniovu lekársku fakultu Univerzity Komenského v Martine s vyznamenaním Summa cum laude. Pochádza zo Žiliny a vo Svätom Jure vedie ambulanciu všeobecného lekára pre dospelých od jari 2019.",
+      "Okrem klinickej praxe má bohaté skúsenosti z farmaceutického priemyslu, medzinárodného výskumu a verejného zdravotníctva. Ambulancia stavia na prevencii, presnej diagnostike a zrozumiteľnej komunikácii — aj v anglickom jazyku.",
+    ],
+    careerTitle: "Vzdelanie a profesionálna dráha",
+    bioSections: [
+      {
+        title: "Vzdelanie",
+        paragraphs: [
+          "Študoval na Jesseniovej lekárskej fakulte Univerzity Komenského v Martine. Štúdium ukončil s vyznamenaním „Summa cum laude“.",
+          "V roku 2018 ukončil treťostupňové vysokoškolské štúdium na Slovenskej zdravotníckej univerzite, fakulte verejného zdravotníctva obhajobou práce „Liek v rukách lekára: vybrané a právne aspekty kategorizačného procesu v SR“ a bol mu udelený titul Doctor Philosophiae (PhD.).",
+        ],
+      },
+      {
+        title: "Lekárska a profesionálna prax",
+        paragraphs: [
+          "Po skončení vysokoškolského štúdia pracoval na internom oddelení NsP Trstená ako sekundárny lekár a vo farmaceutických spoločnostiach Eli Lilly a GSK na pozíciách farmaceutického zástupcu, výskumného pracovníka, medicínskeho riaditeľa, riaditeľa pre endokrinológiu, onkológiu a ženské zdravie, korporátnych záležitostí a ako generálny riaditeľ na Slovensku, v Rakúsku a USA.",
+        ],
+      },
+      {
+        title: "Medzinárodné pôsobenie",
+        paragraphs: [
+          "V zahraničí pracoval 3 roky najprv ako koordinátor klinického výskumu nového inzulínu, prvého analógu ľudského inzulínu vo Viedni, Rakúsko pre krajiny: Slovenská republika, Slovinsko, Rumunsko, Bulharsko, Ruská federácia a Turecko.",
+          "Neskôr pracoval v centrále spoločnosti Eli Lilly v Indianapolise, štát Indiana, USA vo výskume a marketingu v onkológii — rakovina pľúc, močového mechúra a ochoreniach centrálneho nervového systému — schizofrénia.",
+        ],
+      },
+      {
+        title: "Verejný sektor a ocenenia",
+        paragraphs: [
+          "Počas práce vo farmaceutickom priemysle bol vyše 5 rokov členom predsedníctva, podpredsedom či prezidentom asociácie spoločností SAFS, LAWG. Bol tiež zvolený do výboru BRITCHAM – britskej obchodnej komory.",
+          "Za spoločnosti, ktoré reprezentoval, obdržal viaceré ocenenia v oblasti filantropie a dobrovoľníctva: Top firemný filantrop a VIA BONA. Spolupracoval s n.o. Plamienok a Druhý krok, n.o.",
+        ],
+      },
+      {
+        title: "Ambulancia vo Svätom Jure",
+        paragraphs: [
+          "Od jari 2019 vedie ambulanciu všeobecného lekára pre dospelých vo Svätom Jure. Kladie dôraz na prevenciu, presnú diagnostiku s využitím moderného prístrojového vybavenia a individuálny prístup ku každému pacientovi.",
+        ],
+      },
     ],
     valuesTitle: "Na čom nám záleží",
     values: [
@@ -407,6 +500,7 @@ const en: Dictionary = {
     backHome: "Back to home",
     readMore: "Learn more",
     getDirections: "Get directions",
+    comingSoon: "Coming soon",
   },
   topbar: {
     note: "Online prescriptions & appointments via the Moji lekári portal",
@@ -416,14 +510,23 @@ const en: Dictionary = {
     titleLine1: "MUDr. Pavol Trnovec, PhD.",
     titleLine2Prefix: "General practice ",
     titleHighlight: "in Svätý Jur",
-    lead: "Comprehensive care for adults — from prevention and on-site POCT diagnostics to chronic disease management. An appointment system and enough time for every patient.",
+    lead: "Prevention, on-site POCT diagnostics and chronic disease management. An appointment system and communication in English.",
     insurersLabel: "Contracted insurers:",
+    languagesBadge: "SK · EN",
     primaryCta: "Book now",
     secondaryCta: "I'm a new patient",
-    badgeDoctor: "General practitioner · since 2019",
-    badgeEnglishTitle: "English speaking doctor",
-    badgeEnglish: "English speaking GP",
+    badges: [
+      {
+        title: "Summa cum laude · PhD.",
+        subtitle: "Jessenius Faculty of Medicine, UK",
+      },
+      {
+        title: "7+ years of practice",
+        subtitle: "Independent practice since 2019",
+      },
+    ],
     bookingNote: "Booking is handled via the My Doctors portal",
+    bookingNotePrefix: "Booking is handled via the ",
     photoAlt: "MUDr. Pavol Trnovec, PhD.",
   },
   facts: {
@@ -440,7 +543,7 @@ const en: Dictionary = {
     infoCta: "Info for new patients",
     callCta: "Call us",
     story:
-      "He graduated from the Jessenius Faculty of Medicine, comes from Žilina and has been running his own practice in Svätý Jur since spring 2019. He takes a personal approach — with an emphasis on time, prevention and clear explanations of diagnosis and treatment.",
+      "Graduate of the Jessenius Faculty of Medicine in Martin (Summa cum laude) and holder of a PhD degree. He has been leading the practice in Svätý Jur since spring 2019 — with an emphasis on time, prevention and clear communication, including in English.",
     doctorTitle: "Your doctor",
     whyItems: [
       {
@@ -481,7 +584,7 @@ const en: Dictionary = {
     subtitle: "Complete healthcare for adult patients under one roof.",
     featured: {
       title: "Prevention, diagnostics and treatment",
-      text: "Comprehensive care for adults focused on early diagnosis, effective treatment and long-term health.",
+      text: "Full scope of general practice services — including on-site POCT diagnostics, e-prescriptions and English speaking GP.",
     },
     items: [
       {
@@ -507,42 +610,87 @@ const en: Dictionary = {
     ],
     poct: {
       title: "POCT devices — results while you wait",
-      text: "Modern devices for fast laboratory results on the spot, with no waiting for an external lab.",
-      tags: ["CRP test", "FOB test", "Glucose · HbA1c", "ECG", "INR / Quick"],
+      text: "The practice is equipped with modern diagnostic devices — from ECG and ABI testing to CRP, haemoglobin and iFOBT, plus 24-hour blood pressure holter monitoring.",
+      tags: [
+        "EKG Schiller AT 2 Plus",
+        "ABI BOSO",
+        "Holter BOSO TM2430",
+        "CRP · Hb · iFOBT",
+        "Accu Check glucose meter",
+      ],
     },
     viewAll: "All services",
     pageTitle: "Our services",
     pageLead:
-      "We provide comprehensive general healthcare for adults — from prevention and diagnostics to treatment and long-term follow-up.",
-    detailGroups: [
-      {
-        title: "Prevention & counselling",
-        items: [
-          "Preventive check-ups for adults",
-          "Cardiovascular risk assessment",
-          "Guidance for chronic conditions",
-          "Vaccination and travel medicine",
-        ],
-      },
-      {
-        title: "Diagnostics",
-        items: [
-          "Blood and biological sample collection",
-          "POCT tests with results while you wait (CRP, glucose, INR…)",
-          "ECG examination",
-          "Interpretation of lab and imaging results",
-        ],
-      },
-      {
-        title: "Treatment & follow-up",
-        items: [
-          "Treatment of acute illnesses",
-          "Management of chronic conditions",
-          "Prescriptions and e-prescriptions",
-          "Pre-operative exams and certificates",
-        ],
-      },
-    ],
+      "Comprehensive general care for adults — from prevention and on-site POCT diagnostics to e-prescriptions, referral proposals and fee-based services.",
+    scope: {
+      title: "Scope of services",
+      intro:
+        "The practice provides complete healthcare within the scope of a general practitioner for adult patients.",
+      items: [
+        { text: "Prevention, diagnostics and treatment of conditions within the scope of general practice" },
+        { text: "Preparation of referral proposals for specialist examinations" },
+        { text: "Preventive check-ups and vaccination" },
+        { text: "Pre-operative examinations" },
+        { text: "Blood sampling and diagnostics using POCT devices — on-site equipment" },
+        { text: "Professional health counselling and consultations" },
+        { text: "Outpatient care" },
+        { text: "Issuing certificates in accordance with applicable laws" },
+        { text: "E-prescription, e-lab, e-referral" },
+        { text: "Online booking", comingSoon: true },
+        { text: "English speaking GP" },
+        { text: "Services on patient request according to the valid price list" },
+      ],
+    },
+    equipment: {
+      title: "Medical equipment",
+      intro:
+        "Diagnostic devices on site enable rapid testing and results while you wait — without unnecessary delays for an external laboratory.",
+      purposeLabel: "Examination / purpose",
+      deviceLabel: "Device",
+      items: [
+        {
+          purpose: "Detects heart conditions",
+          device: "EKG Schiller AT 2 Plus",
+        },
+        {
+          purpose:
+            "One-minute test that detects narrowed arteries in the lower limbs — it can save your life (ABI)",
+          device: "ABI BOSO ABI system -100",
+        },
+        {
+          purpose: "Blood pressure under 24-hour monitoring",
+          device: "BOSO TM2430 blood pressure holter",
+        },
+        {
+          purpose: "Antibiotics only when truly needed",
+          device: "QuickRead go Orion — quantitative CRP testing",
+        },
+        {
+          purpose: "Detects anaemia",
+          device: "QuickRead go Orion — haemoglobin level testing",
+        },
+        {
+          purpose: "Detects hidden occult bleeding — stool test",
+          device: "QuickRead go Orion — quantitative iFOBT testing",
+        },
+        {
+          purpose: "Measures blood oxygen saturation",
+          device: "Pulse oximeter",
+        },
+        {
+          purpose: "Ear canal and eardrum examination — inflammation, earwax",
+          device: "KaWe Germany otoscope",
+        },
+        {
+          purpose: "Screening blood glucose test",
+          device: "Accu Check glucose meter",
+        },
+        { purpose: "Urine testing" },
+        { purpose: "INR", comingSoon: true },
+        { purpose: "Screening vision and hearing tests" },
+      ],
+    },
   },
   hoursSection: {
     title: "Opening hours",
@@ -606,8 +754,44 @@ const en: Dictionary = {
     title: "About the practice & doctor",
     lead: "MUDr. Pavol Trnovec, PhD. is a general practitioner for adults and the professional representative of the MEDICA JUR, s.r.o. practice in Svätý Jur.",
     bio: [
-      "MUDr. Pavol Trnovec, PhD. graduated from the Jessenius Faculty of Medicine of Comenius University. He comes from Žilina and has been leading the general practice for adults in Svätý Jur since spring 2019.",
-      "The practice focuses on prevention, accurate diagnostics and an individual approach. We set aside enough time for every examination — and explain results clearly, including in English.",
+      "MUDr. Pavol Trnovec, PhD. graduated from the Jessenius Faculty of Medicine of Comenius University in Martin with Summa cum laude honours. He comes from Žilina and has been leading the general practice for adults in Svätý Jur since spring 2019.",
+      "Beyond clinical practice, he has extensive experience in the pharmaceutical industry, international research and public health. The practice focuses on prevention, accurate diagnostics and clear communication — including in English.",
+    ],
+    careerTitle: "Education and professional career",
+    bioSections: [
+      {
+        title: "Education",
+        paragraphs: [
+          "He studied at the Jessenius Faculty of Medicine of Comenius University in Martin, graduating with Summa cum laude honours.",
+          "In 2018 he completed his doctoral studies at the Faculty of Public Health of the Slovak Medical University, defending the thesis \"The drug in the doctor's hands: selected legal aspects of the categorisation process in the Slovak Republic\", and was awarded the degree Doctor Philosophiae (PhD).",
+        ],
+      },
+      {
+        title: "Medical and professional experience",
+        paragraphs: [
+          "After completing his university studies, he worked at the internal medicine department of Trstená Hospital as a secondary physician and at pharmaceutical companies Eli Lilly and GSK in roles including pharmaceutical representative, research associate, medical director, director for endocrinology, oncology and women's health, corporate affairs and general manager in Slovakia, Austria and the USA.",
+        ],
+      },
+      {
+        title: "International experience",
+        paragraphs: [
+          "Abroad, he spent 3 years first as coordinator of clinical research into a new insulin — the first human insulin analogue — in Vienna, Austria, covering Slovakia, Slovenia, Romania, Bulgaria, the Russian Federation and Turkey.",
+          "He later worked at Eli Lilly headquarters in Indianapolis, Indiana, USA in research and marketing in oncology — lung and bladder cancer — and central nervous system disorders, including schizophrenia.",
+        ],
+      },
+      {
+        title: "Public sector and awards",
+        paragraphs: [
+          "During his career in the pharmaceutical industry, he served for over 5 years on the board, as vice-chairman or president of the SAFS and LAWG association of companies. He was also elected to the board of BRITCHAM — the British Chamber of Commerce.",
+          "On behalf of the companies he represented, he received several awards for philanthropy and volunteering: Top Corporate Philanthropist and VIA BONA. He collaborated with NGOs Plamienok and Druhý krok.",
+        ],
+      },
+      {
+        title: "Practice in Svätý Jur",
+        paragraphs: [
+          "Since spring 2019 he has been leading a general practice for adults in Svätý Jur, with an emphasis on prevention, accurate diagnostics using modern equipment and an individual approach to every patient.",
+        ],
+      },
     ],
     valuesTitle: "What we care about",
     values: [

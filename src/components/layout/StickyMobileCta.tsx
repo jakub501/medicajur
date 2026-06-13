@@ -3,7 +3,7 @@
 import { Phone, CalendarCheck } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { ButtonAnchor } from "./Button";
+import { ButtonAnchor } from "@/components/ui/Button";
 
 export function StickyMobileCta({ dict }: { dict: Dictionary }) {
   return (

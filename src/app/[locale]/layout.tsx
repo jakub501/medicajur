@@ -5,11 +5,11 @@ import { locales, isLocale, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { clinicJsonLd } from "@/lib/structuredData";
-import { TopBar } from "@/components/TopBar";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { CookieBanner } from "@/components/CookieBanner";
-import { StickyMobileCta } from "@/components/StickyMobileCta";
+import { TopBar } from "@/components/layout/TopBar";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { CookieBanner } from "@/components/layout/CookieBanner";
+import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],

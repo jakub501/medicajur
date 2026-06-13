@@ -2,13 +2,13 @@ import { CalendarCheck, Phone } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { PageHero } from "@/components/PageHero";
-import { Section } from "@/components/Section";
-import { Container } from "@/components/Container";
-import { Icon } from "@/components/Icon";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
-import { CountUp } from "@/components/CountUp";
-import { ButtonAnchor } from "@/components/Button";
+import { PageHero } from "@/components/ui/PageHero";
+import { Section } from "@/components/ui/Section";
+import { Container } from "@/components/ui/Container";
+import { Icon } from "@/components/ui/Icon";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CountUp } from "@/components/ui/CountUp";
+import { ButtonAnchor } from "@/components/ui/Button";
 
 export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
   const a = dict.about;
@@ -70,6 +70,27 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
           ))}
         </div>
       </Section>
+
+      <section className="border-t border-line bg-bg py-12 sm:py-16">
+        <Container>
+          <h2 className="text-h2 mb-8 sm:mb-10">{a.careerTitle}</h2>
+          <div className="flex flex-col gap-8">
+            {a.bioSections.map((section) => (
+              <article
+                key={section.title}
+                className="card border-blue-line/60 bg-surface"
+              >
+                <h3 className="text-h3 text-[1.25rem]">{section.title}</h3>
+                <div className="text-body-lg mt-4 flex flex-col gap-3.5 leading-relaxed text-muted">
+                  {section.paragraphs.map((paragraph, i) => (
+                    <p key={i}>{paragraph}</p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <section className="bg-surface py-12 sm:py-16">
         <Container>

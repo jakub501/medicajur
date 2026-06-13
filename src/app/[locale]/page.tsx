@@ -4,14 +4,14 @@ import {
   formatDayAcute,
   formatDayIntervals,
 } from "@/lib/site";
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/sections/Hero";
 import { QuickFacts } from "@/components/sections/QuickFacts";
 import { Trust } from "@/components/sections/Trust";
 import { NewPatients } from "@/components/sections/NewPatients";
-import { ServicesBento } from "@/components/sections/Services";
+import { ServicesBento } from "@/components/sections/ServicesBento";
 import { Faq } from "@/components/sections/Faq";
-import { HoursContact } from "@/components/sections/HoursContact";
+import { ContactHoursSection } from "@/components/sections/ContactHoursSection";
 
 export default async function HomePage({
   params,
@@ -43,7 +43,7 @@ export default async function HomePage({
       <Reveal>
         <Faq locale={loc} dict={dict} items={dict.faq.items} showCta />
       </Reveal>
-      <HoursContact dict={dict} />
+      <ContactHoursSection dict={dict} />
     </>
   );
 }

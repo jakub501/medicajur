@@ -1,7 +1,7 @@
 import { Phone, MapPin, Syringe } from "lucide-react";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Container } from "./Container";
+import { Container } from "@/components/ui/Container";
 
 export function TopBar({ dict }: { dict: Dictionary }) {
   return (

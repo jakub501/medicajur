@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Section, SectionHeading } from "../Section";
+import { Section, SectionHeading } from "@/components/ui/Section";
 
 type FaqItem = { q: string; a: string };
 

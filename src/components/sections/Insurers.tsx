@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { Section } from "../Section";
+import { Section } from "@/components/ui/Section";
 
 export function Insurers({ dict }: { dict: Dictionary }) {
   return (

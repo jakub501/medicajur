@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Cookie } from "lucide-react";
 import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { Button } from "./Button";
+import { Button } from "@/components/ui/Button";
 
 const STORAGE_KEY = "mj-cookie-consent";
 
