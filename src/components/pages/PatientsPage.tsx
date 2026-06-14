@@ -6,6 +6,7 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
 import { Faq } from "@/components/sections/Faq";
+import { Erecept } from "@/components/sections/Erecept";
 
 export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const p = dict.patientsPage;
@@ -83,6 +84,8 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
           </div>
         </Container>
       </section>
+
+      <Erecept dict={dict} />
 
       <Faq locale={locale} dict={dict} items={p.faq} />
     </>

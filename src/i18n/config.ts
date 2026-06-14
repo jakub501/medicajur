@@ -11,6 +11,7 @@ export const routes = {
   home: { sk: "", en: "" },
   about: { sk: "ambulancia", en: "about" },
   services: { sk: "sluzby", en: "services" },
+  pricing: { sk: "cennik", en: "pricing" },
   hours: { sk: "ordinacne-hodiny", en: "opening-hours" },
   patients: { sk: "pre-pacientov", en: "for-patients" },
   contact: { sk: "kontakt", en: "contact" },
@@ -39,6 +40,9 @@ export function isHomePath(pathname: string, locale: Locale) {
 }
 
 export function navHref(locale: Locale, key: RouteKey, pathname: string) {
+  if (key === "pricing") {
+    return href(locale, "services", "pricing");
+  }
   if (isHomePath(pathname, locale)) {
     const hash = homeSectionHash[key];
     if (hash) return href(locale, "home", hash);
@@ -50,6 +54,7 @@ export function navHref(locale: Locale, key: RouteKey, pathname: string) {
 export const contentRouteKeys: RouteKey[] = [
   "about",
   "services",
+  "pricing",
   "hours",
   "patients",
   "contact",
@@ -68,14 +73,19 @@ export function resolveRouteKey(locale: Locale, slug: string): RouteKey | null {
 export function switchLocalePath(pathname: string, target: Locale): string {
   const segments = pathname.split("/").filter(Boolean);
   const current = segments[0] as Locale;
-  const rest = segments.slice(1).join("/");
-  if (!rest) return `/${target}`;
+  const rest = segments.slice(1);
+  if (!rest.length) return `/${target}`;
 
+  if (rest[0] === routes.services[current] && rest.length > 1) {
+    return `/${target}/${routes.services[target]}/${rest.slice(1).join("/")}`;
+  }
+
+  const restJoined = rest.join("/");
   for (const key of Object.keys(routes) as RouteKey[]) {
-    if (routes[key][current] === rest) {
+    if (routes[key][current] === restJoined) {
       const targetSlug = routes[key][target];
       return targetSlug ? `/${target}/${targetSlug}` : `/${target}`;
     }
   }
-  return `/${target}/${rest}`;
+  return `/${target}/${restJoined}`;
 }

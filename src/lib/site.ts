@@ -43,6 +43,21 @@ export const SITE = {
 } as const;
 
 /**
+ * Site-wide notice bar (holidays, substitute doctor, changed hours…).
+ * Set `active: true` to show it at the very top of every page.
+ * Edit the texts per language; leave a language empty to skip it there.
+ */
+export const NOTICE = {
+  active: false,
+  /** Optional date range shown in bold before the message, e.g. "7. – 18. 7. 2026". */
+  range: "21. – 25. 7. 2026",
+  text: {
+    sk: "Čerpáme dovolenku, ambulancia je zatvorená. Zastupuje MUDr. … v …. V akútnych prípadoch volajte 155.",
+    en: "The practice is closed for holidays. Substitute: Dr. … at …. In acute cases call 155.",
+  },
+} as const;
+
+/**
  * Opening hours. `intervals` are minutes-from-midnight ranges used for the
  * live open/closed indicator. `acute` is shown as a sub-line.
  */

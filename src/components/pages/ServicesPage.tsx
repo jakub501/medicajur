@@ -2,44 +2,27 @@ import { CalendarCheck } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
-import { Container } from "@/components/ui/Container";
+import { ButtonAnchor } from "@/components/ui/Button";
 import { ServicesScopeList } from "@/components/pages/ServicesScopeList";
 import { ServicesEquipmentList } from "@/components/pages/ServicesEquipmentList";
-import { ButtonAnchor } from "@/components/ui/Button";
+import { ServicesPricingSection } from "@/components/pages/ServicesPricingSection";
 
-export function ServicesPage({ dict }: { locale: Locale; dict: Dictionary }) {
-  const s = dict.services;
-
+export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
-    <>
-      <PageHero eyebrow={s.eyebrow} title={s.pageTitle} lead={s.pageLead} />
+    <Section className="py-8 sm:py-10">
+        <div className="mx-auto max-w-5xl">
+          <ServicesScopeList locale={locale} dict={dict} />
 
-      <Section>
-        <ServicesScopeList dict={dict} />
-      </Section>
-
-      <section className="bg-surface py-12 sm:py-16">
-        <Container>
-          <ServicesEquipmentList dict={dict} />
-
-          <div className="card mt-8 border-blue-line bg-blue-soft">
-            <h3 className="text-h3">{s.poct.title}</h3>
-            <p className="text-body mt-2 text-muted">{s.poct.text}</p>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {s.poct.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-[7px] bg-surface px-3 py-1.5 text-body-sm font-semibold text-primary"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          <div id="equipment" className="mt-10 scroll-mt-28 sm:mt-12">
+            <ServicesEquipmentList locale={locale} dict={dict} />
           </div>
 
-          <div className="mt-8 text-center">
+          <div id="pricing" className="mt-10 scroll-mt-28 sm:mt-12">
+            <ServicesPricingSection dict={dict} />
+          </div>
+
+          <div className="mt-10 text-center sm:mt-12">
             <ButtonAnchor
               href={SITE.bookingUrl}
               target="_blank"
@@ -51,8 +34,7 @@ export function ServicesPage({ dict }: { locale: Locale; dict: Dictionary }) {
             </ButtonAnchor>
             <p className="text-caption mt-3 text-muted">{dict.hero.bookingNote}</p>
           </div>
-        </Container>
-      </section>
-    </>
+        </div>
+    </Section>
   );
 }

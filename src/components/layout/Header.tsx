@@ -15,6 +15,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "about", label: "about" },
   { key: "services", label: "services" },
+  { key: "pricing", label: "pricing" },
   { key: "hours", label: "hours" },
   { key: "patients", label: "patients" },
   { key: "contact", label: "contact" },
@@ -44,6 +45,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   }, [open]);
 
   const isActive = (key: RouteKey) => {
+    if (key === "pricing") {
+      const servicesPath = href(locale, "services");
+      return pathname === servicesPath || pathname.startsWith(`${servicesPath}/`);
+    }
     const target = href(locale, key);
     return pathname === target || pathname.startsWith(`${target}/`);
   };

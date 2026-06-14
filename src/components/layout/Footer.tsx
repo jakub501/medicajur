@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "about", label: "about" },
   { key: "services", label: "services" },
+  { key: "pricing", label: "pricing" },
   { key: "hours", label: "hours" },
   { key: "patients", label: "patients" },
   { key: "contact", label: "contact" },
@@ -48,7 +49,11 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               {dict.footer.navTitle}
             </h3>
             {NAV.map(({ key, label }) => (
-              <Link key={key} href={href(locale, key)} className={footerLink}>
+              <Link
+                key={key}
+                href={key === "pricing" ? href(locale, "services", "pricing") : href(locale, key)}
+                className={footerLink}
+              >
                 {dict.nav[label]}
               </Link>
             ))}

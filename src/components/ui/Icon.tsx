@@ -7,6 +7,9 @@ import {
   Activity,
   Languages,
   Stethoscope,
+  UserPlus,
+  FileText,
+  Pill,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,6 +22,9 @@ const MAP: Record<string, LucideIcon> = {
   activity: Activity,
   languages: Languages,
   stethoscope: Stethoscope,
+  "user-plus": UserPlus,
+  "file-text": FileText,
+  pill: Pill,
 };
 
 export function Icon({
