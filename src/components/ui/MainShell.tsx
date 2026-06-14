@@ -5,6 +5,8 @@ const MAIN_ORBS = [
   { width: 360, height: 360, top: "52%", right: "-8%", background: "rgba(46,158,107,0.05)" },
   { width: 440, height: 440, top: "72%", left: "18%", background: "rgba(21,99,156,0.05)" },
   { width: 320, height: 320, top: "88%", right: "12%", background: "rgba(46,158,107,0.04)" },
+  { width: 400, height: 400, top: "92%", left: "-10%", background: "rgba(21,99,156,0.05)" },
+  { width: 340, height: 340, top: "96%", right: "8%", background: "rgba(46,158,107,0.04)" },
 ] as const;
 
 export function MainShell({ children }: { children: React.ReactNode }) {

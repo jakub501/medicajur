@@ -126,9 +126,11 @@ export default async function LocaleLayout({
         <SiteChrome locale={locale} dict={dict} />
         <ScrollToHash />
         <main className="relative z-0 flex-1">
-          <MainShell>{children}</MainShell>
+          <MainShell>
+            {children}
+            <Footer locale={locale} dict={dict} />
+          </MainShell>
         </main>
-        <Footer locale={locale} dict={dict} />
         <CookieBanner locale={locale} dict={dict} />
         <StickyMobileCta dict={dict} />
       </body>

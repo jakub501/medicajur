@@ -98,13 +98,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (
     <footer className="site-footer">
       <div className="site-footer-body">
-        <div className="site-footer-backdrop" aria-hidden="true">
-          <div className="site-footer-gradient" />
-          <div className="site-footer-grid" />
-          <span className="site-footer-orb site-footer-orb--primary" />
-          <span className="site-footer-orb site-footer-orb--green" />
-        </div>
-
         <Container className="relative">
           <div className="footer-panel-grid">
             <div className="footer-col footer-col--brand sm:col-span-2 lg:col-span-1">

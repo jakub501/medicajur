@@ -20,19 +20,39 @@ export const routes = {
 
 export type RouteKey = keyof typeof routes;
 
+/** Primary navbar links on the homepage (scroll targets). */
+export type HomeNavKey =
+  | "aboutDoctor"
+  | "services"
+  | "newPatient"
+  | "existingPatients"
+  | "contact";
+
+export const homeNavHashes: Record<HomeNavKey, string> = {
+  aboutDoctor: "about",
+  services: "services",
+  newPatient: "patients",
+  existingPatients: "existing-patients",
+  contact: "kontakt",
+};
+
 export function href(locale: Locale, key: RouteKey, hash?: string) {
   const slug = routes[key][locale];
   const base = slug ? `/${locale}/${slug}` : `/${locale}`;
   return hash ? `${base}#${hash}` : base;
 }
 
-/** Homepage section anchors used when navigating from the home page. */
+/** Homepage section anchors for legacy route keys (footer, etc.). */
 export const homeSectionHash: Partial<Record<RouteKey, string>> = {
   about: "about",
   services: "services",
   hours: "hours",
   contact: "kontakt",
 };
+
+export function homeNavHref(locale: Locale, key: HomeNavKey) {
+  return href(locale, "home", homeNavHashes[key]);
+}
 
 export function isHomePath(pathname: string, locale: Locale) {
   return pathname === `/${locale}` || pathname === `/${locale}/`;

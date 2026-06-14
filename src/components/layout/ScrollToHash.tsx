@@ -1,74 +1,43 @@
 "use client";
 
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
-
-const STICKY_HEADER_GAP = 28;
-
-function getStickyHeaderHeight() {
-  return document.querySelector<HTMLElement>(".site-chrome")?.offsetHeight ?? 126;
-}
-
-function getScrollOffset(el: HTMLElement) {
-  const margin = getComputedStyle(el).scrollMarginTop;
-  const parsed = Number.parseFloat(margin);
-  return Number.isFinite(parsed) ? parsed : 0;
-}
-
-function scrollToY(top: number) {
-  const y = Math.max(0, top);
-  window.scrollTo({ top: y, left: 0, behavior: "auto" });
-  document.documentElement.scrollTop = y;
-  document.body.scrollTop = y;
-}
-
-function scrollToTop() {
-  scrollToY(0);
-}
-
-function scrollToElement(el: HTMLElement, offset?: number) {
-  const top =
-    el.getBoundingClientRect().top + window.scrollY - (offset ?? getStickyHeaderHeight() + STICKY_HEADER_GAP);
-  scrollToY(top);
-}
+import { scrollToSection, scrollToSectionById, scrollToTop } from "@/lib/scroll-to-section";
 
 function isServicesIndex(pathname: string) {
   return pathname.endsWith("/sluzby") || pathname.endsWith("/services");
 }
 
-function scrollToServicesScope() {
+function scrollToServicesScope(smooth: boolean) {
   const scope = document.getElementById("scope");
   if (!scope) {
-    scrollToTop();
+    scrollToTop(smooth);
     return;
   }
 
   const heading = scope.querySelector("h2");
-  scrollToElement((heading as HTMLElement | null) ?? scope);
+  scrollToSection((heading as HTMLElement | null) ?? scope, { smooth });
 }
 
-function scrollOnNavigate(pathname: string) {
+function scrollOnNavigate(pathname: string, smooth: boolean) {
   const hash = window.location.hash.slice(1);
 
   if (hash === "scope" || (!hash && isServicesIndex(pathname))) {
-    scrollToServicesScope();
+    scrollToServicesScope(smooth);
     return;
   }
 
   if (hash) {
-    const el = document.getElementById(hash);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - getScrollOffset(el);
-      scrollToY(top);
-      return;
-    }
+    scrollToSectionById(hash, { smooth });
+    return;
   }
 
-  scrollToTop();
+  scrollToTop(smooth);
 }
 
 export function ScrollToHash() {
   const pathname = usePathname();
+  const isFirstNavigation = useRef(true);
 
   useLayoutEffect(() => {
     if ("scrollRestoration" in history) {
@@ -77,11 +46,22 @@ export function ScrollToHash() {
   }, []);
 
   useLayoutEffect(() => {
-    scrollOnNavigate(pathname);
+    const smooth = !isFirstNavigation.current && Boolean(window.location.hash.slice(1));
+    isFirstNavigation.current = false;
+
+    const run = () => scrollOnNavigate(pathname, smooth);
+    if (smooth) {
+      requestAnimationFrame(run);
+    } else {
+      run();
+    }
   }, [pathname]);
 
   useLayoutEffect(() => {
-    const onHashChange = () => scrollOnNavigate(pathname);
+    const onHashChange = () => {
+      requestAnimationFrame(() => scrollOnNavigate(pathname, true));
+    };
+
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, [pathname]);

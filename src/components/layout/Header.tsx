@@ -1,22 +1,30 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, CalendarCheck, Menu, X } from "lucide-react";
-import { href, navHref, type Locale, type RouteKey } from "@/i18n/config";
+import {
+  homeNavHashes,
+  homeNavHref,
+  href,
+  isHomePath,
+  type HomeNavKey,
+  type Locale,
+} from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
+import { scrollToSectionById, scrollToTop } from "@/lib/scroll-to-section";
 import { Container } from "@/components/ui/Container";
 import { Brand } from "./Brand";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
-  { key: "about", label: "about" },
+const NAV: { key: HomeNavKey; label: keyof Dictionary["nav"] }[] = [
+  { key: "aboutDoctor", label: "aboutDoctor" },
   { key: "services", label: "services" },
-  { key: "pricing", label: "pricing" },
-  { key: "hours", label: "hours" },
+  { key: "newPatient", label: "newPatient" },
+  { key: "existingPatients", label: "existingPatients" },
   { key: "contact", label: "contact" },
 ];
 
@@ -33,9 +41,17 @@ export function Header({
 }) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
+  const [activeHash, setActiveHash] = useState("");
 
   useEffect(() => {
     setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const syncHash = () => setActiveHash(window.location.hash.slice(1));
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
+    return () => window.removeEventListener("hashchange", syncHash);
   }, [pathname]);
 
   useEffect(() => {
@@ -45,13 +61,48 @@ export function Header({
     };
   }, [open]);
 
-  const isActive = (key: RouteKey) => {
-    if (key === "pricing") {
-      const servicesPath = href(locale, "services");
-      return pathname === servicesPath || pathname.startsWith(`${servicesPath}/`);
-    }
-    const target = href(locale, key);
-    return pathname === target || pathname.startsWith(`${target}/`);
+  const isNavActive = (key: HomeNavKey) => {
+    if (!isHomePath(pathname, locale)) return false;
+    return activeHash === homeNavHref(locale, key).split("#")[1];
+  };
+
+  const navLinkClass = (key: HomeNavKey, mobile = false) =>
+    cn(
+      mobile
+        ? "border-b border-line py-3.5 text-[17px] font-semibold transition-colors"
+        : "inline-flex h-10 items-center whitespace-nowrap rounded-full px-3 text-[14px] font-semibold leading-none transition-colors xl:px-3.5 xl:text-[15px]",
+      isNavActive(key)
+        ? mobile
+          ? "text-primary"
+          : "bg-blue-soft text-primary"
+        : mobile
+          ? "text-ink hover:text-primary"
+          : "text-ink hover:bg-blue-soft/55 hover:text-primary",
+    );
+
+  const handleBrandClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!isHomePath(pathname, locale)) return;
+
+    event.preventDefault();
+
+    scrollToTop(true);
+    window.history.pushState(null, "", href(locale, "home"));
+    setActiveHash("");
+    setOpen(false);
+  };
+
+  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, key: HomeNavKey) => {
+    if (!isHomePath(pathname, locale)) return;
+
+    event.preventDefault();
+
+    const hash = homeNavHashes[key];
+    const target = homeNavHref(locale, key);
+
+    scrollToSectionById(hash, { smooth: true });
+    window.history.pushState(null, "", target);
+    setActiveHash(hash);
+    setOpen(false);
   };
 
   return (
@@ -64,7 +115,12 @@ export function Header({
     >
       <Container>
         <nav className="site-header__nav grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
-          <Link href={href(locale, "home")} className="brand-link shrink-0" aria-label={SITE.brand}>
+          <Link
+            href={href(locale, "home")}
+            onClick={handleBrandClick}
+            className="brand-link shrink-0"
+            aria-label={SITE.brand}
+          >
             <Brand
               locale={locale}
               brand={SITE.brand}
@@ -78,14 +134,10 @@ export function Header({
               {NAV.map(({ key, label }) => (
                 <li key={key}>
                   <Link
-                    href={navHref(locale, key, pathname)}
-                    data-active={isActive(key)}
-                    className={cn(
-                      "inline-flex h-10 items-center whitespace-nowrap rounded-full px-3 text-[14px] font-semibold leading-none transition-colors xl:px-3.5 xl:text-[15px]",
-                      isActive(key)
-                        ? "bg-blue-soft text-primary"
-                        : "text-ink hover:bg-blue-soft/55 hover:text-primary",
-                    )}
+                    href={homeNavHref(locale, key)}
+                    onClick={(event) => handleNavClick(event, key)}
+                    data-active={isNavActive(key)}
+                    className={navLinkClass(key)}
                   >
                     {dict.nav[label]}
                   </Link>
@@ -127,11 +179,9 @@ export function Header({
               {NAV.map(({ key, label }) => (
                 <Link
                   key={key}
-                  href={navHref(locale, key, pathname)}
-                  className={cn(
-                    "border-b border-line py-3.5 text-[17px] font-semibold transition-colors",
-                    isActive(key) ? "text-primary" : "text-ink hover:text-primary",
-                  )}
+                  href={homeNavHref(locale, key)}
+                  onClick={(event) => handleNavClick(event, key)}
+                  className={navLinkClass(key, true)}
                 >
                   {dict.nav[label]}
                 </Link>

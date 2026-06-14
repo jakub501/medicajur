@@ -11,7 +11,10 @@ const sk = {
   },
   nav: {
     about: "Ambulancia",
+    aboutDoctor: "O lekárovi",
     services: "Služby",
+    newPatient: "Nový pacient",
+    existingPatients: "Pre pacientov",
     pricing: "Cenník",
     hours: "Hodiny",
     patients: "Pacienti",
@@ -593,6 +596,33 @@ const sk = {
     ],
     cta: "Viac o lekárovi",
   },
+  reviews: {
+    eyebrow: "Recenzie pacientov",
+    title: "Čo hovoria naši pacienti",
+    subtitle: "Ukážkové recenzie — ilustračný obsah pripravený na nahradenie skutočnými hodnoteniami.",
+    items: [
+      {
+        name: "Jana K.",
+        meta: "Svätý Jur · pacientka od 2022",
+        text: "Objednanie cez Moji lekári funguje spoľahlivo a v ambulancii sa cítim vypočutá. Oceňujem, že lekár vysvetlí diagnózu aj ďalší postup bez zbytočného strašenia.",
+      },
+      {
+        name: "Peter M.",
+        meta: "Pezinok · nový pacient",
+        text: "Prechod od predchádzajúceho lekára prebehol hladko, administratívu vybavili za mňa. Po prvom vyšetrení som mal jasný plán prevencie aj ďalších kontrol.",
+      },
+      {
+        name: "Mária T.",
+        meta: "Svätý Jur · dlhodobá pacientka",
+        text: "Najviac oceňujem dôraz na prevenciu a možnosť detailnejších vyšetrení. Prostredie ambulancie pôsobí moderno a prístup je vždy vecný aj ľudský.",
+      },
+      {
+        name: "Thomas W.",
+        meta: "Bratislava · English-speaking patient",
+        text: "As an expat I appreciate clear communication in English. Examinations are thorough, appointments run on time and the team is professional and friendly.",
+      },
+    ],
+  },
   faq: {
     eyebrow: "Otázky pacientov",
     title: "Časté otázky",
@@ -722,7 +752,10 @@ const en: Dictionary = {
   },
   nav: {
     about: "Practice",
+    aboutDoctor: "About the doctor",
     services: "Services",
+    newPatient: "New patient",
+    existingPatients: "Existing patients",
     pricing: "Pricing",
     hours: "Hours",
     patients: "Patients",
@@ -1303,6 +1336,33 @@ const en: Dictionary = {
       { icon: "languages", text: "English-speaking GP" },
     ],
     cta: "More about the doctor",
+  },
+  reviews: {
+    eyebrow: "Patient reviews",
+    title: "What our patients say",
+    subtitle: "Sample reviews — illustrative content to be replaced with real ratings.",
+    items: [
+      {
+        name: "Jana K.",
+        meta: "Svätý Jur · patient since 2022",
+        text: "Booking via Moji lekári works reliably and I feel heard in the practice. I appreciate that the doctor explains the diagnosis and next steps clearly, without unnecessary alarm.",
+      },
+      {
+        name: "Peter M.",
+        meta: "Pezinok · new patient",
+        text: "Switching from my previous GP was smooth — the admin was handled for me. After the first visit I had a clear prevention plan and follow-up schedule.",
+      },
+      {
+        name: "Mária T.",
+        meta: "Svätý Jur · long-term patient",
+        text: "I value the emphasis on prevention and the option of more detailed check-ups. The practice feels modern and the approach is always professional yet human.",
+      },
+      {
+        name: "Thomas W.",
+        meta: "Bratislava · English-speaking patient",
+        text: "As an expat I appreciate clear communication in English. Examinations are thorough, appointments run on time and the team is professional and friendly.",
+      },
+    ],
   },
   faq: {
     eyebrow: "Patient questions",

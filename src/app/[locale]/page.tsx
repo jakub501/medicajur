@@ -7,6 +7,7 @@ import { BecomePatientSection } from "@/components/sections/BecomePatientSection
 import { ExistingPatientsSection } from "@/components/sections/ExistingPatientsSection";
 import { ServicesBento } from "@/components/sections/ServicesBento";
 import { AboutPracticeBanner } from "@/components/sections/AboutPracticeBanner";
+import { ReviewsSection } from "@/components/sections/ReviewsSection";
 import { Faq } from "@/components/sections/Faq";
 import { ContactHoursSection } from "@/components/sections/ContactHoursSection";
 
@@ -26,6 +27,12 @@ export default async function HomePage({
         <Trust dict={dict} />
       </Reveal>
       <Reveal>
+        <AboutPracticeBanner locale={loc} dict={dict} />
+      </Reveal>
+      <Reveal>
+        <ReviewsSection dict={dict} />
+      </Reveal>
+      <Reveal>
         <ServicesBento locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
@@ -33,9 +40,6 @@ export default async function HomePage({
       </Reveal>
       <Reveal>
         <ExistingPatientsSection dict={dict} />
-      </Reveal>
-      <Reveal>
-        <AboutPracticeBanner locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
         <Faq locale={loc} dict={dict} items={dict.faq.items} />
