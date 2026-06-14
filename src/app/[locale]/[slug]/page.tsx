@@ -14,7 +14,6 @@ import { AboutPage } from "@/components/pages/AboutPage";
 import { ServicesPage } from "@/components/pages/ServicesPage";
 import { PricingPage } from "@/components/pages/PricingPage";
 import { HoursPage } from "@/components/pages/HoursPage";
-import { PatientsPage } from "@/components/pages/PatientsPage";
 import { ContactPage } from "@/components/pages/ContactPage";
 import { LegalPage } from "@/components/pages/LegalPage";
 
@@ -34,8 +33,6 @@ function pageTitle(key: RouteKey, dict: ReturnType<typeof getDictionary>): strin
       return dict.pricing.pageTitle;
     case "hours":
       return dict.hoursSection.title;
-    case "patients":
-      return dict.patientsPage.title;
     case "contact":
       return dict.contact.title;
     case "privacy":
@@ -95,8 +92,6 @@ export default async function DynamicPage({
       return <PricingPage locale={locale} />;
     case "hours":
       return <HoursPage locale={locale} dict={dict} />;
-    case "patients":
-      return <PatientsPage locale={locale} dict={dict} />;
     case "contact":
       return <ContactPage locale={locale} dict={dict} />;
     case "privacy":

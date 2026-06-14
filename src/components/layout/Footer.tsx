@@ -10,7 +10,6 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "services", label: "services" },
   { key: "pricing", label: "pricing" },
   { key: "hours", label: "hours" },
-  { key: "patients", label: "patients" },
   { key: "contact", label: "contact" },
 ];
 

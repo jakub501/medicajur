@@ -1,132 +1,182 @@
-import { CalendarCheck, Phone } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { PageHero } from "@/components/ui/PageHero";
-import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Icon } from "@/components/ui/Icon";
+import { Section } from "@/components/ui/Section";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { CountUp } from "@/components/ui/CountUp";
-import { ButtonAnchor } from "@/components/ui/Button";
+import { Icon } from "@/components/ui/Icon";
+import { cn } from "@/lib/cn";
+
+const HIGHLIGHT_ACCENTS = ["primary", "green", "deep", "gold"] as const;
+const PROFILE_ACCENTS = ["primary", "green", "deep", "gold"] as const;
+
+const PROFILE_ACCENT_BAR: Record<(typeof PROFILE_ACCENTS)[number], string> = {
+  primary: "from-primary via-primary/70 to-brand-green/80",
+  green: "from-brand-green via-brand-green/70 to-primary/60",
+  deep: "from-primary-deep via-primary to-brand-green/70",
+  gold: "from-[#c9922e] via-[#d4a84a] to-brand-green/70",
+};
 
 export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
   const a = dict.about;
-  const yearsOfPractice = Math.max(1, new Date().getFullYear() - 2019);
-  const stats = [
-    { value: yearsOfPractice, suffix: "+", label: a.stats.years },
-    { value: SITE.insurers.length, suffix: "", label: a.stats.insurers },
-    { value: 2, suffix: "", label: a.stats.languages },
-  ];
 
   return (
     <>
-      <PageHero eyebrow={a.eyebrow} title={a.title} lead={a.lead} />
+      <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-blue-soft/60 to-bg py-10 sm:py-14">
+        <span
+          className="orb"
+          style={{
+            width: 320,
+            height: 320,
+            top: -120,
+            right: -80,
+            background: "rgba(21,99,156,0.1)",
+          }}
+          aria-hidden="true"
+        />
+        <span
+          className="orb"
+          style={{
+            width: 240,
+            height: 240,
+            bottom: -100,
+            left: -60,
+            background: "rgba(46,158,107,0.08)",
+          }}
+          aria-hidden="true"
+        />
 
-      <Section>
-        <div className="grid items-start gap-10 md:grid-cols-2 lg:gap-12">
-          <div className="order-2 md:order-1">
-            <div className="text-body-lg flex flex-col gap-4 leading-relaxed text-muted">
-              {a.bio.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
-            </div>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <ButtonAnchor
-                href={SITE.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="md"
-              >
-                <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
-                {dict.common.book}
-              </ButtonAnchor>
-              <ButtonAnchor href={SITE.phoneHref} variant="secondary" size="md">
-                <Phone className="h-[18px] w-[18px]" strokeWidth={1.85} />
-                {SITE.phone}
-              </ButtonAnchor>
-            </div>
-          </div>
-
-          <ImagePlaceholder
-            src={SITE.images.doctor || undefined}
-            alt={dict.hero.photoAlt}
-            label={dict.hero.photoAlt}
-            className="order-1 h-[300px] w-full rounded-xl shadow-card sm:h-[360px] md:order-2 md:h-[400px]"
-          />
-        </div>
-
-        <div className="mt-10 grid gap-4 md:grid-cols-3 sm:gap-[18px]">
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="card text-center transition-all duration-300 hover:-translate-y-1 hover:border-blue-line hover:shadow-card"
-            >
-              <div className="font-serif text-[2.75rem] font-semibold leading-none text-primary">
-                <CountUp value={s.value} suffix={s.suffix} />
-              </div>
-              <div className="text-eyebrow mt-2 text-muted">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <section className="border-t border-line bg-bg py-12 sm:py-16">
         <Container>
-          <h2 className="text-h2 mb-8 sm:mb-10">{a.careerTitle}</h2>
-          <div className="flex flex-col gap-8">
-            {a.bioSections.map((section) => (
-              <article
-                key={section.title}
-                className="card border-blue-line/60 bg-surface"
-              >
-                <h3 className="text-h3 text-[1.25rem]">{section.title}</h3>
-                <div className="text-body-lg mt-4 flex flex-col gap-3.5 leading-relaxed text-muted">
-                  {section.paragraphs.map((paragraph, i) => (
-                    <p key={i}>{paragraph}</p>
-                  ))}
+          <div className="relative mx-auto max-w-5xl animate-rise">
+            <div className="overflow-hidden rounded-[20px] border border-line bg-surface shadow-[0_20px_48px_-28px_rgba(13,70,116,0.28)]">
+              <div className="grid items-stretch lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)]">
+                <div className="hero-frame rounded-[24px] p-2.5 sm:p-3 lg:h-full lg:rounded-bl-[18px] lg:rounded-br-[26px] lg:rounded-tl-[18px] lg:rounded-tr-[26px] lg:p-3">
+                  <ImagePlaceholder
+                    src={SITE.images.doctor || undefined}
+                    alt={dict.hero.photoAlt}
+                    label={dict.hero.photoAlt}
+                    priority
+                    className="h-[280px] w-full rounded-[14px] sm:h-[320px] lg:h-full lg:min-h-[340px]"
+                  />
                 </div>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
 
-      <section className="bg-surface py-12 sm:py-16">
-        <Container>
-          <h2 className="text-h2 mb-8">{a.valuesTitle}</h2>
-          <div className="grid gap-4 sm:gap-[18px] md:grid-cols-2 lg:grid-cols-4">
-            {a.values.map((v) => (
-              <div
-                key={v.title}
-                className="card group bg-bg transition-all duration-300 hover:-translate-y-1 hover:border-blue-line hover:bg-surface hover:shadow-card"
-              >
-                <span className="icon-box mb-4 transition-all duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-white">
-                  <Icon name={v.icon} className="h-6 w-6" />
-                </span>
-                <h3 className="text-h3 text-[1.25rem]">{v.title}</h3>
-                <p className="text-body mt-2 text-muted">{v.text}</p>
+                <div className="flex flex-col justify-start px-6 pb-7 pt-5 text-center sm:px-8 sm:pb-9 sm:pt-6 lg:px-10 lg:pb-9 lg:pt-3 lg:text-left">
+                  <span className="text-eyebrow text-primary">{a.eyebrow}</span>
+
+                  <div className="pt-6 sm:pt-7">
+                    <h1 className="text-h1 text-balance font-medium">{a.title}</h1>
+                    <p className="text-body-lg mt-3.5 font-medium text-ink sm:mt-4">{a.lead}</p>
+                    <span
+                      className="mx-auto mt-5 block h-1 w-12 rounded-full bg-gradient-to-r from-primary to-brand-green lg:mx-0"
+                      aria-hidden="true"
+                    />
+                  </div>
+                </div>
               </div>
-            ))}
+
+              <div className="border-t border-line bg-gradient-to-b from-bg/80 to-bg/40 px-5 py-5 sm:px-7 sm:py-6">
+                <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 sm:gap-4">
+                  {a.highlights.map((item, index) => (
+                    <li
+                      key={item.text}
+                      className="group flex h-full flex-col items-center rounded-xl border border-line/80 bg-surface px-4 py-5 text-center transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-line hover:shadow-[0_8px_24px_-16px_rgba(13,70,116,0.28)] sm:px-5"
+                    >
+                      <span
+                        className={cn(
+                          "hero-float-badge-icon h-10 w-10 shrink-0 rounded-[11px] transition-transform duration-300 group-hover:scale-105",
+                          `hero-float-badge-icon--${HIGHLIGHT_ACCENTS[index] ?? "primary"}`,
+                        )}
+                      >
+                        <Icon name={item.icon} className="h-[18px] w-[18px]" />
+                      </span>
+                      <span className="text-body-sm mt-3.5 font-medium leading-snug text-ink">
+                        {item.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
 
-      <Section>
-        <div className="grid items-center gap-8 overflow-hidden rounded-2xl border border-line bg-surface md:grid-cols-2">
-          <ImagePlaceholder
-            src={SITE.images.facility || undefined}
-            alt={a.facilityTitle}
-            label={a.facilityTitle}
-            className="h-[240px] w-full sm:h-[300px] md:h-[340px]"
-          />
-          <div className="p-6 sm:p-10">
-            <h2 className="text-h2">{a.facilityTitle}</h2>
-            <p className="text-body-lg mt-3 text-muted">{a.facilityText}</p>
-            <p className="text-body-lg mt-4 font-serif font-semibold text-ink">
-              {SITE.address.street}, {SITE.address.zip} {SITE.address.city}
-            </p>
-            <p className="text-body-sm mt-1 text-muted">{dict.contact.addressNote}</p>
+      <Section className="bg-surface py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="hairline mb-8 sm:mb-10" aria-hidden="true" />
+
+          <div className="flex flex-col gap-5 sm:gap-6">
+            {a.profileCards.map((card, index) => {
+              const accent = PROFILE_ACCENTS[index] ?? "primary";
+
+              return (
+                <article
+                  key={card.title}
+                  className="group relative overflow-hidden rounded-[20px] border border-line bg-bg transition-all duration-300 hover:border-blue-line hover:shadow-[0_16px_40px_-28px_rgba(13,70,116,0.35)]"
+                >
+                  <span
+                    className={cn(
+                      "absolute inset-y-0 left-0 w-1 bg-gradient-to-b",
+                      PROFILE_ACCENT_BAR[accent],
+                    )}
+                    aria-hidden="true"
+                  />
+
+                  <div className="p-6 sm:p-7 lg:p-8">
+                    <div className="flex items-start gap-4">
+                      <span
+                        className={cn(
+                          "flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] font-serif text-[0.8125rem] font-bold tabular-nums transition-transform duration-300 group-hover:scale-105",
+                          `hero-float-badge-icon hero-float-badge-icon--${accent}`,
+                        )}
+                      >
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <h2 className="text-h3 pt-1.5 text-balance">{card.title}</h2>
+                    </div>
+
+                    {"qualifications" in card && card.qualifications && (
+                      <ul className="mt-6 sm:ml-14">
+                        {card.qualifications.map((item, qualIndex) => (
+                          <li
+                            key={item.label}
+                            className={cn(
+                              "relative flex gap-4 pb-6 last:pb-0",
+                              qualIndex < card.qualifications!.length - 1 &&
+                                "before:absolute before:bottom-0 before:left-[5px] before:top-7 before:w-px before:bg-gradient-to-b before:from-blue-line before:to-transparent",
+                            )}
+                          >
+                            <span
+                              className="relative z-[1] mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-primary ring-4 ring-primary/10"
+                              aria-hidden="true"
+                            />
+                            <div className="min-w-0 flex-1">
+                              <span className="text-body-sm font-bold tracking-wide text-primary">
+                                {item.label}
+                              </span>
+                              <p className="text-body mt-2 leading-relaxed text-muted">{item.text}</p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {"paragraphs" in card && card.paragraphs && (
+                      <div className="mt-6 flex flex-col gap-4 border-l-2 border-blue-line/60 pl-5 sm:ml-14 sm:pl-6">
+                        {card.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p
+                            key={paragraphIndex}
+                            className="text-body leading-[1.75] text-muted first:text-body-lg first:leading-relaxed"
+                          >
+                            {paragraph}
+                          </p>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </Section>

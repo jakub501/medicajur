@@ -12,7 +12,9 @@ export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionar
   return (
     <Section className="py-8 sm:py-10">
         <div className="mx-auto max-w-5xl">
-          <ServicesScopeList locale={locale} dict={dict} />
+          <div id="scope" className="scroll-mt-[5.75rem]">
+            <ServicesScopeList locale={locale} dict={dict} />
+          </div>
 
           <div id="equipment" className="mt-10 scroll-mt-28 sm:mt-12">
             <ServicesEquipmentList locale={locale} dict={dict} />

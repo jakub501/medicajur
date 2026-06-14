@@ -28,7 +28,8 @@ export function ServicesBento({
 
         <div className="mt-8 text-center">
           <Link
-            href={href(locale, "services")}
+            href={href(locale, "services", "scope")}
+            scroll
             className="inline-flex min-h-11 items-center gap-2 text-body font-bold text-primary transition-colors hover:text-primary-deep"
           >
             {s.viewAll}

@@ -11,6 +11,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
+import { ScrollToHash } from "@/components/layout/ScrollToHash";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -124,6 +125,7 @@ export default async function LocaleLayout({
         <NoticeBar locale={locale} />
         <TopBar dict={dict} />
         <Header locale={locale} dict={dict} />
+        <ScrollToHash />
         <main className="flex-1">{children}</main>
         <Footer locale={locale} dict={dict} />
         <CookieBanner locale={locale} dict={dict} />

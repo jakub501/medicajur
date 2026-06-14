@@ -29,9 +29,9 @@ export function ServicesEquipmentList({
         </div>
 
         <ul className="divide-y divide-line">
-          {e.items.map((item) => (
+          {e.items.map((item, index) => (
             <li
-              key={item.slug ?? item.detailSlug ?? item.purpose}
+              key={`${index}-${item.purpose}`}
               className="grid gap-1.5 px-4 py-3 sm:grid-cols-[1.35fr_1fr] sm:items-center sm:gap-4 sm:px-5 sm:py-3.5"
             >
               <div>

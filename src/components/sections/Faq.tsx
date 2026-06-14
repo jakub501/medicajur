@@ -46,7 +46,7 @@ export function Faq({
 
       {showCta && (
         <Link
-          href={href(locale, "patients")}
+          href={href(locale, "home", "patients")}
           className="text-body-sm mt-6 inline-flex min-h-11 items-center gap-1.5 font-bold text-primary transition-colors hover:text-primary-deep"
         >
           {f.cta}

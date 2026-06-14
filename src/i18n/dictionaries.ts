@@ -1,4 +1,5 @@
 import type { Locale } from "./config";
+import { pricingCategoriesSk } from "./pricing-categories";
 
 /* The Slovak dictionary is the canonical shape; English must match it. */
 
@@ -76,7 +77,7 @@ const sk = {
   patients: {
     eyebrow: "Prijímame nových pacientov",
     title: "Vitajte v našej ambulancii",
-    text: "O administratívu sa postaráme za vás. Prechod k nám je rýchly a bez stresu — odhlásenie od predchádzajúceho lekára vybavíme my.",
+    text: "O administratívu sa postaráme za vás. Prechod k nám je rýchly a bez stresu. Odhlásenie od predchádzajúceho lekára vybavíme my.",
     aboutCta: "O ambulancii",
     infoCta: "Informácie pre nových pacientov",
     callCta: "Zavolať",
@@ -164,7 +165,7 @@ const sk = {
         "ABI BOSO",
         "Holter BOSO TM2430",
         "CRP · Hb · iFOBT",
-        "Glukomer Accu Check",
+        "Glukomer Accu-Chek",
       ],
     },
     viewAll: "Podrobný výpis služieb",
@@ -173,27 +174,29 @@ const sk = {
       "Komplexná všeobecná starostlivosť o dospelých — od prevencie a POCT diagnostiky na počkanie až po e-recepty, konziliárne návrhy a výkony podľa cenníka.",
     scope: {
       title: "Rozsah poskytovaných služieb",
-      intro:
-        "Ambulancia poskytuje kompletnú zdravotnú starostlivosť v pôsobnosti všeobecného lekára pre dospelých pacientov.",
       groups: [
         {
           title: "Komplexná zdravotná starostlivosť",
           items: [
             {
+              icon: "stethoscope",
               title: "Všeobecná ambulantná starostlivosť",
-              text: "Prevencia, diagnostika a liečba akútnych aj chronických ochorení dospelých.",
+              text: "Komplexná starostlivosť v pôsobnosti všeobecného lekára — od vyšetrenia a liečby akútnych aj chronických ochorení až po odborné poradenstvo.",
             },
             {
+              icon: "syringe",
               title: "Preventívne prehliadky a očkovanie",
-              text: "Pravidelná prevencia a povinné či odporúčané očkovania.",
+              text: "Pravidelné preventívne prehliadky hradené poisťovňou vrátane povinných a odporúčaných očkovaní.",
             },
             {
+              icon: "clipboard-check",
               title: "Predoperačné vyšetrenia",
-              text: "Kompletná interná príprava pred plánovanými lekárskymi zákrokmi.",
+              text: "Kompletná predoperačná príprava a interné vyšetrenie pred plánovaným operačným zákrokom.",
             },
             {
+              icon: "shield-check",
               title: "Odborné poradenstvo",
-              text: "Konzultácie zdravotného stavu a vypracovanie odporúčaní na vyšetrenia k lekárom – špecialistom.",
+              text: "Konzultácie zdravotného stavu a vypracovanie odporúčaní na vyšetrenia u lekárov – špecialistov.",
             },
           ],
         },
@@ -201,8 +204,9 @@ const sk = {
           title: "Moderná diagnostika a odbery",
           items: [
             {
+              icon: "activity",
               title: "Odbery krvi a biologického materiálu",
-              text: "Rýchla laboratórna diagnostika priamo v ambulancii (výsledky z prístrojov už do niekoľkých minút).",
+              text: "Odbery priamo v ambulancii a rýchla diagnostika na počkanie pomocou moderného prístrojového vybavenia.",
             },
           ],
         },
@@ -210,14 +214,17 @@ const sk = {
           title: "Administratíva a e-Služby",
           items: [
             {
+              icon: "pill",
               title: "Elektronické zdravotníctvo (e-Health)",
-              text: "Vystavovanie e-receptov, elektronických žiadaniek a spracovanie e-laboratórnych výsledkov.",
+              text: "E-recept, e-lab a e-žiadanka — elektronická komunikácia s laboratóriami a špecialistami.",
             },
             {
+              icon: "file-text",
               title: "Potvrdenia a posudky",
-              text: "Vydávanie lekárskych potvrdení v súlade s platnou legislatívou (vodičské preukazy, zbrojné pasy, zamestnanie a pod.).",
+              text: "Vydávanie lekárskych potvrdení podľa platnej legislatívy — vodičské preukazy, zbrojné pasy, zamestnanie a ďalšie.",
             },
             {
+              icon: "file-text",
               title: "Výkony na žiadosť pacienta",
               text: "Služby nehradené zo zdravotného poistenia podľa platného cenníka ambulancie.",
               linkToPricing: true,
@@ -228,12 +235,14 @@ const sk = {
           title: "Komfort pre pacienta",
           items: [
             {
+              icon: "clock",
               title: "Online objednávanie na termín",
-              text: "Prostredníctvom online portálu Moji lekári",
+              text: "Objednávka termínu prostredníctvom online portálu Moji lekári.",
             },
             {
+              icon: "languages",
               title: "English speaking GP",
-              text: "Comprehensive medical examinations and consultations available fully in English.",
+              text: "Komplexné vyšetrenie a komunikácia s lekárom plne v anglickom jazyku.",
             },
           ],
         },
@@ -355,7 +364,7 @@ const sk = {
         {
           slug: "accu-chek",
           purpose: "Rýchle meranie hladiny cukru v krvi",
-          device: "Glukomer Accu Check",
+          device: "Glukomer Accu-Chek",
           detail: {
             image: "/images/equipment/accu-chek.png",
             imageAlt: "Glukomer Accu-Chek",
@@ -430,49 +439,24 @@ const sk = {
   pricing: {
     eyebrow: "Cenník",
     pageTitle: "Cenník výkonov",
+    pageLeadTitle: "Služby nad rámec zdravotného poistenia",
     pageLead:
-      "Výkony nehradené z verejného zdravotného poistenia — poskytujeme ich na žiadosť pacienta podľa platného cenníka ambulancie.",
-    note: "Výkony hradené zdravotnou poisťovňou pacient neplatí. Nižšie uvedené položky sú výkony na žiadosť pacienta (samoplatca). Ceny doplníme podľa aktuálneho cenníka ambulancie.",
+      "Všetky bežné liečebné a diagnostické úkony indikované lekárom sú pre našich poistených pacientov bezplatné. Spoplatnené sú len administratívne služby a vyšetrenia realizované na osobnú žiadosť pacienta (samoplatcu).",
     priceUnavailable: "podľa cenníka",
-    categories: [
-      {
-        title: "Potvrdenia a administratívne úkony",
-        items: [
-          { name: "Vyšetrenie a potvrdenie pre vodičský preukaz", price: "" },
-          { name: "Vyšetrenie a potvrdenie pre zbrojný preukaz", price: "" },
-          { name: "Potvrdenie o zdravotnom stave na žiadosť pacienta", price: "" },
-          { name: "Potvrdenie pre šport / športovú činnosť", price: "" },
-          { name: "Potvrdenie pre zamestnávateľa / brigádu na žiadosť", price: "" },
-          { name: "Výpis zo zdravotnej dokumentácie na žiadosť", price: "" },
-          { name: "Administratívny úkon (vyplnenie tlačiva, formulára)", price: "" },
-        ],
-      },
-      {
-        title: "Vyšetrenia na žiadosť pacienta",
-        items: [
-          { name: "Predoperačné vyšetrenie na žiadosť (samoplatca)", price: "" },
-          { name: "Komplexné preventívne vyšetrenie nad rámec poistenia", price: "" },
-          { name: "Vyšetrenie pre komerčné poistenie", price: "" },
-        ],
-      },
-      {
-        title: "Výkony a diagnostika na počkanie (POCT)",
-        items: [
-          { name: "EKG na žiadosť pacienta", price: "" },
-          { name: "ABI — vyšetrenie tepien dolných končatín", price: "" },
-          { name: "CRP — kvantitatívne vyšetrenie", price: "" },
-          { name: "Stanovenie hladiny hemoglobínu", price: "" },
-          { name: "iFOBT — stolica na okultné krvácanie", price: "" },
-          { name: "Aplikácia injekcie na žiadosť pacienta", price: "" },
-        ],
-      },
-    ],
+    categories: pricingCategoriesSk.map((category) => ({
+      title: category.title,
+      items: category.items.map((item) => ({ name: item.name, price: item.price })),
+    })),
+  },
+  existingPatients: {
+    eyebrow: "Pre registrovaných pacientov",
+    title: "Stávajúci pacienti",
   },
   erecept: {
     eyebrow: "Recepty a lieky",
     title: "Ako si vyžiadať e-recept",
     subtitle:
-      "Recept na vaše chronické lieky vybavíte na diaľku — vyberte si spôsob, ktorý vám vyhovuje.",
+      "Recept na vaše chronické lieky vybavíte na diaľku. Vyberte si spôsob, ktorý vám vyhovuje.",
     steps: [
       {
         title: "Cez aplikáciu Moji lekári",
@@ -487,7 +471,7 @@ const sk = {
         text: "Zavolajte počas ordinačných hodín — podľa dostupnosti sestier.",
       },
     ],
-    note: "E-recept príde elektronicky do ktorejkoľvek lekárne — pri výbere stačí nadiktovať rodné číslo. Lieky predpisujeme registrovaným pacientom.",
+    note: "E-recept príde elektronicky do ktorejkoľvek lekárne. Pri výbere stačí nadiktovať rodné číslo. Lieky predpisujeme registrovaným pacientom.",
   },
   hoursSection: {
     title: "Ordinačné hodiny",
@@ -545,80 +529,69 @@ const sk = {
     ],
   },
   about: {
-    eyebrow: "O ambulancii",
-    title: "O ambulancii a lekárovi",
-    lead: "MUDr. Pavol Trnovec, PhD. je všeobecný lekár pre dospelých a odborný zástupca ambulancie MEDICA JUR, s.r.o. vo Svätom Jure.",
-    bio: [
-      "MUDr. Pavol Trnovec, PhD. vyštudoval Jesseniovu lekársku fakultu Univerzity Komenského v Martine s vyznamenaním Summa cum laude. Pochádza zo Žiliny a vo Svätom Jure vedie ambulanciu všeobecného lekára pre dospelých od jari 2019.",
-      "Okrem klinickej praxe má bohaté skúsenosti z farmaceutického priemyslu, medzinárodného výskumu a verejného zdravotníctva. Ambulancia stavia na prevencii, presnej diagnostike a zrozumiteľnej komunikácii — aj v anglickom jazyku.",
-    ],
-    careerTitle: "Vzdelanie a profesionálna dráha",
-    bioSections: [
+    eyebrow: "O lekárovi",
+    title: "MUDr. Pavol Trnovec, PhD.",
+    lead: "Všeobecný lekár pre dospelých vo Svätom Jure",
+    profileCards: [
       {
-        title: "Vzdelanie",
-        paragraphs: [
-          "Študoval na Jesseniovej lekárskej fakulte Univerzity Komenského v Martine. Štúdium ukončil s vyznamenaním „Summa cum laude“.",
-          "V roku 2018 ukončil treťostupňové vysokoškolské štúdium na Slovenskej zdravotníckej univerzite, fakulte verejného zdravotníctva obhajobou práce „Liek v rukách lekára: vybrané a právne aspekty kategorizačného procesu v SR“ a bol mu udelený titul Doctor Philosophiae (PhD.).",
+        title: "Vzdelanie a kvalifikácia",
+        qualifications: [
+          {
+            label: "MUDr.",
+            text: "Štúdium na Jesseniovej lekárskej fakulte UK v Martine ukončil s najvyšším vyznamenaním „Summa cum laude“.",
+          },
+          {
+            label: "PhD.",
+            text: "V roku 2018 úspešne obhájil doktorandskú prácu na Fakulte verejného zdravotníctva SZU so zameraním na právne aspekty kategorizácie liekov na Slovensku.",
+          },
+          {
+            label: "Atestácia",
+            text: "V rovnakom roku úspešne zložil špecializačnú skúšku z odboru všeobecné lekárstvo pre dospelých a vrátil sa k priamej klinickej praxi.",
+          },
         ],
       },
       {
-        title: "Lekárska a profesionálna prax",
+        title: "Profesionálna a medicínska prax",
         paragraphs: [
-          "Po skončení vysokoškolského štúdia pracoval na internom oddelení NsP Trstená ako sekundárny lekár a vo farmaceutických spoločnostiach Eli Lilly a GSK na pozíciách farmaceutického zástupcu, výskumného pracovníka, medicínskeho riaditeľa, riaditeľa pre endokrinológiu, onkológiu a ženské zdravie, korporátnych záležitostí a ako generálny riaditeľ na Slovensku, v Rakúsku a USA.",
+          "Svoje prvé klinické skúsenosti získal na záchrannej službe, oddelení ARO a neskôr ako sekundárny lekár na internom oddelení v NsP Trstená.",
+          "Následne pôsobil viac ako dve desaťročia na najvyšších pozíciách vo farmaceutickom priemysle (Eli Lilly, GSK). Viedol klinický výskum nového inzulínu vo Viedni a neskôr pracoval priamo v centrále v Indianapolise (USA), kde zodpovedal za globálne stratégie pre nové liečivá v oblasti onkológie a neurológie. Po rokoch v biznise sa z vlastného presvedčenia rozhodol vrátiť k tomu, čo ho napĺňa najviac – k priamej práci s pacientom v ambulancii.",
         ],
       },
       {
-        title: "Medzinárodné pôsobenie",
+        title: "Filozofia liečby a prístup k pacientovi",
         paragraphs: [
-          "V zahraničí pracoval 3 roky najprv ako koordinátor klinického výskumu nového inzulínu, prvého analógu ľudského inzulínu vo Viedni, Rakúsko pre krajiny: Slovenská republika, Slovinsko, Rumunsko, Bulharsko, Ruská federácia a Turecko.",
-          "Neskôr pracoval v centrále spoločnosti Eli Lilly v Indianapolise, štát Indiana, USA vo výskume a marketingu v onkológii — rakovina pľúc, močového mechúra a ochoreniach centrálneho nervového systému — schizofrénia.",
+          "Znalosť farmaceutického prostredia z najvyšších poschodí mu dáva jedinečný pohľad na súčasnú medicínu. Vo svojej ambulancii bojuje proti trendu nadmerného predpisovania liekov, ktoré pacientom často neprinášajú adekvátnu hodnotu. Zakladá si na tom, aby pacient dostal len tú liečbu, ktorú skutočne potrebuje a ktorej prínos je vedecky podložený. Medicínu vníma nielen cez laboratórne výsledky, ale aj cez dôležitosť ľudského rozhovoru, vzájomnej dôvery a úcty v komunite.",
         ],
       },
       {
-        title: "Verejný sektor a ocenenia",
+        title: "Ocenenia, etika a filantropia",
         paragraphs: [
-          "Počas práce vo farmaceutickom priemysle bol vyše 5 rokov členom predsedníctva, podpredsedom či prezidentom asociácie spoločností SAFS, LAWG. Bol tiež zvolený do výboru BRITCHAM – britskej obchodnej komory.",
-          "Za spoločnosti, ktoré reprezentoval, obdržal viaceré ocenenia v oblasti filantropie a dobrovoľníctva: Top firemný filantrop a VIA BONA. Spolupracoval s n.o. Plamienok a Druhý krok, n.o.",
+          "Počas svojho manažérskeho pôsobenia aktívne presadzoval etický prístup v podnikaní. Zastával funkciu šéfa Slovenskej asociácie farmaceutických spoločností (SAFS) a bol členom výboru Britskej obchodnej komory. Spoločnosti pod jeho vedením získali prestížne ocenenia Top firemný filantrop a Via Bona. Dlhodobo a aktívne spolupracoval s neziskovými organizáciami Plamienok a Druhý krok, ktoré pomáhajú deťom a ľuďom v ťažkých životných situáciách.",
         ],
-      },
-      {
-        title: "Ambulancia vo Svätom Jure",
-        paragraphs: [
-          "Od jari 2019 vedie ambulanciu všeobecného lekára pre dospelých vo Svätom Jure. Kladie dôraz na prevenciu, presnú diagnostiku s využitím moderného prístrojového vybavenia a individuálny prístup ku každému pacientovi.",
-        ],
-      },
-    ],
-    valuesTitle: "Na čom nám záleží",
-    values: [
-      {
-        title: "Čas pre pacienta",
-        text: "Objednávkový systém znižuje čakanie a dáva priestor na dôkladné vyšetrenie.",
-        icon: "clock",
-      },
-      {
-        title: "Moderné vybavenie",
-        text: "Ambulancia je vybavená prístrojmi pre rýchlu diagnostiku priamo na mieste.",
-        icon: "activity",
-      },
-      {
-        title: "Prevencia na prvom mieste",
-        text: "Zameriavame sa na včasný záchyt a dlhodobé zdravie.",
-        icon: "shield-check",
-      },
-      {
-        title: "Individuálny prístup",
-        text: "Ku každému pacientovi pristupujeme osobne a s dostatkom času na vysvetlenie.",
-        icon: "clipboard-check",
       },
     ],
     facilityTitle: "Naše priestory",
     facilityText:
       "Ambulancia sa nachádza v novej polyfunkčnej budove s bezbariérovým prístupom a parkovaním v tesnej blízkosti.",
-    stats: {
-      years: "Rokov samostatnej praxe",
-      insurers: "Zmluvné poisťovne",
-      languages: "Jazyky (SK · EN)",
-    },
+    highlights: [
+      { icon: "stethoscope", text: "Všeobecný lekár pre dospelých" },
+      { icon: "globe", text: "Titul PhD. a medzinárodná prax z USA a Rakúska" },
+      { icon: "pill", text: "Cielená liečba bez zbytočných liekov" },
+      { icon: "languages", text: "English-speaking GP" },
+    ],
+  },
+  aboutBanner: {
+    eyebrow: "O lekárovi",
+    title: "MUDr. Pavol Trnovec, PhD.",
+    subtitle: "Všeobecný lekár pre dospelých",
+    text: "Lekár, ktorý vymenil úspešnú kariéru vo vrcholovom manažmente medzinárodných farmaceutických spoločností za priamu pomoc pacientom. Svoje dlhoročné skúsenosti z klinického výskumu v USA a Rakúsku dnes pretavuje do poctivej medicíny vo vlastnej ambulancii. Jeho prioritou je presná diagnostika, otvorená komunikácia a racionálna liečba, pri ktorej je na prvom mieste človek, nie zbytočné množstvo liekov.",
+    highlights: [
+      { icon: "stethoscope", text: "Všeobecný lekár pre dospelých" },
+      { icon: "globe", text: "Titul PhD. a medzinárodná prax z USA a Rakúska" },
+      { icon: "pill", text: "Cielená liečba bez zbytočných liekov" },
+      { icon: "languages", text: "English-speaking GP" },
+    ],
+    cta: "Viac o lekárovi",
   },
   faq: {
     eyebrow: "Otázky pacientov",
@@ -892,25 +865,27 @@ const en: Dictionary = {
       "Comprehensive general care for adults — from prevention and on-site POCT diagnostics to e-prescriptions, referral proposals and fee-based services.",
     scope: {
       title: "Scope of services",
-      intro:
-        "The practice provides complete healthcare within the scope of a general practitioner for adult patients.",
       groups: [
         {
           title: "Comprehensive healthcare",
           items: [
             {
+              icon: "stethoscope",
               title: "General outpatient care",
-              text: "Prevention, diagnostics and treatment of acute and chronic conditions in adults.",
+              text: "Comprehensive care within the scope of a GP — from examination and treatment of acute and chronic conditions to professional counselling.",
             },
             {
+              icon: "syringe",
               title: "Preventive check-ups and vaccination",
-              text: "Regular prevention and mandatory or recommended vaccinations.",
+              text: "Regular preventive check-ups covered by insurance, including mandatory and recommended vaccinations.",
             },
             {
+              icon: "clipboard-check",
               title: "Pre-operative examinations",
-              text: "Complete internal preparation before planned medical procedures.",
+              text: "Complete pre-operative preparation and internal assessment before a planned surgical procedure.",
             },
             {
+              icon: "shield-check",
               title: "Professional counselling",
               text: "Health consultations and preparation of referral recommendations for specialist examinations.",
             },
@@ -920,8 +895,9 @@ const en: Dictionary = {
           title: "Modern diagnostics and sampling",
           items: [
             {
+              icon: "activity",
               title: "Blood and biological material sampling",
-              text: "Rapid laboratory diagnostics in the practice (device results within minutes).",
+              text: "On-site sampling and rapid point-of-care diagnostics using modern medical equipment.",
             },
           ],
         },
@@ -929,14 +905,17 @@ const en: Dictionary = {
           title: "Administration and e-Services",
           items: [
             {
+              icon: "pill",
               title: "Electronic healthcare (e-Health)",
-              text: "E-prescriptions, electronic referrals and processing of e-laboratory results.",
+              text: "E-prescriptions, e-lab and e-referrals — electronic communication with laboratories and specialists.",
             },
             {
+              icon: "file-text",
               title: "Certificates and assessments",
-              text: "Issuing medical certificates in accordance with applicable legislation (driving licences, firearms permits, employment and more).",
+              text: "Medical certificates in accordance with applicable legislation — driving licences, firearms permits, employment and more.",
             },
             {
+              icon: "file-text",
               title: "Services on patient request",
               text: "Services not covered by health insurance according to the practice price list.",
               linkToPricing: true,
@@ -947,12 +926,14 @@ const en: Dictionary = {
           title: "Patient comfort",
           items: [
             {
+              icon: "clock",
               title: "Online appointment booking",
-              text: "Coming soon.",
+              text: "Book appointments through the Moji lekári online portal.",
             },
             {
+              icon: "languages",
               title: "English speaking GP",
-              text: "Full examination and communication available in English.",
+              text: "Full examination and communication with the doctor in English.",
             },
           ],
         },
@@ -1149,43 +1130,18 @@ const en: Dictionary = {
   pricing: {
     eyebrow: "Pricing",
     pageTitle: "Price list",
+    pageLeadTitle: "Services beyond health insurance",
     pageLead:
-      "Services not covered by public health insurance — provided at the patient's request according to the practice's current price list.",
-    note: "Services covered by health insurance are free of charge for the patient. The items below are services provided at the patient's request (self-pay). Prices will be completed according to the practice's current price list.",
+      "All routine treatment and diagnostic procedures indicated by the doctor are free of charge for our insured patients. Only administrative services and examinations provided at the patient's personal request (self-pay) are charged.",
     priceUnavailable: "on request",
-    categories: [
-      {
-        title: "Certificates and administrative tasks",
-        items: [
-          { name: "Examination and certificate for a driving licence", price: "" },
-          { name: "Examination and certificate for a firearms licence", price: "" },
-          { name: "Health status certificate at the patient's request", price: "" },
-          { name: "Certificate for sport / physical activity", price: "" },
-          { name: "Certificate for an employer / part-time work on request", price: "" },
-          { name: "Extract from medical records on request", price: "" },
-          { name: "Administrative task (completing a form)", price: "" },
-        ],
-      },
-      {
-        title: "Examinations at the patient's request",
-        items: [
-          { name: "Pre-operative examination on request (self-pay)", price: "" },
-          { name: "Comprehensive preventive examination beyond insurance cover", price: "" },
-          { name: "Examination for commercial insurance", price: "" },
-        ],
-      },
-      {
-        title: "On-site procedures and diagnostics (POCT)",
-        items: [
-          { name: "ECG at the patient's request", price: "" },
-          { name: "ABI — examination of lower-limb arteries", price: "" },
-          { name: "CRP — quantitative test", price: "" },
-          { name: "Haemoglobin level measurement", price: "" },
-          { name: "iFOBT — faecal occult blood test", price: "" },
-          { name: "Injection administered at the patient's request", price: "" },
-        ],
-      },
-    ],
+    categories: pricingCategoriesSk.map((category) => ({
+      title: category.title,
+      items: category.items.map((item) => ({ name: item.name, price: item.price })),
+    })),
+  },
+  existingPatients: {
+    eyebrow: "For registered patients",
+    title: "Existing patients",
   },
   erecept: {
     eyebrow: "Prescriptions & medication",
@@ -1264,80 +1220,69 @@ const en: Dictionary = {
     ],
   },
   about: {
-    eyebrow: "About the practice",
-    title: "About the practice & doctor",
-    lead: "MUDr. Pavol Trnovec, PhD. is a general practitioner for adults and the professional representative of the MEDICA JUR, s.r.o. practice in Svätý Jur.",
-    bio: [
-      "MUDr. Pavol Trnovec, PhD. graduated from the Jessenius Faculty of Medicine of Comenius University in Martin with Summa cum laude honours. He comes from Žilina and has been leading the general practice for adults in Svätý Jur since spring 2019.",
-      "Beyond clinical practice, he has extensive experience in the pharmaceutical industry, international research and public health. The practice focuses on prevention, accurate diagnostics and clear communication — including in English.",
-    ],
-    careerTitle: "Education and professional career",
-    bioSections: [
+    eyebrow: "Your doctor",
+    title: "MUDr. Pavol Trnovec, PhD.",
+    lead: "General practitioner for adults in Svätý Jur",
+    profileCards: [
       {
-        title: "Education",
-        paragraphs: [
-          "He studied at the Jessenius Faculty of Medicine of Comenius University in Martin, graduating with Summa cum laude honours.",
-          "In 2018 he completed his doctoral studies at the Faculty of Public Health of the Slovak Medical University, defending the thesis \"The drug in the doctor's hands: selected legal aspects of the categorisation process in the Slovak Republic\", and was awarded the degree Doctor Philosophiae (PhD).",
+        title: "Education and qualifications",
+        qualifications: [
+          {
+            label: "MD",
+            text: "He graduated from the Jessenius Faculty of Medicine of Comenius University in Martin with the highest honours, Summa cum laude.",
+          },
+          {
+            label: "PhD",
+            text: "In 2018 he successfully defended his doctoral thesis at the Faculty of Public Health of the Slovak Medical University, focusing on the legal aspects of drug categorisation in Slovakia.",
+          },
+          {
+            label: "Board certification",
+            text: "In the same year he passed his specialist examination in general practice for adults and returned to direct clinical work.",
+          },
         ],
       },
       {
-        title: "Medical and professional experience",
+        title: "Professional and medical experience",
         paragraphs: [
-          "After completing his university studies, he worked at the internal medicine department of Trstená Hospital as a secondary physician and at pharmaceutical companies Eli Lilly and GSK in roles including pharmaceutical representative, research associate, medical director, director for endocrinology, oncology and women's health, corporate affairs and general manager in Slovakia, Austria and the USA.",
+          "He gained his first clinical experience in emergency services, the ICU and later as a secondary physician on the internal medicine ward at Trstená Hospital.",
+          "He then spent more than two decades in senior roles in the pharmaceutical industry (Eli Lilly, GSK). He led clinical research into a new insulin in Vienna and later worked at headquarters in Indianapolis (USA), where he was responsible for global strategies for new medicines in oncology and neurology. After years in business, he chose of his own conviction to return to what fulfils him most — direct work with patients in his practice.",
         ],
       },
       {
-        title: "International experience",
+        title: "Treatment philosophy and approach to patients",
         paragraphs: [
-          "Abroad, he spent 3 years first as coordinator of clinical research into a new insulin — the first human insulin analogue — in Vienna, Austria, covering Slovakia, Slovenia, Romania, Bulgaria, the Russian Federation and Turkey.",
-          "He later worked at Eli Lilly headquarters in Indianapolis, Indiana, USA in research and marketing in oncology — lung and bladder cancer — and central nervous system disorders, including schizophrenia.",
+          "His knowledge of the pharmaceutical environment at the highest level gives him a unique perspective on modern medicine. In his practice he pushes back against the trend of excessive prescribing of medicines that often bring patients inadequate value. He believes patients should receive only the treatment they truly need and whose benefit is scientifically supported. He sees medicine not only through laboratory results, but also through the importance of human conversation, mutual trust and respect in the community.",
         ],
       },
       {
-        title: "Public sector and awards",
+        title: "Awards, ethics and philanthropy",
         paragraphs: [
-          "During his career in the pharmaceutical industry, he served for over 5 years on the board, as vice-chairman or president of the SAFS and LAWG association of companies. He was also elected to the board of BRITCHAM — the British Chamber of Commerce.",
-          "On behalf of the companies he represented, he received several awards for philanthropy and volunteering: Top Corporate Philanthropist and VIA BONA. He collaborated with NGOs Plamienok and Druhý krok.",
+          "During his management career he actively promoted an ethical approach to business. He served as head of the Slovak Association of Pharmaceutical Companies (SAFS) and was a board member of the British Chamber of Commerce. Companies under his leadership received prestigious Top Corporate Philanthropist and Via Bona awards. He has long worked actively with NGOs Plamienok and Druhý krok, which help children and people in difficult life situations.",
         ],
-      },
-      {
-        title: "Practice in Svätý Jur",
-        paragraphs: [
-          "Since spring 2019 he has been leading a general practice for adults in Svätý Jur, with an emphasis on prevention, accurate diagnostics using modern equipment and an individual approach to every patient.",
-        ],
-      },
-    ],
-    valuesTitle: "What we care about",
-    values: [
-      {
-        title: "Time for the patient",
-        text: "An appointment system reduces waiting and allows for a thorough examination.",
-        icon: "clock",
-      },
-      {
-        title: "Modern equipment",
-        text: "The practice is equipped for rapid on-site diagnostics.",
-        icon: "activity",
-      },
-      {
-        title: "Prevention first",
-        text: "We focus on early detection and long-term health.",
-        icon: "shield-check",
-      },
-      {
-        title: "Individual approach",
-        text: "We treat every patient personally, with enough time to explain everything clearly.",
-        icon: "clipboard-check",
       },
     ],
     facilityTitle: "Our premises",
     facilityText:
       "The practice is located in a new multi-functional building with step-free access and parking nearby.",
-    stats: {
-      years: "Years in independent practice",
-      insurers: "Contracted insurers",
-      languages: "Languages (SK · EN)",
-    },
+    highlights: [
+      { icon: "stethoscope", text: "General practitioner for adults" },
+      { icon: "globe", text: "PhD degree and international practice in the USA and Austria" },
+      { icon: "pill", text: "Targeted treatment without unnecessary medication" },
+      { icon: "languages", text: "English-speaking GP" },
+    ],
+  },
+  aboutBanner: {
+    eyebrow: "Your doctor",
+    title: "MUDr. Pavol Trnovec, PhD.",
+    subtitle: "General practitioner for adults",
+    text: "A doctor who traded a successful career in senior management at international pharmaceutical companies for direct patient care. He now brings his long-standing experience from clinical research in the USA and Austria into honest, hands-on medicine in his own practice. His priority is accurate diagnostics, open communication and rational treatment that puts the person first — not unnecessary quantities of medication.",
+    highlights: [
+      { icon: "stethoscope", text: "General practitioner for adults" },
+      { icon: "globe", text: "PhD degree and international practice in the USA and Austria" },
+      { icon: "pill", text: "Targeted treatment without unnecessary medication" },
+      { icon: "languages", text: "English-speaking GP" },
+    ],
+    cta: "More about the doctor",
   },
   faq: {
     eyebrow: "Patient questions",

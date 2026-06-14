@@ -13,7 +13,6 @@ export const routes = {
   services: { sk: "sluzby", en: "services" },
   pricing: { sk: "cennik", en: "pricing" },
   hours: { sk: "ordinacne-hodiny", en: "opening-hours" },
-  patients: { sk: "pre-pacientov", en: "for-patients" },
   contact: { sk: "kontakt", en: "contact" },
   privacy: { sk: "ochrana-osobnych-udajov", en: "privacy-policy" },
   cookies: { sk: "cookies", en: "cookies" },
@@ -56,7 +55,6 @@ export const contentRouteKeys: RouteKey[] = [
   "services",
   "pricing",
   "hours",
-  "patients",
   "contact",
   "privacy",
   "cookies",
@@ -71,21 +69,25 @@ export function resolveRouteKey(locale: Locale, slug: string): RouteKey | null {
 
 /** Translate the current pathname into the equivalent path for another locale. */
 export function switchLocalePath(pathname: string, target: Locale): string {
-  const segments = pathname.split("/").filter(Boolean);
+  const hashIndex = pathname.indexOf("#");
+  const hash = hashIndex >= 0 ? pathname.slice(hashIndex) : "";
+  const pathOnly = hashIndex >= 0 ? pathname.slice(0, hashIndex) : pathname;
+
+  const segments = pathOnly.split("/").filter(Boolean);
   const current = segments[0] as Locale;
   const rest = segments.slice(1);
-  if (!rest.length) return `/${target}`;
+  if (!rest.length) return `/${target}${hash}`;
 
   if (rest[0] === routes.services[current] && rest.length > 1) {
-    return `/${target}/${routes.services[target]}/${rest.slice(1).join("/")}`;
+    return `/${target}/${routes.services[target]}/${rest.slice(1).join("/")}${hash}`;
   }
 
   const restJoined = rest.join("/");
   for (const key of Object.keys(routes) as RouteKey[]) {
     if (routes[key][current] === restJoined) {
       const targetSlug = routes[key][target];
-      return targetSlug ? `/${target}/${targetSlug}` : `/${target}`;
+      return targetSlug ? `/${target}/${targetSlug}${hash}` : `/${target}${hash}`;
     }
   }
-  return `/${target}/${restJoined}`;
+  return `/${target}/${restJoined}${hash}`;
 }

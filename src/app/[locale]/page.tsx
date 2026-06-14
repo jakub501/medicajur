@@ -3,9 +3,10 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/sections/Hero";
 import { Trust } from "@/components/sections/Trust";
-import { NewPatients } from "@/components/sections/NewPatients";
-import { Erecept } from "@/components/sections/Erecept";
+import { BecomePatientSection } from "@/components/sections/BecomePatientSection";
+import { ExistingPatientsSection } from "@/components/sections/ExistingPatientsSection";
 import { ServicesBento } from "@/components/sections/ServicesBento";
+import { AboutPracticeBanner } from "@/components/sections/AboutPracticeBanner";
 import { Faq } from "@/components/sections/Faq";
 import { ContactHoursSection } from "@/components/sections/ContactHoursSection";
 
@@ -28,13 +29,16 @@ export default async function HomePage({
         <ServicesBento locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
-        <NewPatients locale={loc} dict={dict} />
+        <BecomePatientSection dict={dict} />
       </Reveal>
       <Reveal>
-        <Erecept dict={dict} />
+        <ExistingPatientsSection dict={dict} />
       </Reveal>
       <Reveal>
-        <Faq locale={loc} dict={dict} items={dict.faq.items} showCta />
+        <AboutPracticeBanner locale={loc} dict={dict} />
+      </Reveal>
+      <Reveal>
+        <Faq locale={loc} dict={dict} items={dict.faq.items} />
       </Reveal>
       <ContactHoursSection dict={dict} />
     </>

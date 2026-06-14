@@ -157,7 +157,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <span>{dict.hero.primaryCta}</span>
               </ButtonAnchor>
               <ButtonLink
-                href={href(locale, "patients")}
+                href={href(locale, "home", "patients")}
                 variant="secondary"
                 size="md"
                 className="w-full justify-center px-5 sm:px-6"
