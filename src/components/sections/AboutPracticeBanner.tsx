@@ -20,30 +20,7 @@ export function AboutPracticeBanner({
   const b = dict.aboutBanner;
 
   return (
-    <Section id="about" className="relative overflow-hidden bg-surface py-12 sm:py-16">
-      <span
-        className="orb"
-        style={{
-          width: 300,
-          height: 300,
-          top: -80,
-          right: -60,
-          background: "rgba(21,99,156,0.09)",
-        }}
-        aria-hidden="true"
-      />
-      <span
-        className="orb"
-        style={{
-          width: 220,
-          height: 220,
-          bottom: -60,
-          left: -40,
-          background: "rgba(46,158,107,0.07)",
-        }}
-        aria-hidden="true"
-      />
-
+    <Section id="about" className="py-12 sm:py-16">
       <div className="relative mx-auto max-w-5xl animate-rise">
         <div className="trust-quote-panel overflow-hidden">
           <div className="grid items-stretch lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)]">

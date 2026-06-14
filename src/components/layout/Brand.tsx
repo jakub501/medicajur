@@ -19,7 +19,7 @@ export function Brand({
   if (compact) {
     return (
       <span className="font-serif text-[1.125rem] font-semibold tracking-[0.01em] text-primary sm:text-[1.2rem]">
-        {SITE.brand}
+        {brand}
       </span>
     );
   }

@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const STICKY_HEADER_GAP = 28;
 
 function getStickyHeaderHeight() {
-  return document.querySelector<HTMLElement>(".site-header")?.offsetHeight ?? 72;
+  return document.querySelector<HTMLElement>(".site-chrome")?.offsetHeight ?? 126;
 }
 
 function getScrollOffset(el: HTMLElement) {

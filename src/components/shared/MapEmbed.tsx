@@ -15,7 +15,7 @@ export function MapEmbed({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-[13px] border border-line",
+        "h-full overflow-hidden rounded-[14px] border border-line/80 bg-surface",
         className,
       )}
     >

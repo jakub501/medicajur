@@ -49,7 +49,7 @@ const sk = {
     titleLine1: "MUDr. Pavol Trnovec, PhD.",
     titleLine2Prefix: "Ambulancia všeobecného lekára ",
     titleHighlight: "vo Svätom Jure",
-    lead: "Prevencia, POCT diagnostika na počkanie a liečba chronických ochorení. Objednávkový systém a komunikácia aj v angličtine.",
+    lead: "Moderná starostlivosť o vaše zdravie, rýchla diagnostika na počkanie a individuálny prístup. Samozrejmosťou je online objednávanie na termín a kompletné vyšetrenia aj v anglickom jazyku.",
     insurersLabel: "Zmluvné poisťovne:",
     languagesBadge: "SK · EN",
     primaryCta: "Objednať sa",
@@ -600,32 +600,36 @@ const sk = {
     cta: "Viac informácií pre nových pacientov",
     items: [
       {
-        q: "Ako sa objednať na vyšetrenie?",
-        a: "Registrovaní pacienti sa objednávajú cez portál Moji lekári. Noví pacienti nás môžu kontaktovať telefonicky počas ordinačných hodín alebo prísť osobne s podpísanou dohodou o poskytovaní zdravotnej starostlivosti.",
-      },
-      {
         q: "Prijímate nových pacientov?",
-        a: "Áno. Stačí vyplniť a podpísať dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju do ambulancie počas ordinačných hodín. O odhlásenie od predchádzajúceho lekára sa postaráme my.",
+        a: "Áno, aktuálne prijímame nových pacientov. Pre registráciu stačí vyplniť a podpísať Dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju k nám do ambulancie alebo vám ju vydáme priamo v ambulancii. O kompletné odhlásenie od vášho predchádzajúceho všeobecného lekára a prenos dokumentácie sa kompletne postaráme my.",
       },
       {
-        q: "Čo priniesť na prvú návštevu?",
-        a: "Občiansky preukaz, preukaz zdravotného poistenia, podpísanú dohodu o poskytovaní zdravotnej starostlivosti a zoznam užívaných liekov. Ak máte zdravotnú dokumentáciu od predchádzajúceho lekára, prineste ju tiež.",
+        q: "Ako sa môžem objednať na vyšetrenie?",
+        a: "Registrovaní pacienti: Na presný čas sa pohodlne objednávate online prostredníctvom pacientskeho portálu Moji lekári.\n\nNoví (neregistrovaní) pacienti: Kontaktujte nás, prosím, telefonicky, prostredníctvom e-mailu počas ordinačných hodín alebo nás navštívte osobne priamo v ambulancii.",
       },
       {
-        q: "Ako si objednám e-recept?",
-        a: "Registrovaní pacienti objednávajú lieky a e-recepty výhradne cez portál Moji lekári. Prístup získate na základe pozvánky, ktorú vám zašle lekár na e-mail po registrácii.",
+        q: "Ako si môžem požiadať o e-recept na lieky?",
+        a: "Registrovaní pacienti si predpis dlhodobo užívaných liekov vyžadujú výhradne elektronicky cez portál Moji lekári. Tento systém zrýchľuje vybavovanie a necháva lekárovi viac času na pacientov v ambulancii. Prístup do portálu získate automaticky formou e-mailovej pozvánky po vašej registrácii u nás.",
       },
       {
-        q: "Kedy prísť s akútnym stavom?",
-        a: "Akútne stavy ošetrujeme v časoch na to vyhradených — pozrite si dnešný čas akútnej ordinačnej služby v tabuľke hodín. Pri vážnych príznakoch volajte 155.",
+        q: "Čo si mám priniesť na prvú návštevu?",
+        a: "Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\nAk máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.\n\nOdporúčame taktiež priniesť podpísanú dohodu o registrácii; v prípade potreby ju možno spísať rovno v ambulancii.",
       },
       {
-        q: "Kde zaparkujem pri ambulancii?",
-        a: "Parkovanie je možné pri polyfunkčnej budove Kačačnice na Muškátovej 2. Vstup do ambulancie je na 1. poschodí nad lekárňou Vitalita, s bezbariérovým prístupom cez výťah.",
+        q: "Ako postupovať v prípade akútneho ochorenia?",
+        a: "Akútne stavy (napr. náhle vysoké horúčky, silné bolesti, akútne infekcie) ošetrujeme bez objednania vo vyhradených hodinách na začiatku ordinačnej doby – presný čas nájdete v tabuľke ordinačných hodín.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
       },
       {
-        q: "S ktorými poisťovňami máte zmluvu?",
-        a: "Máme zmluvu so všetkými zdravotnými poisťovňami pôsobiacimi na Slovensku — VšZP, Dôvera a Union.",
+        q: "S ktorými zdravotnými poisťovňami máte zmluvu?",
+        a: "Sme zmluvným partnerom všetkých zdravotných poisťovní na Slovensku. Poistenci VšZP, Dôvera aj Union majú u nás štandardnú zdravotnú starostlivosť a preventívne prehliadky plne hradené.",
+      },
+      {
+        q: "Platí sa u vás za vyšetrenia na moderných prístrojoch?",
+        a: "Ak máte zdravotné ťažkosti a vyšetrenie indikuje lekár, neplatíte nič. Všetky diagnostické úkony potrebné na určenie správnej liečby sú pre našich kapitovaných pacientov plne hradené z verejného zdravotného poistenia.\n\nNaším štandardom je však poskytovať nadštandardnú preventívnu starostlivosť a maximálny komfort, čo si vyžaduje investície do špičkových technológií a personálneho zabezpečenia. Preto poskytujeme ročné predplatné balíky služieb, vďaka ktorým dokážeme zabezpečiť hĺbkovú prevenciu a moderný manažment zdravia na najvyššej úrovni:\n\n• Prehľadný klientsky servis: Súčasťou ročného predplatného sú nezdravotnícke služby ako recepcia, call centrum, komfortné SMS a e-mailové notifikácie či plný prístup do pacientskeho portálu Moji lekári na 12 mesiacov.\n\n• Prémiová prevencia a Health Coaching: V rámci predplateného balíka (programy ZDRAVIE za 50 € alebo ZDRAVIE+ za 100 €) získavate pravidelnú preventívnu diagnostiku nad rámec bežného poistenia. Tá zahŕňa detailnú analýzu zloženia tela (prístrojmi TANITA alebo InBODY 970), meranie priechodnosti tepien (ABI), analýzu cievneho a metabolického veku (Maxpulse, MESI EKG) a odborné zdravotné poradenstvo (health coaching).\n\nSpoplatnené sú len vyšetrenia vykonané výhradne na vašu vlastnú žiadosť mimo týchto balíkov (napr. zo zvedavosti) alebo úkony pre potreby zamestnávateľa a administratívy podľa platného cenníka.",
+      },
+      {
+        q: "Ako sa k vám dostanem a kde môžem zaparkovať?",
+        a: "Ambulancia sa nachádza v polyfunkčnej budove Kačačnice na Muškátovej ulici 2 vo Svätom Jure. Pohodlne zaparkovať môžete priamo pri budove. Vstup do ambulancie nájdete na 1. poschodí (priamo nad lekárňou Vitalita) a prístup je plne bezbariérový vďaka dostupnému výťahu.",
       },
     ],
   },
@@ -648,19 +652,35 @@ const sk = {
     faq: [
       {
         q: "Prijímate nových pacientov?",
-        a: "Áno, prijímame nových pacientov. Stačí vyplniť a podpísať dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju do ambulancie počas ordinačných hodín.",
+        a: "Áno, aktuálne prijímame nových pacientov. Pre registráciu stačí vyplniť a podpísať Dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju k nám do ambulancie alebo vám ju vydáme priamo v ambulancii. O kompletné odhlásenie od vášho predchádzajúceho všeobecného lekára a prenos dokumentácie sa kompletne postaráme my.",
       },
       {
-        q: "Ako si objednám e-recept?",
-        a: "Registrovaní pacienti si objednávajú lieky a e-recepty cez portál Moji lekári. Prístup získate na základe pozvánky, ktorú vám zašle lekár na e-mail.",
+        q: "Ako sa môžem objednať na vyšetrenie?",
+        a: "Registrovaní pacienti: Na presný čas sa pohodlne objednávate online prostredníctvom pacientskeho portálu Moji lekári.\n\nNoví (neregistrovaní) pacienti: Kontaktujte nás, prosím, telefonicky, prostredníctvom e-mailu počas ordinačných hodín alebo nás navštívte osobne priamo v ambulancii.",
       },
       {
-        q: "Kedy prebiehajú odbery krvi?",
-        a: "Odbery krvi sa realizujú v ranných hodinách. Na odber sa, prosím, objednajte vopred.",
+        q: "Ako si môžem požiadať o e-recept na lieky?",
+        a: "Registrovaní pacienti si predpis dlhodobo užívaných liekov vyžadujú výhradne elektronicky cez portál Moji lekári. Tento systém zrýchľuje vybavovanie a necháva lekárovi viac času na pacientov v ambulancii. Prístup do portálu získate automaticky formou e-mailovej pozvánky po vašej registrácii u nás.",
       },
       {
-        q: "S ktorými poisťovňami máte zmluvu?",
-        a: "Máme zmluvu so všetkými zdravotnými poisťovňami pôsobiacimi na Slovensku — VšZP, Dôvera a Union.",
+        q: "Čo si mám priniesť na prvú návštevu?",
+        a: "Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\nAk máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.\n\nOdporúčame taktiež priniesť podpísanú dohodu o registrácii; v prípade potreby ju možno spísať rovno v ambulancii.",
+      },
+      {
+        q: "Ako postupovať v prípade akútneho ochorenia?",
+        a: "Akútne stavy (napr. náhle vysoké horúčky, silné bolesti, akútne infekcie) ošetrujeme bez objednania vo vyhradených hodinách na začiatku ordinačnej doby – presný čas nájdete v tabuľke ordinačných hodín.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
+      },
+      {
+        q: "S ktorými zdravotnými poisťovňami máte zmluvu?",
+        a: "Sme zmluvným partnerom všetkých zdravotných poisťovní na Slovensku. Poistenci VšZP, Dôvera aj Union majú u nás štandardnú zdravotnú starostlivosť a preventívne prehliadky plne hradené.",
+      },
+      {
+        q: "Platí sa u vás za vyšetrenia na moderných prístrojoch?",
+        a: "Ak máte zdravotné ťažkosti a vyšetrenie indikuje lekár, neplatíte nič. Všetky diagnostické úkony potrebné na určenie správnej liečby sú pre našich kapitovaných pacientov plne hradené z verejného zdravotného poistenia.\n\nNaším štandardom je však poskytovať nadštandardnú preventívnu starostlivosť a maximálny komfort, čo si vyžaduje investície do špičkových technológií a personálneho zabezpečenia. Preto poskytujeme ročné predplatné balíky služieb, vďaka ktorým dokážeme zabezpečiť hĺbkovú prevenciu a moderný manažment zdravia na najvyššej úrovni:\n\n• Prehľadný klientsky servis: Súčasťou ročného predplatného sú nezdravotnícke služby ako recepcia, call centrum, komfortné SMS a e-mailové notifikácie či plný prístup do pacientskeho portálu Moji lekári na 12 mesiacov.\n\n• Prémiová prevencia a Health Coaching: V rámci predplateného balíka (programy ZDRAVIE za 50 € alebo ZDRAVIE+ za 100 €) získavate pravidelnú preventívnu diagnostiku nad rámec bežného poistenia. Tá zahŕňa detailnú analýzu zloženia tela (prístrojmi TANITA alebo InBODY 970), meranie priechodnosti tepien (ABI), analýzu cievneho a metabolického veku (Maxpulse, MESI EKG) a odborné zdravotné poradenstvo (health coaching).\n\nSpoplatnené sú len vyšetrenia vykonané výhradne na vašu vlastnú žiadosť mimo týchto balíkov (napr. zo zvedavosti) alebo úkony pre potreby zamestnávateľa a administratívy podľa platného cenníka.",
+      },
+      {
+        q: "Ako sa k vám dostanem a kde môžem zaparkovať?",
+        a: "Ambulancia sa nachádza v polyfunkčnej budove Kačačnice na Muškátovej ulici 2 vo Svätom Jure. Pohodlne zaparkovať môžete priamo pri budove. Vstup do ambulancie nájdete na 1. poschodí (priamo nad lekárňou Vitalita) a prístup je plne bezbariérový vďaka dostupnému výťahu.",
       },
     ],
   },
@@ -740,7 +760,7 @@ const en: Dictionary = {
     titleLine1: "MUDr. Pavol Trnovec, PhD.",
     titleLine2Prefix: "General practice ",
     titleHighlight: "in Svätý Jur",
-    lead: "Prevention, on-site POCT diagnostics and chronic disease management. An appointment system and communication in English.",
+    lead: "Modern care for your health, rapid on-site diagnostics and an individual approach. Online appointment booking and full examinations in English come as standard.",
     insurersLabel: "Contracted insurers:",
     languagesBadge: "SK · EN",
     primaryCta: "Book now",
@@ -1291,32 +1311,36 @@ const en: Dictionary = {
     cta: "More information for new patients",
     items: [
       {
-        q: "How do I book an appointment?",
-        a: "Registered patients book via the Moji lekári portal. New patients can contact us by phone during opening hours or visit in person with a signed healthcare provision agreement.",
+        q: "Are you accepting new patients?",
+        a: "Yes, we are currently accepting new patients. To register, simply complete and sign the Healthcare Provision Agreement and bring it to our practice, or we can provide it for you on site. We will fully take care of de-registering you from your previous GP and transferring your medical records.",
       },
       {
-        q: "Are you accepting new patients?",
-        a: "Yes. Simply complete and sign the healthcare provision agreement and bring it to the practice during opening hours. We take care of de-registering you from your previous doctor.",
+        q: "How can I book an appointment?",
+        a: "Registered patients: Book a specific time slot conveniently online via the Moji lekári patient portal.\n\nNew (unregistered) patients: Please contact us by phone or e-mail during opening hours, or visit us in person at the practice.",
+      },
+      {
+        q: "How can I request an e-prescription for medication?",
+        a: "Registered patients request prescriptions for long-term medication exclusively online via the Moji lekári portal. This system speeds up processing and gives the doctor more time for patients in the practice. You receive portal access automatically by e-mail invitation after registering with us.",
       },
       {
         q: "What should I bring to my first visit?",
-        a: "ID card, health insurance card, signed healthcare provision agreement and a list of medications you take. If you have medical records from your previous doctor, bring those too.",
+        a: "Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\nIf you have paper medical records or recent specialist reports, bring those as well.\n\nWe also recommend bringing a signed registration agreement; if needed, it can be completed at the practice.",
       },
       {
-        q: "How do I order an e-prescription?",
-        a: "Registered patients order medication and e-prescriptions exclusively via the Moji lekári portal. Access is granted by an invitation the doctor sends to your e-mail after registration.",
+        q: "What should I do in case of acute illness?",
+        a: "We treat acute conditions (e.g. sudden high fever, severe pain, acute infections) without an appointment during dedicated hours at the start of the surgery day — see the opening hours table for exact times.\n\nIn case of life-threatening emergency (suspected heart attack, stroke, severe shortness of breath), do not wait — call emergency services on 155 or 112 immediately.",
       },
       {
-        q: "When should I come with an acute condition?",
-        a: "We see acute cases during dedicated time slots — check today's acute hours in the schedule. For serious symptoms, call 155.",
+        q: "Which health insurers do you have contracts with?",
+        a: "We are a contracted partner of all health insurers in Slovakia. Patients with VšZP, Dôvera and Union have standard healthcare and preventive check-ups fully covered.",
       },
       {
-        q: "Where can I park near the practice?",
-        a: "Parking is available at the Kačačnice building at Muškátová 2. The practice is on the 1st floor above the Vitalita pharmacy, with step-free access via a lift.",
+        q: "Do I pay for tests on modern devices?",
+        a: "If you have health problems and the doctor indicates the test, you pay nothing. All diagnostic procedures needed to determine the right treatment are fully covered by public health insurance for our capitated patients.\n\nHowever, our standard is to provide above-standard preventive care and maximum comfort, which requires investment in cutting-edge technology and staffing. We therefore offer annual service subscription packages that enable in-depth prevention and modern health management at the highest level:\n\n• Clear client service: The annual subscription includes non-medical services such as reception, call centre, convenient SMS and e-mail notifications, and full access to the Moji lekári patient portal for 12 months.\n\n• Premium prevention and health coaching: With a prepaid package (ZDRAVIE at €50 or ZDRAVIE+ at €100), you receive regular preventive diagnostics beyond standard insurance coverage. This includes detailed body composition analysis (TANITA or InBODY 970), arterial flow measurement (ABI), vascular and metabolic age analysis (Maxpulse, MESI ECG) and professional health coaching.\n\nOnly tests performed solely at your own request outside these packages (e.g. out of curiosity) or procedures for employer and administrative purposes are charged according to the valid price list.",
       },
       {
-        q: "Which insurers do you have contracts with?",
-        a: "We have contracts with all health insurers operating in Slovakia — VšZP, Dôvera and Union.",
+        q: "How do I get to you and where can I park?",
+        a: "The practice is located in the Kačačnice mixed-use building at Muškátová 2 in Svätý Jur. You can park conveniently right by the building. The practice entrance is on the 1st floor (directly above the Vitalita pharmacy) with full step-free access via a lift.",
       },
     ],
   },
@@ -1339,19 +1363,35 @@ const en: Dictionary = {
     faq: [
       {
         q: "Are you accepting new patients?",
-        a: "Yes, we accept new patients. Simply complete and sign the healthcare provision agreement and bring it to the practice during opening hours.",
+        a: "Yes, we are currently accepting new patients. To register, simply complete and sign the Healthcare Provision Agreement and bring it to our practice, or we can provide it for you on site. We will fully take care of de-registering you from your previous GP and transferring your medical records.",
       },
       {
-        q: "How do I order an e-prescription?",
-        a: "Registered patients order medication and e-prescriptions via the Moji lekári portal. Access is granted by an invitation the doctor sends to your e-mail.",
+        q: "How can I book an appointment?",
+        a: "Registered patients: Book a specific time slot conveniently online via the Moji lekári patient portal.\n\nNew (unregistered) patients: Please contact us by phone or e-mail during opening hours, or visit us in person at the practice.",
       },
       {
-        q: "When are blood draws done?",
-        a: "Blood draws take place in the morning. Please book in advance for sampling.",
+        q: "How can I request an e-prescription for medication?",
+        a: "Registered patients request prescriptions for long-term medication exclusively online via the Moji lekári portal. This system speeds up processing and gives the doctor more time for patients in the practice. You receive portal access automatically by e-mail invitation after registering with us.",
       },
       {
-        q: "Which insurers do you have contracts with?",
-        a: "We have contracts with all health insurers operating in Slovakia — VšZP, Dôvera and Union.",
+        q: "What should I bring to my first visit?",
+        a: "Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\nIf you have paper medical records or recent specialist reports, bring those as well.\n\nWe also recommend bringing a signed registration agreement; if needed, it can be completed at the practice.",
+      },
+      {
+        q: "What should I do in case of acute illness?",
+        a: "We treat acute conditions (e.g. sudden high fever, severe pain, acute infections) without an appointment during dedicated hours at the start of the surgery day — see the opening hours table for exact times.\n\nIn case of life-threatening emergency (suspected heart attack, stroke, severe shortness of breath), do not wait — call emergency services on 155 or 112 immediately.",
+      },
+      {
+        q: "Which health insurers do you have contracts with?",
+        a: "We are a contracted partner of all health insurers in Slovakia. Patients with VšZP, Dôvera and Union have standard healthcare and preventive check-ups fully covered.",
+      },
+      {
+        q: "Do I pay for tests on modern devices?",
+        a: "If you have health problems and the doctor indicates the test, you pay nothing. All diagnostic procedures needed to determine the right treatment are fully covered by public health insurance for our capitated patients.\n\nHowever, our standard is to provide above-standard preventive care and maximum comfort, which requires investment in cutting-edge technology and staffing. We therefore offer annual service subscription packages that enable in-depth prevention and modern health management at the highest level:\n\n• Clear client service: The annual subscription includes non-medical services such as reception, call centre, convenient SMS and e-mail notifications, and full access to the Moji lekári patient portal for 12 months.\n\n• Premium prevention and health coaching: With a prepaid package (ZDRAVIE at €50 or ZDRAVIE+ at €100), you receive regular preventive diagnostics beyond standard insurance coverage. This includes detailed body composition analysis (TANITA or InBODY 970), arterial flow measurement (ABI), vascular and metabolic age analysis (Maxpulse, MESI ECG) and professional health coaching.\n\nOnly tests performed solely at your own request outside these packages (e.g. out of curiosity) or procedures for employer and administrative purposes are charged according to the valid price list.",
+      },
+      {
+        q: "How do I get to you and where can I park?",
+        a: "The practice is located in the Kačačnice mixed-use building at Muškátová 2 in Svätý Jur. You can park conveniently right by the building. The practice entrance is on the 1st floor (directly above the Vitalita pharmacy) with full step-free access via a lift.",
       },
     ],
   },

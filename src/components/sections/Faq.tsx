@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { FaqAnswer } from "@/components/ui/FaqAnswer";
 
 type FaqItem = { q: string; a: string };
 
@@ -21,38 +22,48 @@ export function Faq({
   const f = dict.faq;
 
   return (
-    <Section id="faq" className="bg-surface py-12 sm:py-16">
-      <SectionHeading eyebrow={f.eyebrow} title={f.title} subtitle={f.subtitle} />
+    <Section id="faq" className="py-12 sm:py-16">
+      <SectionHeading eyebrow={f.eyebrow} title={f.title} subtitle={f.subtitle} center />
 
-      <div className="flex flex-col gap-3">
-        {items.map((item) => (
-          <details
-            key={item.q}
-            className="group rounded-[14px] border border-line bg-bg px-5 py-4 [&_summary::-webkit-details-marker]:hidden"
-          >
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-body-lg font-semibold text-ink">
-              {item.q}
-              <span
-                className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-soft text-primary transition-transform group-open:rotate-45"
-                aria-hidden="true"
-              >
-                +
-              </span>
-            </summary>
-            <p className="text-body mt-3 leading-relaxed text-muted">{item.a}</p>
-          </details>
-        ))}
+      <div className="mx-auto max-w-3xl">
+        <div className="services-overview-panel rounded-[20px] border border-line/70 p-3 sm:p-3.5">
+          <div className="flex flex-col gap-2">
+            {items.map((item, index) => (
+              <details key={item.q} className="faq-item group">
+                <summary className="flex cursor-pointer list-none items-start gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-[1.125rem] [&::-webkit-details-marker]:hidden">
+                  <span
+                    className="faq-item-index mt-0.5 shrink-0 tabular-nums"
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="min-w-0 flex-1 text-body-lg font-semibold leading-snug text-ink transition-colors group-hover:text-primary group-open:text-primary">
+                    {item.q}
+                  </span>
+                  <span className="faq-item-toggle mt-0.5 shrink-0" aria-hidden="true">
+                    <ChevronDown className="h-4 w-4" strokeWidth={2.25} />
+                  </span>
+                </summary>
+                <div className="faq-item-answer mx-4 mb-4 sm:mx-5 sm:mb-5">
+                  <FaqAnswer text={item.a} />
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {showCta && (
+          <div className="mt-8 text-center">
+            <Link
+              href={href(locale, "home", "patients")}
+              className="inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-blue-line bg-surface px-5 text-body font-bold text-primary shadow-soft transition-all hover:border-primary/35 hover:bg-blue-soft/60 hover:text-primary-deep"
+            >
+              {f.cta}
+              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            </Link>
+          </div>
+        )}
       </div>
-
-      {showCta && (
-        <Link
-          href={href(locale, "home", "patients")}
-          className="text-body-sm mt-6 inline-flex min-h-11 items-center gap-1.5 font-bold text-primary transition-colors hover:text-primary-deep"
-        >
-          {f.cta}
-          <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-        </Link>
-      )}
     </Section>
   );
 }

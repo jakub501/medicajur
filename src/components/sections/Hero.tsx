@@ -84,109 +84,88 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   }));
 
   return (
-    <section className="shell-gradient hero-section--flush relative overflow-hidden border-b border-line/70 pb-14 sm:pb-16 lg:pb-20">
-      <div className="hero-grid pointer-events-none absolute inset-0" aria-hidden="true" />
-      <span
-        className="orb"
-        style={{
-          width: 480,
-          height: 480,
-          top: -280,
-          left: -160,
-          background: "rgba(46,158,107,0.12)",
-        }}
-        aria-hidden="true"
-      />
-      <span
-        className="orb"
-        style={{
-          width: 420,
-          height: 420,
-          top: -140,
-          right: -120,
-          background: "rgba(21,99,156,0.14)",
-        }}
-        aria-hidden="true"
-      />
-
+    <section className="hero-section--flush relative pb-14 sm:pb-16 lg:pb-20">
       <Container>
         <div className="relative grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-          <div className="order-1 flex max-w-xl animate-rise flex-col justify-center gap-5 lg:gap-6">
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex w-fit items-center gap-2 rounded-full border border-blue-line bg-blue-soft/80 px-3.5 py-1.5 text-eyebrow font-bold text-primary">
-                <UserPlus className="h-3.5 w-3.5" strokeWidth={2.1} aria-hidden="true" />
-                {dict.hero.eyebrow}
+          <div className="order-1 flex max-w-xl animate-rise flex-col justify-center gap-6 lg:gap-7">
+            <span className="inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-line bg-blue-soft/80 px-3.5 py-1.5 text-eyebrow font-bold text-primary">
+              <span className="relative flex h-2 w-2" aria-hidden="true">
+                <span className="pulse-dot absolute inline-flex h-2 w-2 rounded-full bg-brand-green" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-green" />
               </span>
-            </div>
+              {dict.hero.eyebrow}
+            </span>
 
-            <div>
-              <h1 className="text-display text-balance font-medium leading-[1.12]">
+            <div className="flex flex-col gap-4">
+              <h1 className="text-display text-balance font-medium leading-[1.1]">
                 <span className="block">{dict.hero.titleLine1}</span>
-                <span className="text-h2 mt-1 block font-normal text-muted">
+                <span className="text-h2 mt-1.5 block font-normal text-muted">
                   {dict.hero.titleLine2Prefix}
                   <span className="text-primary">{dict.hero.titleHighlight}</span>
                 </span>
               </h1>
+
+              <p className="text-body-lg max-w-[33em] text-pretty leading-[1.7] text-muted">
+                {dict.hero.lead}
+              </p>
             </div>
 
-            <p className="text-body-lg max-w-[32em] text-pretty leading-[1.65] text-muted">
-              {dict.hero.lead}
-            </p>
-
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
               <span className="text-caption font-semibold text-muted">{dict.hero.insurersLabel}</span>
               {SITE.insurers.map((name) => (
                 <span
                   key={name}
-                  className="inline-flex items-center rounded-full border border-line bg-surface px-3 py-1 text-caption font-bold text-primary"
+                  className="inline-flex items-center rounded-full border border-line bg-surface/70 px-2.5 py-1 text-caption font-semibold text-ink/75"
                 >
                   {name}
                 </span>
               ))}
             </div>
 
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-              <ButtonAnchor
-                href={SITE.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                size="md"
-                className="w-full justify-center px-5 shadow-float sm:col-span-2"
-              >
-                <CalendarCheck className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
-                <span>{dict.hero.primaryCta}</span>
-              </ButtonAnchor>
-              <ButtonLink
-                href={href(locale, "home", "patients")}
-                variant="secondary"
-                size="md"
-                className="w-full justify-center px-5 sm:px-6"
-              >
-                <UserPlus className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
-                <span>{dict.hero.secondaryCta}</span>
-              </ButtonLink>
-              <ButtonAnchor
-                href={SITE.phoneHref}
-                variant="secondary"
-                size="md"
-                className="w-full justify-center px-5 sm:px-6"
-              >
-                <Phone className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
-                <span>{dict.common.call}</span>
-              </ButtonAnchor>
-            </div>
+            <div className="flex flex-col gap-3.5">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <ButtonAnchor
+                  href={SITE.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="md"
+                  className="w-full justify-center px-5 sm:col-span-2"
+                >
+                  <CalendarCheck className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
+                  <span>{dict.hero.primaryCta}</span>
+                </ButtonAnchor>
+                <ButtonLink
+                  href={href(locale, "home", "patients")}
+                  variant="secondary"
+                  size="md"
+                  className="w-full justify-center px-5 sm:px-6"
+                >
+                  <UserPlus className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
+                  <span>{dict.hero.secondaryCta}</span>
+                </ButtonLink>
+                <ButtonAnchor
+                  href={SITE.phoneHref}
+                  variant="secondary"
+                  size="md"
+                  className="w-full justify-center px-5 sm:px-6"
+                >
+                  <Phone className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
+                  <span>{dict.common.call}</span>
+                </ButtonAnchor>
+              </div>
 
-            <p className="text-caption text-muted">
-              {dict.hero.bookingNotePrefix}
-              <a
-                href={SITE.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary-deep hover:decoration-primary/60"
-              >
-                {SITE.bookingName}
-              </a>
-            </p>
+              <p className="text-caption text-muted">
+                {dict.hero.bookingNotePrefix}
+                <a
+                  href={SITE.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary-deep hover:decoration-primary/60"
+                >
+                  {SITE.bookingName}
+                </a>
+              </p>
+            </div>
           </div>
 
           <div className="order-2 overflow-visible animate-rise [animation-delay:120ms]">

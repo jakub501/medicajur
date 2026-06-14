@@ -33,9 +33,7 @@ export function LanguageSwitcher({
             aria-current={active ? "true" : undefined}
             className={cn(
               "inline-flex min-h-9 items-center rounded-full px-2.5 py-1 uppercase tracking-wide transition-colors",
-              active
-                ? "bg-primary text-white"
-                : "text-muted hover:text-primary",
+              active ? "bg-primary text-white" : "text-muted hover:text-primary",
             )}
           >
             {l}

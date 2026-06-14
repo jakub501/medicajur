@@ -22,30 +22,7 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-blue-soft/60 to-bg py-10 sm:py-14">
-        <span
-          className="orb"
-          style={{
-            width: 320,
-            height: 320,
-            top: -120,
-            right: -80,
-            background: "rgba(21,99,156,0.1)",
-          }}
-          aria-hidden="true"
-        />
-        <span
-          className="orb"
-          style={{
-            width: 240,
-            height: 240,
-            bottom: -100,
-            left: -60,
-            background: "rgba(46,158,107,0.08)",
-          }}
-          aria-hidden="true"
-        />
-
+      <section className="relative py-10 sm:py-14">
         <Container>
           <div className="relative mx-auto max-w-5xl animate-rise">
             <div className="overflow-hidden rounded-[20px] border border-line bg-surface shadow-[0_20px_48px_-28px_rgba(13,70,116,0.28)]">
@@ -101,7 +78,7 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
         </Container>
       </section>
 
-      <Section className="bg-surface py-12 sm:py-16">
+      <Section className="py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <div className="hairline mb-8 sm:mb-10" aria-hidden="true" />
 

@@ -6,12 +6,12 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { clinicJsonLd } from "@/lib/structuredData";
 import { NoticeBar } from "@/components/layout/NoticeBar";
-import { TopBar } from "@/components/layout/TopBar";
-import { Header } from "@/components/layout/Header";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { Footer } from "@/components/layout/Footer";
 import { CookieBanner } from "@/components/layout/CookieBanner";
 import { StickyMobileCta } from "@/components/layout/StickyMobileCta";
 import { ScrollToHash } from "@/components/layout/ScrollToHash";
+import { MainShell } from "@/components/ui/MainShell";
 
 const newsreader = Newsreader({
   subsets: ["latin", "latin-ext"],
@@ -123,10 +123,11 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <NoticeBar locale={locale} />
-        <TopBar dict={dict} />
-        <Header locale={locale} dict={dict} />
+        <SiteChrome locale={locale} dict={dict} />
         <ScrollToHash />
-        <main className="flex-1">{children}</main>
+        <main className="relative z-0 flex-1">
+          <MainShell>{children}</MainShell>
+        </main>
         <Footer locale={locale} dict={dict} />
         <CookieBanner locale={locale} dict={dict} />
         <StickyMobileCta dict={dict} />

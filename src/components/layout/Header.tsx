@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, CalendarCheck, Menu, X } from "lucide-react";
-import { href, isHomePath, navHref, type Locale, type RouteKey } from "@/i18n/config";
+import { href, navHref, type Locale, type RouteKey } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
@@ -20,21 +20,23 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "contact", label: "contact" },
 ];
 
-export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export function Header({
+  locale,
+  dict,
+  scrolled,
+  onHome,
+}: {
+  locale: Locale;
+  dict: Dictionary;
+  scrolled: boolean;
+  onHome: boolean;
+}) {
   const pathname = usePathname() ?? "";
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -52,18 +54,16 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     return pathname === target || pathname.startsWith(`${target}/`);
   };
 
-  const onHome = isHomePath(pathname, locale);
-
   return (
     <header
       className={cn(
-        "site-header sticky top-0 z-50",
+        "site-header",
         onHome && "site-header--home",
         scrolled && "site-header--scrolled",
       )}
     >
       <Container>
-        <nav className="grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
+        <nav className="site-header__nav grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
           <Link href={href(locale, "home")} className="shrink-0" aria-label={SITE.brand}>
             <Brand
               locale={locale}
@@ -81,8 +81,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     href={navHref(locale, key, pathname)}
                     data-active={isActive(key)}
                     className={cn(
-                      "nav-underline inline-flex h-10 items-center whitespace-nowrap rounded-md px-2.5 text-[14px] font-semibold leading-none transition-colors xl:px-3 xl:text-[15px]",
-                      isActive(key) ? "text-primary" : "text-ink hover:text-primary",
+                      "inline-flex h-10 items-center whitespace-nowrap rounded-full px-3 text-[14px] font-semibold leading-none transition-colors xl:px-3.5 xl:text-[15px]",
+                      isActive(key)
+                        ? "bg-blue-soft text-primary"
+                        : "text-ink hover:bg-blue-soft/55 hover:text-primary",
                     )}
                   >
                     {dict.nav[label]}
@@ -99,7 +101,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               target="_blank"
               rel="noopener noreferrer"
               title={dict.hero.bookingNote}
-              className="cta-primary hidden h-10 items-center gap-1.5 whitespace-nowrap rounded-[10px] px-3.5 text-[14px] font-bold leading-none text-white transition-all sm:inline-flex xl:px-4 xl:text-[15px]"
+              className="cta-primary hidden h-10 items-center gap-1.5 whitespace-nowrap rounded-[10px] px-3.5 text-[14px] font-bold leading-none text-white transition-all hover:-translate-y-px sm:inline-flex xl:px-4 xl:text-[15px]"
             >
               <CalendarCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={1.85} aria-hidden="true" />
               {dict.nav.book}
@@ -126,7 +128,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 <Link
                   key={key}
                   href={navHref(locale, key, pathname)}
-                  className="border-b border-line py-3.5 text-[17px] font-semibold text-ink"
+                  className={cn(
+                    "border-b border-line py-3.5 text-[17px] font-semibold transition-colors",
+                    isActive(key) ? "text-primary" : "text-ink hover:text-primary",
+                  )}
                 >
                   {dict.nav[label]}
                 </Link>

@@ -6,7 +6,7 @@ export function BecomePatientSection({ dict }: { dict: Dictionary }) {
   const p = dict.patientsPage;
 
   return (
-    <Section id="patients" className="bg-gradient-to-b from-transparent via-blue-soft/20 to-transparent">
+    <Section id="patients">
       <div className="mx-auto max-w-5xl">
         <span className="text-eyebrow text-primary">{dict.patients.eyebrow}</span>
         <h2 className="text-h2 mt-2.5 text-balance">{p.newTitle}</h2>
