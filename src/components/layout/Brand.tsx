@@ -1,25 +1,28 @@
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
+type BrandVariant = "image" | "lockup";
+
 export function Brand({
   locale,
   brand,
   doctor,
   invert = false,
-  compact = false,
+  variant = "image",
 }: {
   locale: string;
   brand: string;
   doctor: string;
   invert?: boolean;
-  compact?: boolean;
+  variant?: BrandVariant;
 }) {
   const alt = `${brand} — ${doctor}`;
 
-  if (compact) {
+  if (variant === "lockup") {
     return (
-      <span className="font-serif text-[1.125rem] font-semibold tracking-[0.01em] text-primary sm:text-[1.2rem]">
-        {brand}
+      <span className="brand-lockup">
+        <span className="brand-lockup-name">{SITE.brandMark}</span>
+        <span className="brand-lockup-doctor">{doctor.toUpperCase()}</span>
       </span>
     );
   }

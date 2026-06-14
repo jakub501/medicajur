@@ -64,12 +64,12 @@ export function Header({
     >
       <Container>
         <nav className="site-header__nav grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
-          <Link href={href(locale, "home")} className="shrink-0" aria-label={SITE.brand}>
+          <Link href={href(locale, "home")} className="brand-link shrink-0" aria-label={SITE.brand}>
             <Brand
               locale={locale}
               brand={SITE.brand}
               doctor={SITE.doctor}
-              compact
+              variant="lockup"
             />
           </Link>
 

@@ -6,6 +6,7 @@
 export const SITE = {
   company: "MEDICA JUR, s.r.o.",
   brand: "MEDICA JUR",
+  brandMark: "MedicaJur",
   doctor: "MUDr. Pavol Trnovec, PhD.",
   phone: "+421 2 2073 3871",
   phoneHref: "tel:+421220733871",

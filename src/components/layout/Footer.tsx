@@ -3,7 +3,6 @@ import { Phone, MapPin, CalendarCheck, Mail, ArrowRight } from "lucide-react";
 import { href, type Locale, type RouteKey } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
-import { cn } from "@/lib/cn";
 import { Container } from "@/components/ui/Container";
 import { Brand } from "./Brand";
 
@@ -15,12 +14,7 @@ const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
   { key: "contact", label: "contact" },
 ];
 
-const CONTACT_ICONS = [
-  { icon: Phone, accent: "primary" as const },
-  { icon: Mail, accent: "green" as const },
-  { icon: MapPin, accent: "deep" as const },
-  { icon: CalendarCheck, accent: "gold" as const },
-];
+const CONTACT_ICONS = [Phone, Mail, MapPin, CalendarCheck] as const;
 
 function FooterColumnTitle({ children }: { children: React.ReactNode }) {
   return <h3 className="footer-col-title">{children}</h3>;
@@ -49,47 +43,37 @@ function FooterContactItem({
   href: linkHref,
   external,
   icon: Icon,
-  accent,
   children,
 }: {
   href?: string;
   external?: boolean;
-  icon: typeof Phone;
-  accent: (typeof CONTACT_ICONS)[number]["accent"];
+  icon: (typeof CONTACT_ICONS)[number];
   children: React.ReactNode;
 }) {
-  const row = (
+  const content = (
     <>
-      <span
-        className={cn(
-          "hero-float-badge-icon h-10 w-10 shrink-0 rounded-[11px]",
-          `hero-float-badge-icon--${accent}`,
-        )}
-        aria-hidden="true"
-      >
-        <Icon className="h-[18px] w-[18px]" strokeWidth={1.85} />
-      </span>
+      <Icon className="footer-contact-icon h-4 w-4 shrink-0" strokeWidth={1.85} aria-hidden="true" />
       <span className="footer-contact-label">{children}</span>
     </>
   );
 
-  const className = "footer-contact-card group";
+  const className = "footer-contact-row group";
 
   if (!linkHref) {
-    return <div className={className}>{row}</div>;
+    return <div className={className}>{content}</div>;
   }
 
   if (external) {
     return (
       <a href={linkHref} target="_blank" rel="noopener noreferrer" className={className}>
-        {row}
+        {content}
       </a>
     );
   }
 
   return (
     <a href={linkHref} className={className}>
-      {row}
+      {content}
     </a>
   );
 }
@@ -97,19 +81,22 @@ function FooterContactItem({
 export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const year = new Date().getFullYear();
   const contactItems = [
-    { href: SITE.phoneHref, label: SITE.phone, ...CONTACT_ICONS[0] },
-    { href: `mailto:${SITE.emails.doctor}`, label: SITE.emails.doctor, ...CONTACT_ICONS[1] },
+    { href: SITE.phoneHref, label: SITE.phone, icon: CONTACT_ICONS[0] },
+    { href: `mailto:${SITE.emails.doctor}`, label: SITE.emails.doctor, icon: CONTACT_ICONS[1] },
     {
       label: `${SITE.address.street}, ${SITE.address.zip} ${SITE.address.city}`,
-      ...CONTACT_ICONS[2],
+      icon: CONTACT_ICONS[2],
     },
-    { href: SITE.bookingUrl, label: dict.common.bookOnline, external: true, ...CONTACT_ICONS[3] },
+    {
+      href: SITE.bookingUrl,
+      label: dict.common.bookOnline,
+      external: true,
+      icon: CONTACT_ICONS[3],
+    },
   ] as const;
 
   return (
     <footer className="site-footer">
-      <div className="site-footer-bridge" aria-hidden="true" />
-
       <div className="site-footer-body">
         <div className="site-footer-backdrop" aria-hidden="true">
           <div className="site-footer-gradient" />
@@ -127,16 +114,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               <div className="footer-brand-rule" aria-hidden="true" />
               <p className="footer-brand-doctor">{SITE.doctor}</p>
               <p className="footer-about">{dict.footer.about}</p>
-              <a
-                href={SITE.bookingUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-book-cta"
-              >
-                <CalendarCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={1.85} aria-hidden="true" />
-                {dict.common.bookOnline}
-                <ArrowRight className="h-4 w-4 shrink-0 opacity-80" strokeWidth={2} aria-hidden="true" />
-              </a>
             </div>
 
             <div className="footer-col">
@@ -164,7 +141,6 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     href={"href" in item ? item.href : undefined}
                     external={"external" in item ? item.external : undefined}
                     icon={item.icon}
-                    accent={item.accent}
                   >
                     {item.label}
                   </FooterContactItem>
@@ -180,27 +156,11 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </nav>
             </div>
           </div>
-        </Container>
 
-        <div className="site-footer-bar">
-          <Container>
-            <div className="site-footer-bar-inner">
-              <p className="footer-bar-copy">
-                © {year} {SITE.company} {dict.footer.rights}
-              </p>
-              <div className="footer-bar-links">
-                <Link href={href(locale, "privacy")} className="footer-bar-link">
-                  {dict.footer.privacy}
-                </Link>
-                <span className="footer-bar-sep" aria-hidden="true" />
-                <Link href={href(locale, "cookies")} className="footer-bar-link">
-                  {dict.footer.cookies}
-                </Link>
-              </div>
-              <p className="footer-bar-mark">{SITE.brand}</p>
-            </div>
-          </Container>
-        </div>
+          <p className="footer-copyright">
+            © {year} {SITE.company} {dict.footer.rights}
+          </p>
+        </Container>
       </div>
     </footer>
   );
