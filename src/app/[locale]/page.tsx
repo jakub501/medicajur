@@ -30,7 +30,7 @@ export default async function HomePage({
         <AboutPracticeBanner locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
-        <ReviewsSection dict={dict} />
+        <ReviewsSection locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
         <ServicesBento locale={loc} dict={dict} />

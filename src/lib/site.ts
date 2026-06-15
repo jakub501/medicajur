@@ -25,6 +25,15 @@ export const SITE = {
   // Geo-coordinates for Muškátová 2, Svätý Jur (approx., used for map + JSON-LD)
   geo: { lat: 48.2536, lng: 17.2156 },
   mapsQuery: "Muškátová 2, 900 21 Svätý Jur",
+  /** Google Place ID for live rating + review count (Places API). */
+  googlePlaceId: "ChIJvVfamLORbEcRA0Ucz-2y3_I",
+  googleReviewsUrl:
+    "https://www.google.com/maps/place/MUDr.+Pavol+Trnovec,+PhD.+MedicaJur,s.r.o./@48.2543703,17.2202747,17z/data=!4m8!3m7!1s0x476c91b398da57bd:0xf2dfb2edcf1c4503!8m2!3d48.2543703!4d17.2202747!9m1!1b1!16s%2Fg%2F11bzx348pt!18m1!1e1",
+  /** Used when GOOGLE_PLACES_API_KEY is not set or the API request fails. */
+  googleReviewsFallback: {
+    rating: 5.0,
+    reviewCount: 0,
+  },
   bookingUrl: "https://lekar.digital/",
   bookingName: "Moji lekári",
   officialUrl: "https://www.medicajur.sk",

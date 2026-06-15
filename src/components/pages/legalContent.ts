@@ -8,60 +8,108 @@ const PRIVACY: Record<Locale, LegalDoc> = {
     title: "Ochrana osobných údajov",
     updated: "Posledná aktualizácia: jún 2026",
     intro:
-      "Ochrana vašich osobných údajov je pre nás dôležitá. Tento dokument vysvetľuje, aké údaje spracúvame, na aký účel a aké máte práva podľa Nariadenia (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov.",
+      "Ochrana vašich osobných údajov je pre nás dôležitá. V týchto zásadách vysvetľujeme, kto spracúva vaše osobné údaje, aké údaje spracúvame, na aké účely a na akom právnom základe, komu ich môžeme poskytnúť, ako dlho ich uchovávame a aké práva máte podľa Nariadenia Európskeho parlamentu a Rady (EÚ) 2016/679 (GDPR) a zákona č. 18/2018 Z. z. o ochrane osobných údajov.",
     sections: [
       {
         heading: "Prevádzkovateľ",
         paragraphs: [
-          "Prevádzkovateľom je MEDICA JUR, s.r.o., so sídlom Muškátová 2, 900 21 Svätý Jur, v zastúpení MUDr. Pavol Trnovec, PhD. Kontakt: doktor@medicajur.sk, +421 2 2073 3871.",
-          "(IČO a ďalšie identifikačné údaje doplníme podľa podkladov prevádzkovateľa.)",
+          "Prevádzkovateľom, ktorý určuje účely a prostriedky spracúvania osobných údajov, je:",
+          "MEDICA JUR, s.r.o., so sídlom Muškátová 2, 900 21 Svätý Jur, IČO: 35 925 035, zapísaná v Obchodnom registri Mestského súdu Bratislava III, v zastúpení MUDr. Pavol Trnovec, PhD.",
+          "Kontakt vo veciach ochrany osobných údajov: doktor@medicajur.sk, +421 2 2073 3871.",
         ],
       },
       {
-        heading: "Aké údaje spracúvame",
-        paragraphs: ["Spracúvame nasledujúce kategórie osobných údajov:"],
+        heading: "Aké osobné údaje spracúvame",
+        paragraphs: ["V súvislosti s poskytovaním zdravotnej starostlivosti a prevádzkou ambulancie spracúvame najmä tieto kategórie osobných údajov:"],
         list: [
-          "identifikačné a kontaktné údaje (meno, adresa, telefón, e-mail, rodné číslo),",
-          "údaje o zdravotnom stave v rozsahu nevyhnutnom na poskytovanie zdravotnej starostlivosti,",
-          "údaje zo zdravotnej dokumentácie,",
-          "údaje, ktoré nám poskytnete pri komunikácii (telefón, e-mail, kontaktný formulár).",
+          "identifikačné údaje (meno a priezvisko, titul, dátum narodenia, rodné číslo),",
+          "kontaktné údaje (adresa trvalého pobytu, telefónne číslo, e-mailová adresa),",
+          "údaje o zdravotnej poisťovni a poistnom vzťahu,",
+          "osobitnú kategóriu údajov o zdraví v rozsahu nevyhnutnom na poskytovanie zdravotnej starostlivosti,",
+          "údaje zo zdravotnej dokumentácie (anamnéza, diagnózy, výsledky vyšetrení, predpísané lieky, odporúčania),",
+          "údaje, ktoré nám poskytnete pri komunikácii (telefonicky, e-mailom, cez kontaktný formulár alebo portál Moji lekári).",
         ],
       },
       {
-        heading: "Účel a právny základ spracúvania",
+        heading: "Účely a právne základy spracúvania",
         paragraphs: [
-          "Osobné údaje spracúvame najmä na účely poskytovania zdravotnej starostlivosti, vedenia zdravotnej dokumentácie a plnenia zákonných povinností.",
-          "Právnym základom je plnenie zákonných povinností (najmä zákon č. 576/2004 Z. z. a č. 362/2011 Z. z.), poskytnutie zdravotnej starostlivosti a v odôvodnených prípadoch váš súhlas.",
+          "Vaše osobné údaje spracúvame na nasledujúce účely a na týchto právnych základoch:",
+        ],
+        list: [
+          "poskytovanie zdravotnej starostlivosti a vedenie zdravotnej dokumentácie — plnenie zákonných povinností podľa zákona č. 576/2004 Z. z. a č. 362/2011 Z. z. a spracúvanie nevyhnutné na účely zdravotnej starostlivosti (čl. 9 ods. 2 písm. h) GDPR),",
+          "vyúčtovanie a komunikácia so zdravotnými poisťovňami — plnenie zákonných povinností,",
+          "vedenie účtovnej a daňovej agendy — plnenie zákonných povinností,",
+          "objednávanie na vyšetrenie a komunikácia s pacientom (vrátane portálu Moji lekári) — poskytnutie zdravotnej starostlivosti, prípadne náš oprávnený záujem na efektívnej organizácii ambulancie,",
+          "vybavenie podnetov a otázok zaslaných cez kontaktné údaje na webe — náš oprávnený záujem, prípadne váš súhlas.",
+        ],
+      },
+      {
+        heading: "Zdroje osobných údajov",
+        paragraphs: [
+          "Osobné údaje získavame predovšetkým priamo od vás. V odôvodnených prípadoch ich môžeme získať aj od iných poskytovateľov zdravotnej starostlivosti (napr. pri prevzatí zdravotnej dokumentácie), od zdravotných poisťovní alebo z verejných registrov v rozsahu povolenom právnymi predpismi.",
+        ],
+      },
+      {
+        heading: "Príjemcovia a sprostredkovatelia",
+        paragraphs: [
+          "Vaše osobné údaje môžu byť v nevyhnutnom rozsahu poskytnuté:",
+        ],
+        list: [
+          "zdravotným poisťovniam (VšZP, Dôvera, Union) na účely úhrady zdravotnej starostlivosti,",
+          "iným poskytovateľom zdravotnej starostlivosti, ku ktorým vás odošleme (laboratóriá, odborní lekári, ústavná starostlivosť),",
+          "Národnému centru zdravotníckych informácií a orgánom verejnej moci v rozsahu stanovenom zákonom,",
+          "sprostredkovateľom, ktorí pre nás zabezpečujú služby (napr. prevádzkovateľ portálu Moji lekári, IT podpora, účtovné služby) na základe zmluvy o spracúvaní osobných údajov.",
+        ],
+      },
+      {
+        heading: "Prenos do tretích krajín",
+        paragraphs: [
+          "Vaše osobné údaje neprenášame do tretích krajín mimo Európskeho hospodárskeho priestoru ani medzinárodným organizáciám.",
         ],
       },
       {
         heading: "Doba uchovávania",
         paragraphs: [
-          "Zdravotnú dokumentáciu uchovávame po dobu stanovenú právnymi predpismi. Ostatné údaje uchovávame len po dobu nevyhnutnú na dosiahnutie účelu spracúvania.",
-        ],
-      },
-      {
-        heading: "Príjemcovia údajov",
-        paragraphs: [
-          "Údaje môžu byť poskytnuté zdravotným poisťovniam, orgánom verejnej moci a poskytovateľom služieb (napr. laboratóriá, IT a portál Moji lekári) v rozsahu nevyhnutnom na plnenie účelu a na základe zmluvy o spracúvaní.",
+          "Zdravotnú dokumentáciu uchovávame po dobu stanovenú zákonom č. 576/2004 Z. z. (spravidla 20 rokov po poslednom poskytnutí zdravotnej starostlivosti, resp. inú zákonom určenú dobu). Účtovné a daňové doklady uchovávame po dobu vyžadovanú príslušnými predpismi.",
+          "Ostatné osobné údaje uchovávame len po dobu nevyhnutnú na dosiahnutie účelu spracúvania, prípadne do odvolania súhlasu, ak je spracúvanie založené na súhlase.",
         ],
       },
       {
         heading: "Vaše práva",
-        paragraphs: ["V súvislosti so spracúvaním máte právo:"],
+        paragraphs: ["V súvislosti so spracúvaním vašich osobných údajov máte tieto práva:"],
         list: [
-          "na prístup k svojim údajom,",
-          "na opravu nesprávnych údajov,",
-          "na vymazanie alebo obmedzenie spracúvania (ak to umožňujú právne predpisy),",
-          "namietať proti spracúvaniu,",
-          "na prenosnosť údajov,",
-          "podať sťažnosť na Úrad na ochranu osobných údajov SR.",
+          "právo na prístup k svojim osobným údajom a na informácie o ich spracúvaní,",
+          "právo na opravu nesprávnych a doplnenie neúplných údajov,",
+          "právo na vymazanie alebo obmedzenie spracúvania, ak to umožňujú právne predpisy,",
+          "právo namietať proti spracúvaniu založenému na oprávnenom záujme,",
+          "právo na prenosnosť údajov, ak je spracúvanie založené na súhlase alebo zmluve a vykonáva sa automatizovane,",
+          "právo kedykoľvek odvolať súhlas, ak je spracúvanie založené na súhlase, bez vplyvu na zákonnosť spracúvania pred jeho odvolaním,",
+          "právo podať návrh na začatie konania na Úrade na ochranu osobných údajov Slovenskej republiky.",
         ],
       },
       {
-        heading: "Kontakt",
+        heading: "Automatizované rozhodovanie",
         paragraphs: [
-          "Vo veciach ochrany osobných údajov nás kontaktujte na doktor@medicajur.sk alebo telefonicky na +421 2 2073 3871.",
+          "Pri spracúvaní vašich osobných údajov nedochádza k automatizovanému rozhodovaniu vrátane profilovania, ktoré by malo právne účinky alebo by sa vás obdobne významne dotýkalo.",
+        ],
+      },
+      {
+        heading: "Súbory cookies",
+        paragraphs: [
+          "Naša webová stránka používa súbory cookies. Podrobnosti o ich používaní a o správe vášho súhlasu nájdete v dokumente Zásady používania súborov cookies.",
+        ],
+      },
+      {
+        heading: "Zmeny týchto zásad",
+        paragraphs: [
+          "Tieto zásady môžeme priebežne aktualizovať, aby zodpovedali zmenám v právnych predpisoch alebo v spôsobe spracúvania údajov. Aktuálne znenie je vždy dostupné na tejto stránke spolu s dátumom poslednej aktualizácie.",
+        ],
+      },
+      {
+        heading: "Kontakt a dozorný orgán",
+        paragraphs: [
+          "Vo veciach ochrany osobných údajov a uplatnenia svojich práv nás kontaktujte na doktor@medicajur.sk alebo telefonicky na +421 2 2073 3871.",
+          "Dozorným orgánom je Úrad na ochranu osobných údajov Slovenskej republiky, Hraničná 12, 820 07 Bratislava, www.dataprotection.gov.sk.",
         ],
       },
     ],
@@ -70,60 +118,108 @@ const PRIVACY: Record<Locale, LegalDoc> = {
     title: "Privacy policy",
     updated: "Last updated: June 2026",
     intro:
-      "Protecting your personal data is important to us. This document explains what data we process, for what purpose, and what rights you have under Regulation (EU) 2016/679 (GDPR) and Act No. 18/2018 Coll. on personal data protection.",
+      "Protecting your personal data is important to us. This policy explains who processes your personal data, what data we process, for what purposes and on what legal basis, with whom we may share it, how long we retain it, and what rights you have under Regulation (EU) 2016/679 (GDPR) and Act No. 18/2018 Coll. on personal data protection.",
     sections: [
       {
         heading: "Controller",
         paragraphs: [
-          "The controller is MEDICA JUR, s.r.o., registered at Muškátová 2, 900 21 Svätý Jur, represented by MUDr. Pavol Trnovec, PhD. Contact: doktor@medicajur.sk, +421 2 2073 3871.",
-          "(Company ID and further identification details to be added from the operator's records.)",
+          "The controller determining the purposes and means of processing personal data is:",
+          "MEDICA JUR, s.r.o., registered office at Muškátová 2, 900 21 Svätý Jur, Company ID (IČO): 35 925 035, registered in the Commercial Register of the Bratislava III City Court, represented by MUDr. Pavol Trnovec, PhD.",
+          "Contact for data protection matters: doktor@medicajur.sk, +421 2 2073 3871.",
         ],
       },
       {
-        heading: "What data we process",
-        paragraphs: ["We process the following categories of personal data:"],
+        heading: "What personal data we process",
+        paragraphs: ["In connection with the provision of healthcare and the operation of the practice, we process in particular the following categories of personal data:"],
         list: [
-          "identification and contact data (name, address, phone, e-mail, birth number),",
-          "health data to the extent necessary for providing healthcare,",
-          "medical record data,",
-          "data you provide when contacting us (phone, e-mail, contact form).",
+          "identification data (first name and surname, title, date of birth, birth number),",
+          "contact data (permanent address, phone number, e-mail address),",
+          "health insurer and insurance relationship data,",
+          "special category health data to the extent necessary for providing healthcare,",
+          "medical record data (medical history, diagnoses, examination results, prescribed medication, recommendations),",
+          "data you provide when contacting us (by phone, e-mail, contact form or the Moji lekári portal).",
         ],
       },
       {
-        heading: "Purpose and legal basis",
+        heading: "Purposes and legal bases",
         paragraphs: [
-          "We process personal data mainly to provide healthcare, maintain medical records and comply with legal obligations.",
-          "The legal basis is compliance with legal obligations (in particular Acts No. 576/2004 Coll. and No. 362/2011 Coll.), provision of healthcare, and, where justified, your consent.",
+          "We process your personal data for the following purposes and on these legal bases:",
+        ],
+        list: [
+          "providing healthcare and maintaining medical records — compliance with legal obligations under Acts No. 576/2004 Coll. and No. 362/2011 Coll. and processing necessary for healthcare purposes (Art. 9(2)(h) GDPR),",
+          "billing and communication with health insurers — compliance with legal obligations,",
+          "accounting and tax records — compliance with legal obligations,",
+          "appointment booking and patient communication (including the Moji lekári portal) — provision of healthcare, or our legitimate interest in efficiently running the practice,",
+          "handling enquiries sent via the contact details on the website — our legitimate interest, or your consent.",
+        ],
+      },
+      {
+        heading: "Sources of personal data",
+        paragraphs: [
+          "We obtain personal data primarily directly from you. In justified cases we may also obtain it from other healthcare providers (e.g. when taking over medical records), from health insurers or from public registers to the extent permitted by law.",
+        ],
+      },
+      {
+        heading: "Recipients and processors",
+        paragraphs: [
+          "Your personal data may be shared, to the necessary extent, with:",
+        ],
+        list: [
+          "health insurers (VšZP, Dôvera, Union) for the purpose of reimbursing healthcare,",
+          "other healthcare providers to whom you are referred (laboratories, specialists, inpatient care),",
+          "the National Health Information Centre and public authorities to the extent required by law,",
+          "processors providing services for us (e.g. the operator of the Moji lekári portal, IT support, accounting services) under a data processing agreement.",
+        ],
+      },
+      {
+        heading: "Transfers to third countries",
+        paragraphs: [
+          "We do not transfer your personal data to third countries outside the European Economic Area or to international organisations.",
         ],
       },
       {
         heading: "Retention period",
         paragraphs: [
-          "We keep medical records for the period required by law. Other data is kept only for as long as necessary to fulfil the purpose of processing.",
-        ],
-      },
-      {
-        heading: "Recipients of data",
-        paragraphs: [
-          "Data may be shared with health insurers, public authorities and service providers (e.g. laboratories, IT and the Moji lekári portal) to the extent necessary and under a data processing agreement.",
+          "We keep medical records for the period set by Act No. 576/2004 Coll. (generally 20 years after the last provision of healthcare, or another period set by law). Accounting and tax documents are kept for the period required by the relevant regulations.",
+          "Other personal data is kept only for as long as necessary to achieve the purpose of processing, or until consent is withdrawn where processing is based on consent.",
         ],
       },
       {
         heading: "Your rights",
-        paragraphs: ["In relation to processing you have the right to:"],
+        paragraphs: ["In relation to the processing of your personal data, you have the following rights:"],
         list: [
-          "access your data,",
-          "rectify inaccurate data,",
-          "erase or restrict processing (where permitted by law),",
-          "object to processing,",
-          "data portability,",
-          "lodge a complaint with the Slovak Data Protection Authority.",
+          "the right to access your personal data and information about its processing,",
+          "the right to rectify inaccurate data and complete incomplete data,",
+          "the right to erasure or restriction of processing where permitted by law,",
+          "the right to object to processing based on a legitimate interest,",
+          "the right to data portability where processing is based on consent or a contract and carried out by automated means,",
+          "the right to withdraw consent at any time where processing is based on consent, without affecting the lawfulness of processing before withdrawal,",
+          "the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic.",
         ],
       },
       {
-        heading: "Contact",
+        heading: "Automated decision-making",
         paragraphs: [
-          "For data protection matters, contact us at doktor@medicajur.sk or by phone at +421 2 2073 3871.",
+          "Your personal data is not subject to automated decision-making, including profiling, that would have legal effects or similarly significantly affect you.",
+        ],
+      },
+      {
+        heading: "Cookies",
+        paragraphs: [
+          "Our website uses cookies. For details on their use and on managing your consent, please see the Cookie policy.",
+        ],
+      },
+      {
+        heading: "Changes to this policy",
+        paragraphs: [
+          "We may update this policy from time to time to reflect changes in legislation or in how we process data. The current version is always available on this page together with the date of the last update.",
+        ],
+      },
+      {
+        heading: "Contact and supervisory authority",
+        paragraphs: [
+          "For data protection matters and to exercise your rights, contact us at doktor@medicajur.sk or by phone at +421 2 2073 3871.",
+          "The supervisory authority is the Office for Personal Data Protection of the Slovak Republic, Hraničná 12, 820 07 Bratislava, www.dataprotection.gov.sk.",
         ],
       },
     ],

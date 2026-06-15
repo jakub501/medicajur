@@ -112,4 +112,13 @@ npm run build && npm run start
 ```
 
 Set `NEXT_PUBLIC_SITE_URL=https://www.medicajur.sk` in the hosting environment so canonical URLs, Open Graph and the sitemap use the live domain.
-```
+
+### Google Maps rating (optional)
+
+The homepage reviews banner can show a **live rating and review count** from Google Maps via the [Places API (New)](https://developers.google.com/maps/documentation/places/web-service/overview):
+
+1. Create a Google Cloud project and enable **Places API (New)**.
+2. Create an API key and restrict it to Places API only.
+3. Set `GOOGLE_PLACES_API_KEY` in `.env.local` (local) and in your hosting provider (production).
+
+Data is cached for 12 hours. If the key is missing or the request fails, the site uses `googleReviewsFallback` in `src/lib/site.ts` (update the fallback values there if needed).
