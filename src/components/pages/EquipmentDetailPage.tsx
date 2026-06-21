@@ -56,7 +56,7 @@ export function EquipmentDetailPage({
               : "card mt-6 overflow-hidden p-4 sm:p-5"
           }
         >
-          {images.map((image) => (
+          {images.map((image, index) => (
             <div
               key={image.src}
               className={
@@ -82,7 +82,7 @@ export function EquipmentDetailPage({
                       ? "(max-width: 768px) 100vw, 50vw"
                       : "(max-width: 768px) 100vw, 576px"
                   }
-                  priority
+                  priority={index === 0}
                 />
               </div>
             </div>

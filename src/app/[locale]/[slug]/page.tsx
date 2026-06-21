@@ -9,7 +9,7 @@ import {
   type Locale,
   type RouteKey,
 } from "@/i18n/config";
-import { getDictionary } from "@/i18n/dictionaries";
+import { getDictionary, type Dictionary } from "@/i18n/dictionaries";
 import { AboutPage } from "@/components/pages/AboutPage";
 import { ServicesPage } from "@/components/pages/ServicesPage";
 import { PricingPage } from "@/components/pages/PricingPage";
@@ -23,7 +23,7 @@ export function generateStaticParams() {
   );
 }
 
-function pageTitle(key: RouteKey, dict: ReturnType<typeof getDictionary>): string {
+function pageTitle(key: RouteKey, dict: Dictionary): string {
   switch (key) {
     case "about":
       return dict.about.title;
@@ -54,7 +54,7 @@ export async function generateMetadata({
   const key = resolveRouteKey(locale, slug);
   if (!key) return {};
 
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const otherLocale: Locale = locale === "sk" ? "en" : "sk";
 
   return {
@@ -81,7 +81,7 @@ export default async function DynamicPage({
   const key = resolveRouteKey(locale, slug);
   if (!key || key === "home") notFound();
 
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
 
   switch (key) {
     case "about":

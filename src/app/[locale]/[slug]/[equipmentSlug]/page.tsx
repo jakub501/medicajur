@@ -5,17 +5,21 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { findEquipmentBySlug, getEquipmentSlugs } from "@/lib/equipment";
 import { EquipmentDetailPage } from "@/components/pages/EquipmentDetailPage";
 
-export function generateStaticParams() {
-  return locales.flatMap((locale) => {
-    const dict = getDictionary(locale);
-    const servicesSlug = routes.services[locale];
+export async function generateStaticParams() {
+  return (
+    await Promise.all(
+      locales.map(async (locale) => {
+        const dict = await getDictionary(locale);
+        const servicesSlug = routes.services[locale];
 
-    return getEquipmentSlugs(dict).map((equipmentSlug) => ({
-      locale,
-      slug: servicesSlug,
-      equipmentSlug,
-    }));
-  });
+        return getEquipmentSlugs(dict).map((equipmentSlug) => ({
+          locale,
+          slug: servicesSlug,
+          equipmentSlug,
+        }));
+      }),
+    )
+  ).flat();
 }
 
 export async function generateMetadata({
@@ -26,7 +30,7 @@ export async function generateMetadata({
   const { locale, equipmentSlug } = await params;
   if (!isLocale(locale)) return {};
 
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const item = findEquipmentBySlug(dict, equipmentSlug);
   if (!item?.device) return {};
 
@@ -56,7 +60,7 @@ export default async function EquipmentDetailRoute({
   if (!isLocale(locale)) notFound();
   if (slug !== routes.services[locale]) notFound();
 
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const item = findEquipmentBySlug(dict, equipmentSlug);
   if (!item?.slug || !item.detail) notFound();
 

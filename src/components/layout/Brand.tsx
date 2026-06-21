@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
@@ -28,13 +29,12 @@ export function Brand({
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
+    <Image
       src={SITE.images.logo}
       alt={alt}
       width={136}
       height={139}
-      decoding="async"
+      priority
       className={cn(
         "block shrink-0 object-contain object-left",
         "h-[92px] w-auto sm:h-24",

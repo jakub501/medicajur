@@ -38,7 +38,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const loc: Locale = isLocale(locale) ? locale : "sk";
-  const dict = getDictionary(loc);
+  const dict = await getDictionary(loc);
 
   const title = `${SITE.brand} — ${SITE.doctor}`;
   const description =
@@ -109,7 +109,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
 
-  const dict = getDictionary(locale);
+  const dict = await getDictionary(locale);
   const jsonLd = clinicJsonLd(locale);
 
   return (
