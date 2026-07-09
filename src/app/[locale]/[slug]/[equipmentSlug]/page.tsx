@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { isLocale, locales, routes, type Locale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { findEquipmentBySlug, getEquipmentSlugs } from "@/lib/equipment";
-import { EquipmentDetailPage } from "@/components/pages/EquipmentDetailPage";
+import { EquipmentDetailPage } from "@/components/services/EquipmentDetailPage";
 
 export async function generateStaticParams() {
   return (

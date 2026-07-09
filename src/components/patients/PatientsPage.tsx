@@ -5,8 +5,8 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
-import { Faq } from "@/components/sections/Faq";
-import { Erecept } from "@/components/sections/Erecept";
+import { Faq } from "@/components/faq/Faq";
+import { Erecept } from "@/components/patients/Erecept";
 
 export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const p = dict.patientsPage;

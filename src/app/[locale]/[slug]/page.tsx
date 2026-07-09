@@ -10,12 +10,12 @@ import {
   type RouteKey,
 } from "@/i18n/config";
 import { getDictionary, type Dictionary } from "@/i18n/dictionaries";
-import { AboutPage } from "@/components/pages/AboutPage";
-import { ServicesPage } from "@/components/pages/ServicesPage";
-import { PricingPage } from "@/components/pages/PricingPage";
-import { HoursPage } from "@/components/pages/HoursPage";
-import { ContactPage } from "@/components/pages/ContactPage";
-import { LegalPage } from "@/components/pages/LegalPage";
+import { AboutPage } from "@/components/about/AboutPage";
+import { ServicesPage } from "@/components/services/ServicesPage";
+import { PricingPage } from "@/components/services/PricingPage";
+import { HoursPage } from "@/components/contact/HoursPage";
+import { ContactPage } from "@/components/contact/ContactPage";
+import { LegalPage } from "@/components/legal/LegalPage";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>

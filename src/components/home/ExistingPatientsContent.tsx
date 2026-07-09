@@ -1,7 +1,7 @@
 import { Info, Smartphone, Mail, Phone } from "lucide-react";
 import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { BookingCard } from "@/components/sections/BookingCard";
+import { BookingCard } from "@/components/home/BookingCard";
 
 const channels = [
   { icon: Smartphone, href: SITE.bookingUrl, value: SITE.bookingName, external: true },

@@ -1,4 +1,4 @@
-import { pricingCategoriesSk } from "./pricing-categories";
+import { pricingCategoriesSk } from "@/content/pricing-categories";
 
 /* The Slovak dictionary is the canonical shape; English must match it. */
 

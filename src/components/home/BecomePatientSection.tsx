@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section } from "@/components/ui/Section";
-import { BecomePatientContent } from "@/components/sections/BecomePatientContent";
+import { BecomePatientContent } from "@/components/home/BecomePatientContent";
 
 export function BecomePatientSection({ dict }: { dict: Dictionary }) {
   const p = dict.patientsPage;

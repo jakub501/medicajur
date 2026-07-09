@@ -1,6 +1,6 @@
 import { Clock, Info } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
-import { HoursTable } from "@/components/shared/HoursTable";
+import { HoursTable } from "@/components/contact/HoursTable";
 import { cn } from "@/lib/cn";
 
 export function HoursPanel({

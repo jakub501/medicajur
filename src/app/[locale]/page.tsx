@@ -2,35 +2,35 @@ import dynamic from "next/dynamic";
 import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Reveal } from "@/components/ui/Reveal";
-import { Hero } from "@/components/sections/Hero";
-import { Trust } from "@/components/sections/Trust";
-import { AboutPracticeBanner } from "@/components/sections/AboutPracticeBanner";
-import { ServicesBento } from "@/components/sections/ServicesBento";
+import { Hero } from "@/components/home/Hero";
+import { Trust } from "@/components/home/Trust";
+import { AboutPracticeBanner } from "@/components/home/AboutPracticeBanner";
+import { ServicesBento } from "@/components/home/ServicesBento";
 
 const ReviewsSection = dynamic(() =>
-  import("@/components/sections/ReviewsSection").then((m) => ({
+  import("@/components/home/ReviewsSection").then((m) => ({
     default: m.ReviewsSection,
   })),
 );
 
 const BecomePatientSection = dynamic(() =>
-  import("@/components/sections/BecomePatientSection").then((m) => ({
+  import("@/components/home/BecomePatientSection").then((m) => ({
     default: m.BecomePatientSection,
   })),
 );
 
 const ExistingPatientsSection = dynamic(() =>
-  import("@/components/sections/ExistingPatientsSection").then((m) => ({
+  import("@/components/home/ExistingPatientsSection").then((m) => ({
     default: m.ExistingPatientsSection,
   })),
 );
 
 const Faq = dynamic(() =>
-  import("@/components/sections/Faq").then((m) => ({ default: m.Faq })),
+  import("@/components/faq/Faq").then((m) => ({ default: m.Faq })),
 );
 
 const ContactHoursSection = dynamic(() =>
-  import("@/components/sections/ContactHoursSection").then((m) => ({
+  import("@/components/home/ContactHoursSection").then((m) => ({
     default: m.ContactHoursSection,
   })),
 );

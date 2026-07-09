@@ -1,6 +1,6 @@
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section } from "@/components/ui/Section";
-import { ExistingPatientsContent } from "@/components/sections/ExistingPatientsContent";
+import { ExistingPatientsContent } from "@/components/home/ExistingPatientsContent";
 
 export function ExistingPatientsSection({ dict }: { dict: Dictionary }) {
   const s = dict.existingPatients;

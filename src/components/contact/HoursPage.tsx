@@ -2,8 +2,8 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
-import { ContactPanel } from "@/components/shared/ContactPanel";
-import { HoursPanel } from "@/components/shared/HoursPanel";
+import { ContactPanel } from "@/components/contact/ContactPanel";
+import { HoursPanel } from "@/components/contact/HoursPanel";
 
 export function HoursPage({ dict }: { locale: Locale; dict: Dictionary }) {
   return (

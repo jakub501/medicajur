@@ -4,9 +4,9 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { Section } from "@/components/ui/Section";
 import { ButtonAnchor } from "@/components/ui/Button";
-import { ServicesScopeList } from "@/components/pages/ServicesScopeList";
-import { ServicesEquipmentList } from "@/components/pages/ServicesEquipmentList";
-import { ServicesPricingSection } from "@/components/pages/ServicesPricingSection";
+import { ServicesScopeList } from "@/components/services/ServicesScopeList";
+import { ServicesEquipmentList } from "@/components/services/ServicesEquipmentList";
+import { ServicesPricingSection } from "@/components/services/ServicesPricingSection";
 
 export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   return (

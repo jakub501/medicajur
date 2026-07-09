@@ -1,7 +1,7 @@
 import { MapPin, Phone, Mail, Navigation } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE, mapsLink } from "@/lib/site";
-import { MapEmbed } from "@/components/shared/MapEmbed";
+import { MapEmbed } from "@/components/contact/MapEmbed";
 import { cn } from "@/lib/cn";
 
 const CONTACT_ACCENTS = ["primary", "green", "deep"] as const;

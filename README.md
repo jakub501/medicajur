@@ -36,8 +36,18 @@ src/
 │     ├─ page.tsx                # Home
 │     └─ [slug]/page.tsx         # All inner pages (localized slugs)
 ├─ components/
-│  ├─ sections/                  # Home sections (Hero, Services, …)
-│  └─ pages/                     # Inner page bodies + legal content
+│  ├─ ui/                        # Reusable UI primitives (Button, Section, …)
+│  ├─ layout/                    # Site chrome (Header, Footer, MainShell, …)
+│  ├─ home/                      # Homepage sections (Hero, Trust, …)
+│  ├─ contact/                   # Contact & opening hours (pages + panels)
+│  ├─ services/                  # Services page, equipment detail, pricing list
+│  ├─ about/                     # About page
+│  ├─ legal/                     # Privacy & cookie policy pages
+│  ├─ faq/                       # FAQ accordion (shared across pages)
+│  └─ patients/                  # Patient onboarding & e-recept content
+├─ content/
+│  ├─ legal-content.ts           # Legal page copy (SK + EN)
+│  └─ pricing-categories.ts      # Pricing table data
 ├─ i18n/
 │  ├─ config.ts                  # locales, route slugs, helpers
 │  └─ dictionaries.ts            # ALL site copy (SK + EN)
@@ -88,8 +98,8 @@ To replace the **logo**, edit `src/components/Logo.tsx`. To replace the **favico
 
 ## Legal / GDPR
 
-- Privacy policy and cookie policy content: `src/components/pages/legal-content.ts` (SK + EN).
-- Cookie consent banner: `src/components/CookieBanner.tsx` (stores choice in `localStorage`).
+- Privacy policy and cookie policy content: `src/content/legal-content.ts` (SK + EN).
+- Cookie consent banner: `src/components/layout/CookieBanner.tsx` (stores choice in `localStorage`).
 - ⚠️ Before launch, fill in the operator's **IČO** and confirm the contracted insurers in `src/lib/site.ts` / legal content.
 
 ---

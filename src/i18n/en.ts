@@ -1,5 +1,5 @@
 import type { Dictionary } from "./sk";
-import { pricingCategoriesSk } from "./pricing-categories";
+import { pricingCategoriesSk } from "@/content/pricing-categories";
 
 const en: Dictionary = {
   meta: {
