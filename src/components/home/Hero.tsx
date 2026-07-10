@@ -1,19 +1,18 @@
 import {
-  CalendarCheck,
   GraduationCap,
   Languages,
+  Mail,
   Phone,
   Stethoscope,
-  UserPlus,
   type LucideIcon,
 } from "lucide-react";
-import { href, type Locale } from "@/i18n/config";
+import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { Container } from "@/components/ui/Container";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
-import { ButtonAnchor, ButtonLink } from "@/components/ui/Button";
+import { ButtonAnchor } from "@/components/ui/Button";
 
 const HERO_BADGE_ICONS: LucideIcon[] = [GraduationCap, Stethoscope];
 
@@ -74,7 +73,7 @@ const HERO_BADGE_POSITIONS = [
 
 const HERO_BADGE_DELAYS = ["0s", "1.2s"] as const;
 
-export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+export function Hero({ dict }: { locale: Locale; dict: Dictionary }) {
   const badges = dict.hero.badges.map((badge, index) => ({
     ...badge,
     icon: HERO_BADGE_ICONS[index],
@@ -88,14 +87,6 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       <Container>
         <div className="relative grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
           <div className="order-1 flex max-w-xl animate-rise flex-col justify-center gap-6 lg:gap-7">
-            <span className="inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-line bg-blue-soft/80 px-3.5 py-1.5 text-eyebrow font-bold text-primary">
-              <span className="relative flex h-2 w-2" aria-hidden="true">
-                <span className="pulse-dot absolute inline-flex h-2 w-2 rounded-full bg-brand-green" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-green" />
-              </span>
-              {dict.hero.eyebrow}
-            </span>
-
             <div className="flex flex-col gap-4">
               <h1 className="text-display text-balance font-medium leading-[1.1]">
                 <span className="block">{dict.hero.titleLine1}</span>
@@ -110,61 +101,26 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5">
-              <span className="text-caption font-semibold text-muted">{dict.hero.insurersLabel}</span>
-              {SITE.insurers.map((name) => (
-                <span
-                  key={name}
-                  className="inline-flex items-center rounded-full border border-line bg-surface/70 px-2.5 py-1 text-caption font-semibold text-ink/75"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
-
             <div className="flex flex-col gap-3.5">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <ButtonAnchor
-                  href={SITE.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`mailto:${SITE.emails.doctor}`}
                   size="md"
-                  className="w-full justify-center px-5 sm:col-span-2"
+                  className="w-full justify-center px-5"
                 >
-                  <CalendarCheck className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
+                  <Mail className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
                   <span>{dict.hero.primaryCta}</span>
                 </ButtonAnchor>
-                <ButtonLink
-                  href={href(locale, "home", "patients")}
-                  variant="secondary"
-                  size="md"
-                  className="w-full justify-center px-5 sm:px-6"
-                >
-                  <UserPlus className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
-                  <span>{dict.hero.secondaryCta}</span>
-                </ButtonLink>
                 <ButtonAnchor
                   href={SITE.phoneHref}
                   variant="secondary"
                   size="md"
-                  className="w-full justify-center px-5 sm:px-6"
+                  className="w-full justify-center px-5"
                 >
                   <Phone className="h-[18px] w-[18px] shrink-0" strokeWidth={1.85} />
                   <span>{dict.common.call}</span>
                 </ButtonAnchor>
               </div>
-
-              <p className="text-caption text-muted">
-                {dict.hero.bookingNotePrefix}
-                <a
-                  href={SITE.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-primary underline decoration-primary/30 underline-offset-2 transition-colors hover:text-primary-deep hover:decoration-primary/60"
-                >
-                  {SITE.bookingName}
-                </a>
-              </p>
             </div>
           </div>
 

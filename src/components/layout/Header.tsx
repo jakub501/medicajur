@@ -62,6 +62,9 @@ export function Header({
   }, [open]);
 
   const isNavActive = (key: HomeNavKey) => {
+    if (key === "aboutDoctor") {
+      return pathname === href(locale, "about") || pathname.startsWith(`${href(locale, "about")}/`);
+    }
     if (!isHomePath(pathname, locale)) return false;
     return activeHash === homeNavHref(locale, key).split("#")[1];
   };
@@ -92,7 +95,7 @@ export function Header({
   };
 
   const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, key: HomeNavKey) => {
-    if (!isHomePath(pathname, locale)) return;
+    if (key === "aboutDoctor" || !isHomePath(pathname, locale)) return;
 
     event.preventDefault();
 

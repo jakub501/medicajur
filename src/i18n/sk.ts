@@ -47,12 +47,10 @@ const sk = {
     note: "Online objednávanie liekov a vyšetrení cez portál Moji lekári",
   },
   hero: {
-    eyebrow: "Prijímame nových pacientov",
-    titleLine1: "MUDr. Pavol Trnovec, PhD.",
-    titleLine2Prefix: "Ambulancia všeobecného lekára ",
-    titleHighlight: "vo Svätom Jure",
-    lead: "Moderná starostlivosť o vaše zdravie, rýchla diagnostika na počkanie a individuálny prístup. Samozrejmosťou je online objednávanie na termín a kompletné vyšetrenia aj v anglickom jazyku.",
-    insurersLabel: "Zmluvné poisťovne:",
+    titleLine1: "Celostná a funkčná medicína pre dlhší a zdravší život",
+    titleLine2Prefix: "MedicaJur – pre ",
+    titleHighlight: "Vaše zdravie",
+    lead: "MUDr. Pavol Trnovec, PhD, prináša medicínu, ktorá nehľadá iba symptómy, ale rieši príčiny. Cielené intervencie, prevencia a moderné diagnostické metódy s cieľom predĺžiť vek prežitý v plnom zdraví.",
     languagesBadge: "SK · EN",
     primaryCta: "Objednať sa",
     secondaryCta: "Som nový pacient",
@@ -505,28 +503,22 @@ const sk = {
   },
   trust: {
     title: "Prečo si vybrať našu ambulanciu",
-    quote:
-      "Zameriavam sa na prevenciu, aby ste mohli žiť spokojne. Ale ak bude treba, som otvorený poskytnúť Vám špičkovú liečbu.",
+    quote: "Pomôžem Vám prežiť Váš život v celej jeho plnosti",
     items: [
       {
-        title: "Komplexná pomoc",
-        text: "Od prevencie až po liečbu. Väčšinu vecí vybavíte priamo u nás, bez zbytočného posielania inde.",
-        icon: "clipboard-check",
+        title: "Celostný prístup",
+        text: "Hľadáme skutočné príčiny Vašich ťažkostí, nielen riešenia pre okamžité symptómy.",
+        icon: "stethoscope",
       },
       {
-        title: "Všetky poisťovne",
-        text: "Bez doplatkov za výber lekára. Spolupracujeme so všetkými zdravotnými poisťovňami.",
+        title: "Moderná diagnostika",
+        text: "Využívame špičkové technológie pre presný obraz o Vašom zdraví a vnútornej rovnováhe.",
+        icon: "activity",
+      },
+      {
+        title: "Zamerané na prevenciu",
+        text: "Chránime Vašu budúcnosť pred civilizačnými chorobami skôr, než stihnú prepuknúť.",
         icon: "shield-check",
-      },
-      {
-        title: "Prijímame nových pacientov",
-        text: "Prechod k nám je jednoduchý. Odhlásenie aj presun dokumentácie vybavíme za Vás.",
-        icon: "user-plus",
-      },
-      {
-        title: "English-speaking doctor",
-        text: "Examinations and explanations are also available in English. You can discuss your health comfortably.",
-        icon: "languages",
       },
     ],
   },

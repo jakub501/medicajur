@@ -7,12 +7,6 @@ import { Section } from "@/components/ui/Section";
 
 const TRUST_CARD_ACCENTS = ["primary", "green", "deep", "gold"] as const;
 
-const INSURER_NAME_CLASS: Record<string, string> = {
-  "VšZP": "text-insurer-vszp-text",
-  "Dôvera": "text-insurer-dovera-text",
-  Union: "text-insurer-union-text",
-};
-
 function TrustCardShell({
   title,
   icon,
@@ -60,28 +54,6 @@ function TrustCard({
   );
 }
 
-function TrustInsurersBar() {
-  return (
-    <div
-      className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 rounded-xl border border-line/70 bg-bg/80 px-4 py-3 sm:gap-x-5 sm:px-5"
-      aria-label={SITE.insurers.join(", ")}
-    >
-      {SITE.insurers.map((name, index) => (
-        <span key={name} className="inline-flex items-center gap-x-4 sm:gap-x-5">
-          {index > 0 && (
-            <span aria-hidden="true" className="font-serif text-muted/35">
-              ·
-            </span>
-          )}
-          <span className={cn("font-serif text-body-sm font-semibold", INSURER_NAME_CLASS[name])}>
-            {name}
-          </span>
-        </span>
-      ))}
-    </div>
-  );
-}
-
 export function Trust({ dict }: { dict: Dictionary }) {
   const t = dict.trust;
 
@@ -122,7 +94,7 @@ export function Trust({ dict }: { dict: Dictionary }) {
       </div>
 
       <div className="mx-auto max-w-3xl">
-        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:items-stretch sm:gap-4">
+        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-3 sm:items-stretch sm:gap-4">
           {t.items.map((item, index) => (
             <TrustCard
               key={item.title}
@@ -132,10 +104,6 @@ export function Trust({ dict }: { dict: Dictionary }) {
               accent={TRUST_CARD_ACCENTS[index]}
             />
           ))}
-        </div>
-
-        <div className="mt-3.5 sm:mt-4">
-          <TrustInsurersBar />
         </div>
       </div>
     </Section>

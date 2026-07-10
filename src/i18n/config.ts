@@ -44,13 +44,13 @@ export function href(locale: Locale, key: RouteKey, hash?: string) {
 
 /** Homepage section anchors for legacy route keys (footer, etc.). */
 export const homeSectionHash: Partial<Record<RouteKey, string>> = {
-  about: "about",
   services: "services",
   hours: "hours",
   contact: "kontakt",
 };
 
 export function homeNavHref(locale: Locale, key: HomeNavKey) {
+  if (key === "aboutDoctor") return href(locale, "about");
   return href(locale, "home", homeNavHashes[key]);
 }
 

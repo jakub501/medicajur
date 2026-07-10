@@ -46,12 +46,10 @@ const en: Dictionary = {
     note: "Online prescriptions & appointments via the Moji lekári portal",
   },
   hero: {
-    eyebrow: "Accepting new patients",
-    titleLine1: "MUDr. Pavol Trnovec, PhD.",
-    titleLine2Prefix: "General practice ",
-    titleHighlight: "in Svätý Jur",
-    lead: "Modern care for your health, rapid on-site diagnostics and an individual approach. Online appointment booking and full examinations in English come as standard.",
-    insurersLabel: "Contracted insurers:",
+    titleLine1: "Holistic and functional medicine for a longer, healthier life",
+    titleLine2Prefix: "MedicaJur – for ",
+    titleHighlight: "your health",
+    lead: "MUDr. Pavol Trnovec, PhD, delivers medicine that does not merely treat symptoms, but addresses root causes. Targeted interventions, prevention and modern diagnostic methods aimed at extending the years you live in full health.",
     languagesBadge: "SK · EN",
     primaryCta: "Book now",
     secondaryCta: "I'm a new patient",
@@ -504,28 +502,22 @@ const en: Dictionary = {
   },
   trust: {
     title: "Why choose our practice",
-    quote:
-      "I put prevention first, so you can live with peace of mind. When treatment is needed, I am ready to provide care of the highest standard.",
+    quote: "I will help you live your life to its fullest",
     items: [
       {
-        title: "Comprehensive care",
-        text: "From prevention through to treatment. Most of what you need is handled right here, without unnecessary referrals elsewhere.",
-        icon: "clipboard-check",
+        title: "Holistic approach",
+        text: "We look for the real causes of your difficulties, not just solutions for immediate symptoms.",
+        icon: "stethoscope",
       },
       {
-        title: "Every health insurer",
-        text: "No surcharge for choosing your GP. We are contracted with all health insurers in Slovakia.",
+        title: "Modern diagnostics",
+        text: "We use cutting-edge technology for an accurate picture of your health and inner balance.",
+        icon: "activity",
+      },
+      {
+        title: "Focused on prevention",
+        text: "We protect your future from lifestyle diseases before they have a chance to develop.",
         icon: "shield-check",
-      },
-      {
-        title: "Accepting new patients",
-        text: "Switching to us is straightforward. We take care of de-registration from your previous GP and the transfer of your medical records.",
-        icon: "user-plus",
-      },
-      {
-        title: "English-speaking GP",
-        text: "Examinations and clear explanations are available in English. You can discuss your health in the language you are comfortable with.",
-        icon: "languages",
       },
     ],
   },

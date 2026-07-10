@@ -4,7 +4,6 @@ import { getDictionary } from "@/i18n/dictionaries";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/home/Hero";
 import { Trust } from "@/components/home/Trust";
-import { AboutPracticeBanner } from "@/components/home/AboutPracticeBanner";
 import { ServicesBento } from "@/components/home/ServicesBento";
 
 const ReviewsSection = dynamic(() =>
@@ -49,9 +48,6 @@ export default async function HomePage({
       <Hero locale={loc} dict={dict} />
       <Reveal>
         <Trust dict={dict} />
-      </Reveal>
-      <Reveal>
-        <AboutPracticeBanner locale={loc} dict={dict} />
       </Reveal>
       <Reveal>
         <ReviewsSection locale={loc} dict={dict} />
