@@ -1,5 +1,5 @@
 import type { Dictionary } from "./sk";
-import { pricingCategoriesSk } from "@/content/pricing-categories";
+import { getPricingCategories } from "@/content/pricing-categories";
 
 const en: Dictionary = {
   meta: {
@@ -63,7 +63,7 @@ const en: Dictionary = {
         subtitle: "Independent practice since 2019",
       },
     ],
-    bookingNote: "Booking is handled via the My Doctors portal",
+    bookingNote: "Booking is handled via the Moji lekári portal",
     bookingNotePrefix: "Booking is handled via the ",
     photoAlt: "MEDICA JUR practice in Svätý Jur",
   },
@@ -97,7 +97,7 @@ const en: Dictionary = {
     callCta: "Call us",
     story:
       "Graduate of the Jessenius Faculty of Medicine in Martin (Summa cum laude) and holder of a PhD degree. He has been leading the practice in Svätý Jur since spring 2019 — with an emphasis on time, prevention and clear communication, including in English.",
-    doctorTitle: "About doctor",
+    doctorTitle: "Your doctor",
     whyItems: [
       {
         title: "Time for the patient",
@@ -133,7 +133,7 @@ const en: Dictionary = {
   },
   services: {
     eyebrow: "Care",
-    title: "Our services",
+    title: "Services overview",
     subtitle: "Complete care for adults under one roof.",
     overview: {
       cards: [
@@ -179,7 +179,7 @@ const en: Dictionary = {
         "ABI BOSO",
         "Holter BOSO TM2430",
         "CRP · Hb · iFOBT",
-        "Accu Check glucose meter",
+        "Accu-Chek glucose meter",
       ],
     },
     viewAll: "Detailed service listing",
@@ -302,7 +302,7 @@ const en: Dictionary = {
         },
         {
           slug: "boso-tm2430-holter",
-          purpose: "Blood pressure under 24-hour monitoring",
+          purpose: "24-hour blood pressure monitoring",
           device: "BOSO TM2430 blood pressure holter",
           detail: {
             image: "/images/equipment/boso-tm2430-holter.png",
@@ -334,7 +334,7 @@ const en: Dictionary = {
           },
         },
         {
-          purpose: "Detects anaemia",
+          purpose: "Diagnosis of anaemia",
           device: "QuickRead go Orion — haemoglobin level testing",
           detailSlug: "quickread-go-orion",
         },
@@ -377,8 +377,8 @@ const en: Dictionary = {
         },
         {
           slug: "accu-chek",
-          purpose: "Screening blood glucose test",
-          device: "Accu Check glucose meter",
+          purpose: "Rapid blood glucose measurement",
+          device: "Accu-Chek glucose meter",
           detail: {
             image: "/images/equipment/accu-chek.png",
             imageAlt: "Accu-Chek glucose meter",
@@ -456,11 +456,11 @@ const en: Dictionary = {
     pageLeadTitle: "Services beyond health insurance",
     pageLead:
       "All routine treatment and diagnostic procedures indicated by the doctor are free of charge for our insured patients. Only administrative services and examinations provided at the patient's personal request (self-pay) are charged.",
-    priceUnavailable: "on request",
-    categories: pricingCategoriesSk.map((category) => ({
+    priceUnavailable: "per price list",
+    categories: getPricingCategories("en").map((category) => ({
       title: category.title,
       items: category.items.map((item) => ({ name: item.name, price: item.price })),
-    })),
+    })) as { title: string; items: { name: string; price: string }[] }[],
   },
   existingPatients: {
     title: "Registered patients",
@@ -473,7 +473,7 @@ const en: Dictionary = {
   erecept: {
     eyebrow: "Prescriptions & medication",
     title: "How to request an e-prescription",
-    subtitle: "Request a repeat prescription remotely.",
+    subtitle: "You can request chronic medication prescriptions remotely.",
     steps: [
       {
         title: "Via the Moji lekári app",
@@ -519,7 +519,7 @@ const en: Dictionary = {
   },
   trust: {
     title: "Why choose our practice",
-    quote: "It's not just about living longer — it's about living those years in full health.",
+    quote: "For me, it's not just about helping you live longer — it's about living those years in full health.",
     quoteRole: "MEDICA JUR · Svätý Jur",
     items: [
       {
@@ -541,16 +541,16 @@ const en: Dictionary = {
     examTitle: "What we learn at your intake examination",
     examLead: "One visit gives you a complete picture of your health — while you wait.",
     exams: [
-      { name: "InBody 970", measure: "Body composition — muscle, fat and water" },
-      { name: "MaxGrip", measure: "Grip strength and muscle condition" },
-      { name: "MaxPulse", measure: "Pulse wave and arterial elasticity" },
-      { name: "ABI", measure: "Ankle-brachial index and atherosclerosis screening" },
-      { name: "Blood count & biochemistry", measure: "Complete laboratory profile" },
+      { name: "InBody 970", measure: "Muscle, fat and metabolic age" },
+      { name: "MaxGrip", measure: "Muscle strength and longevity indicator" },
+      { name: "MaxPulse", measure: "Arterial elasticity and stress level" },
+      { name: "ABI index", measure: "Artery flow and heart health" },
+      { name: "Blood count", measure: "Organ and immune health screening" },
     ],
   },
   aboutUs: {
     eyebrow: "About us",
-    title: "Care for every stage of your life",
+    title: "A practice for your whole life",
     lead: "At MEDICA JUR we accompany patients through every stage of adult life — from young adults to seniors. Prevention is at the core, deciding how many years you live in full strength.",
     pillars: [
       {
@@ -574,7 +574,7 @@ const en: Dictionary = {
     doctorCta: "About the doctor",
   },
   about: {
-    eyebrow: "About doctor",
+    eyebrow: "About the doctor",
     title: "MUDr. Pavol Trnovec, PhD.",
     lead: "General practitioner for adults in Svätý Jur",
     profileCards: [
@@ -626,7 +626,7 @@ const en: Dictionary = {
     ],
   },
   aboutBanner: {
-    eyebrow: "About doctor",
+    eyebrow: "About the doctor",
     title: "MUDr. Pavol Trnovec, PhD.",
     subtitle: "General practitioner for adults",
     text: "A doctor who left a successful career in senior management at international pharmaceutical companies to help patients directly. He now channels his many years of experience from clinical research in the USA and Austria into honest, hands-on medicine in his own practice. His priority is accurate diagnosis, open communication and rational treatment that puts the person first — not unnecessary medication.",
@@ -678,7 +678,7 @@ const en: Dictionary = {
     items: [
       {
         q: "Are you accepting new patients?",
-        a: "Yes, we are currently accepting new patients. To register, simply complete and sign the Healthcare Provision Agreement and bring it to our practice, or we can provide it for you on site. We will fully take care of de-registering you from your previous GP and transferring your medical records.",
+        a: "Yes, we accept new patients who share our focus on longevity and a holistic approach to health. When you switch to us, we will fully take care of de-registering you from your previous GP and transferring your medical records.",
       },
       {
         q: "How can I book an appointment?",
@@ -694,7 +694,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I do in case of acute illness?",
-        a: "We treat acute conditions (e.g. sudden high fever, severe pain, acute infections) without an appointment during dedicated hours at the start of the surgery day — see the opening hours table for exact times.\n\nIn case of life-threatening emergency (suspected heart attack, stroke, severe shortness of breath), do not wait — call emergency services on 155 or 112 immediately.",
+        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait — call emergency services on 155 or 112 immediately.",
       },
       {
         q: "Which health insurers do you have contracts with?",
@@ -702,7 +702,7 @@ const en: Dictionary = {
       },
       {
         q: "Do I pay for tests on modern devices?",
-        a: "If you have health problems and the doctor indicates the test, you pay nothing. All diagnostic procedures needed to determine the right treatment are fully covered by public health insurance for our capitated patients.\n\nHowever, our standard is to provide above-standard preventive care and maximum comfort, which requires investment in cutting-edge technology and staffing. We therefore offer annual service subscription packages that enable in-depth prevention and modern health management at the highest level:\n\n• Clear client service: The annual subscription includes non-medical services such as reception, call centre, convenient SMS and e-mail notifications, and full access to the Moji lekári patient portal for 12 months.\n\n• Premium prevention and health coaching: With a prepaid package (ZDRAVIE at €50 or ZDRAVIE+ at €100), you receive regular preventive diagnostics beyond standard insurance coverage. This includes detailed body composition analysis (TANITA or InBODY 970), arterial flow measurement (ABI), vascular and metabolic age analysis (Maxpulse, MESI ECG) and professional health coaching.\n\nOnly tests performed solely at your own request outside these packages (e.g. out of curiosity) or procedures for employer and administrative purposes are charged according to the valid price list.",
+        a: "Indicated examinations for illness are fully covered by your insurance. However, our practice focuses on long-term health and longevity, which requires state-of-the-art equipment and above-standard time devoted to each patient.\n\nWe therefore provide the highest level of such care through annual subscription packages ZDRAVIE (€50) and ZDRAVIE+ (€100).\n\nAnnual subscription guarantees:\n\n• Top-tier device-based prevention: Regular measurements beyond insurance coverage (InBODY 970, TANITA, Maxpulse, MESI ECG, ABI) that reveal hidden risks of lifestyle diseases, complemented by personal Health Coaching.\n\n• First-class service: Comprehensive non-medical service including reception, call centre, notifications and annual access to the Moji lekári patient portal.\n\n(Examinations outside packages at your own request and administrative services are charged according to the valid price list).",
       },
       {
         q: "How do I get to you and where can I park?",
@@ -729,7 +729,7 @@ const en: Dictionary = {
     faq: [
       {
         q: "Are you accepting new patients?",
-        a: "Yes, we are currently accepting new patients. To register, simply complete and sign the Healthcare Provision Agreement and bring it to our practice, or we can provide it for you on site. We will fully take care of de-registering you from your previous GP and transferring your medical records.",
+        a: "Yes, we accept new patients who share our focus on longevity and a holistic approach to health. When you switch to us, we will fully take care of de-registering you from your previous GP and transferring your medical records.",
       },
       {
         q: "How can I book an appointment?",
@@ -745,7 +745,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I do in case of acute illness?",
-        a: "We treat acute conditions (e.g. sudden high fever, severe pain, acute infections) without an appointment during dedicated hours at the start of the surgery day — see the opening hours table for exact times.\n\nIn case of life-threatening emergency (suspected heart attack, stroke, severe shortness of breath), do not wait — call emergency services on 155 or 112 immediately.",
+        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait — call emergency services on 155 or 112 immediately.",
       },
       {
         q: "Which health insurers do you have contracts with?",
@@ -753,7 +753,7 @@ const en: Dictionary = {
       },
       {
         q: "Do I pay for tests on modern devices?",
-        a: "If you have health problems and the doctor indicates the test, you pay nothing. All diagnostic procedures needed to determine the right treatment are fully covered by public health insurance for our capitated patients.\n\nHowever, our standard is to provide above-standard preventive care and maximum comfort, which requires investment in cutting-edge technology and staffing. We therefore offer annual service subscription packages that enable in-depth prevention and modern health management at the highest level:\n\n• Clear client service: The annual subscription includes non-medical services such as reception, call centre, convenient SMS and e-mail notifications, and full access to the Moji lekári patient portal for 12 months.\n\n• Premium prevention and health coaching: With a prepaid package (ZDRAVIE at €50 or ZDRAVIE+ at €100), you receive regular preventive diagnostics beyond standard insurance coverage. This includes detailed body composition analysis (TANITA or InBODY 970), arterial flow measurement (ABI), vascular and metabolic age analysis (Maxpulse, MESI ECG) and professional health coaching.\n\nOnly tests performed solely at your own request outside these packages (e.g. out of curiosity) or procedures for employer and administrative purposes are charged according to the valid price list.",
+        a: "Indicated examinations for illness are fully covered by your insurance. However, our practice focuses on long-term health and longevity, which requires state-of-the-art equipment and above-standard time devoted to each patient.\n\nWe therefore provide the highest level of such care through annual subscription packages ZDRAVIE (€50) and ZDRAVIE+ (€100).\n\nAnnual subscription guarantees:\n\n• Top-tier device-based prevention: Regular measurements beyond insurance coverage (InBODY 970, TANITA, Maxpulse, MESI ECG, ABI) that reveal hidden risks of lifestyle diseases, complemented by personal Health Coaching.\n\n• First-class service: Comprehensive non-medical service including reception, call centre, notifications and annual access to the Moji lekári patient portal.\n\n(Examinations outside packages at your own request and administrative services are charged according to the valid price list).",
       },
       {
         q: "How do I get to you and where can I park?",

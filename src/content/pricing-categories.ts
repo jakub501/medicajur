@@ -1,3 +1,5 @@
+import { pricingCategoriesEn } from "./pricing-categories-en";
+
 export const pricingCategoriesSk = [
   {
     title: "A. Prehliadky a lekársky posudok",
@@ -282,3 +284,7 @@ export const pricingCategoriesSk = [
     ],
   },
 ] as const;
+
+export function getPricingCategories(locale: "sk" | "en") {
+  return locale === "sk" ? pricingCategoriesSk : pricingCategoriesEn;
+}

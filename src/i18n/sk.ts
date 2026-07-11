@@ -461,7 +461,7 @@ const sk = {
     categories: pricingCategoriesSk.map((category) => ({
       title: category.title,
       items: category.items.map((item) => ({ name: item.name, price: item.price })),
-    })),
+    })) as { title: string; items: { name: string; price: string }[] }[],
   },
   existingPatients: {
     title: "Registrovaní pacienti",
@@ -542,11 +542,11 @@ const sk = {
     examTitle: "Čo o Vás zistíme pri vstupnom vyšetrení",
     examLead: "Za jednu návštevu získate komplexný obraz o svojom zdraví — na počkanie.",
     exams: [
-      { name: "InBody 970", measure: "Zloženie tela — svaly, tuk aj voda" },
-      { name: "MaxGrip", measure: "Sila stisku ruky a svalová kondícia" },
-      { name: "MaxPulse", measure: "Pulzová vlna a pružnosť ciev" },
-      { name: "ABI", measure: "Členkovo-ramenný index a záchyt aterosklerózy" },
-      { name: "Krvný obraz a biochémia", measure: "Kompletný laboratórny profil" },
+      { name: "InBody 970", measure: "Svaly, tuk a metabolický vek" },
+      { name: "MaxGrip", measure: "Svalová sila a ukazovateľ dlhovekosti" },
+      { name: "MaxPulse", measure: "Pružnosť ciev a úroveň stresu" },
+      { name: "ABI index", measure: "Priechodnosť tepien a zdravie srdca" },
+      { name: "Krvný obraz", measure: "Kontrola orgánov a imunity" },
     ],
   },
   aboutUs: {
