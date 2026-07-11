@@ -529,7 +529,7 @@ const en: Dictionary = {
       },
       {
         title: "Modern diagnostics",
-        text: "Advanced equipment: InBody 970, Maxpulse, ECG, ABI",
+        text: "We measure what a routine checkup misses",
         icon: "activity",
       },
       {
@@ -537,6 +537,15 @@ const en: Dictionary = {
         text: "Cardiovascular, metabolic, neurodegenerative",
         icon: "shield-check",
       },
+    ],
+    examTitle: "What we learn at your intake examination",
+    examLead: "One visit gives you a complete picture of your health — while you wait.",
+    exams: [
+      { name: "InBody 970", measure: "Body composition — muscle, fat and water" },
+      { name: "MaxGrip", measure: "Grip strength and muscle condition" },
+      { name: "MaxPulse", measure: "Pulse wave and arterial elasticity" },
+      { name: "ABI", measure: "Ankle-brachial index and atherosclerosis screening" },
+      { name: "Blood count & biochemistry", measure: "Complete laboratory profile" },
     ],
   },
   aboutUs: {

@@ -530,7 +530,7 @@ const sk = {
       },
       {
         title: "Moderná diagnostika",
-        text: "Špičkové prístroje InBody 970, Maxpulse, EKG, ABI",
+        text: "Meriame to, čo bežná prehliadka nezachytí",
         icon: "activity",
       },
       {
@@ -538,6 +538,15 @@ const sk = {
         text: "Kardiovaskulárne, metabolické, neurodegeneratívne",
         icon: "shield-check",
       },
+    ],
+    examTitle: "Čo o Vás zistíme pri vstupnom vyšetrení",
+    examLead: "Za jednu návštevu získate komplexný obraz o svojom zdraví — na počkanie.",
+    exams: [
+      { name: "InBody 970", measure: "Zloženie tela — svaly, tuk aj voda" },
+      { name: "MaxGrip", measure: "Sila stisku ruky a svalová kondícia" },
+      { name: "MaxPulse", measure: "Pulzová vlna a pružnosť ciev" },
+      { name: "ABI", measure: "Členkovo-ramenný index a záchyt aterosklerózy" },
+      { name: "Krvný obraz a biochémia", measure: "Kompletný laboratórny profil" },
     ],
   },
   aboutUs: {

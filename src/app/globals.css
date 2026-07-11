@@ -1803,6 +1803,136 @@ footer h4 {
   border: 1px solid rgba(224, 165, 61, 0.26);
 }
 
+/* ---- Philosophy quote card — a distinct testimonial element ---- */
+.trust-quote-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(207, 224, 238, 0.9);
+  background: linear-gradient(160deg, #ffffff 0%, #f1f7fc 100%);
+  box-shadow: var(--shadow-card);
+}
+.trust-quote-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -32%;
+  right: -6%;
+  width: 42%;
+  height: 130%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(21, 99, 156, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.trust-quote-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: -40%;
+  left: -6%;
+  width: 34%;
+  height: 120%;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(46, 158, 107, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.trust-quote-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.trust-quote-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: linear-gradient(145deg, #1a6ba6 0%, #0d4674 100%);
+  box-shadow:
+    0 0 0 3px rgba(224, 165, 61, 0.3),
+    0 10px 22px -10px rgba(13, 70, 116, 0.5);
+}
+
+/* ---- Diagnostics band — the real intake examinations on a dark ground ---- */
+/* Headings inside the dark band must stay light (override the global ink color). */
+.trust-dark-band h3,
+.trust-dark-band h4 {
+  color: var(--color-on-primary);
+}
+
+.trust-exam-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .trust-exam-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .trust-exam-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.trust-exam-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-radius: 14px;
+  border: 1px solid rgba(168, 205, 230, 0.16);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1rem 1.05rem 1.1rem;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.trust-exam-item:hover {
+  border-color: rgba(224, 165, 61, 0.42);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-3px);
+}
+
+.trust-exam-item__ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 11px;
+  flex-shrink: 0;
+  color: #f0c063;
+  background: rgba(224, 165, 61, 0.13);
+  border: 1px solid rgba(224, 165, 61, 0.28);
+}
+
+.trust-exam-item__name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+.trust-exam-item__measure {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--color-on-primary-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trust-exam-item:hover {
+    transform: none;
+  }
+}
+
 /* ---- Value cards — vertical, colorful, dimensional.
    Shared by the "Prečo" (Trust) and "Služby" (Services) sections. ---- */
 .trust-card {
