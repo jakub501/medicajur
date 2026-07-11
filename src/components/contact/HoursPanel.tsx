@@ -11,22 +11,22 @@ export function HoursPanel({
   className?: string;
 }) {
   return (
-    <div className={cn("contact-panel-card card flex h-full flex-col shadow-soft", className)}>
-      <div className="mb-5 flex items-center gap-3.5">
-        <span className="hero-float-badge-icon hero-float-badge-icon--primary h-10 w-10 shrink-0 rounded-[11px]">
+    <div className={cn("hours-contact-panel flex h-full flex-col", className)}>
+      <div className="mb-5 flex items-center gap-3">
+        <span className="trust-ico trust-ico--primary h-10 w-10 shrink-0 rounded-[13px]">
           <Clock className="h-5 w-5" strokeWidth={1.85} aria-hidden="true" />
         </span>
-        <h3 className="text-h3">{dict.hoursSection.title}</h3>
+        <h3 className="trust-card__title">{dict.hoursSection.title}</h3>
       </div>
 
       <div className="flex-1">
         <HoursTable dict={dict} />
       </div>
 
-      <div className="contact-panel-note text-body-sm mt-5 flex items-start gap-2.5">
-        <Info className="mt-0.5 h-[18px] w-[18px] shrink-0 text-primary" strokeWidth={1.85} aria-hidden="true" />
+      <p className="hours-contact-note text-body-sm mt-5 flex items-start gap-2.5 leading-relaxed">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" strokeWidth={1.85} aria-hidden="true" />
         <span>{dict.hoursSection.note}</span>
-      </div>
+      </p>
     </div>
   );
 }

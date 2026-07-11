@@ -48,7 +48,7 @@ export default async function HomePage({
     <>
       <Hero locale={loc} dict={dict} />
       <Reveal fade>
-        <AboutUs dict={dict} />
+        <AboutUs locale={loc} dict={dict} />
       </Reveal>
       <Reveal fade>
         <Trust dict={dict} />

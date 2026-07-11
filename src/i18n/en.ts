@@ -9,10 +9,10 @@ const en: Dictionary = {
   },
   nav: {
     about: "Practice",
-    aboutDoctor: "About the doctor",
+    aboutDoctor: "About us",
     services: "Services",
     newPatient: "New patient",
-    existingPatients: "Existing patients",
+    existingPatients: "Registered",
     pricing: "Pricing",
     hours: "Hours",
     patients: "Patients",
@@ -33,7 +33,6 @@ const en: Dictionary = {
     address: "Address",
     phone: "Phone",
     email: "E-mail",
-    callDuringHours: "Please call during opening hours.",
     book: "Book now",
     bookOnline: "Book online",
     call: "Call us",
@@ -494,7 +493,6 @@ const en: Dictionary = {
   hoursSection: {
     title: "Opening hours",
     note: "Blood draws take place in the morning. Please book in advance for sampling and planned exams.",
-    acutePrefix: "Acute",
     pageLead:
       "Phone bookings subject to nurse availability. Acute cases are seen in the dedicated time slots and according to the patient's condition.",
     days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
@@ -573,6 +571,7 @@ const en: Dictionary = {
       { label: "Waiting room" },
       { label: "Reception" },
     ],
+    doctorCta: "About the doctor",
   },
   about: {
     eyebrow: "About doctor",

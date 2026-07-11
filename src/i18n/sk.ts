@@ -10,10 +10,10 @@ const sk = {
   },
   nav: {
     about: "Ambulancia",
-    aboutDoctor: "O lekárovi",
+    aboutDoctor: "O nás",
     services: "Služby",
     newPatient: "Nový pacient",
-    existingPatients: "Pre pacientov",
+    existingPatients: "Registrovaní",
     pricing: "Cenník",
     hours: "Hodiny",
     patients: "Pacienti",
@@ -34,7 +34,6 @@ const sk = {
     address: "Adresa",
     phone: "Telefón",
     email: "E-mail",
-    callDuringHours: "Volajte počas ordinačných hodín.",
     book: "Objednať sa",
     bookOnline: "Objednať online",
     call: "Zavolať",
@@ -495,7 +494,6 @@ const sk = {
   hoursSection: {
     title: "Ordinačné hodiny",
     note: "Odbery krvi prebiehajú ráno. Na odber a plánované vyšetrenia sa, prosím, objednajte vopred.",
-    acutePrefix: "Akútne",
     pageLead:
       "Telefonické objednávanie podľa dostupnosti sestier. Akútne stavy ošetríme v časoch na to vyhradených a podľa stavu pacienta.",
     days: ["Nedeľa", "Pondelok", "Utorok", "Streda", "Štvrtok", "Piatok", "Sobota"],
@@ -574,6 +572,7 @@ const sk = {
       { label: "Čakáreň" },
       { label: "Recepcia" },
     ],
+    doctorCta: "O lekárovi",
   },
   about: {
     eyebrow: "O lekárovi",

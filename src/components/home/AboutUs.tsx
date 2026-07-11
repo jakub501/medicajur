@@ -1,10 +1,13 @@
-import { HeartPulse, Sparkles, Users, type LucideIcon } from "lucide-react";
+import { HeartPulse, Sparkles, Users, ArrowRight, type LucideIcon } from "lucide-react";
+import type { Locale } from "@/i18n/config";
+import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { ButtonLink } from "@/components/ui/Button";
 
 const PILLAR_ICONS: LucideIcon[] = [Sparkles, Users, HeartPulse];
 const PILLAR_ACCENTS = ["primary", "green", "gold"] as const;
@@ -15,7 +18,7 @@ const PHOTO_SRCS = [
   SITE.images.aboutReception,
 ];
 
-export function AboutUs({ dict }: { dict: Dictionary }) {
+export function AboutUs({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const a = dict.aboutUs;
 
   return (
@@ -50,6 +53,11 @@ export function AboutUs({ dict }: { dict: Dictionary }) {
               );
             })}
           </Reveal>
+
+          <ButtonLink href={href(locale, "about")} variant="primary" size="md" className="mt-8">
+            <ArrowRight className="h-[18px] w-[18px]" strokeWidth={1.85} aria-hidden="true" />
+            {a.doctorCta}
+          </ButtonLink>
         </div>
 
         <Reveal stagger className="grid grid-cols-2 gap-3 sm:gap-3.5">

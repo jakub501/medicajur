@@ -29,7 +29,7 @@ export type HomeNavKey =
   | "contact";
 
 export const homeNavHashes: Record<HomeNavKey, string> = {
-  aboutDoctor: "about",
+  aboutDoctor: "o-nas",
   services: "services",
   newPatient: "patients",
   existingPatients: "existing-patients",
@@ -50,7 +50,6 @@ export const homeSectionHash: Partial<Record<RouteKey, string>> = {
 };
 
 export function homeNavHref(locale: Locale, key: HomeNavKey) {
-  if (key === "aboutDoctor") return href(locale, "about");
   return href(locale, "home", homeNavHashes[key]);
 }
 

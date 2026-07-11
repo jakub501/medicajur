@@ -86,11 +86,11 @@ export type DaySchedule = {
 const hm = (h: number, m = 0) => h * 60 + m;
 
 export const SCHEDULE: DaySchedule[] = [
-  { dow: 1, intervals: [[hm(7), hm(12)], [hm(12, 30), hm(15)]], acute: [hm(8), hm(9)] },
-  { dow: 2, intervals: [[hm(12), hm(17, 30)]], acute: [hm(12), hm(13)] },
-  { dow: 3, intervals: [[hm(7), hm(12)], [hm(12, 30), hm(15)]], acute: [hm(8), hm(9)] },
-  { dow: 4, intervals: [[hm(12), hm(17, 30)]], acute: [hm(12), hm(13)] },
-  { dow: 5, intervals: [[hm(7), hm(12)], [hm(12, 30), hm(14)]], acute: [hm(8), hm(9)] },
+  { dow: 1, intervals: [[hm(7), hm(15)]], acute: null },
+  { dow: 2, intervals: [[hm(11), hm(18)]], acute: null },
+  { dow: 3, intervals: [[hm(7), hm(15)]], acute: null },
+  { dow: 4, intervals: [[hm(11), hm(18)]], acute: null },
+  { dow: 5, intervals: [[hm(7), hm(12)]], acute: null },
   { dow: 6, intervals: [], acute: null },
   { dow: 0, intervals: [], acute: null },
 ];

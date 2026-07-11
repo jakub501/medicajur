@@ -20,69 +20,66 @@ export function ContactPanel({
   className?: string;
 }) {
   return (
-    <div id={id} className={cn("contact-panel-card card flex h-full flex-col shadow-soft", className)}>
-      <div className="mb-5 flex items-center gap-3.5">
-        <span className="hero-float-badge-icon hero-float-badge-icon--green h-10 w-10 shrink-0 rounded-[11px]">
+    <div id={id} className={cn("hours-contact-panel flex h-full flex-col", className)}>
+      <div className="mb-5 flex items-center gap-3">
+        <span className="trust-ico trust-ico--green h-10 w-10 shrink-0 rounded-[13px]">
           <MapPin className="h-5 w-5" strokeWidth={1.85} aria-hidden="true" />
         </span>
-        <h3 className="text-h3">{dict.contact.title}</h3>
+        <h3 className="trust-card__title">{dict.contact.title}</h3>
       </div>
 
       <div className="flex flex-col gap-3">
-        <ContactLine
-          icon={<MapPin className="h-[18px] w-[18px]" strokeWidth={1.85} />}
+        <ContactTile
+          icon={<MapPin className="h-6 w-6" strokeWidth={1.85} aria-hidden="true" />}
           label={dict.common.address}
           accent={CONTACT_ACCENTS[0]}
         >
-          <span className="font-serif text-body-lg font-semibold text-ink">
+          <span className="contact-tile__value font-serif">
             {SITE.address.street}, {SITE.address.zip} {SITE.address.city}
           </span>
-          <span className="text-caption mt-1 block leading-relaxed text-muted">
+          <span className="text-body-sm mt-1 block leading-relaxed text-muted">
             {dict.contact.addressNote}
           </span>
           <a
             href={mapsLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-secondary text-body-sm mt-2.5 inline-flex min-h-10 items-center gap-1.5 rounded-[10px] px-3.5 font-bold shadow-soft transition-all hover:-translate-y-px"
+            className="btn-secondary text-body-sm mt-3 inline-flex min-h-10 items-center gap-1.5 rounded-[10px] px-3.5 font-bold shadow-soft transition-all hover:-translate-y-px"
           >
             <Navigation className="h-4 w-4" strokeWidth={1.85} aria-hidden="true" />
             {dict.common.getDirections}
           </a>
-        </ContactLine>
+        </ContactTile>
 
-        <ContactLine
-          icon={<Phone className="h-[18px] w-[18px]" strokeWidth={1.85} />}
+        <ContactTile
+          icon={<Phone className="h-6 w-6" strokeWidth={1.85} aria-hidden="true" />}
           label={dict.common.phone}
           accent={CONTACT_ACCENTS[1]}
         >
           <a
             href={SITE.phoneHref}
-            className="font-serif text-body-lg font-semibold text-primary transition-colors hover:text-primary-deep"
+            className="contact-tile__value font-serif text-primary transition-colors hover:text-primary-deep"
           >
             {SITE.phone}
           </a>
-          <span className="text-caption mt-1 block text-muted">
-            {dict.common.callDuringHours}
-          </span>
-        </ContactLine>
+        </ContactTile>
 
-        <ContactLine
-          icon={<Mail className="h-[18px] w-[18px]" strokeWidth={1.85} />}
+        <ContactTile
+          icon={<Mail className="h-6 w-6" strokeWidth={1.85} aria-hidden="true" />}
           label={dict.common.email}
           accent={CONTACT_ACCENTS[2]}
         >
           <a
             href={`mailto:${SITE.emails.doctor}`}
-            className="font-serif text-body-lg font-semibold text-primary transition-colors hover:text-primary-deep hover:underline"
+            className="contact-tile__value font-serif text-primary transition-colors hover:text-primary-deep hover:underline"
           >
             {SITE.emails.doctor}
           </a>
-        </ContactLine>
+        </ContactTile>
 
         {withEmails && (
-          <ContactLine
-            icon={<Mail className="h-[18px] w-[18px]" strokeWidth={1.85} />}
+          <ContactTile
+            icon={<Mail className="h-6 w-6" strokeWidth={1.85} aria-hidden="true" />}
             label={dict.contact.emailsTitle}
             accent={CONTACT_ACCENTS[2]}
           >
@@ -91,7 +88,7 @@ export function ContactPanel({
               <EmailRow label={dict.contact.emailRecipe} email={SITE.emails.recipe} />
               <EmailRow label={dict.contact.emailNurse} email={SITE.emails.nurse} />
             </div>
-          </ContactLine>
+          </ContactTile>
         )}
       </div>
 
@@ -104,7 +101,7 @@ export function ContactPanel({
   );
 }
 
-function ContactLine({
+function ContactTile({
   icon,
   label,
   accent,
@@ -116,17 +113,10 @@ function ContactLine({
   children: React.ReactNode;
 }) {
   return (
-    <div className="contact-line flex items-start gap-3.5 rounded-xl border border-line/60 bg-bg/35 px-4 py-3.5 transition-colors hover:border-blue-line/70 hover:bg-bg/55">
-      <span
-        className={cn(
-          "hero-float-badge-icon h-10 w-10 shrink-0 rounded-[11px]",
-          `hero-float-badge-icon--${accent}`,
-        )}
-      >
-        {icon}
-      </span>
+    <div className={cn("contact-tile group items-start", `contact-tile--${accent}`)}>
+      <span className={cn("trust-ico shrink-0", `trust-ico--${accent}`)}>{icon}</span>
       <div className="min-w-0 flex-1">
-        <div className="text-eyebrow font-bold text-muted">{label}</div>
+        <span className="contact-tile__label">{label}</span>
         <div className="mt-1">{children}</div>
       </div>
     </div>

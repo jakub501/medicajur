@@ -27,25 +27,25 @@ export function Faq({
       <SectionHeading eyebrow={f.eyebrow} title={f.title} subtitle={f.subtitle} center />
 
       <div className="mx-auto max-w-3xl">
-        <div className="services-overview-panel rounded-[20px] border border-line/70 p-3 sm:p-3.5">
-          <Reveal stagger className="flex flex-col gap-2">
+        <div className="faq-panel">
+          <Reveal stagger className="faq-panel__list">
             {items.map((item, index) => (
               <details key={item.q} className="faq-item group">
-                <summary className="flex cursor-pointer list-none items-start gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-[1.125rem] [&::-webkit-details-marker]:hidden">
+                <summary className="faq-item__summary flex cursor-pointer list-none items-start gap-3 sm:gap-4 [&::-webkit-details-marker]:hidden">
                   <span
                     className="faq-item-index mt-0.5 shrink-0 tabular-nums"
                     aria-hidden="true"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="min-w-0 flex-1 text-body-lg font-semibold leading-snug text-ink transition-colors group-hover:text-primary group-open:text-primary">
+                  <span className="faq-item__question min-w-0 flex-1 text-body-lg font-semibold leading-snug text-ink transition-colors group-hover:text-primary group-open:text-primary">
                     {item.q}
                   </span>
                   <span className="faq-item-toggle mt-0.5 shrink-0" aria-hidden="true">
                     <ChevronDown className="h-4 w-4" strokeWidth={2.25} />
                   </span>
                 </summary>
-                <div className="faq-item-answer mx-4 mb-4 sm:mx-5 sm:mb-5">
+                <div className="faq-item-answer">
                   <FaqAnswer text={item.a} />
                 </div>
               </details>
