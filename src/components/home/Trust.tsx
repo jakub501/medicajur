@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { Icon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 
 const TRUST_CARD_ACCENTS = ["primary", "green", "deep", "gold"] as const;
 const EXAM_ICONS: LucideIcon[] = [Scale, Dumbbell, HeartPulse, Waves, Droplet];
@@ -105,7 +106,7 @@ export function Trust({ dict }: { dict: Dictionary }) {
 
       {/* Three pillars */}
       <div className="mx-auto mt-10 max-w-5xl sm:mt-12">
-        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-3 sm:items-stretch sm:gap-4">
+        <Reveal stagger className="grid grid-cols-1 gap-3.5 sm:grid-cols-3 sm:items-stretch sm:gap-4">
           {t.items.map((item, index) => (
             <TrustCard
               key={item.title}
@@ -115,7 +116,7 @@ export function Trust({ dict }: { dict: Dictionary }) {
               accent={TRUST_CARD_ACCENTS[index]}
             />
           ))}
-        </div>
+        </Reveal>
       </div>
 
       {/* Diagnostics band — the real intake examinations */}
@@ -132,7 +133,7 @@ export function Trust({ dict }: { dict: Dictionary }) {
             </p>
           </div>
 
-          <div className="trust-exam-grid">
+          <Reveal stagger className="trust-exam-grid">
             {t.exams.map((exam, index) => {
               const ExamIcon = EXAM_ICONS[index % EXAM_ICONS.length];
 
@@ -146,7 +147,7 @@ export function Trust({ dict }: { dict: Dictionary }) {
                 </div>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </div>
     </Section>

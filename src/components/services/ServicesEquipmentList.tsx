@@ -17,7 +17,7 @@ export function ServicesEquipmentList({
     <div>
       <h2 className="text-h2 text-balance">{e.title}</h2>
       <span
-        className="mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
+        className="heading-rule mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
         aria-hidden="true"
       />
       {e.intro && <p className="text-body-lg mt-3 max-w-[42em] text-muted">{e.intro}</p>}

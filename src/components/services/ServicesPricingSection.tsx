@@ -8,7 +8,7 @@ export function ServicesPricingSection({ dict }: { dict: Dictionary }) {
       <div>
         <h2 className="text-h2 text-balance">{p.pageTitle}</h2>
         <span
-          className="mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
+          className="heading-rule mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
           aria-hidden="true"
         />
       </div>

@@ -3,6 +3,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
 import { ButtonAnchor } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
 
 const STEP_ACCENTS = ["primary", "green", "deep"] as const;
 
@@ -11,7 +12,7 @@ export function BecomePatientContent({ dict }: { dict: Dictionary }) {
 
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="flex flex-col gap-5">
+      <Reveal stagger className="flex flex-col gap-5">
         {b.steps.map((step, index) => (
           <div
             key={step.title}
@@ -47,7 +48,7 @@ export function BecomePatientContent({ dict }: { dict: Dictionary }) {
             </div>
           </div>
         ))}
-      </div>
+      </Reveal>
     </div>
   );
 }

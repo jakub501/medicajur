@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { ContactPanel } from "@/components/contact/ContactPanel";
 import { HoursPanel } from "@/components/contact/HoursPanel";
 
@@ -15,7 +16,7 @@ export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
       <PageHero eyebrow={c.eyebrow} title={c.title} lead={c.lead} />
 
       <Section>
-        <div className="grid gap-5 lg:grid-cols-[1fr_1fr]">
+        <Reveal stagger className="grid gap-5 lg:grid-cols-[1fr_1fr]">
           <ContactPanel dict={dict} withMap withEmails />
           <div className="flex flex-col gap-5">
             <HoursPanel dict={dict} />
@@ -54,7 +55,7 @@ export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

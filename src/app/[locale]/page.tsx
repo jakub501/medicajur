@@ -47,28 +47,30 @@ export default async function HomePage({
   return (
     <>
       <Hero locale={loc} dict={dict} />
-      <Reveal>
+      <Reveal fade>
         <AboutUs dict={dict} />
       </Reveal>
-      <Reveal>
+      <Reveal fade>
         <Trust dict={dict} />
       </Reveal>
       <Reveal>
         <ReviewsSection locale={loc} dict={dict} />
       </Reveal>
-      <Reveal>
+      <Reveal fade>
         <ServicesBento locale={loc} dict={dict} />
       </Reveal>
-      <Reveal>
+      <Reveal fade>
         <BecomePatientSection dict={dict} />
       </Reveal>
-      <Reveal>
+      <Reveal fade>
         <ExistingPatientsSection dict={dict} />
       </Reveal>
-      <Reveal>
+      <Reveal fade>
         <Faq locale={loc} dict={dict} items={dict.faq.items} />
       </Reveal>
-      <ContactHoursSection dict={dict} />
+      <Reveal>
+        <ContactHoursSection dict={dict} />
+      </Reveal>
     </>
   );
 }

@@ -99,7 +99,7 @@ export async function Hero({ locale, dict }: { locale: Locale; dict: Dictionary 
             </div>
           </div>
 
-          <div className="order-2 animate-rise [animation-delay:120ms]">
+          <div className="order-2 animate-rise [animation-delay:240ms]">
             <div className="relative mx-auto w-full max-w-[540px] md:max-w-none md:px-4 lg:px-6">
               <div className="hero-frame-glow" aria-hidden="true" />
               <div className="hero-frame relative rounded-[22px] p-1.5 sm:p-2">

@@ -63,6 +63,16 @@
 
 :root {
   color-scheme: light;
+  --ease-elegant: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --duration-reveal: 1.45s;
+  --duration-reveal-lift: 1.55s;
+  --duration-reveal-fade: 1.35s;
+  --duration-reveal-child: 1.3s;
+  --duration-reveal-child-lift: 1.45s;
+  --duration-rise: 1.2s;
+  --duration-hover: 0.52s;
+  --stagger-step: 0.16s;
 }
 
 * {
@@ -212,9 +222,9 @@ h4 {
     linear-gradient(160deg, #ffffff 0%, #eef5fb 100%);
   box-shadow: var(--shadow-card);
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-color var(--duration-hover) ease,
+    box-shadow var(--duration-hover) ease,
+    transform var(--duration-hover) var(--ease-elegant);
 }
 
 .service-feature-card::after {
@@ -238,7 +248,7 @@ h4 {
 .service-feature-card:hover {
   border-color: rgba(21, 99, 156, 0.35);
   box-shadow: 0 26px 50px -22px rgba(13, 70, 116, 0.4);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -648,9 +658,9 @@ h4 {
   background: var(--color-blue-soft);
   color: var(--color-primary);
   transition:
-    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.25s ease,
-    color 0.25s ease;
+    transform 0.45s var(--ease-elegant),
+    background-color var(--duration-hover) ease,
+    color var(--duration-hover) ease;
 }
 
 .faq-item[open] .faq-item-toggle {
@@ -797,7 +807,7 @@ h4 {
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -806,13 +816,13 @@ h4 {
 }
 
 .animate-rise {
-  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: rise var(--duration-rise) var(--ease-elegant) both;
 }
 
 @keyframes reveal-on-scroll {
   from {
     opacity: 0;
-    transform: translateY(1rem);
+    transform: translateY(0.75rem);
   }
   to {
     opacity: 1;
@@ -823,12 +833,73 @@ h4 {
 .reveal-on-scroll {
   animation: reveal-on-scroll linear both;
   animation-timeline: view();
-  animation-range: entry 0% cover 28%;
+  animation-range: entry 0% cover 38%;
 }
 
 @supports not (animation-timeline: view()) {
   .reveal-on-scroll {
     animation: none;
+  }
+}
+
+/* Scroll-triggered reveal (IntersectionObserver adds .is-visible).
+   Slow, refined easing for a deliberate, presentation-grade feel. */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-elegant),
+    transform var(--duration-reveal-lift) var(--ease-elegant);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Opacity-only wrapper — pairs with an inner .reveal-group so the outer fade
+   and the inner lift never compete. */
+.reveal-fade {
+  opacity: 0;
+  transition: opacity var(--duration-reveal-fade) var(--ease-elegant);
+}
+.reveal-fade.is-visible {
+  opacity: 1;
+}
+
+/* Staggered variant — direct children cascade in, one after another. */
+.reveal-group > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--duration-reveal-child) var(--ease-elegant),
+    transform var(--duration-reveal-child-lift) var(--ease-elegant);
+  will-change: opacity, transform;
+}
+.reveal-group.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+.reveal-group.is-visible > *:nth-child(1) { transition-delay: 0.06s; }
+.reveal-group.is-visible > *:nth-child(2) { transition-delay: calc(0.06s + var(--stagger-step)); }
+.reveal-group.is-visible > *:nth-child(3) { transition-delay: calc(0.06s + var(--stagger-step) * 2); }
+.reveal-group.is-visible > *:nth-child(4) { transition-delay: calc(0.06s + var(--stagger-step) * 3); }
+.reveal-group.is-visible > *:nth-child(5) { transition-delay: calc(0.06s + var(--stagger-step) * 4); }
+.reveal-group.is-visible > *:nth-child(6) { transition-delay: calc(0.06s + var(--stagger-step) * 5); }
+.reveal-group.is-visible > *:nth-child(7) { transition-delay: calc(0.06s + var(--stagger-step) * 6); }
+.reveal-group.is-visible > *:nth-child(8) { transition-delay: calc(0.06s + var(--stagger-step) * 7); }
+.reveal-group.is-visible > *:nth-child(9) { transition-delay: calc(0.06s + var(--stagger-step) * 8); }
+.reveal-group.is-visible > *:nth-child(10) { transition-delay: calc(0.06s + var(--stagger-step) * 9); }
+.reveal-group.is-visible > *:nth-child(11) { transition-delay: calc(0.06s + var(--stagger-step) * 10); }
+.reveal-group.is-visible > *:nth-child(12) { transition-delay: calc(0.06s + var(--stagger-step) * 11); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-fade,
+  .reveal-group > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }
 
@@ -838,16 +909,16 @@ h4 {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
   }
 }
 
 .animate-floaty {
-  animation: floaty 6s ease-in-out infinite;
+  animation: floaty 8.5s ease-in-out infinite;
 }
 
 .animate-floaty-badge {
-  animation: floaty-badge 7s ease-in-out infinite;
+  animation: floaty-badge 10s ease-in-out infinite;
 }
 
 @keyframes floaty-badge {
@@ -856,7 +927,7 @@ h4 {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 }
 
@@ -887,7 +958,7 @@ h4 {
 
 .grow-bar {
   transform-origin: center;
-  animation: grow-bar 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: grow-bar 0.9s var(--ease-elegant) both;
 }
 
 .orb {
@@ -1103,33 +1174,56 @@ h4 {
   filter: saturate(0.92);
 }
 
+.brand-lockup-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.brand-mark {
+  height: 2.1rem;
+  width: auto;
+  flex-shrink: 0;
+  filter: drop-shadow(0 3px 6px rgba(13, 70, 116, 0.22));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 .brand-lockup {
   display: flex;
   flex-direction: column;
-  gap: 0.125rem;
-  line-height: 1.1;
+  gap: 0.1rem;
+  line-height: 1.05;
 }
 
 .brand-lockup-name {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-family: var(--font-sans);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
   color: var(--color-primary);
+}
+
+.brand-lockup-name-accent {
+  color: var(--color-primary-deep);
 }
 
 .brand-lockup-doctor {
   font-size: 0.5625rem;
   font-weight: 700;
   line-height: 1.25;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.11em;
   text-transform: uppercase;
   color: var(--color-muted);
 }
 
 @media (min-width: 640px) {
+  .brand-mark {
+    height: 2.3rem;
+  }
+
   .brand-lockup-name {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .brand-lockup-doctor {
@@ -1143,16 +1237,25 @@ h4 {
 }
 
 .brand-link:hover {
-  opacity: 0.9;
+  opacity: 1;
   transform: translateY(-1px);
 }
 
+.brand-link:hover .brand-mark {
+  transform: scale(1.07) rotate(-3deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .brand-link {
+  .brand-link,
+  .brand-mark {
     transition: none;
   }
 
   .brand-link:hover {
+    transform: none;
+  }
+
+  .brand-link:hover .brand-mark {
     transform: none;
   }
 }
@@ -1467,7 +1570,7 @@ footer h4 {
   position: sticky;
   top: 0;
   z-index: 50;
-  transition: box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: box-shadow 0.65s var(--ease-elegant);
 }
 
 .site-chrome--scrolled {
@@ -1485,8 +1588,8 @@ footer h4 {
     #0f5f7f 100%
   );
   transition:
-    background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    background 0.65s var(--ease-elegant),
+    box-shadow 0.65s var(--ease-elegant);
 }
 
 .site-chrome--scrolled .site-topbar {
@@ -1501,7 +1604,7 @@ footer h4 {
 
 .site-topbar__row {
   height: 2.5rem;
-  transition: height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: height 0.65s var(--ease-elegant);
 }
 
 .site-chrome--scrolled .site-topbar__row {
@@ -1538,8 +1641,8 @@ footer h4 {
   );
   pointer-events: none;
   transition:
-    height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    height 0.65s var(--ease-elegant),
+    opacity 0.65s var(--ease-elegant);
 }
 
 .site-chrome--scrolled .site-chrome-bridge {
@@ -1549,8 +1652,8 @@ footer h4 {
 
 .site-header__nav {
   transition:
-    min-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    padding 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    min-height 0.65s var(--ease-elegant),
+    padding 0.65s var(--ease-elegant);
 }
 
 .site-chrome--scrolled .site-header__nav {
@@ -1578,11 +1681,11 @@ footer h4 {
   backdrop-filter: blur(12px) saturate(1.15);
   -webkit-backdrop-filter: blur(12px) saturate(1.15);
   transition:
-    background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-    -webkit-backdrop-filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    background 0.65s var(--ease-elegant),
+    border-color 0.65s var(--ease-elegant),
+    box-shadow 0.65s var(--ease-elegant),
+    backdrop-filter 0.65s var(--ease-elegant),
+    -webkit-backdrop-filter 0.65s var(--ease-elegant);
 }
 
 .site-header--home:not(.site-header--scrolled) {
@@ -1624,6 +1727,62 @@ footer h4 {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* Primary nav — refined underline indicator (replaces filled pills) */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 0.7rem;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--color-ink);
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  right: 0.7rem;
+  bottom: 0.3rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-brand-green) 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link:hover::after,
+.nav-link[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+.nav-link[data-active="true"] {
+  color: var(--color-primary);
+}
+
+.nav-divider {
+  height: 1.5rem;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--color-line) 30%, var(--color-line) 70%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link,
+  .nav-link::after {
+    transition: none;
+  }
 }
 
 /* Hero */
@@ -1891,14 +2050,14 @@ footer h4 {
   background: rgba(255, 255, 255, 0.045);
   padding: 1rem 1.05rem 1.1rem;
   transition:
-    border-color 0.3s ease,
-    background 0.3s ease,
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-color var(--duration-hover) ease,
+    background var(--duration-hover) ease,
+    transform var(--duration-hover) var(--ease-elegant);
 }
 .trust-exam-item:hover {
   border-color: rgba(224, 165, 61, 0.42);
   background: rgba(255, 255, 255, 0.07);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 .trust-exam-item__ico {
@@ -1944,9 +2103,9 @@ footer h4 {
   padding: 1.5rem 1.5rem 1.65rem;
   box-shadow: var(--shadow-soft);
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform var(--duration-hover) var(--ease-elegant),
+    box-shadow var(--duration-hover) ease,
+    border-color var(--duration-hover) ease;
 }
 
 /* accent tint glow in the top-right corner */
@@ -1969,7 +2128,7 @@ footer h4 {
 }
 
 .trust-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
 }
 
 .trust-card--primary { --trust-tint: rgba(21, 99, 156, 0.13); }
@@ -2003,7 +2162,7 @@ footer h4 {
   border-radius: 15px;
   color: #fff;
   flex-shrink: 0;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-hover) var(--ease-elegant);
 }
 
 .group:hover .trust-ico {
@@ -2102,7 +2261,7 @@ footer h4 {
   color: #fff;
   background: var(--bs-grad);
   box-shadow: 0 12px 24px -10px rgba(13, 70, 116, 0.5);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-hover) var(--ease-elegant);
 }
 
 .become-step__card {
@@ -2115,9 +2274,9 @@ footer h4 {
   padding: 1.2rem 1.4rem 1.3rem;
   box-shadow: var(--shadow-soft);
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform var(--duration-hover) var(--ease-elegant),
+    box-shadow var(--duration-hover) ease,
+    border-color var(--duration-hover) ease;
 }
 
 .become-step:hover .become-step__card {
@@ -2211,15 +2370,15 @@ footer h4 {
   padding: 1.1rem 1.2rem;
   box-shadow: var(--shadow-soft);
   transition:
-    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform var(--duration-hover) var(--ease-elegant),
+    box-shadow var(--duration-hover) ease,
+    border-color var(--duration-hover) ease;
 }
 .contact-tile--primary { --tile-accent: var(--color-primary); }
 .contact-tile--green { --tile-accent: var(--color-brand-green); }
 
 .contact-tile:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .contact-tile--primary:hover {
   border-color: rgba(21, 99, 156, 0.4);
@@ -2254,7 +2413,7 @@ footer h4 {
   color: var(--tile-accent);
   opacity: 0;
   transform: translateX(-5px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity var(--duration-hover) ease, transform var(--duration-hover) var(--ease-elegant);
 }
 .contact-tile:hover .contact-tile__arrow {
   opacity: 1;
@@ -2542,7 +2701,7 @@ footer h4 {
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -2552,13 +2711,13 @@ footer h4 {
 
 .fade-up {
   opacity: 0;
-  animation: fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fade-up 1.15s var(--ease-elegant) both;
 }
-.fade-up.d-1 { animation-delay: 0.08s; }
-.fade-up.d-2 { animation-delay: 0.2s; }
-.fade-up.d-3 { animation-delay: 0.34s; }
-.fade-up.d-4 { animation-delay: 0.5s; }
-.fade-up.d-5 { animation-delay: 0.66s; }
+.fade-up.d-1 { animation-delay: 0.1s; }
+.fade-up.d-2 { animation-delay: 0.26s; }
+.fade-up.d-3 { animation-delay: 0.44s; }
+.fade-up.d-4 { animation-delay: 0.64s; }
+.fade-up.d-5 { animation-delay: 0.86s; }
 
 /* Gradient text — for the hero highlight word */
 .text-gradient {
@@ -2658,7 +2817,7 @@ footer h4 {
 .cta-primary {
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+  transition: transform 0.45s var(--ease-elegant), background var(--duration-hover) ease;
 }
 .cta-primary::after {
   content: "";

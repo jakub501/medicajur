@@ -4,6 +4,7 @@ import { href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/cn";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { Icon } from "@/components/ui/Icon";
 
 const CARD_ACCENTS = ["primary", "green", "deep", "gold", "primary", "green"] as const;
@@ -23,7 +24,7 @@ export function ServicesBento({
       <SectionHeading title={s.title} subtitle={s.subtitle} center />
 
       <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:items-stretch sm:gap-4 lg:grid-cols-3">
+        <Reveal stagger className="grid grid-cols-1 gap-3.5 sm:grid-cols-2 sm:items-stretch sm:gap-4 lg:grid-cols-3">
           {o.cards.map((item, index) => (
             <ServiceCard
               key={item.title}
@@ -33,7 +34,7 @@ export function ServicesBento({
               {...item}
             />
           ))}
-        </div>
+        </Reveal>
 
         <div className="mt-8 text-center">
           <Link

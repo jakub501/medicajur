@@ -465,9 +465,11 @@ const en: Dictionary = {
   },
   existingPatients: {
     title: "Registered patients",
-    bookTitle: "Booking an appointment",
+    bookTitle: "Appointment booking and e-prescription",
     bookText:
-      "We arrange appointments exclusively by e-mail or phone — get in touch and we'll find a time that suits you.",
+      "All communication with your doctor is handled through the Moji lekári app — from booking an appointment to requesting a prescription.",
+    bookAppLabel: "App",
+    bookAppValue: "Moji lekári",
   },
   erecept: {
     eyebrow: "Prescriptions & medication",

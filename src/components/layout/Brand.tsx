@@ -21,9 +21,32 @@ export function Brand({
 
   if (variant === "lockup") {
     return (
-      <span className="brand-lockup">
-        <span className="brand-lockup-name">{SITE.brandMark}</span>
-        <span className="brand-lockup-doctor">{doctor.toUpperCase()}</span>
+      <span className="brand-lockup-row">
+        <svg
+          className="brand-mark"
+          viewBox="0 0 24 24"
+          role="img"
+          aria-label={brand}
+        >
+          <defs>
+            <linearGradient id="brand-pin-grad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#2a8fd8" />
+              <stop offset="1" stopColor="#0d4674" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+            fill="url(#brand-pin-grad)"
+          />
+          <rect x="11.1" y="6.8" width="1.8" height="6.4" rx="0.7" fill="#fff" />
+          <rect x="8.8" y="9.1" width="6.4" height="1.8" rx="0.7" fill="#fff" />
+        </svg>
+        <span className="brand-lockup">
+          <span className="brand-lockup-name">
+            Medica<span className="brand-lockup-name-accent">Jur</span>
+          </span>
+          <span className="brand-lockup-doctor">{doctor.toUpperCase()}</span>
+        </span>
       </span>
     );
   }

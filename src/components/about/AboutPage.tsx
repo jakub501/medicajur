@@ -1,6 +1,7 @@
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/cn";
 import { AboutDoctorBanner } from "@/components/about/AboutDoctorBanner";
 
@@ -24,7 +25,7 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
         <div className="mx-auto max-w-5xl">
           <div className="hairline mb-8 sm:mb-10" aria-hidden="true" />
 
-          <div className="flex flex-col gap-5 sm:gap-6">
+          <Reveal stagger className="flex flex-col gap-5 sm:gap-6">
             {a.profileCards.map((card, index) => {
               const accent = PROFILE_ACCENTS[index] ?? "primary";
 
@@ -96,7 +97,7 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
                 </article>
               );
             })}
-          </div>
+          </Reveal>
         </div>
       </Section>
     </>

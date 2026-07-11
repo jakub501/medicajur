@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section, SectionHeading } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { FaqAnswer } from "@/components/ui/FaqAnswer";
 
 type FaqItem = { q: string; a: string };
@@ -27,7 +28,7 @@ export function Faq({
 
       <div className="mx-auto max-w-3xl">
         <div className="services-overview-panel rounded-[20px] border border-line/70 p-3 sm:p-3.5">
-          <div className="flex flex-col gap-2">
+          <Reveal stagger className="flex flex-col gap-2">
             {items.map((item, index) => (
               <details key={item.q} className="faq-item group">
                 <summary className="flex cursor-pointer list-none items-start gap-3 px-4 py-4 sm:gap-4 sm:px-5 sm:py-[1.125rem] [&::-webkit-details-marker]:hidden">
@@ -49,7 +50,7 @@ export function Faq({
                 </div>
               </details>
             ))}
-          </div>
+          </Reveal>
         </div>
 
         {showCta && (

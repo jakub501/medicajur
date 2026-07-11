@@ -466,9 +466,11 @@ const sk = {
   },
   existingPatients: {
     title: "Registrovaní pacienti",
-    bookTitle: "Objednanie termínu",
+    bookTitle: "Objednanie termínu a e-recept",
     bookText:
-      "Termín u nás dohodneme výhradne e-mailom alebo telefonicky — ozvite sa a nájdeme čas, ktorý vám vyhovuje.",
+      "Celú komunikáciu s lekárom vybavíte cez aplikáciu Moji lekári. Od dohodnutia termínu až po vypísanie e-receptu.",
+    bookAppLabel: "Aplikácia",
+    bookAppValue: "Moji lekári",
   },
   erecept: {
     eyebrow: "Recepty a lieky",

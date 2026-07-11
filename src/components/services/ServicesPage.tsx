@@ -3,6 +3,7 @@ import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { Section } from "@/components/ui/Section";
+import { Reveal } from "@/components/ui/Reveal";
 import { ButtonAnchor } from "@/components/ui/Button";
 import { ServicesScopeList } from "@/components/services/ServicesScopeList";
 import { ServicesEquipmentList } from "@/components/services/ServicesEquipmentList";
@@ -13,18 +14,24 @@ export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionar
     <Section className="py-8 sm:py-10">
         <div className="mx-auto max-w-5xl">
           <div id="scope" className="scroll-mt-[5.75rem]">
-            <ServicesScopeList locale={locale} dict={dict} />
+            <Reveal>
+              <ServicesScopeList locale={locale} dict={dict} />
+            </Reveal>
           </div>
 
           <div id="equipment" className="mt-10 scroll-mt-28 sm:mt-12">
-            <ServicesEquipmentList locale={locale} dict={dict} />
+            <Reveal>
+              <ServicesEquipmentList locale={locale} dict={dict} />
+            </Reveal>
           </div>
 
           <div id="pricing" className="mt-10 scroll-mt-28 sm:mt-12">
-            <ServicesPricingSection dict={dict} />
+            <Reveal>
+              <ServicesPricingSection dict={dict} />
+            </Reveal>
           </div>
 
-          <div className="mt-10 text-center sm:mt-12">
+          <Reveal className="mt-10 text-center sm:mt-12">
             <ButtonAnchor
               href={SITE.bookingUrl}
               target="_blank"
@@ -35,7 +42,7 @@ export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionar
               {dict.common.book}
             </ButtonAnchor>
             <p className="text-caption mt-3 text-muted">{dict.hero.bookingNote}</p>
-          </div>
+          </Reveal>
         </div>
     </Section>
   );

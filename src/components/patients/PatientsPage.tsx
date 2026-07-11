@@ -5,6 +5,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { PageHero } from "@/components/ui/PageHero";
 import { Section } from "@/components/ui/Section";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { Faq } from "@/components/faq/Faq";
 import { Erecept } from "@/components/patients/Erecept";
 
@@ -18,7 +19,7 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
       {/* Steps */}
       <Section>
         <h2 className="mb-8 text-[28px] sm:text-[32px]">{p.newTitle}</h2>
-        <div className="grid gap-4 sm:gap-[18px] md:grid-cols-3">
+        <Reveal stagger className="grid gap-4 sm:gap-[18px] md:grid-cols-3">
           {dict.patients.steps.map((step, i) => (
             <div
               key={i}
@@ -31,13 +32,13 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
               <p className="mt-2 text-[15px] text-muted">{step.text}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </Section>
 
       {/* Booking + documents */}
       <section className="bg-surface py-12 sm:py-[54px]">
         <Container>
-          <div className="grid gap-5 lg:grid-cols-2">
+          <Reveal stagger className="grid gap-5 lg:grid-cols-2">
             <div className="rounded-[18px] bg-gradient-to-br from-primary to-primary-deep p-7 text-[#eaf3fa] sm:p-9">
               <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[13px] bg-white/15 text-white">
                 <CalendarCheck className="h-6 w-6" strokeWidth={1.85} />
@@ -81,13 +82,17 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
                 {p.documentsNote}
               </p>
             </div>
-          </div>
+          </Reveal>
         </Container>
       </section>
 
-      <Erecept dict={dict} />
+      <Reveal>
+        <Erecept dict={dict} />
+      </Reveal>
 
-      <Faq locale={locale} dict={dict} items={p.faq} />
+      <Reveal>
+        <Faq locale={locale} dict={dict} items={p.faq} />
+      </Reveal>
     </>
   );
 }

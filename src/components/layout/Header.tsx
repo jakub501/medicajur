@@ -69,19 +69,13 @@ export function Header({
     return activeHash === homeNavHref(locale, key).split("#")[1];
   };
 
-  const navLinkClass = (key: HomeNavKey, mobile = false) =>
-    cn(
-      mobile
-        ? "border-b border-line py-3.5 text-[17px] font-semibold transition-colors"
-        : "inline-flex h-10 items-center whitespace-nowrap rounded-full px-3 text-[14px] font-semibold leading-none transition-colors xl:px-3.5 xl:text-[15px]",
-      isNavActive(key)
-        ? mobile
-          ? "text-primary"
-          : "bg-blue-soft text-primary"
-        : mobile
-          ? "text-ink hover:text-primary"
-          : "text-ink hover:bg-blue-soft/55 hover:text-primary",
+  const navLinkClass = (key: HomeNavKey, mobile = false) => {
+    if (!mobile) return "nav-link";
+    return cn(
+      "border-b border-line py-3.5 text-[17px] font-semibold transition-colors",
+      isNavActive(key) ? "text-primary" : "text-ink hover:text-primary",
     );
+  };
 
   const handleBrandClick = (event: MouseEvent<HTMLAnchorElement>) => {
     if (!isHomePath(pathname, locale)) return;
@@ -133,7 +127,7 @@ export function Header({
           </Link>
 
           <div className="hidden min-w-0 items-center justify-center lg:flex">
-            <ul className="flex items-center gap-1 xl:gap-2">
+            <ul className="flex items-center gap-0.5 xl:gap-1.5">
               {NAV.map(({ key, label }) => (
                 <li key={key}>
                   <Link
@@ -150,6 +144,7 @@ export function Header({
           </div>
 
           <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-2.5">
+            <span className="nav-divider mr-1 hidden lg:block" aria-hidden="true" />
             <LanguageSwitcher locale={locale} className="hidden sm:inline-flex" />
             <a
               href={SITE.bookingUrl}
