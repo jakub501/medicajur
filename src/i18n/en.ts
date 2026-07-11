@@ -691,7 +691,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I bring to my first visit?",
-        a: "Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\nIf you have paper medical records or recent specialist reports, bring those as well.\n\nWe also recommend bringing a signed registration agreement; if needed, it can be completed at the practice.",
+        a: "☐ Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\n☐ If you have paper medical records or recent specialist reports, bring those as well.",
       },
       {
         q: "What should I do in case of acute illness?",
@@ -742,7 +742,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I bring to my first visit?",
-        a: "Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\nIf you have paper medical records or recent specialist reports, bring those as well.\n\nWe also recommend bringing a signed registration agreement; if needed, it can be completed at the practice.",
+        a: "☐ Bring your ID card, health insurance card and a list of all medications you currently take (including over-the-counter products).\n\n☐ If you have paper medical records or recent specialist reports, bring those as well.",
       },
       {
         q: "What should I do in case of acute illness?",

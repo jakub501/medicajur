@@ -30,8 +30,8 @@ export function Brand({
         >
           <defs>
             <linearGradient id="brand-pin-grad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stopColor="#2a8fd8" />
-              <stop offset="1" stopColor="#0d4674" />
+              <stop offset="0" stopColor="var(--color-brand-gradient-start)" />
+              <stop offset="1" stopColor="var(--color-brand-gradient-end)" />
             </linearGradient>
           </defs>
           <path
@@ -42,9 +42,7 @@ export function Brand({
           <rect x="8.8" y="9.1" width="6.4" height="1.8" rx="0.7" fill="#fff" />
         </svg>
         <span className="brand-lockup">
-          <span className="brand-lockup-name">
-            Medica<span className="brand-lockup-name-accent">Jur</span>
-          </span>
+          <span className="brand-lockup-name">MedicaJur</span>
           <span className="brand-lockup-doctor">{doctor.toUpperCase()}</span>
         </span>
       </span>

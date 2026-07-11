@@ -7,6 +7,8 @@
   --color-ink: #14283a;
   --color-primary: #15639c;
   --color-primary-deep: #0d4674;
+  --color-brand-gradient-start: #2a8fd8;
+  --color-brand-gradient-end: #0d4674;
   --color-blue-soft: #e8f1f8;
   --color-blue-line: #cfe0ee;
   --color-line: #e2eaf0;
@@ -173,9 +175,46 @@ h4 {
   width: 3rem;
   height: 3rem;
   border-radius: 13px;
-  background: var(--color-blue-soft);
+  border: 1px solid rgba(21, 99, 156, 0.2);
+  background: linear-gradient(145deg, #f3f8fc 0%, #e2eef7 100%);
   color: var(--color-primary);
+  box-shadow: 0 6px 14px -10px rgba(13, 70, 116, 0.18);
   flex-shrink: 0;
+}
+
+.icon-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-accent--primary {
+  border: 1px solid rgba(21, 99, 156, 0.2);
+  background: linear-gradient(145deg, #f3f8fc 0%, #e2eef7 100%);
+  color: var(--color-primary);
+  box-shadow: 0 6px 14px -10px rgba(13, 70, 116, 0.18);
+}
+
+.icon-accent--deep {
+  border: 1px solid rgba(13, 70, 116, 0.22);
+  background: linear-gradient(145deg, #edf3f8 0%, #d8e6f2 100%);
+  color: var(--color-primary-deep);
+  box-shadow: 0 6px 14px -10px rgba(13, 70, 116, 0.2);
+}
+
+.icon-accent--green {
+  border: 1px solid rgba(46, 158, 107, 0.24);
+  background: linear-gradient(145deg, #f0faf5 0%, #dcf3e8 100%);
+  color: var(--color-brand-green);
+  box-shadow: 0 6px 14px -10px rgba(46, 158, 107, 0.18);
+}
+
+.icon-accent--gold {
+  border: 1px solid rgba(224, 165, 61, 0.28);
+  background: linear-gradient(145deg, #fff9ee 0%, #f8edd4 100%);
+  color: #a66b12;
+  box-shadow: 0 6px 14px -10px rgba(224, 165, 61, 0.18);
 }
 
 .services-overview-panel {
@@ -752,6 +791,40 @@ h4 {
   color: var(--color-amber);
 }
 
+.faq-answer-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(207, 224, 238, 0.9);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.98) 0%, rgba(245, 250, 254, 0.88) 100%);
+  padding: 0.75rem 0.875rem;
+}
+
+.faq-answer-checklist-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.faq-answer-checklist-icon {
+  margin-top: 0.1rem;
+  display: inline-flex;
+  height: 1.375rem;
+  width: 1.375rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(46, 158, 107, 0.28);
+  background: linear-gradient(145deg, rgba(240, 250, 245, 0.98) 0%, rgba(232, 245, 238, 0.9) 100%);
+  color: var(--color-brand-green);
+}
+
+.faq-answer-note {
+  font-style: italic;
+}
+
 .contact-panel-card {
   background: linear-gradient(
     165deg,
@@ -1099,23 +1172,59 @@ h4 {
   );
 }
 
+.brand-gradient-fill {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-gradient-start) 0%,
+    var(--color-brand-gradient-end) 100%
+  );
+}
+
+.brand-gradient-fill:hover {
+  background: linear-gradient(135deg, #3199e0 0%, #0a3a5c 100%);
+}
+
+.brand-gradient-panel {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-gradient-start) 0%,
+    var(--color-brand-gradient-end) 100%
+  );
+}
+
 .cta-primary {
-  background: linear-gradient(180deg, #1a6ba6 0%, var(--color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-gradient-start) 0%,
+    var(--color-brand-gradient-end) 100%
+  );
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18) inset,
     0 12px 24px -12px rgba(13, 70, 116, 0.65);
 }
 .cta-primary:hover {
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-deep) 100%);
+  background: linear-gradient(
+    135deg,
+    #3199e0 0%,
+    #0a3a5c 100%
+  );
 }
 
 .btn-secondary {
-  border: 1.5px solid var(--color-blue-line);
-  background: var(--color-surface);
-  color: var(--color-primary);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+    linear-gradient(
+      135deg,
+      var(--color-brand-gradient-start),
+      var(--color-brand-gradient-end)
+    ) border-box;
+  color: var(--color-primary-deep);
 }
 .btn-secondary:hover {
-  border-color: var(--color-primary);
+  background:
+    linear-gradient(var(--color-blue-soft), var(--color-blue-soft)) padding-box,
+    linear-gradient(135deg, #3199e0, #0a3a5c) border-box;
 }
 
 .btn-ghost {
@@ -1127,11 +1236,21 @@ h4 {
 }
 
 .btn-inverse {
-  background: #fff;
-  color: var(--color-primary);
+  border: 2px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(
+      135deg,
+      var(--color-brand-gradient-start),
+      var(--color-brand-gradient-end)
+    ) border-box;
+  color: var(--color-primary-deep);
+  box-shadow: 0 10px 22px -14px rgba(13, 70, 116, 0.38);
 }
 .btn-inverse:hover {
-  background: var(--color-blue-soft);
+  background:
+    linear-gradient(var(--color-blue-soft), var(--color-blue-soft)) padding-box,
+    linear-gradient(135deg, #3199e0, #0a3a5c) border-box;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1202,10 +1321,6 @@ h4 {
   letter-spacing: -0.02em;
   line-height: 1;
   color: var(--color-primary);
-}
-
-.brand-lockup-name-accent {
-  color: var(--color-primary-deep);
 }
 
 .brand-lockup-doctor {
@@ -2068,9 +2183,28 @@ footer h4 {
   height: 2.5rem;
   border-radius: 11px;
   flex-shrink: 0;
-  color: #f0c063;
-  background: rgba(224, 165, 61, 0.13);
-  border: 1px solid rgba(224, 165, 61, 0.28);
+  color: #e8b86a;
+  background: linear-gradient(
+    145deg,
+    rgba(224, 165, 61, 0.2) 0%,
+    rgba(224, 165, 61, 0.07) 100%
+  );
+  border: 1px solid rgba(224, 165, 61, 0.22);
+  box-shadow: none;
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.trust-exam-item:hover .trust-exam-item__ico {
+  color: #f0c878;
+  background: linear-gradient(
+    145deg,
+    rgba(224, 165, 61, 0.3) 0%,
+    rgba(224, 165, 61, 0.12) 100%
+  );
+  border-color: rgba(224, 165, 61, 0.36);
 }
 
 .trust-exam-item__name {

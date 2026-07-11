@@ -5,6 +5,7 @@ import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/cn";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 
 const CARD_ACCENTS = ["primary", "green", "deep", "gold", "primary", "green"] as const;
@@ -37,14 +38,10 @@ export function ServicesBento({
         </Reveal>
 
         <div className="mt-8 text-center">
-          <Link
-            href={href(locale, "services", "scope")}
-            scroll
-            className="inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-blue-line bg-surface px-5 text-body font-bold text-primary shadow-soft transition-all hover:border-primary/35 hover:bg-blue-soft/60 hover:text-primary-deep"
-          >
+          <ButtonLink href={href(locale, "services", "scope")} scroll size="md">
             {s.viewAll}
             <ArrowRight className="h-4 w-4" strokeWidth={2} />
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     </Section>

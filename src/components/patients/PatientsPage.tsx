@@ -25,7 +25,7 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
               key={i}
               className="rounded-[18px] border border-line bg-surface p-7"
             >
-              <span className="flex h-[34px] w-[34px] items-center justify-center rounded-full bg-blue-soft text-[15px] font-extrabold text-primary">
+              <span className="icon-accent icon-accent--primary flex h-[34px] w-[34px] rounded-full text-[15px] font-extrabold">
                 {i + 1}
               </span>
               <h3 className="mt-4 text-[20px]">{step.title}</h3>
@@ -39,7 +39,7 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
       <section className="bg-surface py-12 sm:py-[54px]">
         <Container>
           <Reveal stagger className="grid gap-5 lg:grid-cols-2">
-            <div className="rounded-[18px] bg-gradient-to-br from-primary to-primary-deep p-7 text-[#eaf3fa] sm:p-9">
+            <div className="brand-gradient-panel rounded-[18px] p-7 text-[#eaf3fa] sm:p-9">
               <span className="flex h-[50px] w-[50px] items-center justify-center rounded-[13px] bg-white/15 text-white">
                 <CalendarCheck className="h-6 w-6" strokeWidth={1.85} />
               </span>
@@ -49,7 +49,7 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
                 href={SITE.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-[10px] bg-white px-5 py-3.5 text-[15px] font-bold text-primary transition-colors hover:bg-blue-soft"
+                className="btn-inverse mt-6 inline-flex items-center gap-2 rounded-[10px] px-5 py-3.5 text-[15px] font-bold transition-all hover:-translate-y-px"
               >
                 <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
                 {SITE.bookingName}

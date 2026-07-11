@@ -554,7 +554,7 @@ const sk = {
   aboutUs: {
     eyebrow: "O nás",
     title: "Ambulancia pre celý Váš život",
-    lead: "V MEDICA JUR sprevádzame pacientov každou etapou dospelého života — od mladých dospelých až po seniorov. Ťažiskom je prevencia, ktorá rozhoduje o tom, koľko rokov prežijete v plnej sile.",
+    lead: "V MEDICA JUR sprevádzame pacientov každou etapou dospelého života. Od mladých dospelých až po seniorov. Ťažiskom je prevencia, ktorá rozhoduje o tom, koľko rokov prežijete v plnej sile.",
     pillars: [
       {
         title: "Mladým naplno využiť potenciál",
@@ -562,11 +562,11 @@ const sk = {
       },
       {
         title: "Seniorom život v najlepšom zdraví",
-        text: "Pomáhame seniorom zostať aktívni, sebestační a prežiť roky navyše v čo najlepšom zdraví.",
+        text: "Pomáhame seniorom zostať aktívnymi a sebestačnými a prežiť roky navyše v čo najlepšom zdraví",
       },
       {
         title: "Prevencia srdca a pohybu",
-        text: "Zameriavame sa na kardiovaskulárnu a muskuloskeletálnu prevenciu — dva piliere dlhého a kvalitného života.",
+        text: "Zameriavame sa na kardiovaskulárnu a muskuloskeletálnu prevenciu. Dva piliere dlhého a kvalitného života.",
       },
     ],
     photos: [
@@ -680,7 +680,7 @@ const sk = {
     items: [
       {
         q: "Prijímate nových pacientov?",
-        a: "Áno, aktuálne prijímame nových pacientov. Pre registráciu stačí vyplniť a podpísať Dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju k nám do ambulancie alebo vám ju vydáme priamo v ambulancii. O kompletné odhlásenie od vášho predchádzajúceho všeobecného lekára a prenos dokumentácie sa kompletne postaráme my.",
+        a: "Áno, prijímame nových pacientov, ktorí sa stotožňujú s naším zameraním na dlhovekosť a celostný prístup k zdraviu. O vaše odhlásenie od predchádzajúceho lekára aj prenos dokumentácie sa pri prechode k nám kompletne postaráme my.",
       },
       {
         q: "Ako sa môžem objednať na vyšetrenie?",
@@ -692,11 +692,11 @@ const sk = {
       },
       {
         q: "Čo si mám priniesť na prvú návštevu?",
-        a: "Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\nAk máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.\n\nOdporúčame taktiež priniesť podpísanú dohodu o registrácii; v prípade potreby ju možno spísať rovno v ambulancii.",
+        a: "☐ Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\n☐ Ak máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.",
       },
       {
         q: "Ako postupovať v prípade akútneho ochorenia?",
-        a: "Akútne stavy (napr. náhle vysoké horúčky, silné bolesti, akútne infekcie) ošetrujeme bez objednania vo vyhradených hodinách na začiatku ordinačnej doby – presný čas nájdete v tabuľke ordinačných hodín.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
+        a: "Pri akútnych ochoreniach odporúčame využiť objednanie cez portál Moji lekári, vďaka čomu budete pri ošetrení uprednostnení a vyhnete sa dlhšiemu čakaniu v ambulancii. Týmto ohľaduplným krokom nepomáhate len svojmu rýchlejšiemu zotaveniu, ale zároveň chránite pred nákazou aj ostatných pacientov v čakárni.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť,...) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
       },
       {
         q: "S ktorými zdravotnými poisťovňami máte zmluvu?",
@@ -704,7 +704,7 @@ const sk = {
       },
       {
         q: "Platí sa u vás za vyšetrenia na moderných prístrojoch?",
-        a: "Ak máte zdravotné ťažkosti a vyšetrenie indikuje lekár, neplatíte nič. Všetky diagnostické úkony potrebné na určenie správnej liečby sú pre našich kapitovaných pacientov plne hradené z verejného zdravotného poistenia.\n\nNaším štandardom je však poskytovať nadštandardnú preventívnu starostlivosť a maximálny komfort, čo si vyžaduje investície do špičkových technológií a personálneho zabezpečenia. Preto poskytujeme ročné predplatné balíky služieb, vďaka ktorým dokážeme zabezpečiť hĺbkovú prevenciu a moderný manažment zdravia na najvyššej úrovni:\n\n• Prehľadný klientsky servis: Súčasťou ročného predplatného sú nezdravotnícke služby ako recepcia, call centrum, komfortné SMS a e-mailové notifikácie či plný prístup do pacientskeho portálu Moji lekári na 12 mesiacov.\n\n• Prémiová prevencia a Health Coaching: V rámci predplateného balíka (programy ZDRAVIE za 50 € alebo ZDRAVIE+ za 100 €) získavate pravidelnú preventívnu diagnostiku nad rámec bežného poistenia. Tá zahŕňa detailnú analýzu zloženia tela (prístrojmi TANITA alebo InBODY 970), meranie priechodnosti tepien (ABI), analýzu cievneho a metabolického veku (Maxpulse, MESI EKG) a odborné zdravotné poradenstvo (health coaching).\n\nSpoplatnené sú len vyšetrenia vykonané výhradne na vašu vlastnú žiadosť mimo týchto balíkov (napr. zo zvedavosti) alebo úkony pre potreby zamestnávateľa a administratívy podľa platného cenníka.",
+        a: "Indikované vyšetrenia pri ochoreniach sú plne hradené z vášho poistenia. Naša ambulancia sa však zameriava na dlhodobé zdravie a dlhovekosť, čo si vyžaduje najmodernejšie prístrojové vybavenie a nadštandardný čas venovaný pacientovi.\n\nMaximálnu úroveň takejto starostlivosti preto našim pacientom poskytujeme prostredníctvom ročných predplatných balíkov ZDRAVIE (50 €) a ZDRAVIE+ (100 €).\n\nRočné predplatné vám garantuje:\n\n• Špičkovú prístrojovú prevenciu: Pravidelné merania nad rámec poistenia (InBODY 970, TANITA, Maxpulse, MESI EKG, ABI), ktoré odhalia skryté riziká civilizačných ochorení, doplnené o osobný Health Coaching.\n\n• Prvotriedny servis: Komplexný nezdravotnícky servis vrátane recepcie, call centra, notifikácií a ročného prístupu do pacientskeho portálu Moji lekári.\n\n(Vyšetrenia mimo balíkov na vlastnú žiadosť a administratívne úkony sa riadia platným cenníkom).",
       },
       {
         q: "Ako sa k vám dostanem a kde môžem zaparkovať?",
@@ -731,7 +731,7 @@ const sk = {
     faq: [
       {
         q: "Prijímate nových pacientov?",
-        a: "Áno, aktuálne prijímame nových pacientov. Pre registráciu stačí vyplniť a podpísať Dohodu o poskytovaní zdravotnej starostlivosti a priniesť ju k nám do ambulancie alebo vám ju vydáme priamo v ambulancii. O kompletné odhlásenie od vášho predchádzajúceho všeobecného lekára a prenos dokumentácie sa kompletne postaráme my.",
+        a: "Áno, prijímame nových pacientov, ktorí sa stotožňujú s naším zameraním na dlhovekosť a celostný prístup k zdraviu. O vaše odhlásenie od predchádzajúceho lekára aj prenos dokumentácie sa pri prechode k nám kompletne postaráme my.",
       },
       {
         q: "Ako sa môžem objednať na vyšetrenie?",
@@ -743,11 +743,11 @@ const sk = {
       },
       {
         q: "Čo si mám priniesť na prvú návštevu?",
-        a: "Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\nAk máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.\n\nOdporúčame taktiež priniesť podpísanú dohodu o registrácii; v prípade potreby ju možno spísať rovno v ambulancii.",
+        a: "☐ Prineste si občiansky preukaz, preukaz zdravotného poistenia a zoznam všetkých aktuálne užívaných liekov (vrátane voľnopredajných).\n\n☐ Ak máte k dispozícii papierovú zdravotnú dokumentáciu alebo posledné lekárske správy od špecialistov, vezmite ich so sebou.",
       },
       {
         q: "Ako postupovať v prípade akútneho ochorenia?",
-        a: "Akútne stavy (napr. náhle vysoké horúčky, silné bolesti, akútne infekcie) ošetrujeme bez objednania vo vyhradených hodinách na začiatku ordinačnej doby – presný čas nájdete v tabuľke ordinačných hodín.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
+        a: "Pri akútnych ochoreniach odporúčame využiť objednanie cez portál Moji lekári, vďaka čomu budete pri ošetrení uprednostnení a vyhnete sa dlhšiemu čakaniu v ambulancii. Týmto ohľaduplným krokom nepomáhate len svojmu rýchlejšiemu zotaveniu, ale zároveň chránite pred nákazou aj ostatných pacientov v čakárni.\n\nV prípade náhleho ohrozenia života (podozrenie na infarkt, cievnu príhodu, ťažká dýchavičnosť,...) nečakajte a okamžite volajte záchrannú službu na čísle 155 alebo 112.",
       },
       {
         q: "S ktorými zdravotnými poisťovňami máte zmluvu?",
@@ -755,7 +755,7 @@ const sk = {
       },
       {
         q: "Platí sa u vás za vyšetrenia na moderných prístrojoch?",
-        a: "Ak máte zdravotné ťažkosti a vyšetrenie indikuje lekár, neplatíte nič. Všetky diagnostické úkony potrebné na určenie správnej liečby sú pre našich kapitovaných pacientov plne hradené z verejného zdravotného poistenia.\n\nNaším štandardom je však poskytovať nadštandardnú preventívnu starostlivosť a maximálny komfort, čo si vyžaduje investície do špičkových technológií a personálneho zabezpečenia. Preto poskytujeme ročné predplatné balíky služieb, vďaka ktorým dokážeme zabezpečiť hĺbkovú prevenciu a moderný manažment zdravia na najvyššej úrovni:\n\n• Prehľadný klientsky servis: Súčasťou ročného predplatného sú nezdravotnícke služby ako recepcia, call centrum, komfortné SMS a e-mailové notifikácie či plný prístup do pacientskeho portálu Moji lekári na 12 mesiacov.\n\n• Prémiová prevencia a Health Coaching: V rámci predplateného balíka (programy ZDRAVIE za 50 € alebo ZDRAVIE+ za 100 €) získavate pravidelnú preventívnu diagnostiku nad rámec bežného poistenia. Tá zahŕňa detailnú analýzu zloženia tela (prístrojmi TANITA alebo InBODY 970), meranie priechodnosti tepien (ABI), analýzu cievneho a metabolického veku (Maxpulse, MESI EKG) a odborné zdravotné poradenstvo (health coaching).\n\nSpoplatnené sú len vyšetrenia vykonané výhradne na vašu vlastnú žiadosť mimo týchto balíkov (napr. zo zvedavosti) alebo úkony pre potreby zamestnávateľa a administratívy podľa platného cenníka.",
+        a: "Indikované vyšetrenia pri ochoreniach sú plne hradené z vášho poistenia. Naša ambulancia sa však zameriava na dlhodobé zdravie a dlhovekosť, čo si vyžaduje najmodernejšie prístrojové vybavenie a nadštandardný čas venovaný pacientovi.\n\nMaximálnu úroveň takejto starostlivosti preto našim pacientom poskytujeme prostredníctvom ročných predplatných balíkov ZDRAVIE (50 €) a ZDRAVIE+ (100 €).\n\nRočné predplatné vám garantuje:\n\n• Špičkovú prístrojovú prevenciu: Pravidelné merania nad rámec poistenia (InBODY 970, TANITA, Maxpulse, MESI EKG, ABI), ktoré odhalia skryté riziká civilizačných ochorení, doplnené o osobný Health Coaching.\n\n• Prvotriedny servis: Komplexný nezdravotnícky servis vrátane recepcie, call centra, notifikácií a ročného prístupu do pacientskeho portálu Moji lekári.\n\n(Vyšetrenia mimo balíkov na vlastnú žiadosť a administratívne úkony sa riadia platným cenníkom).",
       },
       {
         q: "Ako sa k vám dostanem a kde môžem zaparkovať?",

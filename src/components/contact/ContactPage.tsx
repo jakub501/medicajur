@@ -22,7 +22,7 @@ export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
             <HoursPanel dict={dict} />
 
             {/* Online portal */}
-            <div className="rounded-[18px] bg-gradient-to-br from-primary to-primary-deep p-6 text-[#eaf3fa] sm:p-7">
+            <div className="brand-gradient-panel rounded-[18px] p-6 text-[#eaf3fa] sm:p-7">
               <span className="flex h-[46px] w-[46px] items-center justify-center rounded-[12px] bg-white/15 text-white">
                 <Globe className="h-6 w-6" strokeWidth={1.85} />
               </span>
@@ -32,7 +32,7 @@ export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
                 href={SITE.bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 rounded-[10px] bg-white px-5 py-3 text-[14.5px] font-bold text-primary transition-colors hover:bg-blue-soft"
+                className="btn-inverse mt-5 inline-flex items-center gap-2 rounded-[10px] px-5 py-3 text-[14.5px] font-bold transition-all hover:-translate-y-px"
               >
                 <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
                 {SITE.bookingName}
@@ -41,7 +41,7 @@ export function ContactPage({ dict }: { locale: Locale; dict: Dictionary }) {
 
             {/* Operator */}
             <div className="flex items-start gap-3.5 rounded-[18px] border border-line bg-surface p-6">
-              <span className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[11px] bg-blue-soft text-primary">
+              <span className="hero-float-badge-icon hero-float-badge-icon--primary flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-[11px]">
                 <Building2 className="h-5 w-5" strokeWidth={1.85} />
               </span>
               <div>

@@ -17,7 +17,7 @@ export function NewPatients({
   return (
     <Section id="about">
       <div className="grid overflow-hidden rounded-2xl border border-line shadow-card md:grid-cols-2">
-        <div className="relative overflow-hidden bg-primary px-6 py-10 text-on-primary sm:px-10 sm:py-12">
+        <div className="brand-gradient-panel relative overflow-hidden px-6 py-10 text-on-primary sm:px-10 sm:py-12">
           <span
             className="pointer-events-none absolute -bottom-16 -left-16 h-60 w-60 rounded-full bg-white/[0.07]"
             aria-hidden="true"

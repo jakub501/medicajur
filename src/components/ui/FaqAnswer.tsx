@@ -6,8 +6,14 @@ type Block =
   | { type: "paragraph"; body: string }
   | { type: "callout"; label: string; body: string }
   | { type: "bullet"; label: string | null; body: string }
+  | { type: "checklist"; body: string }
+  | { type: "note"; body: string }
   | { type: "alert"; body: string }
   | { type: "lead"; body: string };
+
+type RenderBlock =
+  | Block
+  | { type: "checklist-group"; items: string[] };
 
 const INSURER_CLASS: Record<string, string> = {
   VšZP: "text-insurer-vszp-text",
@@ -21,6 +27,10 @@ function parseBlocks(text: string): Block[] {
     .map((block) => block.trim())
     .filter(Boolean)
     .map((block) => {
+      if (block.startsWith("☐ ")) {
+        return { type: "checklist" as const, body: block.slice(2) };
+      }
+
       if (block.startsWith("• ")) {
         const content = block.slice(2);
         const colonIdx = content.indexOf(": ");
@@ -47,12 +57,41 @@ function parseBlocks(text: string): Block[] {
         return { type: "alert" as const, body: block };
       }
 
+      if (/^\([^)]+\)\.?$/.test(block)) {
+        return { type: "note" as const, body: block };
+      }
+
       if (/^(Áno|Yes),/i.test(block)) {
         return { type: "lead" as const, body: block };
       }
 
       return { type: "paragraph" as const, body: block };
     });
+}
+
+function groupBlocks(blocks: Block[]): RenderBlock[] {
+  const grouped: RenderBlock[] = [];
+  let checklistItems: string[] = [];
+
+  const flushChecklist = () => {
+    if (checklistItems.length > 0) {
+      grouped.push({ type: "checklist-group", items: checklistItems });
+      checklistItems = [];
+    }
+  };
+
+  for (const block of blocks) {
+    if (block.type === "checklist") {
+      checklistItems.push(block.body);
+      continue;
+    }
+
+    flushChecklist();
+    grouped.push(block);
+  }
+
+  flushChecklist();
+  return grouped;
 }
 
 function enrichText(text: string): ReactNode[] {
@@ -94,7 +133,26 @@ function enrichText(text: string): ReactNode[] {
   });
 }
 
-function FaqAnswerBlock({ block }: { block: Block }) {
+function FaqAnswerChecklist({ items }: { items: string[] }) {
+  return (
+    <ul className="faq-answer-checklist" role="list">
+      {items.map((item, index) => (
+        <li key={index} className="faq-answer-checklist-item">
+          <span className="faq-answer-checklist-icon" aria-hidden="true">
+            <Check className="h-3.5 w-3.5" strokeWidth={2.75} />
+          </span>
+          <span className="text-body-sm leading-relaxed text-muted">{enrichText(item)}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function FaqAnswerBlock({ block }: { block: RenderBlock }) {
+  if (block.type === "checklist-group") {
+    return <FaqAnswerChecklist items={block.items} />;
+  }
+
   switch (block.type) {
     case "lead":
       return (
@@ -131,13 +189,19 @@ function FaqAnswerBlock({ block }: { block: Block }) {
           <span>{enrichText(block.body)}</span>
         </p>
       );
+    case "note":
+      return (
+        <p className="faq-answer-note text-body-sm italic leading-relaxed text-muted">
+          {enrichText(block.body)}
+        </p>
+      );
     default:
       return <p className="text-body leading-relaxed text-muted">{enrichText(block.body)}</p>;
   }
 }
 
 export function FaqAnswer({ text }: { text: string }) {
-  const blocks = parseBlocks(text);
+  const blocks = groupBlocks(parseBlocks(text));
 
   return (
     <div className="faq-answer flex flex-col gap-3">

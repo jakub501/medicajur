@@ -3,7 +3,7 @@ import { SITE } from "@/lib/site";
 
 export function BookingCard({ title, text }: { title: string; text: string }) {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary via-primary to-primary-deep p-6 shadow-card sm:p-8">
+    <div className="brand-gradient-panel relative overflow-hidden rounded-2xl p-6 shadow-card sm:p-8">
       <span
         className="pointer-events-none absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/[0.08]"
         aria-hidden="true"

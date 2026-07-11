@@ -1,10 +1,10 @@
-import Link from "next/link";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import { href } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
+import { ButtonLink } from "@/components/ui/Button";
 import { FaqAnswer } from "@/components/ui/FaqAnswer";
 
 type FaqItem = { q: string; a: string };
@@ -55,13 +55,10 @@ export function Faq({
 
         {showCta && (
           <div className="mt-8 text-center">
-            <Link
-              href={href(locale, "home", "patients")}
-              className="inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-blue-line bg-surface px-5 text-body font-bold text-primary shadow-soft transition-all hover:border-primary/35 hover:bg-blue-soft/60 hover:text-primary-deep"
-            >
+            <ButtonLink href={href(locale, "home", "patients")} size="md">
               {f.cta}
               <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-            </Link>
+            </ButtonLink>
           </div>
         )}
       </div>

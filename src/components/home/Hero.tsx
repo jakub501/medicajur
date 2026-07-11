@@ -116,9 +116,7 @@ export async function Hero({ locale, dict }: { locale: Locale; dict: Dictionary 
                   <div className="hero-photo-grade" aria-hidden="true" />
                   <div className="hero-photo-caption">
                     <span className="hero-photo-caption__dot" aria-hidden="true" />
-                    <span className="hero-photo-caption__name">
-                      {SITE.brand} · {SITE.address.city}
-                    </span>
+                    <span className="hero-photo-caption__name">{SITE.doctor}</span>
                   </div>
                 </div>
               </div>

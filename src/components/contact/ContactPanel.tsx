@@ -44,7 +44,7 @@ export function ContactPanel({
             href={mapsLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-body-sm mt-2.5 inline-flex min-h-10 items-center gap-1.5 rounded-[10px] border border-blue-line bg-surface px-3.5 font-bold text-primary shadow-soft transition-all hover:border-primary/35 hover:bg-blue-soft/60 hover:text-primary-deep"
+            className="btn-secondary text-body-sm mt-2.5 inline-flex min-h-10 items-center gap-1.5 rounded-[10px] px-3.5 font-bold shadow-soft transition-all hover:-translate-y-px"
           >
             <Navigation className="h-4 w-4" strokeWidth={1.85} aria-hidden="true" />
             {dict.common.getDirections}
