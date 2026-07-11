@@ -47,10 +47,11 @@ const sk = {
     note: "Online objednávanie liekov a vyšetrení cez portál Moji lekári",
   },
   hero: {
+    eyebrow: "Všeobecná ambulancia · Svätý Jur",
     titleLine1: "Celostná a funkčná medicína pre dlhší a zdravší život",
     titleLine2Prefix: "MedicaJur – pre ",
     titleHighlight: "Vaše zdravie",
-    lead: "MUDr. Pavol Trnovec, PhD, prináša medicínu, ktorá nehľadá iba symptómy, ale rieši príčiny. Cielené intervencie, prevencia a moderné diagnostické metódy s cieľom predĺžiť vek prežitý v plnom zdraví.",
+    lead: "Medicína, ktorá nelieči len príznaky, ale rieši ich príčiny. Prevencia a moderná diagnostika pre viac rokov v plnom zdraví.",
     languagesBadge: "SK · EN",
     primaryCta: "Objednať sa",
     secondaryCta: "Som nový pacient",
@@ -66,7 +67,22 @@ const sk = {
     ],
     bookingNote: "Objednávanie prebieha cez portál Moji lekári",
     bookingNotePrefix: "Objednávanie prebieha cez portál ",
-    photoAlt: "MUDr. Pavol Trnovec, PhD.",
+    photoAlt: "Ambulancia MEDICA JUR vo Svätom Jure",
+  },
+  becomePatient: {
+    title: "Staňte sa našim pacientom",
+    steps: [
+      {
+        title: "Objednajte sa",
+        text: "Do našej ambulancie cez e-mail alebo telefón.",
+      },
+      {
+        title: "Príďte na vstupný rozhovor",
+        text: "Porozprávame sa, spoznáte našu ambulanciu a zistím Vaše potreby.",
+      },
+    ],
+    emailLabel: "Napísať e-mail",
+    phoneLabel: "Zavolať",
   },
   facts: {
     todayLabel: "Dnes",
@@ -120,27 +136,27 @@ const sk = {
   services: {
     eyebrow: "Starostlivosť",
     title: "Prehľad služieb",
-    subtitle: "Kompletná zdravotná starostlivosť o dospelých pacientov pod jednou strechou.",
+    subtitle: "Kompletná starostlivosť o dospelých pod jednou strechou.",
     overview: {
       cards: [
         {
           title: "Prevencia, diagnostika a liečba",
-          text: "Komplexná ambulantná starostlivosť v pôsobnosti všeobecného lekára . Od vyšetrenia a liečby až po odborné zdravotné poradenstvo.",
+          text: "Vyšetrenie, liečba a odborné poradenstvo u všeobecného lekára.",
           icon: "stethoscope",
         },
         {
           title: "Preventívne vyšetrenia a očkovanie",
-          text: "Pravidelné preventívne prehliadky hradené poisťovňou aj očkovanie vrátane sezónnej chrípky a cestovnej medicíny.",
+          text: "Prehliadky hradené poisťovňou a očkovanie vrátane chrípky a cestovnej medicíny.",
           icon: "syringe",
         },
         {
           title: "Predoperačné vyšetrenia",
-          text: "Kompletná predoperačná príprava a interné vyšetrenie pred plánovaným operačným zákrokom.",
+          text: "Predoperačná príprava a interné vyšetrenie pred zákrokom.",
           icon: "clipboard-check",
         },
         {
           title: "Odbery krvi a POCT diagnostika",
-          text: "Odbery priamo v ambulancii a rýchla diagnostika na počkanie pomocou moderného prístrojového vybavenia.",
+          text: "Odbery a rýchla diagnostika na počkanie priamo v ambulancii.",
           icon: "activity",
         },
         {
@@ -150,7 +166,7 @@ const sk = {
         },
         {
           title: "Potvrdenia a výkony na žiadosť",
-          text: "Vydávanie potvrdení podľa platných zákonov. Výkony na žiadosť pacienta podľa platného cenníka.",
+          text: "Potvrdenia a výkony na žiadosť podľa platného cenníka.",
           icon: "file-text",
           linkToPricing: true,
         },
@@ -449,22 +465,23 @@ const sk = {
     })),
   },
   existingPatients: {
-    eyebrow: "Pre registrovaných pacientov",
-    title: "Stávajúci pacienti",
+    title: "Registrovaní pacienti",
+    bookTitle: "Objednanie termínu",
+    bookText:
+      "Termín u nás dohodneme výhradne e-mailom alebo telefonicky — ozvite sa a nájdeme čas, ktorý vám vyhovuje.",
   },
   erecept: {
     eyebrow: "Recepty a lieky",
     title: "Ako si vyžiadať e-recept",
-    subtitle:
-      "Recept na vaše chronické lieky vybavíte na diaľku. Vyberte si spôsob, ktorý vám vyhovuje.",
+    subtitle: "Recept na chronické lieky vybavíte na diaľku.",
     steps: [
       {
         title: "Cez aplikáciu Moji lekári",
-        text: "Najrýchlejšie a kedykoľvek. Registrovaní pacienti si liek vyžiadajú priamo v aplikácii.",
+        text: "Najrýchlejšie. Liek si vyžiadate priamo v aplikácii.",
       },
       {
         title: "E-mailom",
-        text: "Napíšte nám meno, dátum narodenia a názov lieku. Recept vystavíme elektronicky.",
+        text: "Napíšte meno, dátum narodenia a liek. Vystavíme ho elektronicky.",
       },
       {
         title: "Telefonicky",
@@ -503,23 +520,48 @@ const sk = {
   },
   trust: {
     title: "Prečo si vybrať našu ambulanciu",
-    quote: "Pomôžem Vám prežiť Váš život v celej jeho plnosti",
+    quote: "Nejde mi len o to, aby ste žili dlhšie, ale aby ste tie roky prežili v plnom zdraví.",
+    quoteRole: "MEDICA JUR · Svätý Jur",
     items: [
       {
         title: "Celostný prístup",
-        text: "Hľadáme skutočné príčiny Vašich ťažkostí, nielen riešenia pre okamžité symptómy.",
+        text: "Riešime príčiny, nie iba symptómy",
         icon: "stethoscope",
       },
       {
         title: "Moderná diagnostika",
-        text: "Využívame špičkové technológie pre presný obraz o Vašom zdraví a vnútornej rovnováhe.",
+        text: "Špičkové prístroje InBody 970, Maxpulse, EKG, ABI",
         icon: "activity",
       },
       {
-        title: "Zamerané na prevenciu",
-        text: "Chránime Vašu budúcnosť pred civilizačnými chorobami skôr, než stihnú prepuknúť.",
+        title: "Prevencia civilizačných ochorení",
+        text: "Kardiovaskulárne, metabolické, neurodegeneratívne",
         icon: "shield-check",
       },
+    ],
+  },
+  aboutUs: {
+    eyebrow: "O nás",
+    title: "Ambulancia pre celý Váš život",
+    lead: "V MEDICA JUR sprevádzame pacientov každou etapou dospelého života — od mladých dospelých až po seniorov. Ťažiskom je prevencia, ktorá rozhoduje o tom, koľko rokov prežijete v plnej sile.",
+    pillars: [
+      {
+        title: "Mladým naplno využiť potenciál",
+        text: "Budujeme pevné základy zdravia, aby mladí dospelí žili s energiou a naplnili svoj potenciál.",
+      },
+      {
+        title: "Seniorom život v najlepšom zdraví",
+        text: "Pomáhame seniorom zostať aktívni, sebestační a prežiť roky navyše v čo najlepšom zdraví.",
+      },
+      {
+        title: "Prevencia srdca a pohybu",
+        text: "Zameriavame sa na kardiovaskulárnu a muskuloskeletálnu prevenciu — dva piliere dlhého a kvalitného života.",
+      },
+    ],
+    photos: [
+      { label: "Ordinácia" },
+      { label: "Čakáreň" },
+      { label: "Recepcia" },
     ],
   },
   about: {

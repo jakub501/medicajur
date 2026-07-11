@@ -47,7 +47,7 @@ export function SectionHeading({
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       <h2 className="text-h2 mt-2.5">{title}</h2>
       {center && (
-        <span className="mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r from-primary to-brand-green" />
+        <span className="heading-rule mx-auto mt-4 block h-1 w-12 rounded-full bg-gradient-to-r from-primary to-brand-green" />
       )}
       {subtitle && (
         <p

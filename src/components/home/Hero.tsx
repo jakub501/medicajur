@@ -1,107 +1,82 @@
-import {
-  GraduationCap,
-  Languages,
-  Mail,
-  Phone,
-  Stethoscope,
-  type LucideIcon,
-} from "lucide-react";
+import { Mail, Phone, Star } from "lucide-react";
 import type { Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
+import { getGooglePlaceStats } from "@/lib/google-place-stats";
+import { formatGoogleRating } from "@/lib/format-google-stats";
 import { Container } from "@/components/ui/Container";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { ButtonAnchor } from "@/components/ui/Button";
 
-const HERO_BADGE_ICONS: LucideIcon[] = [GraduationCap, Stethoscope];
+function ProofStars({ rating }: { rating: number }) {
+  const filled = Math.round(rating);
 
-const HERO_BADGE_ACCENTS = ["gold", "green"] as const;
-
-function HeroBadge({
-  icon: Icon,
-  title,
-  subtitle,
-  accent,
-  compact = false,
-  className,
-}: {
-  icon: LucideIcon;
-  title: string;
-  subtitle: string;
-  accent: (typeof HERO_BADGE_ACCENTS)[number];
-  compact?: boolean;
-  className?: string;
-}) {
   return (
-    <div
-      className={cn(
-        "hero-float-badge flex items-center gap-2.5 rounded-2xl",
-        compact ? "px-3 py-2.5" : "px-3.5 py-3 sm:px-4 sm:py-3.5",
-        className,
-      )}
-    >
-      <span className={cn("hero-float-badge-icon", `hero-float-badge-icon--${accent}`)}>
-        <Icon className="h-[18px] w-[18px]" strokeWidth={1.9} aria-hidden="true" />
-      </span>
-      <span className="min-w-0">
-        <span
+    <span className="inline-flex items-center gap-px" aria-hidden="true">
+      {Array.from({ length: 5 }).map((_, index) => (
+        <Star
+          key={index}
           className={cn(
-            "block font-semibold leading-tight text-ink",
-            compact ? "text-body-sm" : "text-[0.9375rem]",
+            "h-3.5 w-3.5",
+            index < filled ? "fill-gold text-gold" : "fill-transparent text-gold/30",
           )}
-        >
-          {title}
-        </span>
-        <span
-          className={cn(
-            "mt-0.5 block leading-snug text-muted",
-            compact ? "text-[0.75rem]" : "text-[0.78rem]",
-          )}
-        >
-          {subtitle}
-        </span>
-      </span>
-    </div>
+          strokeWidth={1.5}
+        />
+      ))}
+    </span>
   );
 }
 
-const HERO_BADGE_POSITIONS = [
-  "left-0 top-[12%] -translate-x-[30%] lg:-translate-x-[36%]",
-  "right-0 bottom-[12%] translate-x-[20%] lg:translate-x-[24%]",
-] as const;
-
-const HERO_BADGE_DELAYS = ["0s", "1.2s"] as const;
-
-export function Hero({ dict }: { locale: Locale; dict: Dictionary }) {
-  const badges = dict.hero.badges.map((badge, index) => ({
-    ...badge,
-    icon: HERO_BADGE_ICONS[index],
-    accent: HERO_BADGE_ACCENTS[index],
-    position: HERO_BADGE_POSITIONS[index],
-    delay: HERO_BADGE_DELAYS[index],
-  }));
+export async function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
+  const stats = await getGooglePlaceStats();
+  const ratingLabel = formatGoogleRating(stats.rating, locale);
 
   return (
-    <section className="hero-section--flush relative pb-14 sm:pb-16 lg:pb-20">
+    <section className="hero-section--flush relative overflow-hidden pb-14 sm:pb-16 lg:pb-20">
+      <div className="hero-aurora" aria-hidden="true">
+        <span className="hero-aurora__blob hero-aurora__blob--a" />
+        <span className="hero-aurora__blob hero-aurora__blob--b" />
+      </div>
+
       <Container>
         <div className="relative grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
-          <div className="order-1 flex max-w-xl animate-rise flex-col justify-center gap-6 lg:gap-7">
+          <div className="order-1 flex max-w-xl flex-col justify-center gap-6 lg:gap-7">
             <div className="flex flex-col gap-4">
-              <h1 className="text-display text-balance font-medium leading-[1.1]">
+              <span className="fade-up d-1 inline-flex items-center gap-2 self-start rounded-full border border-blue-line bg-blue-soft/70 px-3.5 py-1.5 text-eyebrow text-primary">
+                <span
+                  className="pulse-dot inline-block h-1.5 w-1.5 rounded-full bg-brand-green"
+                  aria-hidden="true"
+                />
+                {dict.hero.eyebrow}
+              </span>
+
+              <h1 className="fade-up d-2 text-display text-balance font-semibold leading-[1.06]">
                 <span className="block">{dict.hero.titleLine1}</span>
-                <span className="text-h2 mt-1.5 block font-normal text-muted">
+                <span className="text-h2 mt-2 block font-normal text-muted">
                   {dict.hero.titleLine2Prefix}
-                  <span className="text-primary">{dict.hero.titleHighlight}</span>
+                  <span className="text-gradient font-semibold">{dict.hero.titleHighlight}</span>
                 </span>
               </h1>
 
-              <p className="text-body-lg max-w-[33em] text-pretty leading-[1.7] text-muted">
+              <p className="fade-up d-3 text-body-lg max-w-[33em] text-pretty leading-[1.7] text-muted">
                 {dict.hero.lead}
               </p>
             </div>
 
-            <div className="flex flex-col gap-3.5">
+            <div className="fade-up d-4 flex flex-wrap items-center gap-x-4 gap-y-2.5">
+              <span className="proof-chip">
+                <ProofStars rating={stats.rating} />
+                <span>{ratingLabel}</span>
+                <span className="proof-chip__muted">Google</span>
+              </span>
+              <span className="proof-divider" aria-hidden="true" />
+              <span className="proof-chip">{dict.hero.languagesBadge}</span>
+              <span className="proof-divider" aria-hidden="true" />
+              <span className="proof-chip proof-chip__muted">{SITE.insurers.join(" · ")}</span>
+            </div>
+
+            <div className="fade-up d-5 flex flex-col gap-3.5">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <ButtonAnchor
                   href={`mailto:${SITE.emails.doctor}`}
@@ -124,56 +99,29 @@ export function Hero({ dict }: { locale: Locale; dict: Dictionary }) {
             </div>
           </div>
 
-          <div className="order-2 overflow-visible animate-rise [animation-delay:120ms]">
-            <div className="relative mx-auto w-full max-w-[520px] md:max-w-none md:px-6 lg:px-8">
+          <div className="order-2 animate-rise [animation-delay:120ms]">
+            <div className="relative mx-auto w-full max-w-[540px] md:max-w-none md:px-4 lg:px-6">
+              <div className="hero-frame-glow" aria-hidden="true" />
               <div className="hero-frame relative rounded-[22px] p-1.5 sm:p-2">
-                <ImagePlaceholder
-                  src={SITE.images.doctor || undefined}
-                  alt={dict.hero.photoAlt}
-                  label={dict.hero.photoAlt}
-                  priority
-                  className="h-[280px] w-full rounded-[16px] sm:h-[360px] md:h-[400px] lg:h-[460px]"
-                />
-              </div>
-
-              {badges.map((badge) => (
-                <div
-                  key={badge.title}
-                  className={cn(
-                    "pointer-events-none absolute z-10 hidden max-w-[min(220px,44%)] md:block",
-                    badge.position,
-                  )}
-                >
-                  <div className="animate-floaty-badge" style={{ animationDelay: badge.delay }}>
-                    <HeroBadge
-                      icon={badge.icon}
-                      title={badge.title}
-                      subtitle={badge.subtitle}
-                      accent={badge.accent}
+                <div className="hero-photo h-[300px] w-full sm:h-[380px] md:h-[420px] lg:h-[480px]">
+                  <div className="hero-photo-tone">
+                    <ImagePlaceholder
+                      src={SITE.images.doctor || undefined}
+                      alt={dict.hero.photoAlt}
+                      label={dict.hero.photoAlt}
+                      priority
+                      className="h-full w-full"
                     />
                   </div>
+                  <div className="hero-photo-grade" aria-hidden="true" />
+                  <div className="hero-photo-caption">
+                    <span className="hero-photo-caption__dot" aria-hidden="true" />
+                    <span className="hero-photo-caption__name">
+                      {SITE.brand} · {SITE.address.city}
+                    </span>
+                  </div>
                 </div>
-              ))}
-            </div>
-
-            <div className="mt-4 flex justify-center">
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-line bg-blue-soft/80 px-3.5 py-1.5 text-caption font-bold text-primary">
-                <Languages className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
-                {dict.hero.languagesBadge}
-              </span>
-            </div>
-
-            <div className="mt-5 grid grid-cols-1 gap-2.5 sm:grid-cols-2 md:hidden">
-              {badges.map((badge) => (
-                <HeroBadge
-                  key={badge.title}
-                  icon={badge.icon}
-                  title={badge.title}
-                  subtitle={badge.subtitle}
-                  accent={badge.accent}
-                  compact
-                />
-              ))}
+              </div>
             </div>
           </div>
         </div>

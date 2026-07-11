@@ -167,7 +167,7 @@ function ReviewCard({
         <StarRow rating={5} size="sm" className="gap-px" />
       </div>
 
-      <blockquote className="review-card__text text-body flex-1 text-pretty leading-[1.72] text-muted">
+      <blockquote className="review-card__text text-[0.95rem] flex-1 text-pretty leading-[1.6] text-muted">
         <span aria-hidden="true" className="text-[1.15em] leading-none text-primary/35">
           „
         </span>

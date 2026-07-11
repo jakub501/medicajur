@@ -1,4 +1,4 @@
-import { Quote } from "lucide-react";
+import { Clock, GraduationCap, Languages, Quote } from "lucide-react";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { cn } from "@/lib/cn";
@@ -6,6 +6,19 @@ import { Icon } from "@/components/ui/Icon";
 import { Section } from "@/components/ui/Section";
 
 const TRUST_CARD_ACCENTS = ["primary", "green", "deep", "gold"] as const;
+
+/** Initials from a name, ignoring academic titles (words ending in ".") */
+function nameInitials(name: string) {
+  return name
+    .split(/\s+/)
+    .map((part) => part.replace(/[.,]/g, ""))
+    .filter((part) => part.length > 0 && !part.endsWith("."))
+    .filter((part) => !/^(MUDr|PhD|MPH|Mgr|Ing|Dr|prof|doc)$/i.test(part))
+    .map((part) => part[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
 
 function TrustCardShell({
   title,
@@ -19,19 +32,13 @@ function TrustCardShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="card group flex h-full items-start gap-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-line hover:shadow-card sm:gap-4">
-      <span
-        className={cn(
-          "hero-float-badge-icon h-10 w-10 shrink-0 rounded-[11px] transition-all duration-300 group-hover:scale-105",
-          `hero-float-badge-icon--${accent}`,
-        )}
-      >
-        <Icon name={icon} className="h-5 w-5" />
+    <div className={cn("trust-card group flex h-full flex-col", `trust-card--${accent}`)}>
+      <span className={cn("trust-ico", `trust-ico--${accent}`)}>
+        <Icon name={icon} className="h-6 w-6" />
       </span>
-      <div className="min-w-0 flex-1">
-        <h3 className="font-serif text-body font-medium leading-snug text-ink">{title}</h3>
-        <div className="mt-1.5">{children}</div>
-      </div>
+      <h3 className="trust-card__title mt-6">{title}</h3>
+      <span className="trust-card__rule mt-3" aria-hidden="true" />
+      <div className="mt-3 flex-1">{children}</div>
     </div>
   );
 }
@@ -49,51 +56,75 @@ function TrustCard({
 }) {
   return (
     <TrustCardShell title={title} icon={icon} accent={accent}>
-      <p className="text-body-sm leading-relaxed text-muted">{text}</p>
+      <p className="text-[0.9375rem] leading-[1.65] text-muted">{text}</p>
     </TrustCardShell>
   );
 }
 
 export function Trust({ dict }: { dict: Dictionary }) {
   const t = dict.trust;
+  const doctorInitials = nameInitials(SITE.doctor);
+
+  const credentials = [
+    { icon: GraduationCap, label: dict.hero.badges[0]?.title },
+    { icon: Clock, label: dict.hero.badges[1]?.title },
+    { icon: Languages, label: dict.hero.languagesBadge },
+  ].filter((c) => Boolean(c.label));
 
   return (
     <Section id="trust" className="py-8 sm:py-10">
-      <div className="mx-auto mb-6 max-w-3xl text-center sm:mb-7">
+      <div className="mx-auto mb-7 max-w-2xl text-center sm:mb-8">
         <h2 className="text-h2 text-balance">{t.title}</h2>
         <span
-          className="mx-auto mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
+          className="heading-rule mx-auto mt-2.5 block h-1 w-10 rounded-full bg-gradient-to-r from-primary to-brand-green"
           aria-hidden="true"
         />
-
-        <figure className="trust-quote-panel relative mt-5 px-6 py-6 text-center sm:mt-6 sm:px-9 sm:py-7">
-          <Quote
-            className="pointer-events-none absolute left-5 top-5 h-9 w-9 text-primary/[0.14] sm:left-6 sm:top-6 sm:h-10 sm:w-10"
-            strokeWidth={1.5}
-            aria-hidden="true"
-          />
-          <figcaption className="relative">
-            <p className="font-serif text-[1.2rem] font-medium leading-tight text-ink sm:text-[1.35rem]">
-              {SITE.doctor}
-            </p>
-            <span
-              className="mx-auto mt-4 block h-px w-14 bg-gradient-to-r from-transparent via-blue-line to-transparent"
-              aria-hidden="true"
-            />
-            <blockquote className="text-body-lg mx-auto mt-4 max-w-[34em] text-pretty font-serif leading-[1.72] text-muted">
-              <span aria-hidden="true" className="text-[1.35em] leading-none text-primary/45">
-                „
-              </span>
-              {t.quote}
-              <span aria-hidden="true" className="text-[1.35em] leading-none text-primary/45">
-                "
-              </span>
-            </blockquote>
-          </figcaption>
-        </figure>
       </div>
 
-      <div className="mx-auto max-w-3xl">
+      <figure className="trust-dark-band relative mx-auto max-w-5xl px-6 py-9 sm:px-10 sm:py-10">
+        <span className="trust-dark-band__sheen" aria-hidden="true" />
+        <div className="grid gap-8 md:grid-cols-[1.5fr_1fr] md:items-center md:gap-12">
+          <blockquote className="relative">
+            <Quote
+              className="trust-dark-band__quote mb-3 h-11 w-11 sm:h-12 sm:w-12"
+              strokeWidth={1.5}
+              aria-hidden="true"
+            />
+            <p className="text-balance font-serif text-[1.5rem] font-medium leading-[1.32] text-on-primary sm:text-[1.9rem]">
+              {t.quote}
+            </p>
+          </blockquote>
+
+          <figcaption className="trust-sig-sep mt-2 border-t pt-7 md:mt-0 md:border-t-0 md:border-l md:pt-0 md:pl-12">
+            <div className="flex items-center gap-3">
+              <span className="trust-dark-band__avatar" aria-hidden="true">
+                {doctorInitials}
+              </span>
+              <span className="leading-tight">
+                <span className="block font-serif text-[1.05rem] font-medium text-white">
+                  {SITE.doctor}
+                </span>
+                <span className="mt-0.5 block text-body-sm text-on-primary-subtle">
+                  {t.quoteRole}
+                </span>
+              </span>
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3">
+              {credentials.map(({ icon: CredIcon, label }) => (
+                <span key={label} className="trust-cred">
+                  <span className="trust-cred__icon" aria-hidden="true">
+                    <CredIcon className="h-[17px] w-[17px]" strokeWidth={1.9} />
+                  </span>
+                  {label}
+                </span>
+              ))}
+            </div>
+          </figcaption>
+        </div>
+      </figure>
+
+      <div className="mx-auto mt-4 max-w-5xl sm:mt-5">
         <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-3 sm:items-stretch sm:gap-4">
           {t.items.map((item, index) => (
             <TrustCard

@@ -49,6 +49,11 @@ export const SITE = {
     doctor: "/images/doctor.png",
     logo: "/images/logo.png",
     facility: "/images/facility.svg", // replace with "/images/ambulancia.jpg" when available
+    // "O nás" practice photos — leave empty to show a placeholder; set the path
+    // once real photos are ready, e.g. "/images/ambulancia-ordinacia.jpg".
+    aboutOffice: "",
+    aboutWaiting: "",
+    aboutReception: "",
   },
 } as const;
 

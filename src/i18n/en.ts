@@ -46,10 +46,11 @@ const en: Dictionary = {
     note: "Online prescriptions & appointments via the Moji lekári portal",
   },
   hero: {
+    eyebrow: "General practice · Svätý Jur",
     titleLine1: "Holistic and functional medicine for a longer, healthier life",
     titleLine2Prefix: "MedicaJur – for ",
     titleHighlight: "your health",
-    lead: "MUDr. Pavol Trnovec, PhD, delivers medicine that does not merely treat symptoms, but addresses root causes. Targeted interventions, prevention and modern diagnostic methods aimed at extending the years you live in full health.",
+    lead: "Medicine that treats causes, not just symptoms. Prevention and modern diagnostics for more years in full health.",
     languagesBadge: "SK · EN",
     primaryCta: "Book now",
     secondaryCta: "I'm a new patient",
@@ -65,7 +66,22 @@ const en: Dictionary = {
     ],
     bookingNote: "Booking is handled via the My Doctors portal",
     bookingNotePrefix: "Booking is handled via the ",
-    photoAlt: "MUDr. Pavol Trnovec, PhD.",
+    photoAlt: "MEDICA JUR practice in Svätý Jur",
+  },
+  becomePatient: {
+    title: "Become our patient",
+    steps: [
+      {
+        title: "Book an appointment",
+        text: "At our practice via e-mail or phone.",
+      },
+      {
+        title: "Come for an intro visit",
+        text: "We'll talk, you'll get to know our practice and I'll learn about your needs.",
+      },
+    ],
+    emailLabel: "Send an e-mail",
+    phoneLabel: "Call us",
   },
   facts: {
     todayLabel: "Today",
@@ -119,27 +135,27 @@ const en: Dictionary = {
   services: {
     eyebrow: "Care",
     title: "Our services",
-    subtitle: "Complete healthcare for adult patients under one roof.",
+    subtitle: "Complete care for adults under one roof.",
     overview: {
       cards: [
         {
           title: "Prevention, diagnostics and treatment",
-          text: "Comprehensive outpatient care within general practice — from examination and treatment to professional health counselling.",
+          text: "Examination, treatment and professional counselling with a GP.",
           icon: "stethoscope",
         },
         {
           title: "Preventive check-ups and vaccination",
-          text: "Regular preventive examinations covered by insurance, plus vaccination including seasonal flu and travel medicine.",
+          text: "Check-ups covered by insurance, plus vaccination including flu and travel medicine.",
           icon: "syringe",
         },
         {
           title: "Pre-operative examinations",
-          text: "Complete pre-operative preparation and internal assessment before a planned surgical procedure.",
+          text: "Pre-operative preparation and internal assessment before a procedure.",
           icon: "clipboard-check",
         },
         {
           title: "Blood sampling and POCT diagnostics",
-          text: "Blood draws in the practice and rapid on-site diagnostics using modern medical equipment.",
+          text: "Blood draws and rapid on-site diagnostics while you wait.",
           icon: "activity",
         },
         {
@@ -149,7 +165,7 @@ const en: Dictionary = {
         },
         {
           title: "Certificates and services on request",
-          text: "Issuing certificates in accordance with applicable laws. Services on patient request according to the valid price list.",
+          text: "Certificates and services on request per the valid price list.",
           icon: "file-text",
           linkToPricing: true,
         },
@@ -448,22 +464,23 @@ const en: Dictionary = {
     })),
   },
   existingPatients: {
-    eyebrow: "For registered patients",
-    title: "Existing patients",
+    title: "Registered patients",
+    bookTitle: "Booking an appointment",
+    bookText:
+      "We arrange appointments exclusively by e-mail or phone — get in touch and we'll find a time that suits you.",
   },
   erecept: {
     eyebrow: "Prescriptions & medication",
     title: "How to request an e-prescription",
-    subtitle:
-      "You can request a repeat prescription remotely — choose the option that suits you best.",
+    subtitle: "Request a repeat prescription remotely.",
     steps: [
       {
         title: "Via the Moji lekári app",
-        text: "Fastest and available anytime. Registered patients request the medication directly in the app.",
+        text: "Fastest. Request your medication directly in the app.",
       },
       {
         title: "By e-mail",
-        text: "Send us your name, date of birth and the medication name. We'll issue the e-prescription electronically.",
+        text: "Send your name, date of birth and medication. We'll issue it electronically.",
       },
       {
         title: "By phone",
@@ -502,23 +519,48 @@ const en: Dictionary = {
   },
   trust: {
     title: "Why choose our practice",
-    quote: "I will help you live your life to its fullest",
+    quote: "It's not just about living longer — it's about living those years in full health.",
+    quoteRole: "MEDICA JUR · Svätý Jur",
     items: [
       {
         title: "Holistic approach",
-        text: "We look for the real causes of your difficulties, not just solutions for immediate symptoms.",
+        text: "We address causes, not just symptoms",
         icon: "stethoscope",
       },
       {
         title: "Modern diagnostics",
-        text: "We use cutting-edge technology for an accurate picture of your health and inner balance.",
+        text: "Advanced equipment: InBody 970, Maxpulse, ECG, ABI",
         icon: "activity",
       },
       {
-        title: "Focused on prevention",
-        text: "We protect your future from lifestyle diseases before they have a chance to develop.",
+        title: "Prevention of lifestyle diseases",
+        text: "Cardiovascular, metabolic, neurodegenerative",
         icon: "shield-check",
       },
+    ],
+  },
+  aboutUs: {
+    eyebrow: "About us",
+    title: "Care for every stage of your life",
+    lead: "At MEDICA JUR we accompany patients through every stage of adult life — from young adults to seniors. Prevention is at the core, deciding how many years you live in full strength.",
+    pillars: [
+      {
+        title: "Helping the young reach their potential",
+        text: "We build strong health foundations so young adults live with energy and fulfil their potential.",
+      },
+      {
+        title: "Seniors living in the best health",
+        text: "We help seniors stay active, independent and enjoy extra years in the best possible health.",
+      },
+      {
+        title: "Prevention for heart and movement",
+        text: "We focus on cardiovascular and musculoskeletal prevention — two pillars of a long, high-quality life.",
+      },
+    ],
+    photos: [
+      { label: "Consulting room" },
+      { label: "Waiting room" },
+      { label: "Reception" },
     ],
   },
   about: {

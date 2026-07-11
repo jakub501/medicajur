@@ -3,6 +3,7 @@ import { isLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { Reveal } from "@/components/ui/Reveal";
 import { Hero } from "@/components/home/Hero";
+import { AboutUs } from "@/components/home/AboutUs";
 import { Trust } from "@/components/home/Trust";
 import { ServicesBento } from "@/components/home/ServicesBento";
 
@@ -46,6 +47,9 @@ export default async function HomePage({
   return (
     <>
       <Hero locale={loc} dict={dict} />
+      <Reveal>
+        <AboutUs dict={dict} />
+      </Reveal>
       <Reveal>
         <Trust dict={dict} />
       </Reveal>
