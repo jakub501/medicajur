@@ -47,7 +47,7 @@ const en: Dictionary = {
   hero: {
     eyebrow: "General practice · Svätý Jur",
     titleLine1: "Holistic and functional medicine for a longer, healthier life",
-    titleLine2Prefix: "MedicaJur – for ",
+    titleLine2Prefix: "MedicaJur for ",
     titleHighlight: "your health",
     lead: "Medicine that treats causes, not just symptoms. Prevention and modern diagnostics for more years in full health.",
     languagesBadge: "SK · EN",
@@ -91,12 +91,12 @@ const en: Dictionary = {
   patients: {
     eyebrow: "Accepting new patients",
     title: "Welcome to our practice",
-    text: "We handle the paperwork for you. Switching to us is quick and stress-free — we'll de-register you from your previous doctor.",
+    text: "We handle the paperwork for you. Switching to us is quick and stress-free. We'll de-register you from your previous doctor.",
     aboutCta: "About the practice",
     infoCta: "Info for new patients",
     callCta: "Call us",
     story:
-      "Graduate of the Jessenius Faculty of Medicine in Martin (Summa cum laude) and holder of a PhD degree. He has been leading the practice in Svätý Jur since spring 2019 — with an emphasis on time, prevention and clear communication, including in English.",
+      "Graduate of the Jessenius Faculty of Medicine in Martin (Summa cum laude) and holder of a PhD degree. He has been leading the practice in Svätý Jur since spring 2019, with an emphasis on time, prevention and clear communication, including in English.",
     doctorTitle: "Your doctor",
     whyItems: [
       {
@@ -172,8 +172,8 @@ const en: Dictionary = {
       pricingLink: "Price list",
     },
     poct: {
-      title: "POCT devices — results while you wait",
-      text: "The practice is equipped with modern diagnostic devices — from ECG and ABI testing to CRP, haemoglobin and iFOBT, plus 24-hour blood pressure holter monitoring.",
+      title: "POCT devices: results while you wait",
+      text: "The practice is equipped with modern diagnostic devices, from ECG and ABI testing to CRP, haemoglobin and iFOBT, plus 24-hour blood pressure holter monitoring.",
       tags: [
         "EKG Schiller AT 2 Plus",
         "ABI BOSO",
@@ -185,7 +185,7 @@ const en: Dictionary = {
     viewAll: "Detailed service listing",
     pageTitle: "Our services",
     pageLead:
-      "Comprehensive general care for adults — from prevention and on-site POCT diagnostics to e-prescriptions, referral proposals and fee-based services.",
+      "Comprehensive general care for adults, from prevention and on-site POCT diagnostics to e-prescriptions, referral proposals and fee-based services.",
     scope: {
       title: "Scope of services",
       groups: [
@@ -195,7 +195,7 @@ const en: Dictionary = {
             {
               icon: "stethoscope",
               title: "General outpatient care",
-              text: "Comprehensive care within the scope of a GP — from examination and treatment of acute and chronic conditions to professional counselling.",
+              text: "Comprehensive care within the scope of a GP, from examination and treatment of acute and chronic conditions to professional counselling.",
             },
             {
               icon: "syringe",
@@ -230,12 +230,12 @@ const en: Dictionary = {
             {
               icon: "pill",
               title: "Electronic healthcare (e-Health)",
-              text: "E-prescriptions, e-lab and e-referrals — electronic communication with laboratories and specialists.",
+              text: "E-prescriptions, e-lab and e-referrals for electronic communication with laboratories and specialists.",
             },
             {
               icon: "file-text",
               title: "Certificates and assessments",
-              text: "Medical certificates in accordance with applicable legislation — driving licences, firearms permits, employment and more.",
+              text: "Medical certificates in accordance with applicable legislation, including driving licences, firearms permits, employment and more.",
             },
             {
               icon: "file-text",
@@ -265,7 +265,7 @@ const en: Dictionary = {
     equipment: {
       title: "Medical equipment",
       intro:
-        "Diagnostic devices on site enable rapid testing and results while you wait — without unnecessary delays for an external laboratory.",
+        "Diagnostic devices on site enable rapid testing and results while you wait, without unnecessary delays for an external laboratory.",
       purposeLabel: "Examination / purpose",
       deviceLabel: "Device",
       backToList: "Back to medical equipment",
@@ -280,7 +280,7 @@ const en: Dictionary = {
             paragraphs: [
               "The Schiller AT 2 Plus is a premium electrocardiograph from the renowned Swiss manufacturer, designed to accurately record your heart's electrical activity. This modern device is essential for preventive check-ups, pre-operative assessments and diagnosing symptoms such as palpitations and chest pain.",
               "Thanks to advanced software, it provides the doctor with immediate analysis that helps detect rhythm disorders, poor blood supply and signs of a previous heart attack in good time. The examination itself is completely painless, safe and requires no needles or uncomfortable procedures.",
-              "During the procedure you lie comfortably on the examination couch while a nurse attaches recording electrodes with conductive gel to your chest and limbs. The measurement itself takes only a few seconds, during which the integrated printer immediately produces a detailed result right in the practice. The doctor will discuss the recorded values with you as soon as the test is complete — the entire process including preparation takes no more than 10 minutes.",
+              "During the procedure you lie comfortably on the examination couch while a nurse attaches recording electrodes with conductive gel to your chest and limbs. The measurement itself takes only a few seconds, during which the integrated printer immediately produces a detailed result right in the practice. The doctor will discuss the recorded values with you as soon as the test is complete. The entire process including preparation takes no more than 10 minutes.",
             ],
           },
         },
@@ -319,7 +319,7 @@ const en: Dictionary = {
           slug: "quickread-go-orion",
           purpose: "Distinguishing bacterial and viral infection (CRP)",
           purposeNote: "Determines whether antibiotics are needed",
-          device: "QuickRead go Orion — quantitative CRP testing",
+          device: "QuickRead go Orion, quantitative CRP testing",
           detail: {
             pageTitle: "QuickRead go Orion",
             pagePurpose: "POCT diagnostics from a single drop of blood",
@@ -335,13 +335,13 @@ const en: Dictionary = {
         },
         {
           purpose: "Diagnosis of anaemia",
-          device: "QuickRead go Orion — haemoglobin level testing",
+          device: "QuickRead go Orion, haemoglobin level testing",
           detailSlug: "quickread-go-orion",
         },
         {
           purpose: "Detection of hidden bleeding in stool",
           purposeNote: "Colorectal cancer prevention",
-          device: "QuickRead go Orion — quantitative iFOBT testing",
+          device: "QuickRead go Orion, quantitative iFOBT testing",
           detailSlug: "quickread-go-orion",
         },
         {
@@ -352,7 +352,7 @@ const en: Dictionary = {
             image: "/images/equipment/pulse-oxymeter.png",
             imageAlt: "Pulse oximeter",
             paragraphs: [
-              "A pulse oximeter is a small, non-invasive medical device for immediate measurement of blood oxygen saturation and heart rate at the same time. The examination is very simple — the device is gently clipped onto the tip of the patient's finger.",
+              "A pulse oximeter is a small, non-invasive medical device for immediate measurement of blood oxygen saturation and heart rate at the same time. The examination is very simple: the device is gently clipped onto the tip of the patient's finger.",
               "The device works on the principle of light passing through tissue, so it does not damage the skin and causes no pain. For the doctor, this oxygenation value is critically important when assessing lung function and the overall state of the patient's respiratory system.",
               "The measurement is regularly used for people with respiratory conditions, asthma, pneumonia or when monitoring patients with chronic difficulties. The result appears on a clear digital display within seconds, allowing an immediate response in case of insufficient oxygenation.",
               "The patient thus receives instant feedback on their breathing without any need for blood sampling.",
@@ -401,7 +401,7 @@ const en: Dictionary = {
             paragraphs: [
               "The Laura Smart urine analyzer is a modern benchtop device that provides objective and highly accurate urine sample testing in the practice. It replaces older visual assessment of diagnostic strips and eliminates any subjective error when reading results.",
               "The device is used for rapid detection of urinary tract infections, early kidney disease or the presence of unwanted blood and protein in the urine. Using advanced optical technology, it can precisely analyse important chemical parameters of the submitted sample within one minute.",
-              "For the patient the examination involves no burden — it is enough to provide a urine sample directly at the practice. Results are printed on a paper slip almost immediately, allowing the doctor to start targeted treatment, such as antibiotics for inflammation, without delay.",
+              "For the patient the examination involves no burden. It is enough to provide a urine sample directly at the practice. Results are printed on a paper slip almost immediately, allowing the doctor to start targeted treatment, such as antibiotics for inflammation, without delay.",
               "This sophisticated screening significantly raises the standard of preventive care and speeds up the diagnostic process.",
             ],
           },
@@ -466,7 +466,7 @@ const en: Dictionary = {
     title: "Registered patients",
     bookTitle: "Appointment booking and e-prescription",
     bookText:
-      "All communication with your doctor is handled through the Moji lekári app — from booking an appointment to requesting a prescription.",
+      "All communication with your doctor is handled through the Moji lekári app, from booking an appointment to requesting a prescription.",
     bookAppLabel: "App",
     bookAppValue: "Moji lekári",
   },
@@ -485,10 +485,10 @@ const en: Dictionary = {
       },
       {
         title: "By phone",
-        text: "Call during opening hours — subject to nurse availability.",
+        text: "Call during opening hours, subject to nurse availability.",
       },
     ],
-    note: "The e-prescription is sent electronically to any pharmacy — just give your ID number when collecting. Prescriptions are issued to registered patients.",
+    note: "The e-prescription is sent electronically to any pharmacy. Just give your ID number when collecting. Prescriptions are issued to registered patients.",
   },
   hoursSection: {
     title: "Opening hours",
@@ -519,7 +519,7 @@ const en: Dictionary = {
   },
   trust: {
     title: "Why choose our practice",
-    quote: "For me, it's not just about helping you live longer — it's about living those years in full health.",
+    quote: "For me, it's not just about helping you live longer. It's about living those years in full health.",
     quoteRole: "MEDICA JUR · Svätý Jur",
     items: [
       {
@@ -551,7 +551,7 @@ const en: Dictionary = {
   aboutUs: {
     eyebrow: "About us",
     title: "A practice for your whole life",
-    lead: "At MEDICA JUR we accompany patients through every stage of adult life — from young adults to seniors. Prevention is at the core, deciding how many years you live in full strength.",
+    lead: "At MEDICA JUR we accompany patients through every stage of adult life, from young adults to seniors. Prevention is at the core, deciding how many years you live in full strength.",
     pillars: [
       {
         title: "Helping the young reach their potential",
@@ -563,7 +563,7 @@ const en: Dictionary = {
       },
       {
         title: "Prevention for heart and movement",
-        text: "We focus on cardiovascular and musculoskeletal prevention — two pillars of a long, high-quality life.",
+        text: "We focus on cardiovascular and musculoskeletal prevention, two pillars of a long, high-quality life.",
       },
     ],
     photos: [
@@ -599,7 +599,7 @@ const en: Dictionary = {
         title: "Professional and medical experience",
         paragraphs: [
           "He gained his first clinical experience in emergency services, the ICU and later as a secondary physician on the internal medicine ward at Trstená Hospital.",
-          "He then spent more than two decades in senior roles in the pharmaceutical industry (Eli Lilly, GSK). He led clinical research into a new insulin in Vienna and later worked at headquarters in Indianapolis (USA), where he was responsible for global strategies for new medicines in oncology and neurology. After years in business, he chose of his own conviction to return to what fulfils him most — direct work with patients in his practice.",
+          "He then spent more than two decades in senior roles in the pharmaceutical industry (Eli Lilly, GSK). He led clinical research into a new insulin in Vienna and later worked at headquarters in Indianapolis (USA), where he was responsible for global strategies for new medicines in oncology and neurology. After years in business, he chose of his own conviction to return to what fulfils him most: direct work with patients in his practice.",
         ],
       },
       {
@@ -629,7 +629,7 @@ const en: Dictionary = {
     eyebrow: "About the doctor",
     title: "MUDr. Pavol Trnovec, PhD.",
     subtitle: "General practitioner for adults",
-    text: "A doctor who left a successful career in senior management at international pharmaceutical companies to help patients directly. He now channels his many years of experience from clinical research in the USA and Austria into honest, hands-on medicine in his own practice. His priority is accurate diagnosis, open communication and rational treatment that puts the person first — not unnecessary medication.",
+    text: "A doctor who left a successful career in senior management at international pharmaceutical companies to help patients directly. He now channels his many years of experience from clinical research in the USA and Austria into honest, hands-on medicine in his own practice. His priority is accurate diagnosis, open communication and rational treatment that puts the person first, not unnecessary medication.",
     highlights: [
       { icon: "stethoscope", text: "General practitioner for adults" },
       { icon: "globe", text: "PhD degree and international practice in the USA and Austria" },
@@ -651,17 +651,17 @@ const en: Dictionary = {
       {
         name: "Jozef P.",
         meta: "",
-        text: "My visit with Dr Trnovec was a revelation — 21st-century medicine and patient care! Detailed initial tests with clear explanations, practical recommendations, and a willingness to help without pushing medication right away. The practice environment is genuinely pleasant too. Highly recommended!",
+        text: "My visit with Dr Trnovec was a revelation: 21st-century medicine and patient care! Detailed initial tests with clear explanations, practical recommendations, and a willingness to help without pushing medication right away. The practice environment is genuinely pleasant too. Highly recommended!",
       },
       {
         name: "Katarína K.",
         meta: "",
-        text: "Everything is explained clearly and I finally felt that someone cares about my health. I believe it is important to look after your health before illness sets in. Today I found a doctor who cares about healthy patients too — not just prescribing medication when it is already too late. Thank you!",
+        text: "Everything is explained clearly and I finally felt that someone cares about my health. I believe it is important to look after your health before illness sets in. Today I found a doctor who cares about healthy patients too, not just prescribing medication when it is already too late. Thank you!",
       },
       {
         name: "Dominika K.",
         meta: "",
-        text: "An empathetic, direct and professional approach. After a long time, preventive care as every patient in Slovakia deserves. Nothing to fault — I recommend him. Even with the annual fee, it is worth having a doctor who does not examine you in the doorway but truly listens and assesses you.",
+        text: "An empathetic, direct and professional approach. After a long time, preventive care as every patient in Slovakia deserves. Nothing to fault. I recommend him. Even with the annual fee, it is worth having a doctor who does not examine you in the doorway but truly listens and assesses you.",
       },
       {
         name: "Adam V.",
@@ -694,7 +694,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I do in case of acute illness?",
-        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait — call emergency services on 155 or 112 immediately.",
+        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait. Call emergency services on 155 or 112 immediately.",
       },
       {
         q: "Which health insurers do you have contracts with?",
@@ -713,7 +713,7 @@ const en: Dictionary = {
   patientsPage: {
     eyebrow: "For patients",
     title: "For patients",
-    lead: "Everything you need before your visit in one place — registration, booking, e-prescriptions and useful documents.",
+    lead: "Everything you need before your visit in one place: registration, booking, e-prescriptions and useful documents.",
     newTitle: "Becoming a patient",
     bookTitle: "Booking & e-prescriptions",
     bookText:
@@ -745,7 +745,7 @@ const en: Dictionary = {
       },
       {
         q: "What should I do in case of acute illness?",
-        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait — call emergency services on 155 or 112 immediately.",
+        a: "For acute illness, we recommend booking via the Moji lekári portal so you are prioritised for treatment and avoid longer waiting at the practice. This considerate step not only helps your faster recovery but also protects other patients in the waiting room from infection.\n\nIn case of sudden life-threatening emergency (suspected heart attack, stroke, severe shortness of breath, ...), do not wait. Call emergency services on 155 or 112 immediately.",
       },
       {
         q: "Which health insurers do you have contracts with?",
@@ -763,7 +763,7 @@ const en: Dictionary = {
   },
   footer: {
     about:
-      "MUDr. Pavol Trnovec, PhD. — a general practice for adults in Svätý Jur. Comprehensive care with an emphasis on prevention.",
+      "MUDr. Pavol Trnovec, PhD., a general practice for adults in Svätý Jur. Comprehensive care with an emphasis on prevention.",
     navTitle: "Navigation",
     contactTitle: "Contact",
     legalTitle: "Legal",

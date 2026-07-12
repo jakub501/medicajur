@@ -43,7 +43,7 @@ export const pricingCategoriesEn = [
         price: "5 €",
       },
       {
-        name: "Health certificate — examinations for students and workers performing epidemiologically significant activities, including issuance of health certificate (Z02.7) (+ microbiological testing per current Medirex price list)",
+        name: "Health certificate: examinations for students and workers performing epidemiologically significant activities, including issuance of health certificate (Z02.7) (+ microbiological testing per current Medirex price list)",
         price: "20 €",
       },
       {
@@ -144,7 +144,7 @@ export const pricingCategoriesEn = [
         price: "5 €",
       },
       {
-        name: "BIA examination — body composition analysis (total fat, visceral fat, BMI, muscle mass, basal metabolism, caloric intake, metabolic age)",
+        name: "BIA examination: body composition analysis (total fat, visceral fat, BMI, muscle mass, basal metabolism, caloric intake, metabolic age)",
         price: "25 €",
       },
       {
@@ -156,15 +156,15 @@ export const pricingCategoriesEn = [
         price: "45 €",
       },
       {
-        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months) — BIA TANITA, MESI ECG, ABI, arterial metabolic age, health coaching — new registration",
+        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months), including BIA TANITA, MESI ECG, ABI, arterial metabolic age, health coaching, new registration",
         price: "50 €",
       },
       {
-        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months) — BIA TANITA, MESI ECG, ABI, arterial metabolic age, health coaching — ZDRAVIE package",
+        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months), including BIA TANITA, MESI ECG, ABI, arterial metabolic age, health coaching, ZDRAVIE package",
         price: "50 €",
       },
       {
-        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months) — BIA InBODY 970, MaxPulse, MESI ECG, ABI, arterial metabolic age, health coaching — ZDRAVIE+ package",
+        name: "Provision of non-medical services (reception, call centre, SMS and e-mail notifications, Moji lekári portal, 12 months), including BIA InBODY 970, MaxPulse, MESI ECG, ABI, arterial metabolic age, health coaching, ZDRAVIE+ package",
         price: "100 €",
       },
       {
@@ -192,7 +192,7 @@ export const pricingCategoriesEn = [
         price: "55 €",
       },
       {
-        name: "Body composition analysis (bioimpedance measurement with TANITA device) — including metabolic age, database entry, printed results and e-mail delivery, with results explanation",
+        name: "Body composition analysis (bioimpedance measurement with TANITA device), including metabolic age, database entry, printed results and e-mail delivery, with results explanation",
         price: "20 €",
       },
       {
@@ -208,19 +208,19 @@ export const pricingCategoriesEn = [
         price: "15 €",
       },
       {
-        name: "Initial InBODY 970 + MaxPulse measurement + 30 min. consultation — including database entry, printed results and e-mail delivery, with results explanation",
+        name: "Initial InBODY 970 + MaxPulse measurement + 30 min. consultation, including database entry, printed results and e-mail delivery, with results explanation",
         price: "50 €",
       },
       {
-        name: "Initial InBODY 970 + MaxPulse measurement + 15 min. consultation — including database entry, printed results and e-mail delivery, with results explanation (unregistered patients)",
+        name: "Initial InBODY 970 + MaxPulse measurement + 15 min. consultation, including database entry, printed results and e-mail delivery, with results explanation (unregistered patients)",
         price: "65 €",
       },
       {
-        name: "Follow-up InBODY 970 + MaxPulse measurement — including database entry, printed results and e-mail delivery",
+        name: "Follow-up InBODY 970 + MaxPulse measurement, including database entry, printed results and e-mail delivery",
         price: "35 €",
       },
       {
-        name: "Initial InBODY 970 measurement — including database entry, printed results and e-mail delivery",
+        name: "Initial InBODY 970 measurement, including database entry, printed results and e-mail delivery",
         price: "40 €",
       },
       {
@@ -228,7 +228,7 @@ export const pricingCategoriesEn = [
         price: "30 €",
       },
       {
-        name: "Follow-up measurement package — 10× repeat InBODY 970 measurement",
+        name: "Follow-up measurement package: 10× repeat InBODY 970 measurement",
         price: "250 €",
       },
       {
@@ -236,7 +236,7 @@ export const pricingCategoriesEn = [
         price: "20 €",
       },
       {
-        name: "Follow-up measurement package — 10× repeat MaxPulse measurement",
+        name: "Follow-up measurement package: 10× repeat MaxPulse measurement",
         price: "150 €",
       },
       {
@@ -248,35 +248,35 @@ export const pricingCategoriesEn = [
         price: "15 €",
       },
       {
-        name: "IV therapy — comprehensive immune system support package",
+        name: "IV therapy: comprehensive immune system support package",
         price: "55 €",
       },
       {
-        name: "IV therapy — vitamin C + Acc Long (respiratory tract and immune support)",
+        name: "IV therapy: vitamin C + Acc Long (respiratory tract and immune support)",
         price: "50 €",
       },
       {
-        name: "IV therapy — comprehensive immune system support package",
+        name: "IV therapy: comprehensive immune system support package",
         price: "50 €",
       },
       {
-        name: "IV therapy — vitamin C + Calcium gluconicum",
+        name: "IV therapy: vitamin C + Calcium gluconicum",
         price: "50 €",
       },
       {
-        name: "IV therapy — vitamin C standalone",
+        name: "IV therapy: vitamin C standalone",
         price: "50 €",
       },
       {
-        name: "IV therapy — vitamin C + magnesium",
+        name: "IV therapy: vitamin C + magnesium",
         price: "35 €",
       },
       {
-        name: "IV therapy — Mg, Ca, Acc Long or Paracetamol (standalone infusion as required)",
+        name: "IV therapy: Mg, Ca, Acc Long or Paracetamol (standalone infusion as required)",
         price: "55 €",
       },
       {
-        name: "IV therapy — Neodolpase",
+        name: "IV therapy: Neodolpase",
         price: "20 €",
       },
     ],

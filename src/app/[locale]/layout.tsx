@@ -46,7 +46,7 @@ export async function generateMetadata({
   const loc: Locale = isLocale(locale) ? locale : "sk";
   const dict = await getDictionary(loc);
 
-  const title = `${SITE.brand} — ${SITE.doctor}`;
+  const title = loc === "en" ? `${SITE.brand}, ${SITE.doctor}` : `${SITE.brand} — ${SITE.doctor}`;
   const description =
     loc === "sk"
       ? "Moderná všeobecná ambulancia pre dospelých vo Svätom Jure. Prevencia, diagnostika, liečba, odbery, očkovanie a POCT vyšetrenia."
@@ -56,7 +56,7 @@ export async function generateMetadata({
     metadataBase: new URL(SITE.baseUrl),
     title: {
       default: title,
-      template: `%s — ${SITE.brand}`,
+      template: loc === "en" ? `%s, ${SITE.brand}` : `%s — ${SITE.brand}`,
     },
     description,
     applicationName: SITE.brand,

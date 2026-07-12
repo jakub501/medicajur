@@ -107,7 +107,7 @@ const PRIVACY: Record<Locale, LegalDoc> = {
     title: "Privacy policy",
     updated: "Last updated: July 2026",
     intro:
-      "This policy concerns solely the processing of personal data in connection with the use of this website. The site is purely informational — it contains no contact forms or registration, and you do not need to provide any personal data to browse it.\n\nThe processing of patients' personal data as part of providing healthcare is governed by separate legal rules, which we will explain in detail when you visit the practice.",
+      "This policy concerns solely the processing of personal data in connection with the use of this website. The site is purely informational. It contains no contact forms or registration, and you do not need to provide any personal data to browse it.\n\nThe processing of patients' personal data as part of providing healthcare is governed by separate legal rules, which we will explain in detail when you visit the practice.",
     sections: [
       {
         heading: "Controller",
@@ -127,7 +127,7 @@ const PRIVACY: Record<Locale, LegalDoc> = {
         ],
         list: [
           "Technical data required for the correct display and security of the site (in particular IP address, browser and operating system type, time of access), which our hosting provider automatically processes as part of server logs.",
-          "Data related to displaying the interactive Google map — when you interact with the map in the website footer, Google may process your IP address and store cookies on your device.",
+          "Data related to displaying the interactive Google map. When you interact with the map in the website footer, Google may process your IP address and store cookies on your device.",
           "The practice's public rating and review count, which we load from the Google Maps interface to display patient satisfaction (when displaying this information, we do not process the visitor's personal data).",
         ],
       },
@@ -162,7 +162,7 @@ const PRIVACY: Record<Locale, LegalDoc> = {
       {
         heading: "Transfers to third countries",
         paragraphs: [
-          "Some partners (primarily Google) may also process technical data on servers outside the European Economic Area, mainly in the USA. Such transfers are fully safeguarded by appropriate legal measures under the GDPR, primarily on the basis of the European Commission's adequacy decision (EU–US Data Privacy Framework), or through standard contractual clauses.",
+          "Some partners (primarily Google) may also process technical data on servers outside the European Economic Area, mainly in the USA. Such transfers are fully safeguarded by appropriate legal measures under the GDPR, primarily on the basis of the European Commission's adequacy decision (EU-US Data Privacy Framework), or through standard contractual clauses.",
         ],
       },
       {
@@ -278,7 +278,7 @@ const COOKIES: Record<Locale, LegalDoc> = {
         ],
       },
       {
-        heading: "2. Third-party cookies — Google Maps",
+        heading: "2. Third-party cookies: Google Maps",
         paragraphs: [
           "In the footer of our site, we use an interactive map and display of public reviews from Google. When you interact with this map, Google (Google Ireland Ltd. / Google LLC) may store its own cookies on your device, process your IP address and transfer this data to its servers (including in the USA).",
         ],

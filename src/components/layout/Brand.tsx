@@ -17,7 +17,7 @@ export function Brand({
   invert?: boolean;
   variant?: BrandVariant;
 }) {
-  const alt = `${brand} — ${doctor}`;
+  const alt = locale === "en" ? `${brand}, ${doctor}` : `${brand} — ${doctor}`;
 
   if (variant === "lockup") {
     return (
