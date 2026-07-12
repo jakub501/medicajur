@@ -79,7 +79,7 @@ export async function Hero({ locale, dict }: { locale: Locale; dict: Dictionary 
             <div className="fade-up d-5 flex flex-col gap-3.5">
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <ButtonAnchor
-                  href={`mailto:${SITE.emails.doctor}`}
+                  href={SITE.bookHref}
                   size="md"
                   className="w-full justify-center px-5"
                 >

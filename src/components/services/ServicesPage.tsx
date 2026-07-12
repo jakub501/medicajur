@@ -32,16 +32,10 @@ export function ServicesPage({ locale, dict }: { locale: Locale; dict: Dictionar
           </div>
 
           <Reveal className="mt-10 text-center sm:mt-12">
-            <ButtonAnchor
-              href={SITE.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              size="md"
-            >
+            <ButtonAnchor href={SITE.bookHref} size="md">
               <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
               {dict.common.book}
             </ButtonAnchor>
-            <p className="text-caption mt-3 text-muted">{dict.hero.bookingNote}</p>
           </Reveal>
         </div>
     </Section>

@@ -21,9 +21,7 @@ export function StickyMobileCta({ dict }: { dict: Dictionary }) {
             {dict.common.call}
           </a>
           <a
-            href={SITE.bookingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={SITE.bookHref}
             className="cta-primary inline-flex min-h-12 flex-[1.3] touch-manipulation items-center justify-center gap-2 rounded-[10px] text-[15px] font-bold text-white"
           >
             <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} aria-hidden="true" />

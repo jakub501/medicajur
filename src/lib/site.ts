@@ -3,6 +3,8 @@
  * Update values here and they propagate across the whole site + structured data.
  */
 
+const DOCTOR_EMAIL = "doktor@medicajur.sk";
+
 export const SITE = {
   company: "MEDICA JUR, s.r.o.",
   brand: "MEDICA JUR",
@@ -11,7 +13,7 @@ export const SITE = {
   phone: "+421 2 2073 3871",
   phoneHref: "tel:+421220733871",
   emails: {
-    doctor: "doktor@medicajur.sk",
+    doctor: DOCTOR_EMAIL,
     recipe: "recept@medicajur.sk",
     nurse: "sestra@medicajur.sk",
     office: "ambulancia@medicajur.sk",
@@ -34,6 +36,9 @@ export const SITE = {
     rating: 5.0,
     reviewCount: 0,
   },
+  /** Primary "Objednať sa" CTA — opens mail to the doctor. */
+  bookHref: `mailto:${DOCTOR_EMAIL}`,
+  /** Moji lekári patient portal (e-prescriptions, registered patients). */
   bookingUrl: "https://lekar.digital/",
   bookingName: "Moji lekári",
   officialUrl: "https://www.medicajur.sk",

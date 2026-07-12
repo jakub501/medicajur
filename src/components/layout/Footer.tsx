@@ -104,9 +104,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                 </Link>
                 <p className="footer-about">{dict.footer.about}</p>
                 <a
-                  href={SITE.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={SITE.bookHref}
                   className="cta-primary footer-book-cta mt-5 inline-flex min-h-10 items-center gap-2 rounded-[12px] px-4 text-body-sm font-bold text-white transition-all hover:-translate-y-px"
                 >
                   <CalendarCheck className="h-4 w-4" strokeWidth={1.85} aria-hidden="true" />

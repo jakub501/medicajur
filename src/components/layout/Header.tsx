@@ -139,10 +139,7 @@ export function Header({
             <span className="nav-divider mr-1 hidden lg:block" aria-hidden="true" />
             <LanguageSwitcher locale={locale} className="hidden sm:inline-flex" />
             <a
-              href={SITE.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={dict.hero.bookingNote}
+              href={SITE.bookHref}
               className="cta-primary hidden h-10 items-center gap-1.5 whitespace-nowrap rounded-[10px] px-3.5 text-[14px] font-bold leading-none text-white transition-all hover:-translate-y-px sm:inline-flex xl:px-4 xl:text-[15px]"
             >
               <CalendarCheck className="h-[17px] w-[17px] shrink-0" strokeWidth={1.85} aria-hidden="true" />
@@ -196,16 +193,12 @@ export function Header({
               </a>
             </div>
             <a
-              href={SITE.bookingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={dict.hero.bookingNote}
+              href={SITE.bookHref}
               className="cta-primary mt-4 flex h-11 items-center justify-center gap-2 rounded-[10px] px-5 text-[16px] font-bold text-white"
             >
               <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} />
               {dict.nav.book}
             </a>
-            <p className="mt-2 text-center text-[12px] text-muted">{dict.hero.bookingNote}</p>
           </Container>
         </div>
       </div>
