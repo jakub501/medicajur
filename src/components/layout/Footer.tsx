@@ -1,19 +1,11 @@
 import Link from "next/link";
 import { Phone, MapPin, CalendarCheck, Mail } from "lucide-react";
-import { href, type Locale, type RouteKey } from "@/i18n/config";
+import { homeNavHref, homeNavOrder, href, type Locale } from "@/i18n/config";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { SITE } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { Brand } from "./Brand";
 import { cn } from "@/lib/cn";
-
-const NAV: { key: RouteKey; label: keyof Dictionary["nav"] }[] = [
-  { key: "about", label: "about" },
-  { key: "services", label: "services" },
-  { key: "pricing", label: "pricing" },
-  { key: "hours", label: "hours" },
-  { key: "contact", label: "contact" },
-];
 
 const CONTACT_ACCENTS = ["primary", "green", "deep"] as const;
 
@@ -125,14 +117,9 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               <div className="footer-col">
                 <FooterColumnTitle>{dict.footer.navTitle}</FooterColumnTitle>
                 <nav className="footer-nav">
-                  {NAV.map(({ key, label }) => (
-                    <FooterNavLink
-                      key={key}
-                      href={
-                        key === "pricing" ? href(locale, "services", "pricing") : href(locale, key)
-                      }
-                    >
-                      {dict.nav[label]}
+                  {homeNavOrder.map((key) => (
+                    <FooterNavLink key={key} href={homeNavHref(locale, key)}>
+                      {dict.nav[key]}
                     </FooterNavLink>
                   ))}
                 </nav>

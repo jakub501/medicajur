@@ -539,7 +539,7 @@ const en: Dictionary = {
       },
     ],
     examTitle: "What we learn at your intake examination",
-    examLead: "One visit gives you a complete picture of your health — while you wait.",
+    examLead: "One visit gives you a complete picture of your health.",
     exams: [
       { name: "InBody 970", measure: "Muscle, fat and metabolic age" },
       { name: "MaxGrip", measure: "Muscle strength and longevity indicator" },

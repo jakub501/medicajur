@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Newsreader, Public_Sans } from "next/font/google";
 import { locales, isLocale, type Locale } from "@/i18n/config";
@@ -30,6 +30,12 @@ const publicSans = Public_Sans({
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export async function generateMetadata({
   params,

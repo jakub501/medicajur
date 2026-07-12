@@ -36,6 +36,15 @@ export const homeNavHashes: Record<HomeNavKey, string> = {
   contact: "kontakt",
 };
 
+/** Primary navbar / footer link order on the homepage. */
+export const homeNavOrder: HomeNavKey[] = [
+  "aboutDoctor",
+  "services",
+  "newPatient",
+  "existingPatients",
+  "contact",
+];
+
 export function href(locale: Locale, key: RouteKey, hash?: string) {
   const slug = routes[key][locale];
   const base = slug ? `/${locale}/${slug}` : `/${locale}`;

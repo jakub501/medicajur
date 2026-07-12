@@ -15,7 +15,7 @@ export function StickyMobileCta({ dict }: { dict: Dictionary }) {
         <div className="mx-auto flex max-w-[1200px] gap-2.5 px-3 py-2.5">
           <a
             href={SITE.phoneHref}
-            className="btn-secondary inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-[10px] text-[15px] font-bold"
+            className="btn-secondary inline-flex min-h-12 flex-1 touch-manipulation items-center justify-center gap-2 rounded-[10px] text-[15px] font-bold"
           >
             <Phone className="h-[18px] w-[18px]" strokeWidth={1.85} aria-hidden="true" />
             {dict.common.call}
@@ -24,7 +24,7 @@ export function StickyMobileCta({ dict }: { dict: Dictionary }) {
             href={SITE.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="cta-primary inline-flex min-h-12 flex-[1.3] items-center justify-center gap-2 rounded-[10px] text-[15px] font-bold text-white"
+            className="cta-primary inline-flex min-h-12 flex-[1.3] touch-manipulation items-center justify-center gap-2 rounded-[10px] text-[15px] font-bold text-white"
           >
             <CalendarCheck className="h-[18px] w-[18px]" strokeWidth={1.85} aria-hidden="true" />
             {dict.common.book}

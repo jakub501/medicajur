@@ -11,7 +11,7 @@ export function PageHero({
   lead?: string;
 }) {
   return (
-    <section className="relative py-12 sm:py-16">
+    <section className="relative scroll-mt-28 py-12 sm:scroll-mt-32 sm:py-16">
       <Container>
         <div className="relative max-w-[44em] animate-rise">
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}

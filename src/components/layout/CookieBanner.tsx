@@ -38,7 +38,10 @@ export function CookieBanner({
   if (!visible) return null;
 
   return (
-    <div className="safe-bottom fixed inset-x-0 bottom-3 z-[60] p-3 sm:bottom-5 sm:p-5">
+    <>
+      {/* Keeps footer content visible above cookie + sticky bar on mobile. */}
+      <div aria-hidden className="h-[7.5rem] shrink-0 lg:hidden" />
+      <div className="safe-bottom fixed inset-x-0 bottom-[4.75rem] z-[60] p-3 max-lg:bottom-[4.75rem] sm:p-5 lg:bottom-5">
       <div className="mx-auto flex max-w-[1200px] flex-col gap-4 rounded-2xl border border-line bg-surface p-5 shadow-card sm:flex-row sm:items-center sm:gap-6">
         <div className="flex items-start gap-3">
           <span className="icon-box mt-0.5 h-9 w-9 rounded-[10px]">
@@ -54,15 +57,16 @@ export function CookieBanner({
             </Link>
           </p>
         </div>
-        <div className="flex shrink-0 gap-3 sm:ml-auto">
-          <Button variant="secondary" size="sm" onClick={() => decide("essential")}>
+        <div className="flex w-full shrink-0 flex-col gap-2.5 sm:ml-auto sm:w-auto sm:flex-row sm:gap-3">
+          <Button variant="secondary" size="sm" className="w-full sm:w-auto" onClick={() => decide("essential")}>
             {dict.cookies.reject}
           </Button>
-          <Button size="sm" onClick={() => decide("all")}>
+          <Button size="sm" className="w-full sm:w-auto" onClick={() => decide("all")}>
             {dict.cookies.accept}
           </Button>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

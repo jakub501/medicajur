@@ -46,13 +46,13 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
                     <div className="flex items-start gap-4">
                       <span
                         className={cn(
-                          "flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] font-serif text-[0.8125rem] font-bold tabular-nums transition-transform duration-300 group-hover:scale-105",
-                          `hero-float-badge-icon hero-float-badge-icon--${accent}`,
+                          "trust-ico shrink-0 tabular-nums text-caption font-bold",
+                          `trust-ico--${accent}`,
                         )}
                       >
                         {String(index + 1).padStart(2, "0")}
                       </span>
-                      <h2 className="text-h3 pt-1.5 text-balance">{card.title}</h2>
+                      <h2 className="text-h3 min-w-0 pt-0.5 text-balance">{card.title}</h2>
                     </div>
 
                     {"qualifications" in card && card.qualifications && (
@@ -71,10 +71,8 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
                               aria-hidden="true"
                             />
                             <div className="min-w-0 flex-1">
-                              <span className="text-body-sm font-bold tracking-wide text-primary">
-                                {item.label}
-                              </span>
-                              <p className="text-body mt-2 leading-relaxed text-muted">{item.text}</p>
+                              <span className="text-eyebrow text-primary">{item.label}</span>
+                              <p className="text-body mt-2 leading-[1.7] text-muted">{item.text}</p>
                             </div>
                           </li>
                         ))}
@@ -86,7 +84,7 @@ export function AboutPage({ dict }: { locale: Locale; dict: Dictionary }) {
                         {card.paragraphs.map((paragraph, paragraphIndex) => (
                           <p
                             key={paragraphIndex}
-                            className="text-body leading-[1.75] text-muted first:text-body-lg first:leading-relaxed"
+                            className="text-body-lg text-pretty leading-[1.7] text-muted"
                           >
                             {paragraph}
                           </p>

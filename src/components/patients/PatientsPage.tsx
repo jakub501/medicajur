@@ -61,8 +61,8 @@ export function PatientsPage({ locale, dict }: { locale: Locale; dict: Dictionar
               <ul className="mt-5 flex flex-col gap-3">
                 {p.documents.map((doc) => (
                   <li key={doc}>
-                    <span className="flex items-center justify-between gap-3 rounded-[12px] border border-line bg-surface px-4 py-3.5">
-                      <span className="flex items-center gap-3 text-[15px] font-semibold text-ink">
+                    <span className="flex min-w-0 items-center justify-between gap-3 rounded-[12px] border border-line bg-surface px-4 py-3.5">
+                      <span className="flex min-w-0 items-center gap-3 text-[15px] font-semibold break-words text-ink">
                         <FileText
                           className="h-5 w-5 shrink-0 text-primary"
                           strokeWidth={1.85}

@@ -7,6 +7,7 @@ import { Phone, CalendarCheck, Menu, X } from "lucide-react";
 import {
   homeNavHashes,
   homeNavHref,
+  homeNavOrder,
   href,
   isHomePath,
   type HomeNavKey,
@@ -20,13 +21,7 @@ import { Container } from "@/components/ui/Container";
 import { Brand } from "./Brand";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const NAV: { key: HomeNavKey; label: keyof Dictionary["nav"] }[] = [
-  { key: "aboutDoctor", label: "aboutDoctor" },
-  { key: "services", label: "services" },
-  { key: "newPatient", label: "newPatient" },
-  { key: "existingPatients", label: "existingPatients" },
-  { key: "contact", label: "contact" },
-];
+const NAV = homeNavOrder.map((key) => ({ key, label: key as keyof Dictionary["nav"] }));
 
 export function Header({
   locale,
@@ -107,7 +102,7 @@ export function Header({
         scrolled && "site-header--scrolled",
       )}
     >
-      <Container>
+      <Container className={cn(open && "relative z-[51]")}>
         <nav className="site-header__nav grid min-h-[68px] grid-cols-[auto_1fr_auto] items-center gap-x-3 py-2 sm:min-h-[72px] sm:gap-x-4">
           <Link
             href={href(locale, "home")}
@@ -167,8 +162,16 @@ export function Header({
       </Container>
 
       {/* Mobile menu */}
+      {open ? (
+        <button
+          type="button"
+          aria-label={dict.nav.close}
+          className="site-header-backdrop fixed inset-0 z-40 bg-ink/25 lg:hidden"
+          onClick={() => setOpen(false)}
+        />
+      ) : null}
       <div className={cn("lg:hidden", open ? "block" : "hidden")}>
-        <div className="site-header-menu">
+        <div className="site-header-menu relative z-50">
           <Container className="py-4">
             <div className="flex flex-col">
               {NAV.map(({ key, label }) => (

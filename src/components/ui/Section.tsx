@@ -13,7 +13,14 @@ export function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} className={cn("relative py-12 sm:py-16", className)}>
+    <section
+      id={id}
+      className={cn(
+        "relative py-12 sm:py-16",
+        id && "scroll-mt-28 sm:scroll-mt-32",
+        className,
+      )}
+    >
       <Container className={containerClassName}>{children}</Container>
     </section>
   );

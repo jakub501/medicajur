@@ -14,10 +14,10 @@ export default function NotFound() {
           color: "#14283a",
           fontFamily: "system-ui, sans-serif",
           textAlign: "center",
-          padding: "2rem",
+          padding: "clamp(1.25rem, 4vw, 2rem)",
         }}
       >
-        <div>
+        <div style={{ maxWidth: "24rem", width: "100%" }}>
           <p
             style={{
               fontSize: 13,
@@ -29,8 +29,16 @@ export default function NotFound() {
           >
             MEDICA JUR
           </p>
-          <h1 style={{ fontSize: 56, margin: "12px 0 8px" }}>404</h1>
-          <p style={{ color: "#5a6e7e", marginBottom: 24 }}>
+          <h1
+            style={{
+              fontSize: "clamp(2.75rem, 12vw, 3.5rem)",
+              margin: "12px 0 8px",
+              lineHeight: 1,
+            }}
+          >
+            404
+          </h1>
+          <p style={{ color: "#5a6e7e", marginBottom: 24, lineHeight: 1.5 }}>
             Stránka sa nenašla · Page not found
           </p>
           <Link

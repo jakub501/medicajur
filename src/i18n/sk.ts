@@ -540,7 +540,7 @@ const sk = {
       },
     ],
     examTitle: "Čo o Vás zistíme pri vstupnom vyšetrení",
-    examLead: "Za jednu návštevu získate komplexný obraz o svojom zdraví — na počkanie.",
+    examLead: "Za jednu návštevu získate komplexný obraz o svojom zdraví.",
     exams: [
       { name: "InBody 970", measure: "Svaly, tuk a metabolický vek" },
       { name: "MaxGrip", measure: "Svalová sila a ukazovateľ dlhovekosti" },

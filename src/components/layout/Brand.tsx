@@ -21,7 +21,7 @@ export function Brand({
 
   if (variant === "lockup") {
     return (
-      <span className="brand-lockup-row">
+      <span className="brand-lockup-row min-w-0 max-w-[calc(100vw-5.5rem)] sm:max-w-none">
         <svg
           className="brand-mark"
           viewBox="0 0 24 24"
@@ -43,7 +43,7 @@ export function Brand({
         </svg>
         <span className="brand-lockup">
           <span className="brand-lockup-name">MedicaJur</span>
-          <span className="brand-lockup-doctor">{doctor.toUpperCase()}</span>
+          <span className="brand-lockup-doctor truncate">{doctor.toUpperCase()}</span>
         </span>
       </span>
     );
