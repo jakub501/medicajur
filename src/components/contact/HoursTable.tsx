@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SCHEDULE, fmtMinutes } from "@/lib/site";
+import { SCHEDULE, fmtMinutes, clinicNow } from "@/lib/site";
 import type { Dictionary } from "@/i18n/dictionaries";
 import { cn } from "@/lib/cn";
 
@@ -9,7 +9,7 @@ export function HoursTable({ dict }: { dict: Dictionary }) {
   const [today, setToday] = useState<number | null>(null);
 
   useEffect(() => {
-    setToday(new Date().getDay());
+    setToday(clinicNow().dow);
   }, []);
 
   return (

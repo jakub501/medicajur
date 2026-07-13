@@ -68,12 +68,14 @@ export const SITE = {
  * Edit the texts per language; leave a language empty to skip it there.
  */
 export const NOTICE = {
+  // No notice is currently planned. To show one (holidays, substitute doctor,
+  // changed hours…): set `active: true` and fill in `range` + `text` below.
   active: false,
   /** Optional date range shown in bold before the message, e.g. "7. – 18. 7. 2026". */
-  range: "21. – 25. 7. 2026",
+  range: "",
   text: {
-    sk: "Čerpáme dovolenku, ambulancia je zatvorená. Zastupuje MUDr. … v …. V akútnych prípadoch volajte 155.",
-    en: "The practice is closed for holidays. Substitute: Dr. … at …. In acute cases call 155.",
+    sk: "",
+    en: "",
   },
 } as const;
 
@@ -103,13 +105,52 @@ export const SCHEDULE: DaySchedule[] = [
 const pad = (n: number) => String(n).padStart(2, "0");
 export const fmtMinutes = (mins: number) => `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`;
 
+/** The clinic's fixed timezone — the "open now" logic must not depend on the
+ *  visitor's device clock or locale. */
+export const CLINIC_TIMEZONE = "Europe/Bratislava";
+
+const DOW_INDEX: Record<string, number> = {
+  Sun: 0,
+  Mon: 1,
+  Tue: 2,
+  Wed: 3,
+  Thu: 4,
+  Fri: 5,
+  Sat: 6,
+};
+
+/**
+ * Current day-of-week (0 = Sunday, matching Date.getDay()) and minutes-from-
+ * midnight in the clinic's timezone, regardless of where the visitor is.
+ */
+export function clinicNow(date = new Date()): { dow: number; minutes: number } {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: CLINIC_TIMEZONE,
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(date);
+
+  let dow = 0;
+  let hour = 0;
+  let minute = 0;
+  for (const part of parts) {
+    if (part.type === "weekday") dow = DOW_INDEX[part.value] ?? 0;
+    else if (part.type === "hour") hour = parseInt(part.value, 10) % 24;
+    else if (part.type === "minute") minute = parseInt(part.value, 10);
+  }
+
+  return { dow, minutes: hour * 60 + minute };
+}
+
 export const scheduleForDow = (dow: number) =>
   SCHEDULE.find((d) => d.dow === dow) ?? SCHEDULE[SCHEDULE.length - 1];
 
 export function isOpenAt(date = new Date()) {
-  const day = scheduleForDow(date.getDay());
-  const now = date.getHours() * 60 + date.getMinutes();
-  return day.intervals.some(([start, end]) => now >= start && now < end);
+  const { dow, minutes } = clinicNow(date);
+  const day = scheduleForDow(dow);
+  return day.intervals.some(([start, end]) => minutes >= start && minutes < end);
 }
 
 export function formatDayIntervals(dow: number, closedLabel: string) {
